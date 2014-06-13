@@ -3,23 +3,23 @@
 // TODO add real comment with header for this file
 
 //#include "Arduino.h"
-#include <EEPROM.h>
+//#include <EEPROM.h>
 #include "sensor.h"
 
 void incProbeIndex(Sensor_t* sensor);
 
-unsigned setProbe(Sensor_t* sensor, unsigned index, unsigned value);
+void setProbe(Sensor_t* sensor, unsigned index, unsigned value);
 
 unsigned readCurrentValue(struct Sensor_t* sensor) {
-  return analogRead(sensor->sensorPIN);
+  return 0;//analogRead(sensor->sensorPIN);
 }
 
 unsigned getProbe(Sensor_t* sensor, unsigned index) {
-  return EEPROM.read(sensor->startEEPROMAdress + index);
+  return 0;//EEPROM.read(sensor->startEEPROMAdress + index);
 }
 
-unsigned setProbe(struct Sensor_t* sensor, unsigned index, unsigned value) {
-  EEPROM.write(sensor->startEEPROMAdress + index, value);
+void setProbe(struct Sensor_t* sensor, unsigned index, unsigned value) {
+  //EEPROM.write(sensor->startEEPROMAdress + index, value);
 }
 
 float normalizeTemperature(unsigned temperature) {

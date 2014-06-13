@@ -60,11 +60,19 @@
       <name>$PROJ_DIR$\sensor.cpp</name>
       <outputs>
         <tool>
+          <name>ICCARM</name>
+          <file> 16</file>
+        </tool>
+        <tool>
           <name>BICOMP</name>
           <file> 5</file>
         </tool>
       </outputs>
       <inputs>
+        <tool>
+          <name>ICCARM</name>
+          <file> 14</file>
+        </tool>
         <tool>
           <name>BICOMP</name>
           <file> 14</file>
@@ -82,11 +90,11 @@
       <inputs>
         <tool>
           <name>ICCARM</name>
-          <file> 6</file>
+          <file> 6 14</file>
         </tool>
         <tool>
           <name>BICOMP</name>
-          <file> 6</file>
+          <file> 6 14</file>
         </tool>
       </inputs>
     </file>

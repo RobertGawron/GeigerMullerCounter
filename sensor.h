@@ -7,7 +7,7 @@ enum SensorType { temperature = 0, humidity = 1 };
 
 // TODO add typedef
 typedef struct  Sensor_t {
-  SensorType type;
+  enum SensorType type;
   unsigned sensorPIN;
   unsigned probeTotalAmout;
   unsigned probeIndex;
