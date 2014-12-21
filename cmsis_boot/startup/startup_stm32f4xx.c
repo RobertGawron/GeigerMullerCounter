@@ -1,10 +1,10 @@
 /**
   ******************************************************************************
   * @file      startup_stm32f4xx.s
-  * @author    Coocox
-  * @version   V1.0
-  * @date      03/05/2012
-  * @brief     STM32F4xx Devices vector table for RIDE7 toolchain. 
+  * @author    Coocox / UB (angepasst fuer STM32F429)
+  * @version   V1.1
+  * @date      10/27/2013
+  * @brief     STM32F429 Devices vector table for RIDE7 toolchain. 
   *            This module performs:
   *                - Set the initial SP
   *                - Set the initial PC == Reset_Handler,
@@ -93,7 +93,7 @@ void WEAK  TIM8_UP_TIM13_IRQHandler(void);
 void WEAK  TIM8_TRG_COM_TIM14_IRQHandler(void);
 void WEAK  TIM8_CC_IRQHandler(void);
 void WEAK  DMA1_Stream7_IRQHandler(void);
-void WEAK  FSMC_IRQHandler(void);
+void WEAK  FMC_IRQHandler(void);
 void WEAK  SDIO_IRQHandler(void);
 void WEAK  TIM5_IRQHandler(void);
 void WEAK  SPI3_IRQHandler(void);
@@ -127,6 +127,19 @@ void WEAK  DCMI_IRQHandler(void);
 void WEAK  CRYP_IRQHandler(void);
 void WEAK  HASH_RNG_IRQHandler(void);
 void WEAK  FPU_IRQHandler(void);
+// neu für STM32F429
+void WEAK  UART7_IRQHandler(void);
+void WEAK  UART8_IRQHandler(void);
+void WEAK  SPI4_IRQHandler(void);
+void WEAK  SPI5_IRQHandler(void);
+void WEAK  SPI6_IRQHandler(void);
+void WEAK  SAI1_IRQHandler(void); 
+void WEAK  LTDC_IRQHandler(void);
+void WEAK  LTDC_ER_IRQHandler(void);
+void WEAK  DMA2D_IRQHandler(void);
+      
+
+
 
 /*----------Symbols defined in linker script----------------------------------*/
 extern unsigned long _sidata;    /*!< Start address for the initialization
@@ -140,7 +153,7 @@ extern void _eram;               /*!< End address for ram                     */
 
 /*----------Function prototypes-----------------------------------------------*/
 extern int main(void);           /*!< The entry point for the application.    */
-//extern void SystemInit(void);    /*!< Setup the microcontroller system(CMSIS) */
+extern void SystemInit(void);    /*!< Setup the microcontroller system(CMSIS) */
 void Default_Reset_Handler(void);   /*!< Default reset handler                */
 static void Default_Handler(void);  /*!< Default exception handler            */
 
@@ -217,7 +230,7 @@ void (* const g_pfnVectors[])(void) =
   TIM8_TRG_COM_TIM14_IRQHandler,/*!< 45:TIM8 Trigger and Commutation and TIM14*/
   TIM8_CC_IRQHandler,        /*!< 46: TIM8 Capture Compare                    */
   DMA1_Stream7_IRQHandler,   /*!< 47: DMA1 Stream7                            */
-  FSMC_IRQHandler,           /*!< 48: FSMC                                    */
+  FMC_IRQHandler,            /*!< 48: FMC                                     */
   SDIO_IRQHandler,           /*!< 49: SDIO                                    */
   TIM5_IRQHandler,           /*!< 50: TIM5                                    */
   SPI3_IRQHandler,           /*!< 51: SPI3                                    */
@@ -250,8 +263,16 @@ void (* const g_pfnVectors[])(void) =
   DCMI_IRQHandler,           /*!< 53: DCMI                                    */
   CRYP_IRQHandler,           /*!< 53: CRYP crypto                             */
   HASH_RNG_IRQHandler,       /*!< 53: Hash and Rng                            */
-  FPU_IRQHandler             /*!< 53: FPU                                     */
-  
+  FPU_IRQHandler,            /*!< 53: FPU                                     */
+  UART7_IRQHandler,          /*!< ??: UART7 (STM32F429)                       */ 
+  UART8_IRQHandler,          /*!< ??: UART8 (STM32F429)                       */
+  SPI4_IRQHandler,           /*!< ??: SPI4 (STM32F429)                        */
+  SPI5_IRQHandler,           /*!< ??: SPI5 (STM32F429)                        */
+  SPI6_IRQHandler,           /*!< ??: SPI6 (STM32F429)                        */
+  SAI1_IRQHandler,           /*!< ??: SAI1 (STM32F429)                        */
+  LTDC_IRQHandler,           /*!< ??: LTDC (STM32F429)                        */
+  LTDC_ER_IRQHandler,        /*!< ??: LTDC_ER (STM32F429)                     */
+  DMA2D_IRQHandler           /*!< ??: DMA2D (STM32F429)                       */
 };
 
 
@@ -295,6 +316,9 @@ void Default_Reset_Handler(void)
         "  STR R1, [R0]");
 #endif	
 
+  //Configure CLOCK
+  //SystemInit();
+ 
   /* Call the application's entry point.*/
   main();
 }
@@ -364,7 +388,7 @@ void Default_Reset_Handler(void)
 #pragma weak TIM8_TRG_COM_TIM14_IRQHandler = Default_Handler
 #pragma weak TIM8_CC_IRQHandler = Default_Handler
 #pragma weak DMA1_Stream7_IRQHandler = Default_Handler
-#pragma weak FSMC_IRQHandler = Default_Handler
+#pragma weak FMC_IRQHandler = Default_Handler
 #pragma weak SDIO_IRQHandler = Default_Handler
 #pragma weak TIM5_IRQHandler = Default_Handler
 #pragma weak SPI3_IRQHandler = Default_Handler
@@ -398,6 +422,18 @@ void Default_Reset_Handler(void)
 #pragma weak CRYP_IRQHandler = Default_Handler
 #pragma weak HASH_RNG_IRQHandler = Default_Handler
 #pragma weak FPU_IRQHandler = Default_Handler
+// neu für STM32F429 
+#pragma weak UART7_IRQHandler = Default_Handler
+#pragma weak UART8_IRQHandler = Default_Handler
+#pragma weak SPI4_IRQHandler = Default_Handler
+#pragma weak SPI5_IRQHandler = Default_Handler
+#pragma weak SPI6_IRQHandler = Default_Handler
+#pragma weak SAI1_IRQHandler = Default_Handler
+#pragma weak LTDC_IRQHandler = Default_Handler
+#pragma weak LTDC_ER_IRQHandler = Default_Handler
+#pragma weak DMA2D_IRQHandler = Default_Handler
+
+
 
 /**
   * @brief  This is the code that gets called when the processor receives an

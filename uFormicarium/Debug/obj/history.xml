@@ -1,20 +1,26 @@
 <?xml version='1.0' encoding='UTF-8'?>
 <history>
-   <processor signature="arm-none-eabi-gcc noversion nomachine -mcpu=cortex-m4 -mthumb -Wall -ffunction-sections -g -O0 -c -DSTM32F401VC -DSTM32F4XX -DUSE_STDPERIPH_DRIVER -D__ASSEMBLY__ -I..\..\..\..\..\Users\rgawron\uFormicarium\cmsis_boot -I..\..\..\..\..\Users\rgawron\uFormicarium\cmsis_lib\include -I..\..\..\..\..\Users\rgawron\uFormicarium -I..\..\..\..\..\Users\rgawron\uFormicarium\cmsis -I..\..\..\..\..\Users\rgawron\uFormicarium\cmsis_lib -I..\..\..\..\..\Users\rgawron">
-      <target file="stm32f4xx_rcc.o" lastModified="14a6db9c5f7">
+   <processor signature="arm-none-eabi-gcc noversion nomachine -mcpu=cortex-m4 -mthumb -Wall -ffunction-sections -g -O0 -c -DSTM32F401VC -DSTM32F4XX -DUSE_STDPERIPH_DRIVER -D__ASSEMBLY__ -I..\..\..\..\..\Users\rgawron\uFormicarium\tm_stm32fspi -I..\..\..\..\..\Users\rgawron\uFormicarium\cmsis_boot -I..\..\..\..\..\Users\rgawron\uFormicarium\cmsis_lib\include -I..\..\..\..\..\Users\rgawron\uFormicarium\tm_stm32fili9341 -I..\..\..\..\..\Users\rgawron\uFormicarium -I..\..\..\..\..\Users\rgawron\uFormicarium\cmsis -I..\..\..\..\..\Users -I..\..\..\..\..\Users\rgawron\uFormicarium\cmsis_lib -I..\..\..\..\..\Users\rgawron">
+      <target file="stm32f4xx_spi.o" lastModified="14a6dde8360">
+         <source file="..\..\..\cmsis_lib\source\stm32f4xx_spi.c" lastModified="14a6ddc51df"/>
+      </target>
+      <target file="stm32f4xx_rcc.o" lastModified="14a6dde80c4">
          <source file="..\..\..\cmsis_lib\source\stm32f4xx_rcc.c" lastModified="14a6dab2925"/>
       </target>
-      <target file="system_stm32f4xx.o" lastModified="14a6db9c6ef">
+      <target file="system_stm32f4xx.o" lastModified="14a6dde82b6">
          <source file="..\..\..\cmsis_boot\system_stm32f4xx.c" lastModified="14a6dab2889"/>
       </target>
-      <target file="stm32f4xx_gpio.o" lastModified="14a6db9c684">
+      <target file="stm32f4xx_gpio.o" lastModified="14a6dde823c">
          <source file="..\..\..\cmsis_lib\source\stm32f4xx_gpio.c" lastModified="14a6dab282b"/>
       </target>
-      <target file="main.o" lastModified="14a6db9c52c">
-         <source file="..\..\..\main.c" lastModified="14a6db623a8"/>
+      <target file="tm_stm32f4_fonts.o" lastModified="14a6dde8507">
+         <source file="..\..\..\tm_stm32fili9341\tm_stm32f4_fonts.c" lastModified="14817f2c746"/>
       </target>
-      <target file="startup_stm32f4xx.o" lastModified="14a6db9c4ce">
-         <source file="..\..\..\cmsis_boot\startup\startup_stm32f4xx.c" lastModified="14a6dab284a"/>
+      <target file="main.o" lastModified="14a6de33828">
+         <source file="..\..\..\main.c" lastModified="14a6de3182b"/>
+      </target>
+      <target file="startup_stm32f4xx.o" lastModified="14a6de7ee10">
+         <source file="..\..\..\cmsis_boot\startup\startup_stm32f4xx.c" lastModified="1457784479b"/>
       </target>
    </processor>
 </history>
