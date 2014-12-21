@@ -74,18 +74,18 @@
     <Component id="504" name="GPIO" path="" type="2"/>
   </Components>
   <Files>
-    <File name="tm_stm32fstmpe811" path="" type="2"/>
     <File name="cmsis_lib/include/stm32f4xx_flash.h" path="cmsis_lib/include/stm32f4xx_flash.h" type="1"/>
+    <File name="tm_stm32fstmpe811" path="" type="2"/>
     <File name="cmsis_lib/source/stm32f4xx_usart.c" path="cmsis_lib/source/stm32f4xx_usart.c" type="1"/>
     <File name="cmsis_lib/include/stm32f4xx_dac.h" path="cmsis_lib/include/stm32f4xx_dac.h" type="1"/>
     <File name="cmsis_lib/include/stm32f4xx_crc.h" path="cmsis_lib/include/stm32f4xx_crc.h" type="1"/>
     <File name="cmsis_lib/include/stm32f4xx_usart.h" path="cmsis_lib/include/stm32f4xx_usart.h" type="1"/>
-    <File name="tm_stm32fstmpe811/tm_stm32f4_stmpe811.h" path="tm_stm32fstmpe811/tm_stm32f4_stmpe811.h" type="1"/>
     <File name="cmsis/core_cm4_simd.h" path="cmsis/core_cm4_simd.h" type="1"/>
+    <File name="tm_stm32fstmpe811/tm_stm32f4_stmpe811.h" path="tm_stm32fstmpe811/tm_stm32f4_stmpe811.h" type="1"/>
     <File name="cmsis_boot/stm32f4xx.h" path="cmsis_boot/stm32f4xx.h" type="1"/>
     <File name="cmsis_lib/source/stm32f4xx_spi.c" path="cmsis_lib/source/stm32f4xx_spi.c" type="1"/>
-    <File name="cmsis/core_cmFunc.h" path="cmsis/core_cmFunc.h" type="1"/>
     <File name="cmsis_lib/source/stm32f4xx_hash.c" path="cmsis_lib/source/stm32f4xx_hash.c" type="1"/>
+    <File name="cmsis/core_cmFunc.h" path="cmsis/core_cmFunc.h" type="1"/>
     <File name="tm_stm32fi2c" path="" type="2"/>
     <File name="cmsis_lib/source/stm32f4xx_iwdg.c" path="cmsis_lib/source/stm32f4xx_iwdg.c" type="1"/>
     <File name="tm_stm32f4_ili9341/tm_stm32f4_ili9341.c" path="tm_stm32fili9341/tm_stm32f4_ili9341.c" type="1"/>
@@ -111,8 +111,8 @@
     <File name="tm_stm32f4_ili9341" path="" type="2"/>
     <File name="cmsis_boot/system_stm32f4xx.c" path="cmsis_boot/system_stm32f4xx.c" type="1"/>
     <File name="cmsis_lib/source/stm32f4xx_rng.c" path="cmsis_lib/source/stm32f4xx_rng.c" type="1"/>
-    <File name="cmsis_lib/include/stm32f4xx_dcmi.h" path="cmsis_lib/include/stm32f4xx_dcmi.h" type="1"/>
     <File name="cmsis_lib/include/stm32f4xx_spi.h" path="cmsis_lib/include/stm32f4xx_spi.h" type="1"/>
+    <File name="cmsis_lib/include/stm32f4xx_dcmi.h" path="cmsis_lib/include/stm32f4xx_dcmi.h" type="1"/>
     <File name="cmsis_lib/include/stm32f4xx_dma2d.h" path="cmsis_lib/include/stm32f4xx_dma2d.h" type="1"/>
     <File name="cmsis" path="" type="2"/>
     <File name="cmsis_lib" path="" type="2"/>
@@ -134,8 +134,8 @@
     <File name="cmsis_lib/source/stm32f4xx_can.c" path="cmsis_lib/source/stm32f4xx_can.c" type="1"/>
     <File name="cmsis_lib/source/stm32f4xx_cryp_aes.c" path="cmsis_lib/source/stm32f4xx_cryp_aes.c" type="1"/>
     <File name="tm_stm32f4_spi/tm_stm32f4_spi.c" path="tm_stm32fspi/tm_stm32f4_spi.c" type="1"/>
-    <File name="cmsis_boot" path="" type="2"/>
     <File name="tm_stm32fi2c/tm_stm32f4_i2c.c" path="tm_stm32fi2c/tm_stm32f4_i2c.c" type="1"/>
+    <File name="cmsis_boot" path="" type="2"/>
     <File name="cmsis_lib/include/stm32f4xx_syscfg.h" path="cmsis_lib/include/stm32f4xx_syscfg.h" type="1"/>
     <File name="cmsis_lib/source/stm32f4xx_ltdc.c" path="cmsis_lib/source/stm32f4xx_ltdc.c" type="1"/>
     <File name="cmsis_boot/startup" path="" type="2"/>
@@ -159,16 +159,16 @@
     <File name="tm_stm32fdelay/tm_stm32f4_delay.h" path="tm_stm32fdelay/tm_stm32f4_delay.h" type="1"/>
     <File name="cmsis_lib/source/stm32f4xx_sai.c" path="cmsis_lib/source/stm32f4xx_sai.c" type="1"/>
     <File name="cmsis_lib/include/stm32f4xx_iwdg.h" path="cmsis_lib/include/stm32f4xx_iwdg.h" type="1"/>
-    <File name="cmsis_lib/include/stm32f4xx_sdio.h" path="cmsis_lib/include/stm32f4xx_sdio.h" type="1"/>
     <File name="cmsis_lib/source/stm32f4xx_sdio.c" path="cmsis_lib/source/stm32f4xx_sdio.c" type="1"/>
-    <File name="cmsis_lib/source/stm32f4xx_exti.c" path="cmsis_lib/source/stm32f4xx_exti.c" type="1"/>
+    <File name="cmsis_lib/include/stm32f4xx_sdio.h" path="cmsis_lib/include/stm32f4xx_sdio.h" type="1"/>
     <File name="cmsis_lib/source/stm32f4xx_cryp_tdes.c" path="cmsis_lib/source/stm32f4xx_cryp_tdes.c" type="1"/>
+    <File name="cmsis_lib/source/stm32f4xx_exti.c" path="cmsis_lib/source/stm32f4xx_exti.c" type="1"/>
     <File name="cmsis_lib/include/stm32f4xx_exti.h" path="cmsis_lib/include/stm32f4xx_exti.h" type="1"/>
     <File name="cmsis_lib/source/stm32f4xx_hash_md5.c" path="cmsis_lib/source/stm32f4xx_hash_md5.c" type="1"/>
     <File name="cmsis_lib/include/stm32f4xx_dma.h" path="cmsis_lib/include/stm32f4xx_dma.h" type="1"/>
     <File name="cmsis_lib/source/stm32f4xx_tim.c" path="cmsis_lib/source/stm32f4xx_tim.c" type="1"/>
-    <File name="cmsis_lib/include/stm32f4xx_gpio.h" path="cmsis_lib/include/stm32f4xx_gpio.h" type="1"/>
     <File name="tm_stm32f4_ili9341/tm_stm32f4_fonts.h" path="tm_stm32fili9341/tm_stm32f4_fonts.h" type="1"/>
+    <File name="cmsis_lib/include/stm32f4xx_gpio.h" path="cmsis_lib/include/stm32f4xx_gpio.h" type="1"/>
     <File name="cmsis_lib/include/stm32f4xx_cryp.h" path="cmsis_lib/include/stm32f4xx_cryp.h" type="1"/>
     <File name="cmsis_lib/include/stm32f4xx_rng.h" path="cmsis_lib/include/stm32f4xx_rng.h" type="1"/>
     <File name="cmsis_lib/include" path="" type="2"/>

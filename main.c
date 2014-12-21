@@ -4,7 +4,6 @@
 #include "tm_stm32f4_ili9341.h"
 #include "tm_stm32f4_fonts.h"
 #include "tm_stm32f4_stmpe811.h"
-#include <stdio.h>
 
 int main(void) {
 	TM_STMPE811_TouchData touchData;
@@ -35,17 +34,27 @@ int main(void) {
 	//Select touch screen orientation
 	touchData.orientation = TM_STMPE811_Orientation_Portrait_2;
 
+	// draw graph
+	TM_ILI9341_DrawLine(0, ILI9341_WIDTH / 2, ILI9341_HEIGHT, ILI9341_WIDTH / 2,
+			ILI9341_COLOR_WHITE);
+
+	int i;
+	for (i = 0; i < ILI9341_HEIGHT; i++) {
+		TM_ILI9341_DrawPixel(i, i * i * 0.0005 + ILI9341_WIDTH / 2,
+				ILI9341_COLOR_WHITE);
+	}
+
 	while (1) {
 		if (TM_STMPE811_ReadTouch(&touchData) == TM_STMPE811_State_Pressed) {
 			//Touch valid
 			//touchData.x,touchData.y
-			TM_ILI9341_Puts(20, 80, "pressed", &TM_Font_11x18, ILI9341_COLOR_BLACK,
-					ILI9341_COLOR_ORANGE);
+			TM_ILI9341_Puts(20, 80, "pressed", &TM_Font_11x18,
+					ILI9341_COLOR_BLACK, ILI9341_COLOR_ORANGE);
 
 			TM_ILI9341_DrawPixel(touchData.x, touchData.y, 0x0000);
 		} else {
-			TM_ILI9341_Puts(20, 80, "Not Pressed", &TM_Font_11x18, ILI9341_COLOR_BLACK,
-					ILI9341_COLOR_ORANGE);
+			TM_ILI9341_Puts(20, 80, "Not Pressed", &TM_Font_11x18,
+					ILI9341_COLOR_BLACK, ILI9341_COLOR_ORANGE);
 		}
 	}
 }
