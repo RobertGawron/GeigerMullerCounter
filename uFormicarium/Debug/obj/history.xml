@@ -1,0 +1,20 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<history>
+   <processor signature="arm-none-eabi-gcc noversion nomachine -mcpu=cortex-m4 -mthumb -Wall -ffunction-sections -g -O0 -c -DSTM32F401VC -DSTM32F4XX -DUSE_STDPERIPH_DRIVER -D__ASSEMBLY__ -I..\..\..\..\..\Users\rgawron\uFormicarium\cmsis_boot -I..\..\..\..\..\Users\rgawron\uFormicarium\cmsis_lib\include -I..\..\..\..\..\Users\rgawron\uFormicarium -I..\..\..\..\..\Users\rgawron\uFormicarium\cmsis -I..\..\..\..\..\Users\rgawron\uFormicarium\cmsis_lib -I..\..\..\..\..\Users\rgawron">
+      <target file="stm32f4xx_rcc.o" lastModified="14a6db9c5f7">
+         <source file="..\..\..\cmsis_lib\source\stm32f4xx_rcc.c" lastModified="14a6dab2925"/>
+      </target>
+      <target file="system_stm32f4xx.o" lastModified="14a6db9c6ef">
+         <source file="..\..\..\cmsis_boot\system_stm32f4xx.c" lastModified="14a6dab2889"/>
+      </target>
+      <target file="stm32f4xx_gpio.o" lastModified="14a6db9c684">
+         <source file="..\..\..\cmsis_lib\source\stm32f4xx_gpio.c" lastModified="14a6dab282b"/>
+      </target>
+      <target file="main.o" lastModified="14a6db9c52c">
+         <source file="..\..\..\main.c" lastModified="14a6db623a8"/>
+      </target>
+      <target file="startup_stm32f4xx.o" lastModified="14a6db9c4ce">
+         <source file="..\..\..\cmsis_boot\startup\startup_stm32f4xx.c" lastModified="14a6dab284a"/>
+      </target>
+   </processor>
+</history>
