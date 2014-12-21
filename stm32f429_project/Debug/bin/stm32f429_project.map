@@ -1418,8 +1418,6 @@ Discarded input sections
  .text          0x00000000        0x0 ..\obj\tm_stm32f4_ili9341.o
  .data          0x00000000        0x0 ..\obj\tm_stm32f4_ili9341.o
  .bss           0x00000000        0x1 ..\obj\tm_stm32f4_ili9341.o
- .text.TM_ILI9341_Rotate
-                0x00000000       0x88 ..\obj\tm_stm32f4_ili9341.o
  .text.TM_ILI9341_GetStringSize
                 0x00000000       0x48 ..\obj\tm_stm32f4_ili9341.o
  .text.TM_ILI9341_DrawLine
@@ -1897,7 +1895,7 @@ Linker script and memory map
 
                 0x20020000                _eram = 0x20020000
 
-.text           0x08000000     0x3d84
+.text           0x08000000     0x3e90
  *(.isr_vector)
  .isr_vector    0x08000000      0x1ac ..\obj\startup_stm32f4xx.o
                 0x08000000                g_pfnVectors
@@ -2008,99 +2006,102 @@ Linker script and memory map
                 0x08000204                DMA2_Stream6_IRQHandler
                 0x08000204                SAI1_IRQHandler
                 0x08000204                DMA1_Stream3_IRQHandler
- .text.main     0x0800020c       0x38 ..\obj\main.o
+ .text.main     0x0800020c       0x88 ..\obj\main.o
                 0x0800020c                main
  .text.RCC_AHB1PeriphClockCmd
-                0x08000244       0x3c ..\obj\stm32f4xx_rcc.o
-                0x08000244                RCC_AHB1PeriphClockCmd
+                0x08000294       0x3c ..\obj\stm32f4xx_rcc.o
+                0x08000294                RCC_AHB1PeriphClockCmd
  .text.RCC_APB1PeriphClockCmd
-                0x08000280       0x3c ..\obj\stm32f4xx_rcc.o
-                0x08000280                RCC_APB1PeriphClockCmd
+                0x080002d0       0x3c ..\obj\stm32f4xx_rcc.o
+                0x080002d0                RCC_APB1PeriphClockCmd
  .text.RCC_APB2PeriphClockCmd
-                0x080002bc       0x3c ..\obj\stm32f4xx_rcc.o
-                0x080002bc                RCC_APB2PeriphClockCmd
+                0x0800030c       0x3c ..\obj\stm32f4xx_rcc.o
+                0x0800030c                RCC_APB2PeriphClockCmd
  .text.TM_SPI_Init
-                0x080002f8       0x94 ..\obj\tm_stm32f4_spi.o
-                0x080002f8                TM_SPI_Init
+                0x08000348       0x94 ..\obj\tm_stm32f4_spi.o
+                0x08000348                TM_SPI_Init
  .text.TM_SPI_Send
-                0x0800038c       0x54 ..\obj\tm_stm32f4_spi.o
-                0x0800038c                TM_SPI_Send
+                0x080003dc       0x54 ..\obj\tm_stm32f4_spi.o
+                0x080003dc                TM_SPI_Send
  .text.TM_SPI1_Init
-                0x080003e0       0xfc ..\obj\tm_stm32f4_spi.o
-                0x080003e0                TM_SPI1_Init
+                0x08000430       0xfc ..\obj\tm_stm32f4_spi.o
+                0x08000430                TM_SPI1_Init
  .text.TM_SPI2_Init
-                0x080004dc      0x15c ..\obj\tm_stm32f4_spi.o
-                0x080004dc                TM_SPI2_Init
+                0x0800052c      0x15c ..\obj\tm_stm32f4_spi.o
+                0x0800052c                TM_SPI2_Init
  .text.TM_SPI3_Init
-                0x08000638       0xfc ..\obj\tm_stm32f4_spi.o
-                0x08000638                TM_SPI3_Init
+                0x08000688       0xfc ..\obj\tm_stm32f4_spi.o
+                0x08000688                TM_SPI3_Init
  .text.TM_SPI4_Init
-                0x08000734       0xf8 ..\obj\tm_stm32f4_spi.o
-                0x08000734                TM_SPI4_Init
+                0x08000784       0xf8 ..\obj\tm_stm32f4_spi.o
+                0x08000784                TM_SPI4_Init
  .text.TM_SPI5_Init
-                0x0800082c      0x118 ..\obj\tm_stm32f4_spi.o
-                0x0800082c                TM_SPI5_Init
+                0x0800087c      0x118 ..\obj\tm_stm32f4_spi.o
+                0x0800087c                TM_SPI5_Init
  .text.TM_SPI6_Init
-                0x08000944       0xb4 ..\obj\tm_stm32f4_spi.o
-                0x08000944                TM_SPI6_Init
+                0x08000994       0xb4 ..\obj\tm_stm32f4_spi.o
+                0x08000994                TM_SPI6_Init
  .text.GPIO_Init
-                0x080009f8      0x11c ..\obj\stm32f4xx_gpio.o
-                0x080009f8                GPIO_Init
+                0x08000a48      0x11c ..\obj\stm32f4xx_gpio.o
+                0x08000a48                GPIO_Init
  .text.GPIO_SetBits
-                0x08000b14       0x1c ..\obj\stm32f4xx_gpio.o
-                0x08000b14                GPIO_SetBits
+                0x08000b64       0x1c ..\obj\stm32f4xx_gpio.o
+                0x08000b64                GPIO_SetBits
  .text.GPIO_ResetBits
-                0x08000b30       0x1c ..\obj\stm32f4xx_gpio.o
-                0x08000b30                GPIO_ResetBits
+                0x08000b80       0x1c ..\obj\stm32f4xx_gpio.o
+                0x08000b80                GPIO_ResetBits
  .text.GPIO_PinAFConfig
-                0x08000b4c       0x90 ..\obj\stm32f4xx_gpio.o
-                0x08000b4c                GPIO_PinAFConfig
+                0x08000b9c       0x90 ..\obj\stm32f4xx_gpio.o
+                0x08000b9c                GPIO_PinAFConfig
  .text.SystemInit
-                0x08000bdc       0x58 ..\obj\system_stm32f4xx.o
-                0x08000bdc                SystemInit
+                0x08000c2c       0x58 ..\obj\system_stm32f4xx.o
+                0x08000c2c                SystemInit
  .text.SetSysClock
-                0x08000c34      0x128 ..\obj\system_stm32f4xx.o
+                0x08000c84      0x128 ..\obj\system_stm32f4xx.o
  .text.SPI_Init
-                0x08000d5c       0x88 ..\obj\stm32f4xx_spi.o
-                0x08000d5c                SPI_Init
+                0x08000dac       0x88 ..\obj\stm32f4xx_spi.o
+                0x08000dac                SPI_Init
  .text.SPI_StructInit
-                0x08000de4       0x48 ..\obj\stm32f4xx_spi.o
-                0x08000de4                SPI_StructInit
- .text.SPI_Cmd  0x08000e2c       0x40 ..\obj\stm32f4xx_spi.o
-                0x08000e2c                SPI_Cmd
+                0x08000e34       0x48 ..\obj\stm32f4xx_spi.o
+                0x08000e34                SPI_StructInit
+ .text.SPI_Cmd  0x08000e7c       0x40 ..\obj\stm32f4xx_spi.o
+                0x08000e7c                SPI_Cmd
  .text.SPI_I2S_GetFlagStatus
-                0x08000e6c       0x38 ..\obj\stm32f4xx_spi.o
-                0x08000e6c                SPI_I2S_GetFlagStatus
+                0x08000ebc       0x38 ..\obj\stm32f4xx_spi.o
+                0x08000ebc                SPI_I2S_GetFlagStatus
  .text.TM_ILI9341_Init
-                0x08000ea4       0xbc ..\obj\tm_stm32f4_ili9341.o
-                0x08000ea4                TM_ILI9341_Init
+                0x08000ef4       0xbc ..\obj\tm_stm32f4_ili9341.o
+                0x08000ef4                TM_ILI9341_Init
  .text.TM_ILI9341_InitLCD
-                0x08000f60      0x25c ..\obj\tm_stm32f4_ili9341.o
-                0x08000f60                TM_ILI9341_InitLCD
+                0x08000fb0      0x25c ..\obj\tm_stm32f4_ili9341.o
+                0x08000fb0                TM_ILI9341_InitLCD
  .text.TM_ILI9341_SendCommand
-                0x080011bc       0x40 ..\obj\tm_stm32f4_ili9341.o
-                0x080011bc                TM_ILI9341_SendCommand
+                0x0800120c       0x40 ..\obj\tm_stm32f4_ili9341.o
+                0x0800120c                TM_ILI9341_SendCommand
  .text.TM_ILI9341_SendData
-                0x080011fc       0x40 ..\obj\tm_stm32f4_ili9341.o
-                0x080011fc                TM_ILI9341_SendData
+                0x0800124c       0x40 ..\obj\tm_stm32f4_ili9341.o
+                0x0800124c                TM_ILI9341_SendData
  .text.TM_ILI9341_DrawPixel
-                0x0800123c       0x44 ..\obj\tm_stm32f4_ili9341.o
-                0x0800123c                TM_ILI9341_DrawPixel
+                0x0800128c       0x44 ..\obj\tm_stm32f4_ili9341.o
+                0x0800128c                TM_ILI9341_DrawPixel
  .text.TM_ILI9341_SetCursorPosition
-                0x08001280       0x90 ..\obj\tm_stm32f4_ili9341.o
-                0x08001280                TM_ILI9341_SetCursorPosition
+                0x080012d0       0x90 ..\obj\tm_stm32f4_ili9341.o
+                0x080012d0                TM_ILI9341_SetCursorPosition
  .text.TM_ILI9341_Fill
-                0x08001310       0x68 ..\obj\tm_stm32f4_ili9341.o
-                0x08001310                TM_ILI9341_Fill
+                0x08001360       0x68 ..\obj\tm_stm32f4_ili9341.o
+                0x08001360                TM_ILI9341_Fill
  .text.TM_ILI9341_Delay
-                0x08001378       0x20 ..\obj\tm_stm32f4_ili9341.o
-                0x08001378                TM_ILI9341_Delay
+                0x080013c8       0x20 ..\obj\tm_stm32f4_ili9341.o
+                0x080013c8                TM_ILI9341_Delay
+ .text.TM_ILI9341_Rotate
+                0x080013e8       0x88 ..\obj\tm_stm32f4_ili9341.o
+                0x080013e8                TM_ILI9341_Rotate
  .text.TM_ILI9341_Puts
-                0x08001398       0xac ..\obj\tm_stm32f4_ili9341.o
-                0x08001398                TM_ILI9341_Puts
+                0x08001470       0xac ..\obj\tm_stm32f4_ili9341.o
+                0x08001470                TM_ILI9341_Puts
  .text.TM_ILI9341_Putc
-                0x08001444      0x118 ..\obj\tm_stm32f4_ili9341.o
-                0x08001444                TM_ILI9341_Putc
+                0x0800151c      0x118 ..\obj\tm_stm32f4_ili9341.o
+                0x0800151c                TM_ILI9341_Putc
  *(.init)
  *(.fini)
  *crtbegin.o(.ctors)
@@ -2114,42 +2115,42 @@ Linker script and memory map
  *(SORT(.dtors.*))
  *(.dtors)
  *(.rodata*)
- .rodata        0x0800155c       0x14 ..\obj\main.o
- .rodata        0x08001570     0x2814 ..\obj\tm_stm32f4_fonts.o
-                0x08001570                TM_Font7x10
-                0x08001cdc                TM_Font11x18
-                0x08002a38                TM_Font16x26
+ .rodata        0x08001634       0x48 ..\obj\main.o
+ .rodata        0x0800167c     0x2814 ..\obj\tm_stm32f4_fonts.o
+                0x0800167c                TM_Font7x10
+                0x08001de8                TM_Font11x18
+                0x08002b44                TM_Font16x26
  *(.eh_fram e*)
 
-.glue_7         0x08003d84        0x0
+.glue_7         0x08003e90        0x0
  .glue_7        0x00000000        0x0 linker stubs
 
-.glue_7t        0x08003d84        0x0
+.glue_7t        0x08003e90        0x0
  .glue_7t       0x00000000        0x0 linker stubs
 
-.vfp11_veneer   0x08003d84        0x0
+.vfp11_veneer   0x08003e90        0x0
  .vfp11_veneer  0x00000000        0x0 linker stubs
 
-.v4_bx          0x08003d84        0x0
+.v4_bx          0x08003e90        0x0
  .v4_bx         0x00000000        0x0 linker stubs
 
-.iplt           0x08003d84        0x0
+.iplt           0x08003e90        0x0
  .iplt          0x00000000        0x0 ..\obj\stm32f4xx_syscfg.o
 
-.rel.dyn        0x08003d84        0x0
+.rel.dyn        0x08003e90        0x0
  .rel.iplt      0x00000000        0x0 ..\obj\stm32f4xx_syscfg.o
 
 .ARM.extab
  *(.ARM.extab* .gnu.linkonce.armextab.*)
-                0x08003d84                __exidx_start = .
+                0x08003e90                __exidx_start = .
 
 .ARM.exidx
  *(.ARM.exidx* .gnu.linkonce.armexidx.*)
-                0x08003d84                __exidx_end = .
-                0x08003d84                __etext = .
-                0x08003d84                _sidata = __etext
+                0x08003e90                __exidx_end = .
+                0x08003e90                __etext = .
+                0x08003e90                _sidata = __etext
 
-.data           0x20000000       0x18 load address 0x08003d84
+.data           0x20000000       0x18 load address 0x08003e90
                 0x20000000                __data_start__ = .
                 0x20000000                _sdata = __data_start__
  *(vtable)
@@ -2177,10 +2178,10 @@ Linker script and memory map
                 0x20000018                __data_end__ = .
                 0x20000018                _edata = __data_end__
 
-.igot.plt       0x20000018        0x0 load address 0x08003d9c
+.igot.plt       0x20000018        0x0 load address 0x08003ea8
  .igot.plt      0x00000000        0x0 ..\obj\stm32f4xx_syscfg.o
 
-.bss            0x20000018        0xc load address 0x08003d9c
+.bss            0x20000018        0xc load address 0x08003ea8
                 0x20000018                . = ALIGN (0x4)
                 0x20000018                __bss_start__ = .
                 0x20000018                _sbss = __bss_start__
@@ -2201,7 +2202,7 @@ Linker script and memory map
  *(.heap*)
                 0x20000024                __HeapLimit = .
 
-.co_stack       0x20000024      0x804 load address 0x08003da8
+.co_stack       0x20000024      0x804 load address 0x08003eb4
                 0x20000028                . = ALIGN (0x8)
  *fill*         0x20000024        0x4 
  *(.co_stack .co_stack.*)
@@ -2258,27 +2259,27 @@ LOAD c:/program files (x86)/gnu tools arm embedded/4.9 2014q4/bin/../lib/gcc/arm
 END GROUP
 OUTPUT(stm32f429_project.elf elf32-littlearm)
 
-.debug_info     0x00000000     0x3bbc
+.debug_info     0x00000000     0x3bdd
  .debug_info    0x00000000       0xed ..\obj\startup_stm32f4xx.o
- .debug_info    0x000000ed      0x125 ..\obj\main.o
- .debug_info    0x00000212      0xe11 ..\obj\stm32f4xx_rcc.o
- .debug_info    0x00001023      0x894 ..\obj\tm_stm32f4_spi.o
- .debug_info    0x000018b7      0x605 ..\obj\stm32f4xx_gpio.o
- .debug_info    0x00001ebc      0x5bc ..\obj\system_stm32f4xx.o
- .debug_info    0x00002478      0xb21 ..\obj\stm32f4xx_spi.o
- .debug_info    0x00002f99      0xa7b ..\obj\tm_stm32f4_ili9341.o
- .debug_info    0x00003a14      0x1a8 ..\obj\tm_stm32f4_fonts.o
+ .debug_info    0x000000ed      0x146 ..\obj\main.o
+ .debug_info    0x00000233      0xe11 ..\obj\stm32f4xx_rcc.o
+ .debug_info    0x00001044      0x894 ..\obj\tm_stm32f4_spi.o
+ .debug_info    0x000018d8      0x605 ..\obj\stm32f4xx_gpio.o
+ .debug_info    0x00001edd      0x5bc ..\obj\system_stm32f4xx.o
+ .debug_info    0x00002499      0xb21 ..\obj\stm32f4xx_spi.o
+ .debug_info    0x00002fba      0xa7b ..\obj\tm_stm32f4_ili9341.o
+ .debug_info    0x00003a35      0x1a8 ..\obj\tm_stm32f4_fonts.o
 
-.debug_abbrev   0x00000000      0xb60
+.debug_abbrev   0x00000000      0xb76
  .debug_abbrev  0x00000000       0xb0 ..\obj\startup_stm32f4xx.o
- .debug_abbrev  0x000000b0       0xa4 ..\obj\main.o
- .debug_abbrev  0x00000154      0x1ba ..\obj\stm32f4xx_rcc.o
- .debug_abbrev  0x0000030e      0x17a ..\obj\tm_stm32f4_spi.o
- .debug_abbrev  0x00000488      0x1a3 ..\obj\stm32f4xx_gpio.o
- .debug_abbrev  0x0000062b      0x136 ..\obj\system_stm32f4xx.o
- .debug_abbrev  0x00000761      0x167 ..\obj\stm32f4xx_spi.o
- .debug_abbrev  0x000008c8      0x1ef ..\obj\tm_stm32f4_ili9341.o
- .debug_abbrev  0x00000ab7       0xa9 ..\obj\tm_stm32f4_fonts.o
+ .debug_abbrev  0x000000b0       0xba ..\obj\main.o
+ .debug_abbrev  0x0000016a      0x1ba ..\obj\stm32f4xx_rcc.o
+ .debug_abbrev  0x00000324      0x17a ..\obj\tm_stm32f4_spi.o
+ .debug_abbrev  0x0000049e      0x1a3 ..\obj\stm32f4xx_gpio.o
+ .debug_abbrev  0x00000641      0x136 ..\obj\system_stm32f4xx.o
+ .debug_abbrev  0x00000777      0x167 ..\obj\stm32f4xx_spi.o
+ .debug_abbrev  0x000008de      0x1ef ..\obj\tm_stm32f4_ili9341.o
+ .debug_abbrev  0x00000acd       0xa9 ..\obj\tm_stm32f4_fonts.o
 
 .debug_aranges  0x00000000      0x4e0
  .debug_aranges
@@ -2310,33 +2311,33 @@ OUTPUT(stm32f429_project.elf elf32-littlearm)
  .debug_ranges  0x000002e8       0xd0 ..\obj\stm32f4xx_spi.o
  .debug_ranges  0x000003b8       0x90 ..\obj\tm_stm32f4_ili9341.o
 
-.debug_line     0x00000000     0x1d08
+.debug_line     0x00000000     0x1d0a
  .debug_line    0x00000000       0x97 ..\obj\startup_stm32f4xx.o
- .debug_line    0x00000097      0x1b2 ..\obj\main.o
- .debug_line    0x00000249      0x62f ..\obj\stm32f4xx_rcc.o
- .debug_line    0x00000878      0x464 ..\obj\tm_stm32f4_spi.o
- .debug_line    0x00000cdc      0x330 ..\obj\stm32f4xx_gpio.o
- .debug_line    0x0000100c      0x1ff ..\obj\system_stm32f4xx.o
- .debug_line    0x0000120b      0x442 ..\obj\stm32f4xx_spi.o
- .debug_line    0x0000164d      0x54b ..\obj\tm_stm32f4_ili9341.o
- .debug_line    0x00001b98      0x170 ..\obj\tm_stm32f4_fonts.o
+ .debug_line    0x00000097      0x1b4 ..\obj\main.o
+ .debug_line    0x0000024b      0x62f ..\obj\stm32f4xx_rcc.o
+ .debug_line    0x0000087a      0x464 ..\obj\tm_stm32f4_spi.o
+ .debug_line    0x00000cde      0x330 ..\obj\stm32f4xx_gpio.o
+ .debug_line    0x0000100e      0x1ff ..\obj\system_stm32f4xx.o
+ .debug_line    0x0000120d      0x442 ..\obj\stm32f4xx_spi.o
+ .debug_line    0x0000164f      0x54b ..\obj\tm_stm32f4_ili9341.o
+ .debug_line    0x00001b9a      0x170 ..\obj\tm_stm32f4_fonts.o
 
 .debug_str      0x00000000     0x1777
  .debug_str     0x00000000      0x12b ..\obj\startup_stm32f4xx.o
                                 0x13d (size before relaxing)
- .debug_str     0x0000012b       0xd5 ..\obj\main.o
-                                0x1ac (size before relaxing)
- .debug_str     0x00000200      0x802 ..\obj\stm32f4xx_rcc.o
+ .debug_str     0x0000012b      0x15f ..\obj\main.o
+                                0x236 (size before relaxing)
+ .debug_str     0x0000028a      0x802 ..\obj\stm32f4xx_rcc.o
                                 0x993 (size before relaxing)
- .debug_str     0x00000a02      0x425 ..\obj\tm_stm32f4_spi.o
+ .debug_str     0x00000a8c      0x425 ..\obj\tm_stm32f4_spi.o
                                 0x5e9 (size before relaxing)
- .debug_str     0x00000e27      0x189 ..\obj\stm32f4xx_gpio.o
+ .debug_str     0x00000eb1      0x189 ..\obj\stm32f4xx_gpio.o
                                 0x496 (size before relaxing)
- .debug_str     0x00000fb0      0x115 ..\obj\system_stm32f4xx.o
+ .debug_str     0x0000103a      0x115 ..\obj\system_stm32f4xx.o
                                 0x3ba (size before relaxing)
- .debug_str     0x000010c5      0x2e3 ..\obj\stm32f4xx_spi.o
+ .debug_str     0x0000114f      0x2e3 ..\obj\stm32f4xx_spi.o
                                 0x693 (size before relaxing)
- .debug_str     0x000013a8      0x34b ..\obj\tm_stm32f4_ili9341.o
+ .debug_str     0x00001432      0x2c1 ..\obj\tm_stm32f4_ili9341.o
                                 0x730 (size before relaxing)
  .debug_str     0x000016f3       0x84 ..\obj\tm_stm32f4_fonts.o
                                 0x206 (size before relaxing)
