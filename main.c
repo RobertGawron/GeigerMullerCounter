@@ -46,6 +46,10 @@ int main(void) {
 
 	while (1) {
 		if (TM_STMPE811_ReadTouch(&touchData) == TM_STMPE811_State_Pressed) {
+			init_graph_layout();
+		}
+		/*
+		if (TM_STMPE811_ReadTouch(&touchData) == TM_STMPE811_State_Pressed) {
 			//Touch valid
 			//touchData.x,touchData.y
 			TM_ILI9341_Puts(20, 80, "pressed", &TM_Font_11x18,
@@ -56,5 +60,6 @@ int main(void) {
 			TM_ILI9341_Puts(20, 80, "Not Pressed", &TM_Font_11x18,
 					ILI9341_COLOR_BLACK, ILI9341_COLOR_ORANGE);
 		}
+		*/
 	}
 }
