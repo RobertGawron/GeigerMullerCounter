@@ -93,9 +93,9 @@
     <File name="tm_stm32fstmpe811/tm_stm32f4_stmpe811.c" path="tm_stm32fstmpe811/tm_stm32f4_stmpe811.c" type="1"/>
     <File name="cmsis_lib/source/stm32f4xx_dac.c" path="cmsis_lib/source/stm32f4xx_dac.c" type="1"/>
     <File name="cmsis_lib/source/stm32f4xx_wwdg.c" path="cmsis_lib/source/stm32f4xx_wwdg.c" type="1"/>
-    <File name="layouts/source/intro_layout.c" path="layouts/source/intro_layout.c" type="1"/>
     <File name="cmsis_lib/source/stm32f4xx_rtc.c" path="cmsis_lib/source/stm32f4xx_rtc.c" type="1"/>
     <File name="cmsis_lib/include/stm32f4xx_rcc.h" path="cmsis_lib/include/stm32f4xx_rcc.h" type="1"/>
+    <File name="layouts/include/layout_intro.h" path="layouts/include/layout_intro.h" type="1"/>
     <File name="cmsis_lib/source/stm32f4xx_syscfg.c" path="cmsis_lib/source/stm32f4xx_syscfg.c" type="1"/>
     <File name="tm_stm32f4_ili9341/tm_stm32f4_fonts.c" path="tm_stm32fili9341/tm_stm32f4_fonts.c" type="1"/>
     <File name="cmsis_lib/include/stm32f4xx_pwr.h" path="cmsis_lib/include/stm32f4xx_pwr.h" type="1"/>
@@ -124,9 +124,9 @@
     <File name="cmsis_lib/include/stm32f4xx_ltdc.h" path="cmsis_lib/include/stm32f4xx_ltdc.h" type="1"/>
     <File name="cmsis_lib/include/stm32f4xx_can.h" path="cmsis_lib/include/stm32f4xx_can.h" type="1"/>
     <File name="cmsis_lib/include/stm32f4xx_rtc.h" path="cmsis_lib/include/stm32f4xx_rtc.h" type="1"/>
+    <File name="layouts/source/layout_intro.c" path="layouts/source/layout_intro.c" type="1"/>
     <File name="cmsis_lib/include/stm32f4xx_hash.h" path="cmsis_lib/include/stm32f4xx_hash.h" type="1"/>
     <File name="cmsis_lib/include/misc.h" path="cmsis_lib/include/misc.h" type="1"/>
-    <File name="layouts/include/graph_layout.h" path="layouts/include/graph_layout.h" type="1"/>
     <File name="tm_stm32f4_spi/tm_stm32f4_spi.h" path="tm_stm32fspi/tm_stm32f4_spi.h" type="1"/>
     <File name="cmsis_lib/source/stm32f4xx_dma2d.c" path="cmsis_lib/source/stm32f4xx_dma2d.c" type="1"/>
     <File name="tm_stm32fdelay/tm_stm32f4_delay.c" path="tm_stm32fdelay/tm_stm32f4_delay.c" type="1"/>
@@ -134,7 +134,6 @@
     <File name="main.c" path="main.c" type="1"/>
     <File name="cmsis_lib/source/stm32f4xx_gpio.c" path="cmsis_lib/source/stm32f4xx_gpio.c" type="1"/>
     <File name="cmsis_lib/include/stm32f4xx_i2c.h" path="cmsis_lib/include/stm32f4xx_i2c.h" type="1"/>
-    <File name="layouts/include/intro_layout.h" path="layouts/include/intro_layout.h" type="1"/>
     <File name="cmsis_lib/source/stm32f4xx_dma.c" path="cmsis_lib/source/stm32f4xx_dma.c" type="1"/>
     <File name="cmsis_lib/source/stm32f4xx_can.c" path="cmsis_lib/source/stm32f4xx_can.c" type="1"/>
     <File name="cmsis_lib/source/stm32f4xx_cryp_aes.c" path="cmsis_lib/source/stm32f4xx_cryp_aes.c" type="1"/>
@@ -162,8 +161,10 @@
     <File name="cmsis_lib/source/stm32f4xx_dcmi.c" path="cmsis_lib/source/stm32f4xx_dcmi.c" type="1"/>
     <File name="tm_stm32fdelay" path="" type="2"/>
     <File name="tm_stm32fdelay/tm_stm32f4_delay.h" path="tm_stm32fdelay/tm_stm32f4_delay.h" type="1"/>
+    <File name="layouts/include/layout_graph.h" path="layouts/include/layout_graph.h" type="1"/>
     <File name="cmsis_lib/source/stm32f4xx_sai.c" path="cmsis_lib/source/stm32f4xx_sai.c" type="1"/>
     <File name="cmsis_lib/include/stm32f4xx_iwdg.h" path="cmsis_lib/include/stm32f4xx_iwdg.h" type="1"/>
+    <File name="layouts/source/layout_graph.c" path="layouts/source/layout_graph.c" type="1"/>
     <File name="cmsis_lib/include/stm32f4xx_sdio.h" path="cmsis_lib/include/stm32f4xx_sdio.h" type="1"/>
     <File name="cmsis_lib/source/stm32f4xx_sdio.c" path="cmsis_lib/source/stm32f4xx_sdio.c" type="1"/>
     <File name="cmsis_lib/include/stm32f4xx_exti.h" path="cmsis_lib/include/stm32f4xx_exti.h" type="1"/>
@@ -176,7 +177,6 @@
     <File name="tm_stm32f4_ili9341/tm_stm32f4_fonts.h" path="tm_stm32fili9341/tm_stm32f4_fonts.h" type="1"/>
     <File name="cmsis_lib/include/stm32f4xx_gpio.h" path="cmsis_lib/include/stm32f4xx_gpio.h" type="1"/>
     <File name="cmsis_lib/include/stm32f4xx_cryp.h" path="cmsis_lib/include/stm32f4xx_cryp.h" type="1"/>
-    <File name="layouts/source/graph_layout.c" path="layouts/source/graph_layout.c" type="1"/>
     <File name="cmsis_lib/include/stm32f4xx_rng.h" path="cmsis_lib/include/stm32f4xx_rng.h" type="1"/>
     <File name="cmsis_lib/include" path="" type="2"/>
     <File name="cmsis_lib/include/stm32f4xx_fmc.h" path="cmsis_lib/include/stm32f4xx_fmc.h" type="1"/>
