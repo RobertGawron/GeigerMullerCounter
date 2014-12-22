@@ -1,4 +1,5 @@
 #include "layout_graph.h"
+
 #include "tm_stm32f4_ili9341.h"
 #include "tm_stm32f4_fonts.h"
 #include "tm_stm32f4_stmpe811.h"
