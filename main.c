@@ -12,20 +12,24 @@ int main(void) {
 	TM_STMPE811_TouchData touchData;
 
 	SystemInit();
+
+
+	//Initialize Touch Sensor
+	if (TM_STMPE811_Init() != TM_STMPE811_State_Ok) {
+		//TM_ILI9341_Puts(20, 20, "STMPE811 Error", &TM_Font_11x18,
+		//		ILI9341_COLOR_ORANGE, ILI9341_COLOR_BLACK);
+
+		//while (1)
+		//	;
+	}
+
 	/* Initialize ILI9341 LCD on board */
 	TM_ILI9341_Init();
 	//TM_ILI9341_Fill(ILI9341_COLOR_BLUE);
 	TM_ILI9341_Rotate(TM_ILI9341_Orientation_Landscape_2);
 	layout_intro_init();
 
-	//Initialize Touch Sensor
-	if (TM_STMPE811_Init() != TM_STMPE811_State_Ok) {
-		TM_ILI9341_Puts(20, 20, "STMPE811 Error", &TM_Font_11x18,
-				ILI9341_COLOR_ORANGE, ILI9341_COLOR_BLACK);
 
-		while (1)
-			;
-	}
 	//Select touch screen orientation
 	touchData.orientation = TM_STMPE811_Orientation_Portrait_2;
 
