@@ -1,142 +1,145 @@
 <?xml version='1.0' encoding='UTF-8'?>
 <history>
-   <processor signature="arm-none-eabi-gcc noversion nomachine -mcpu=cortex-m4 -mthumb -Wall -ffunction-sections -g -O0 -c -DSTM32F4XX -DUSE_STDPERIPH_DRIVER -D__ASSEMBLY__ -DSTM32F429_439xx -I..\..\..\..\..\Users\rgawron\uFormicarium\tm_stm32fdelay -I..\..\..\..\..\Users\rgawron\uFormicarium\cmsis -I..\..\..\..\..\Users\rgawron\uFormicarium\tm_stm32fi2c -I..\..\..\..\..\Users\rgawron -I..\..\..\..\..\Users\rgawron\uFormicarium\cmsis_boot -I..\..\..\..\..\Users\rgawron\uFormicarium\tm_stm32fspi -I..\..\..\..\..\Users\rgawron\uFormicarium\cmsis_lib\include -I..\..\..\..\..\Users\rgawron\uFormicarium\layouts -I..\..\..\..\..\Users\rgawron\uFormicarium\tm_stm32fili9341 -I..\..\..\..\..\Users\rgawron\uFormicarium -I..\..\..\..\..\Users\rgawron\uFormicarium\layouts\include -I..\..\..\..\..\Users\rgawron\uFormicarium\tm_stm32fstmpe811 -I..\..\..\..\..\Users -I..\..\..\..\..\Users\rgawron\uFormicarium\cmsis_lib">
-      <target file="tm_stm32f4_fonts.o" lastModified="14a78bba0c4">
+   <processor signature="arm-none-eabi-gcc noversion nomachine -mcpu=cortex-m4 -mthumb -Wall -ffunction-sections -g -O0 -c -DSTM32F4XX -DUSE_STDPERIPH_DRIVER -D__ASSEMBLY__ -DSTM32F429_439xx -I..\..\..\..\..\Users\rgawron\uFormicarium\tm_stm32fdelay -I..\..\..\..\..\Users\rgawron\uFormicarium\cmsis -I..\..\..\..\..\Users\rgawron -I..\..\..\..\..\Users\rgawron\uFormicarium\tm_stm32fi2c -I..\..\..\..\..\Users\rgawron\uFormicarium\sensors -I..\..\..\..\..\Users\rgawron\uFormicarium\cmsis_boot -I..\..\..\..\..\Users\rgawron\uFormicarium\tm_stm32fspi -I..\..\..\..\..\Users\rgawron\uFormicarium\cmsis_lib\include -I..\..\..\..\..\Users\rgawron\uFormicarium\tm_stm32fili9341 -I..\..\..\..\..\Users\rgawron\uFormicarium\layouts -I..\..\..\..\..\Users\rgawron\uFormicarium -I..\..\..\..\..\Users\rgawron\uFormicarium\tm_stm32fstmpe811 -I..\..\..\..\..\Users -I..\..\..\..\..\Users\rgawron\uFormicarium\cmsis_lib">
+      <target file="tm_stm32f4_fonts.o" lastModified="14a885cf4a8">
          <source file="..\..\..\tm_stm32fili9341\tm_stm32f4_fonts.c" lastModified="14817f2c746"/>
       </target>
-      <target file="stm32f4xx_cryp_aes.o" lastModified="14a78bb7c8a">
+      <target file="stm32f4xx_cryp_aes.o" lastModified="14a885cd6b8">
          <source file="..\..\..\cmsis_lib\source\stm32f4xx_cryp_aes.c" lastModified="14239bc9506"/>
       </target>
-      <target file="tm_stm32f4_timer_properties.o" lastModified="14a78bb9f6d">
+      <target file="tm_stm32f4_timer_properties.o" lastModified="14a885cf35f">
          <source file="..\..\..\tm_stm32fdelay\tm_stm32f4_timer_properties.c" lastModified="1488e7b89f5"/>
       </target>
-      <target file="misc.o" lastModified="14a78bb9da3">
+      <target file="misc.o" lastModified="14a885cf188">
          <source file="..\..\..\cmsis_lib\source\misc.c" lastModified="14239bc941c"/>
       </target>
-      <target file="stm32f4xx_ltdc.o" lastModified="14a78bb8717">
+      <target file="stm32f4xx_ltdc.o" lastModified="14a885cdee3">
          <source file="..\..\..\cmsis_lib\source\stm32f4xx_ltdc.c" lastModified="14239bc96ea"/>
       </target>
-      <target file="stm32f4xx_cryp.o" lastModified="14a78bb944d">
+      <target file="stm32f4xx_cryp.o" lastModified="14a885ce7fa">
          <source file="..\..\..\cmsis_lib\source\stm32f4xx_cryp.c" lastModified="14239bc94d7"/>
       </target>
-      <target file="stm32f4xx_cryp_des.o" lastModified="14a78bb92d2">
+      <target file="stm32f4xx_cryp_des.o" lastModified="14a885ce67b">
          <source file="..\..\..\cmsis_lib\source\stm32f4xx_cryp_des.c" lastModified="14239bc9506"/>
       </target>
-      <target file="stm32f4xx_tim.o" lastModified="14a78bba238">
+      <target file="stm32f4xx_tim.o" lastModified="14a885cf601">
          <source file="..\..\..\cmsis_lib\source\stm32f4xx_tim.c" lastModified="14239bc9871"/>
       </target>
-      <target file="stm32f4xx_iwdg.o" lastModified="14a78bb888b">
+      <target file="stm32f4xx_iwdg.o" lastModified="14a885ce04a">
          <source file="..\..\..\cmsis_lib\source\stm32f4xx_iwdg.c" lastModified="14239bc96cb"/>
       </target>
-      <target file="tm_stm32f4_i2c.o" lastModified="14a78bb94ff">
+      <target file="tm_stm32f4_i2c.o" lastModified="14a885ce8b6">
          <source file="..\..\..\tm_stm32fi2c\tm_stm32f4_i2c.c" lastModified="14899c1403a"/>
       </target>
-      <target file="stm32f4xx_exti.o" lastModified="14a78bb9d10">
+      <target file="stm32f4xx_exti.o" lastModified="14a885cf0fc">
          <source file="..\..\..\cmsis_lib\source\stm32f4xx_exti.c" lastModified="14239bc95a2"/>
       </target>
-      <target file="stm32f4xx_gpio.o" lastModified="14a78bb95ab">
+      <target file="stm32f4xx_gpio.o" lastModified="14a885ce969">
          <source file="..\..\..\cmsis_lib\source\stm32f4xx_gpio.c" lastModified="14239bc965e"/>
       </target>
-      <target file="tm_stm32f4_spi.o" lastModified="14a78bb9393">
+      <target file="tm_stm32f4_spi.o" lastModified="14a885ce746">
          <source file="..\..\..\tm_stm32fspi\tm_stm32f4_spi.c" lastModified="14a6de1644a"/>
       </target>
-      <target file="tm_stm32f4_ili9341.o" lastModified="14a78bb9beb">
+      <target file="tm_stm32f4_ili9341.o" lastModified="14a885cefcf">
          <source file="..\..\..\tm_stm32fili9341\tm_stm32f4_ili9341.c" lastModified="14899d00977"/>
       </target>
-      <target file="stm32f4xx_usart.o" lastModified="14a78bb82cc">
+      <target file="stm32f4xx_usart.o" lastModified="14a885cda83">
          <source file="..\..\..\cmsis_lib\source\stm32f4xx_usart.c" lastModified="14239bc98a0"/>
       </target>
-      <target file="stm32f4xx_rtc.o" lastModified="14a78bb9ece">
+      <target file="stm32f4xx_rtc.o" lastModified="14a885cf2b1">
          <source file="..\..\..\cmsis_lib\source\stm32f4xx_rtc.c" lastModified="14239bc97a6"/>
       </target>
-      <target file="stm32f4xx_hash_sha1.o" lastModified="14a78bb7e85">
+      <target file="stm32f4xx_hash_sha1.o" lastModified="14a885cd8bb">
          <source file="..\..\..\cmsis_lib\source\stm32f4xx_hash_sha1.c" lastModified="14239bc969c"/>
       </target>
-      <target file="stm32f4xx_rcc.o" lastModified="14a78bb8efe">
+      <target file="stm32f4xx_rcc.o" lastModified="14a885ce230">
          <source file="..\..\..\cmsis_lib\source\stm32f4xx_rcc.c" lastModified="14239bc9748"/>
       </target>
-      <target file="stm32f4xx_dac.o" lastModified="14a78bb8639">
+      <target file="stm32f4xx_dac.o" lastModified="14a885cde08">
          <source file="..\..\..\cmsis_lib\source\stm32f4xx_dac.c" lastModified="14239bc9535"/>
       </target>
-      <target file="stm32f4xx_can.o" lastModified="14a78bb845f">
+      <target file="stm32f4xx_can.o" lastModified="14a885cdc24">
          <source file="..\..\..\cmsis_lib\source\stm32f4xx_can.c" lastModified="14239bc94b8"/>
       </target>
-      <target file="stm32f4xx_pwr.o" lastModified="14a78bb836e">
+      <target file="stm32f4xx_pwr.o" lastModified="14a885cdb2f">
          <source file="..\..\..\cmsis_lib\source\stm32f4xx_pwr.c" lastModified="1426b6cf42d"/>
       </target>
-      <target file="stm32f4xx_wwdg.o" lastModified="14a78bb84ef">
+      <target file="stm32f4xx_wwdg.o" lastModified="14a885cdcc0">
          <source file="..\..\..\cmsis_lib\source\stm32f4xx_wwdg.c" lastModified="14239bc98a0"/>
       </target>
-      <target file="stm32f4xx_rng.o" lastModified="14a78bb9c7e">
+      <target file="stm32f4xx_rng.o" lastModified="14a885cf05b">
          <source file="..\..\..\cmsis_lib\source\stm32f4xx_rng.c" lastModified="14239bc9758"/>
       </target>
-      <target file="stm32f4xx_adc.o" lastModified="14a78bb9080">
+      <target file="sensor_temperature.o" lastModified="14a8860d0e2">
+         <source file="..\..\..\sensors\sensor_temperature.c" lastModified="14a8860b9ca"/>
+      </target>
+      <target file="stm32f4xx_adc.o" lastModified="14a885ce3cc">
          <source file="..\..\..\cmsis_lib\source\stm32f4xx_adc.c" lastModified="14239bc946a"/>
       </target>
-      <target file="stm32f4xx_flash.o" lastModified="14a78bb968c">
+      <target file="stm32f4xx_flash.o" lastModified="14a885cea43">
          <source file="..\..\..\cmsis_lib\source\stm32f4xx_flash.c" lastModified="14239bc95d1"/>
       </target>
-      <target file="stm32f4xx_cryp_tdes.o" lastModified="14a78bba013">
+      <target file="stm32f4xx_cryp_tdes.o" lastModified="14a885cf3ec">
          <source file="..\..\..\cmsis_lib\source\stm32f4xx_cryp_tdes.c" lastModified="14239bc9516"/>
       </target>
-      <target file="startup_stm32f4xx.o" lastModified="14a78bb8765">
+      <target file="startup_stm32f4xx.o" lastModified="14a885cdf31">
          <source file="..\..\..\cmsis_boot\startup\startup_stm32f4xx.c" lastModified="1457784479b"/>
       </target>
-      <target file="layout_intro.o" lastModified="14a78c8c454">
-         <source file="..\..\..\layouts\source\layout_intro.c" lastModified="14a78bf7e12"/>
+      <target file="layout_intro.o" lastModified="14a8860cf73">
+         <source file="..\..\..\layouts\layout_intro.c" lastModified="14a885f2151"/>
       </target>
-      <target file="stm32f4xx_dcmi.o" lastModified="14a78bb91a8">
+      <target file="stm32f4xx_dcmi.o" lastModified="14a885ce477">
          <source file="..\..\..\cmsis_lib\source\stm32f4xx_dcmi.c" lastModified="14239bc9554"/>
       </target>
-      <target file="stm32f4xx_dma.o" lastModified="14a78bb988b">
+      <target file="stm32f4xx_dma.o" lastModified="14a885cec61">
          <source file="..\..\..\cmsis_lib\source\stm32f4xx_dma.c" lastModified="14239bc9573"/>
       </target>
-      <target file="stm32f4xx_sai.o" lastModified="14a78bb9741">
+      <target file="stm32f4xx_sai.o" lastModified="14a885ceaff">
          <source file="..\..\..\cmsis_lib\source\stm32f4xx_sai.c" lastModified="14239bc97c5"/>
       </target>
-      <target file="stm32f4xx_crc.o" lastModified="14a78bb87f7">
+      <target file="stm32f4xx_crc.o" lastModified="14a885cdfbe">
          <source file="..\..\..\cmsis_lib\source\stm32f4xx_crc.c" lastModified="14239bc94b8"/>
       </target>
-      <target file="stm32f4xx_sdio.o" lastModified="14a78bb7b5a">
+      <target file="stm32f4xx_sdio.o" lastModified="14a885cd56a">
          <source file="..\..\..\cmsis_lib\source\stm32f4xx_sdio.c" lastModified="14239bc97e4"/>
       </target>
-      <target file="stm32f4xx_hash_md5.o" lastModified="14a78bb8585">
+      <target file="stm32f4xx_hash_md5.o" lastModified="14a885cdd5c">
          <source file="..\..\..\cmsis_lib\source\stm32f4xx_hash_md5.c" lastModified="14239bc968d"/>
       </target>
-      <target file="stm32f4xx_dbgmcu.o" lastModified="14a78bba2c4">
+      <target file="stm32f4xx_dbgmcu.o" lastModified="14a885cf68e">
          <source file="..\..\..\cmsis_lib\source\stm32f4xx_dbgmcu.c" lastModified="14239bc9545"/>
       </target>
-      <target file="stm32f4xx_syscfg.o" lastModified="14a78bb7aa1">
+      <target file="stm32f4xx_syscfg.o" lastModified="14a885cd4b0">
          <source file="..\..\..\cmsis_lib\source\stm32f4xx_syscfg.c" lastModified="14239bc9813"/>
       </target>
-      <target file="stm32f4xx_i2c.o" lastModified="14a78bb9b11">
+      <target file="stm32f4xx_i2c.o" lastModified="14a885ceef4">
          <source file="..\..\..\cmsis_lib\source\stm32f4xx_i2c.c" lastModified="14239bc96bc"/>
       </target>
-      <target file="stm32f4xx_hash.o" lastModified="14a78bb7def">
+      <target file="stm32f4xx_hash.o" lastModified="14a885cd81f">
          <source file="..\..\..\cmsis_lib\source\stm32f4xx_hash.c" lastModified="14239bc967d"/>
       </target>
-      <target file="stm32f4xx_spi.o" lastModified="14a78bb9a39">
+      <target file="stm32f4xx_spi.o" lastModified="14a885cee16">
          <source file="..\..\..\cmsis_lib\source\stm32f4xx_spi.c" lastModified="14239bc9804"/>
       </target>
-      <target file="layout_graph.o" lastModified="14a78bb9105">
-         <source file="..\..\..\layouts\source\layout_graph.c" lastModified="14a74a471ca"/>
+      <target file="layout_graph.o" lastModified="14a8860d0ac">
+         <source file="..\..\..\layouts\layout_graph.c" lastModified="14a885f8dd6"/>
       </target>
-      <target file="stm32f4xx_fmc.o" lastModified="14a78bb9970">
+      <target file="main.o" lastModified="14a8860d000">
+         <source file="..\..\..\main.c" lastModified="14a885fca28"/>
+      </target>
+      <target file="stm32f4xx_fmc.o" lastModified="14a885ced4b">
          <source file="..\..\..\cmsis_lib\source\stm32f4xx_fmc.c" lastModified="14239bc9600"/>
       </target>
-      <target file="tm_stm32f4_delay.o" lastModified="14a78bb923b">
+      <target file="tm_stm32f4_delay.o" lastModified="14a885ce5df">
          <source file="..\..\..\tm_stm32fdelay\tm_stm32f4_delay.c" lastModified="149fd78b858"/>
       </target>
-      <target file="main.o" lastModified="14a78bb8e1e">
-         <source file="..\..\..\main.c" lastModified="14a73cfa520"/>
-      </target>
-      <target file="system_stm32f4xx.o" lastModified="14a78bb97d1">
+      <target file="system_stm32f4xx.o" lastModified="14a885ceb95">
          <source file="..\..\..\cmsis_boot\system_stm32f4xx.c" lastModified="1457789103e"/>
       </target>
-      <target file="stm32f4xx_dma2d.o" lastModified="14a78bb7d47">
+      <target file="stm32f4xx_dma2d.o" lastModified="14a885cd773">
          <source file="..\..\..\cmsis_lib\source\stm32f4xx_dma2d.c" lastModified="14239bc9593"/>
       </target>
-      <target file="tm_stm32f4_stmpe811.o" lastModified="14a78bb8fa0">
+      <target file="tm_stm32f4_stmpe811.o" lastModified="14a885ce2df">
          <source file="..\..\..\tm_stm32fstmpe811\tm_stm32f4_stmpe811.c" lastModified="14851b1c08e"/>
       </target>
    </processor>

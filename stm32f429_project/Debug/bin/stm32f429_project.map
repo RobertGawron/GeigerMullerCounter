@@ -675,7 +675,7 @@ Discarded input sections
  .ARM.attributes
                 0x00000000       0x33 ..\obj\stm32f4xx_iwdg.o
  .text          0x00000000        0x0 ..\obj\main.o
- .data          0x00000000    0x8a918 ..\obj\main.o
+ .data          0x00000000        0x0 ..\obj\main.o
  .bss           0x00000000        0x0 ..\obj\main.o
  .text          0x00000000        0x0 ..\obj\stm32f4xx_rcc.o
  .bss           0x00000000        0x0 ..\obj\stm32f4xx_rcc.o
@@ -861,9 +861,6 @@ Discarded input sections
  .debug_frame   0x00000000      0x5ec ..\obj\stm32f4xx_adc.o
  .ARM.attributes
                 0x00000000       0x33 ..\obj\stm32f4xx_adc.o
- .text          0x00000000        0x0 ..\obj\layout_graph.o
- .data          0x00000000        0x0 ..\obj\layout_graph.o
- .bss           0x00000000        0x0 ..\obj\layout_graph.o
  .text          0x00000000        0x0 ..\obj\stm32f4xx_dcmi.o
  .data          0x00000000        0x0 ..\obj\stm32f4xx_dcmi.o
  .bss           0x00000000        0x0 ..\obj\stm32f4xx_dcmi.o
@@ -908,6 +905,25 @@ Discarded input sections
  .debug_frame   0x00000000      0x258 ..\obj\stm32f4xx_dcmi.o
  .ARM.attributes
                 0x00000000       0x33 ..\obj\stm32f4xx_dcmi.o
+ .text          0x00000000        0x0 ..\obj\layout_graph.o
+ .data          0x00000000        0x0 ..\obj\layout_graph.o
+ .bss           0x00000000        0x0 ..\obj\layout_graph.o
+ .text          0x00000000        0x0 ..\obj\sensor_temperature.o
+ .data          0x00000000        0x0 ..\obj\sensor_temperature.o
+ .bss           0x00000000        0x0 ..\obj\sensor_temperature.o
+ .text.sensor_temperature_get_value
+                0x00000000       0x10 ..\obj\sensor_temperature.o
+ .debug_info    0x00000000       0x3e ..\obj\sensor_temperature.o
+ .debug_abbrev  0x00000000       0x35 ..\obj\sensor_temperature.o
+ .debug_aranges
+                0x00000000       0x20 ..\obj\sensor_temperature.o
+ .debug_ranges  0x00000000       0x10 ..\obj\sensor_temperature.o
+ .debug_line    0x00000000       0x6a ..\obj\sensor_temperature.o
+ .debug_str     0x00000000       0xd4 ..\obj\sensor_temperature.o
+ .comment       0x00000000       0x71 ..\obj\sensor_temperature.o
+ .debug_frame   0x00000000       0x30 ..\obj\sensor_temperature.o
+ .ARM.attributes
+                0x00000000       0x33 ..\obj\sensor_temperature.o
  .text          0x00000000        0x0 ..\obj\tm_stm32f4_delay.o
  .data          0x00000000        0x0 ..\obj\tm_stm32f4_delay.o
  .text.TM_DELAY_EnableDelayTimer
@@ -2408,8 +2424,9 @@ LOAD ..\obj\main.o
 LOAD ..\obj\stm32f4xx_rcc.o
 LOAD ..\obj\tm_stm32f4_stmpe811.o
 LOAD ..\obj\stm32f4xx_adc.o
-LOAD ..\obj\layout_graph.o
 LOAD ..\obj\stm32f4xx_dcmi.o
+LOAD ..\obj\layout_graph.o
+LOAD ..\obj\sensor_temperature.o
 LOAD ..\obj\tm_stm32f4_delay.o
 LOAD ..\obj\stm32f4xx_cryp_des.o
 LOAD ..\obj\tm_stm32f4_spi.o
@@ -2440,37 +2457,37 @@ LOAD c:/program files (x86)/gnu tools arm embedded/4.9 2014q4/bin/../lib/gcc/arm
 END GROUP
 OUTPUT(stm32f429_project.elf elf32-littlearm)
 
-.debug_info     0x00000000     0x5cac
+.debug_info     0x00000000     0x5c82
  .debug_info    0x00000000      0x14f ..\obj\layout_intro.o
  .debug_info    0x0000014f       0xed ..\obj\startup_stm32f4xx.o
- .debug_info    0x0000023c      0x1f3 ..\obj\main.o
- .debug_info    0x0000042f      0xe11 ..\obj\stm32f4xx_rcc.o
- .debug_info    0x00001240      0x45f ..\obj\tm_stm32f4_stmpe811.o
- .debug_info    0x0000169f       0xf4 ..\obj\layout_graph.o
- .debug_info    0x00001793      0x760 ..\obj\tm_stm32f4_delay.o
- .debug_info    0x00001ef3      0x894 ..\obj\tm_stm32f4_spi.o
- .debug_info    0x00002787      0x841 ..\obj\tm_stm32f4_i2c.o
- .debug_info    0x00002fc8      0x605 ..\obj\stm32f4xx_gpio.o
- .debug_info    0x000035cd      0x5bc ..\obj\system_stm32f4xx.o
- .debug_info    0x00003b89      0xb21 ..\obj\stm32f4xx_spi.o
- .debug_info    0x000046aa      0xb87 ..\obj\stm32f4xx_i2c.o
- .debug_info    0x00005231      0xa7b ..\obj\tm_stm32f4_ili9341.o
+ .debug_info    0x0000023c      0x1c9 ..\obj\main.o
+ .debug_info    0x00000405      0xe11 ..\obj\stm32f4xx_rcc.o
+ .debug_info    0x00001216      0x45f ..\obj\tm_stm32f4_stmpe811.o
+ .debug_info    0x00001675       0xf4 ..\obj\layout_graph.o
+ .debug_info    0x00001769      0x760 ..\obj\tm_stm32f4_delay.o
+ .debug_info    0x00001ec9      0x894 ..\obj\tm_stm32f4_spi.o
+ .debug_info    0x0000275d      0x841 ..\obj\tm_stm32f4_i2c.o
+ .debug_info    0x00002f9e      0x605 ..\obj\stm32f4xx_gpio.o
+ .debug_info    0x000035a3      0x5bc ..\obj\system_stm32f4xx.o
+ .debug_info    0x00003b5f      0xb21 ..\obj\stm32f4xx_spi.o
+ .debug_info    0x00004680      0xb87 ..\obj\stm32f4xx_i2c.o
+ .debug_info    0x00005207      0xa7b ..\obj\tm_stm32f4_ili9341.o
 
-.debug_abbrev   0x00000000     0x125f
+.debug_abbrev   0x00000000     0x1233
  .debug_abbrev  0x00000000       0xd8 ..\obj\layout_intro.o
  .debug_abbrev  0x000000d8       0xb0 ..\obj\startup_stm32f4xx.o
- .debug_abbrev  0x00000188       0xf6 ..\obj\main.o
- .debug_abbrev  0x0000027e      0x1ba ..\obj\stm32f4xx_rcc.o
- .debug_abbrev  0x00000438      0x162 ..\obj\tm_stm32f4_stmpe811.o
- .debug_abbrev  0x0000059a       0x85 ..\obj\layout_graph.o
- .debug_abbrev  0x0000061f      0x17d ..\obj\tm_stm32f4_delay.o
- .debug_abbrev  0x0000079c      0x17a ..\obj\tm_stm32f4_spi.o
- .debug_abbrev  0x00000916      0x1b6 ..\obj\tm_stm32f4_i2c.o
- .debug_abbrev  0x00000acc      0x1a3 ..\obj\stm32f4xx_gpio.o
- .debug_abbrev  0x00000c6f      0x136 ..\obj\system_stm32f4xx.o
- .debug_abbrev  0x00000da5      0x167 ..\obj\stm32f4xx_spi.o
- .debug_abbrev  0x00000f0c      0x164 ..\obj\stm32f4xx_i2c.o
- .debug_abbrev  0x00001070      0x1ef ..\obj\tm_stm32f4_ili9341.o
+ .debug_abbrev  0x00000188       0xca ..\obj\main.o
+ .debug_abbrev  0x00000252      0x1ba ..\obj\stm32f4xx_rcc.o
+ .debug_abbrev  0x0000040c      0x162 ..\obj\tm_stm32f4_stmpe811.o
+ .debug_abbrev  0x0000056e       0x85 ..\obj\layout_graph.o
+ .debug_abbrev  0x000005f3      0x17d ..\obj\tm_stm32f4_delay.o
+ .debug_abbrev  0x00000770      0x17a ..\obj\tm_stm32f4_spi.o
+ .debug_abbrev  0x000008ea      0x1b6 ..\obj\tm_stm32f4_i2c.o
+ .debug_abbrev  0x00000aa0      0x1a3 ..\obj\stm32f4xx_gpio.o
+ .debug_abbrev  0x00000c43      0x136 ..\obj\system_stm32f4xx.o
+ .debug_abbrev  0x00000d79      0x167 ..\obj\stm32f4xx_spi.o
+ .debug_abbrev  0x00000ee0      0x164 ..\obj\stm32f4xx_i2c.o
+ .debug_abbrev  0x00001044      0x1ef ..\obj\tm_stm32f4_ili9341.o
 
 .debug_aranges  0x00000000      0x750
  .debug_aranges
@@ -2518,50 +2535,50 @@ OUTPUT(stm32f429_project.elf elf32-littlearm)
  .debug_ranges  0x000004c0      0x120 ..\obj\stm32f4xx_i2c.o
  .debug_ranges  0x000005e0       0x90 ..\obj\tm_stm32f4_ili9341.o
 
-.debug_line     0x00000000     0x2f61
- .debug_line    0x00000000      0x274 ..\obj\layout_intro.o
- .debug_line    0x00000274       0x97 ..\obj\startup_stm32f4xx.o
- .debug_line    0x0000030b      0x287 ..\obj\main.o
- .debug_line    0x00000592      0x62f ..\obj\stm32f4xx_rcc.o
- .debug_line    0x00000bc1      0x37c ..\obj\tm_stm32f4_stmpe811.o
- .debug_line    0x00000f3d      0x1fa ..\obj\layout_graph.o
- .debug_line    0x00001137      0x23c ..\obj\tm_stm32f4_delay.o
- .debug_line    0x00001373      0x464 ..\obj\tm_stm32f4_spi.o
- .debug_line    0x000017d7      0x3e2 ..\obj\tm_stm32f4_i2c.o
- .debug_line    0x00001bb9      0x330 ..\obj\stm32f4xx_gpio.o
- .debug_line    0x00001ee9      0x1ff ..\obj\system_stm32f4xx.o
- .debug_line    0x000020e8      0x442 ..\obj\stm32f4xx_spi.o
- .debug_line    0x0000252a      0x4ec ..\obj\stm32f4xx_i2c.o
- .debug_line    0x00002a16      0x54b ..\obj\tm_stm32f4_ili9341.o
+.debug_line     0x00000000     0x2f0d
+ .debug_line    0x00000000      0x243 ..\obj\layout_intro.o
+ .debug_line    0x00000243       0x97 ..\obj\startup_stm32f4xx.o
+ .debug_line    0x000002da      0x26b ..\obj\main.o
+ .debug_line    0x00000545      0x62f ..\obj\stm32f4xx_rcc.o
+ .debug_line    0x00000b74      0x37c ..\obj\tm_stm32f4_stmpe811.o
+ .debug_line    0x00000ef0      0x1f3 ..\obj\layout_graph.o
+ .debug_line    0x000010e3      0x23c ..\obj\tm_stm32f4_delay.o
+ .debug_line    0x0000131f      0x464 ..\obj\tm_stm32f4_spi.o
+ .debug_line    0x00001783      0x3e2 ..\obj\tm_stm32f4_i2c.o
+ .debug_line    0x00001b65      0x330 ..\obj\stm32f4xx_gpio.o
+ .debug_line    0x00001e95      0x1ff ..\obj\system_stm32f4xx.o
+ .debug_line    0x00002094      0x442 ..\obj\stm32f4xx_spi.o
+ .debug_line    0x000024d6      0x4ec ..\obj\stm32f4xx_i2c.o
+ .debug_line    0x000029c2      0x54b ..\obj\tm_stm32f4_ili9341.o
 
-.debug_str      0x00000000     0x261f
- .debug_str     0x00000000      0x202 ..\obj\layout_intro.o
-                                0x247 (size before relaxing)
- .debug_str     0x00000202       0xa6 ..\obj\startup_stm32f4xx.o
+.debug_str      0x00000000     0x2607
+ .debug_str     0x00000000      0x1fb ..\obj\layout_intro.o
+                                0x240 (size before relaxing)
+ .debug_str     0x000001fb       0xa6 ..\obj\startup_stm32f4xx.o
                                 0x13d (size before relaxing)
- .debug_str     0x000002a8      0x191 ..\obj\main.o
-                                0x37d (size before relaxing)
- .debug_str     0x00000439      0x801 ..\obj\stm32f4xx_rcc.o
+ .debug_str     0x000002a1      0x187 ..\obj\main.o
+                                0x373 (size before relaxing)
+ .debug_str     0x00000428      0x801 ..\obj\stm32f4xx_rcc.o
                                 0x993 (size before relaxing)
- .debug_str     0x00000c3a      0x14c ..\obj\tm_stm32f4_stmpe811.o
+ .debug_str     0x00000c29      0x14c ..\obj\tm_stm32f4_stmpe811.o
                                 0x466 (size before relaxing)
- .debug_str     0x00000d86       0x4e ..\obj\layout_graph.o
-                                0x1a7 (size before relaxing)
- .debug_str     0x00000dd4      0x6f7 ..\obj\tm_stm32f4_delay.o
+ .debug_str     0x00000d75       0x47 ..\obj\layout_graph.o
+                                0x1a0 (size before relaxing)
+ .debug_str     0x00000dbc      0x6f7 ..\obj\tm_stm32f4_delay.o
                                 0x899 (size before relaxing)
- .debug_str     0x000014cb      0x411 ..\obj\tm_stm32f4_spi.o
+ .debug_str     0x000014b3      0x411 ..\obj\tm_stm32f4_spi.o
                                 0x5e9 (size before relaxing)
- .debug_str     0x000018dc      0x208 ..\obj\tm_stm32f4_i2c.o
+ .debug_str     0x000018c4      0x208 ..\obj\tm_stm32f4_i2c.o
                                 0x5dc (size before relaxing)
- .debug_str     0x00001ae4      0x189 ..\obj\stm32f4xx_gpio.o
+ .debug_str     0x00001acc      0x189 ..\obj\stm32f4xx_gpio.o
                                 0x496 (size before relaxing)
- .debug_str     0x00001c6d       0xb1 ..\obj\system_stm32f4xx.o
+ .debug_str     0x00001c55       0xb1 ..\obj\system_stm32f4xx.o
                                 0x3ba (size before relaxing)
- .debug_str     0x00001d1e      0x2e3 ..\obj\stm32f4xx_spi.o
+ .debug_str     0x00001d06      0x2e3 ..\obj\stm32f4xx_spi.o
                                 0x693 (size before relaxing)
- .debug_str     0x00002001      0x35e ..\obj\stm32f4xx_i2c.o
+ .debug_str     0x00001fe9      0x35e ..\obj\stm32f4xx_i2c.o
                                 0x6a8 (size before relaxing)
- .debug_str     0x0000235f      0x2c0 ..\obj\tm_stm32f4_ili9341.o
+ .debug_str     0x00002347      0x2c0 ..\obj\tm_stm32f4_ili9341.o
                                 0x730 (size before relaxing)
 
 .comment        0x00000000       0x70

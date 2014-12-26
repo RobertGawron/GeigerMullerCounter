@@ -1,6 +1,6 @@
 <?xml version='1.0' encoding='UTF-8'?>
 <dependencies>
-   <includePath signature="/I..\..\..\..\..\Users\rgawron\uFormicarium\tm_stm32fdelay /I..\..\..\..\..\Users\rgawron\uFormicarium\cmsis /I..\..\..\..\..\Users\rgawron\uFormicarium\tm_stm32fi2c /I..\..\..\..\..\Users\rgawron /I..\..\..\..\..\Users\rgawron\uFormicarium\cmsis_boot /I..\..\..\..\..\Users\rgawron\uFormicarium\tm_stm32fspi /I..\..\..\..\..\Users\rgawron\uFormicarium\cmsis_lib\include /I..\..\..\..\..\Users\rgawron\uFormicarium\layouts /I..\..\..\..\..\Users\rgawron\uFormicarium\tm_stm32fili9341 /I..\..\..\..\..\Users\rgawron\uFormicarium /I..\..\..\..\..\Users\rgawron\uFormicarium\layouts\include /I..\..\..\..\..\Users\rgawron\uFormicarium\tm_stm32fstmpe811 /I..\..\..\..\..\Users /I..\..\..\..\..\Users\rgawron\uFormicarium\cmsis_lib">
+   <includePath signature="/I..\..\..\..\..\Users\rgawron\uFormicarium\tm_stm32fdelay /I..\..\..\..\..\Users\rgawron\uFormicarium\cmsis /I..\..\..\..\..\Users\rgawron /I..\..\..\..\..\Users\rgawron\uFormicarium\tm_stm32fi2c /I..\..\..\..\..\Users\rgawron\uFormicarium\sensors /I..\..\..\..\..\Users\rgawron\uFormicarium\cmsis_boot /I..\..\..\..\..\Users\rgawron\uFormicarium\tm_stm32fspi /I..\..\..\..\..\Users\rgawron\uFormicarium\cmsis_lib\include /I..\..\..\..\..\Users\rgawron\uFormicarium\tm_stm32fili9341 /I..\..\..\..\..\Users\rgawron\uFormicarium\layouts /I..\..\..\..\..\Users\rgawron\uFormicarium /I..\..\..\..\..\Users\rgawron\uFormicarium\tm_stm32fstmpe811 /I..\..\..\..\..\Users /I..\..\..\..\..\Users\rgawron\uFormicarium\cmsis_lib">
       <source file="..\..\..\cmsis_lib\source\stm32f4xx_dcmi.c" lastModified="14239bc9554">
          <include file="..\..\..\cmsis_lib\include\stm32f4xx_dcmi.h"/>
          <include file="..\..\..\cmsis_lib\include\stm32f4xx_rcc.h"/>
@@ -8,8 +8,6 @@
       <source file="..\..\..\cmsis_lib\source\stm32f4xx_ltdc.c" lastModified="14239bc96ea">
          <include file="..\..\..\cmsis_lib\include\stm32f4xx_ltdc.h"/>
          <include file="..\..\..\cmsis_lib\include\stm32f4xx_rcc.h"/>
-      </source>
-      <source file="..\..\..\layouts\include\layout_graph.h" lastModified="14a73af2d7a">
       </source>
       <source file="..\..\..\cmsis_lib\source\stm32f4xx_wwdg.c" lastModified="14239bc98a0">
          <include file="..\..\..\cmsis_lib\include\stm32f4xx_wwdg.h"/>
@@ -96,11 +94,11 @@
       <source file="..\..\..\tm_stm32fi2c\tm_stm32f4_i2c.c" lastModified="14899c1403a">
          <include file="..\..\..\tm_stm32fi2c\tm_stm32f4_i2c.h"/>
       </source>
-      <source file="..\..\..\layouts\intro.h" lastModified="14a78c8b5ae">
-      </source>
       <source file="..\..\..\tm_stm32fili9341\tm_stm32f4_ili9341.c" lastModified="14899d00977">
          <include file="..\..\..\tm_stm32fili9341\tm_stm32f4_ili9341.h"/>
          <include file="..\..\..\tm_stm32fili9341\tm_stm32f4_fonts.h"/>
+      </source>
+      <source file="..\..\..\layouts\intro.h" lastModified="14a885c2d5a">
       </source>
       <source file="..\..\..\cmsis_lib\source\stm32f4xx_fmc.c" lastModified="14239bc9600">
          <include file="..\..\..\cmsis_lib\include\stm32f4xx_fmc.h"/>
@@ -116,6 +114,8 @@
       </source>
       <source file="..\..\..\cmsis_lib\include\stm32f4xx_cryp.h" lastModified="14239bc3766">
          <include file="..\..\..\cmsis_boot\stm32f4xx.h"/>
+      </source>
+      <source file="..\..\..\layouts\layout_graph.h" lastModified="14a73af2d7a">
       </source>
       <source file="..\..\..\cmsis_lib\source\misc.c" lastModified="14239bc941c">
          <include file="..\..\..\cmsis_lib\include\misc.h"/>
@@ -139,9 +139,6 @@
       </source>
       <source file="..\..\..\cmsis_lib\source\stm32f4xx_hash_sha1.c" lastModified="14239bc969c">
          <include file="..\..\..\cmsis_lib\include\stm32f4xx_hash.h"/>
-      </source>
-      <source file="..\..\..\layouts\include\layout_intro.h" lastModified="14a78afee09">
-         <include file="..\..\..\..\intro.h"/>
       </source>
       <source file="..\..\..\cmsis_boot\stm32f4xx.h" lastModified="1457781fa90">
          <include file="..\..\..\cmsis\core_cm4.h"/>
@@ -195,8 +192,6 @@
          <include file="..\..\..\cmsis_lib\include\stm32f4xx_gpio.h"/>
          <include file="..\..\..\cmsis_lib\include\stm32f4xx_spi.h"/>
          <include file="..\..\..\defines.h"/>
-      </source>
-      <source file="..\..\..\..\intro.h" lastModified="0">
       </source>
       <source file="..\..\..\cmsis_lib\include\stm32f4xx_dma2d.h" lastModified="14239bc37c4">
          <include file="..\..\..\cmsis_boot\stm32f4xx.h"/>
@@ -299,12 +294,6 @@
       <source file="..\..\..\tm_stm32fstmpe811\tm_stm32f4_stmpe811.c" lastModified="14851b1c08e">
          <include file="..\..\..\tm_stm32fstmpe811\tm_stm32f4_stmpe811.h"/>
       </source>
-      <source file="..\..\..\layouts\source\layout_graph.c" lastModified="14a74a471ca">
-         <include file="..\..\..\layouts\include\layout_graph.h"/>
-         <include file="..\..\..\tm_stm32fili9341\tm_stm32f4_ili9341.h"/>
-         <include file="..\..\..\tm_stm32fili9341\tm_stm32f4_fonts.h"/>
-         <include file="..\..\..\tm_stm32fstmpe811\tm_stm32f4_stmpe811.h"/>
-      </source>
       <source file="..\..\..\cmsis_lib\source\stm32f4xx_gpio.c" lastModified="14239bc965e">
          <include file="..\..\..\cmsis_lib\include\stm32f4xx_gpio.h"/>
          <include file="..\..\..\cmsis_lib\include\stm32f4xx_rcc.h"/>
@@ -321,18 +310,18 @@
       <source file="..\..\..\cmsis_lib\include\stm32f4xx_i2c.h" lastModified="14239bc389f">
          <include file="..\..\..\cmsis_boot\stm32f4xx.h"/>
       </source>
-      <source file="..\..\..\cmsis_lib\include\stm32f4xx_can.h" lastModified="14239bc3747">
+      <source file="..\..\..\cmsis_lib\include\stm32f4xx_pwr.h" lastModified="14239bc38dd">
          <include file="..\..\..\cmsis_boot\stm32f4xx.h"/>
       </source>
-      <source file="..\..\..\cmsis_lib\include\stm32f4xx_pwr.h" lastModified="14239bc38dd">
+      <source file="..\..\..\cmsis_lib\include\stm32f4xx_can.h" lastModified="14239bc3747">
          <include file="..\..\..\cmsis_boot\stm32f4xx.h"/>
       </source>
       <source file="..\..\..\cmsis_boot\startup\startup_stm32f4xx.c" lastModified="1457784479b">
       </source>
-      <source file="..\..\..\cmsis_lib\include\stm32f4xx_rtc.h" lastModified="14239bc391c">
+      <source file="..\..\..\cmsis_lib\include\stm32f4xx_gpio.h" lastModified="142485968fc">
          <include file="..\..\..\cmsis_boot\stm32f4xx.h"/>
       </source>
-      <source file="..\..\..\cmsis_lib\include\stm32f4xx_gpio.h" lastModified="142485968fc">
+      <source file="..\..\..\cmsis_lib\include\stm32f4xx_rtc.h" lastModified="14239bc391c">
          <include file="..\..\..\cmsis_boot\stm32f4xx.h"/>
       </source>
       <source file="..\..\..\cmsis_lib\source\stm32f4xx_rng.c" lastModified="14239bc9758">
@@ -344,16 +333,6 @@
       </source>
       <source file="..\..\..\cmsis_lib\source\stm32f4xx_iwdg.c" lastModified="14239bc96cb">
          <include file="..\..\..\cmsis_lib\include\stm32f4xx_iwdg.h"/>
-      </source>
-      <source file="..\..\..\main.c" lastModified="14a73cfa520">
-         <include file="..\..\..\cmsis_boot\stm32f4xx.h"/>
-         <include file="..\..\..\cmsis_lib\include\stm32f4xx_spi.h"/>
-         <include file="..\..\..\defines.h"/>
-         <include file="..\..\..\tm_stm32fili9341\tm_stm32f4_ili9341.h"/>
-         <include file="..\..\..\tm_stm32fili9341\tm_stm32f4_fonts.h"/>
-         <include file="..\..\..\tm_stm32fstmpe811\tm_stm32f4_stmpe811.h"/>
-         <include file="..\..\..\layouts\include\layout_intro.h"/>
-         <include file="..\..\..\layouts\include\layout_graph.h"/>
       </source>
       <source file="..\..\..\cmsis_lib\source\stm32f4xx_sdio.c" lastModified="14239bc97e4">
          <include file="..\..\..\cmsis_lib\include\stm32f4xx_sdio.h"/>
@@ -371,13 +350,6 @@
       </source>
       <source file="..\..\..\cmsis_lib\include\stm32f4xx_iwdg.h" lastModified="14239bc38af">
          <include file="..\..\..\cmsis_boot\stm32f4xx.h"/>
-      </source>
-      <source file="..\..\..\layouts\source\layout_intro.c" lastModified="14a78bf7e12">
-         <include file="..\..\..\layouts\include\layout_intro.h"/>
-         <include file="..\..\..\tm_stm32fili9341\tm_stm32f4_ili9341.h"/>
-         <include file="..\..\..\tm_stm32fili9341\tm_stm32f4_fonts.h"/>
-         <include file="..\..\..\tm_stm32fstmpe811\tm_stm32f4_stmpe811.h"/>
-         <include file="..\..\..\layouts\intro.h"/>
       </source>
       <source file="..\..\..\cmsis_lib\include\stm32f4xx_sai.h" lastModified="14239bc393b">
          <include file="..\..\..\cmsis_boot\stm32f4xx.h"/>

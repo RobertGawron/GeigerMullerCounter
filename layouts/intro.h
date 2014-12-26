@@ -1,5 +1,5 @@
-#ifndef XU
-#define XU
+#ifndef FOOOO
+#define FOOOO
 int intro_data[][2] = {
 	{0, 239}, 
 	{1, 239}, 

@@ -4,10 +4,7 @@
 #include "tm_stm32f4_fonts.h"
 #include "tm_stm32f4_stmpe811.h"
 
-void layout_graph_init()
-{
-	//TM_ILI9341_Rotate(TM_ILI9341_Orientation_Landscape_2);
-
+void layout_graph_init() {
 	TM_ILI9341_Fill(ILI9341_COLOR_GRAY);
 
 	// draw graph
