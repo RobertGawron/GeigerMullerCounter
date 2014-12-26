@@ -70,8 +70,8 @@
       <target file="stm32f4xx_rng.o" lastModified="14a885cf05b">
          <source file="..\..\..\cmsis_lib\source\stm32f4xx_rng.c" lastModified="14239bc9758"/>
       </target>
-      <target file="sensor_temperature.o" lastModified="14a8860d0e2">
-         <source file="..\..\..\sensors\sensor_temperature.c" lastModified="14a8860b9ca"/>
+      <target file="sensor_temperature.o" lastModified="14a8867947a">
+         <source file="..\..\..\sensors\sensor_temperature.c" lastModified="14a88678e3a"/>
       </target>
       <target file="stm32f4xx_adc.o" lastModified="14a885ce3cc">
          <source file="..\..\..\cmsis_lib\source\stm32f4xx_adc.c" lastModified="14239bc946a"/>

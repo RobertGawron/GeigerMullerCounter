@@ -912,16 +912,20 @@ Discarded input sections
  .data          0x00000000        0x0 ..\obj\sensor_temperature.o
  .bss           0x00000000        0x0 ..\obj\sensor_temperature.o
  .text.sensor_temperature_get_value
-                0x00000000       0x10 ..\obj\sensor_temperature.o
- .debug_info    0x00000000       0x3e ..\obj\sensor_temperature.o
- .debug_abbrev  0x00000000       0x35 ..\obj\sensor_temperature.o
+                0x00000000       0x38 ..\obj\sensor_temperature.o
+ .text.sensor_temperature_rescale
+                0x00000000       0x18 ..\obj\sensor_temperature.o
+ .text.sensor_temperature_configure
+                0x00000000       0x7c ..\obj\sensor_temperature.o
+ .debug_info    0x00000000      0x48e ..\obj\sensor_temperature.o
+ .debug_abbrev  0x00000000      0x140 ..\obj\sensor_temperature.o
  .debug_aranges
-                0x00000000       0x20 ..\obj\sensor_temperature.o
- .debug_ranges  0x00000000       0x10 ..\obj\sensor_temperature.o
- .debug_line    0x00000000       0x6a ..\obj\sensor_temperature.o
- .debug_str     0x00000000       0xd4 ..\obj\sensor_temperature.o
+                0x00000000       0x30 ..\obj\sensor_temperature.o
+ .debug_ranges  0x00000000       0x20 ..\obj\sensor_temperature.o
+ .debug_line    0x00000000      0x22d ..\obj\sensor_temperature.o
+ .debug_str     0x00000000      0x4b2 ..\obj\sensor_temperature.o
  .comment       0x00000000       0x71 ..\obj\sensor_temperature.o
- .debug_frame   0x00000000       0x30 ..\obj\sensor_temperature.o
+ .debug_frame   0x00000000       0x78 ..\obj\sensor_temperature.o
  .ARM.attributes
                 0x00000000       0x33 ..\obj\sensor_temperature.o
  .text          0x00000000        0x0 ..\obj\tm_stm32f4_delay.o
