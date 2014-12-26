@@ -3,6 +3,8 @@
 #include "tm_stm32f4_ili9341.h"
 #include "tm_stm32f4_fonts.h"
 #include "tm_stm32f4_stmpe811.h"
+#include "inttypes.h"
+
 #include "intro.h"
 
 void layout_intro_init() {
@@ -10,7 +12,7 @@ void layout_intro_init() {
 
 	TM_ILI9341_Fill(ILI9341_COLOR_WHITE);
 
-	unsigned i;
+	uint8_t i;
 	for (i = 0; i < intro_size; i++) {
 		TM_ILI9341_DrawPixel(intro_data[i][0], intro_data[i][1],
 				ILI9341_COLOR_BLACK);

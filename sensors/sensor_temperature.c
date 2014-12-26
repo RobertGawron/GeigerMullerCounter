@@ -4,9 +4,9 @@
 #include "stm32f4xx_rcc.h"
 
 void sensor_temperature_configure();
-int sensor_temperature_rescale(int inputValue);
+int8_t sensor_temperature_rescale(int inputValue);
 
-int sensor_temperature_get_value() {
+int8_t sensor_temperature_get_value() {
 	sensor_temperature_configure();
 	ADC_SoftwareStartConv(ADC1);
 	while (!ADC_GetFlagStatus(ADC1, ADC_FLAG_EOC))
@@ -14,7 +14,7 @@ int sensor_temperature_get_value() {
 	return sensor_temperature_rescale(ADC_GetConversionValue(ADC1));
 }
 
-int sensor_temperature_rescale(int inputValue) {
+int8_t sensor_temperature_rescale(int inputValue) {
 	return inputValue;
 }
 

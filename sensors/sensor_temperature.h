@@ -1,6 +1,8 @@
 #ifndef __TEMPERATURE_INC
 #define __TEMPERATURE_INC
 
-int sensor_temperature_get_value();
+#include "inttypes.h"
+
+int8_t sensor_temperature_get_value();
 
 #endif

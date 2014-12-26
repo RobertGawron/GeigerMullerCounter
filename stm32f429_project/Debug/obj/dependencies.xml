@@ -194,13 +194,6 @@
       <source file="..\..\..\cmsis_lib\include\stm32f4xx_exti.h" lastModified="14239bc37d4">
          <include file="..\..\..\cmsis_boot\stm32f4xx.h"/>
       </source>
-      <source file="..\..\..\layouts\layout_intro.c" lastModified="14a885f2151">
-         <include file="..\..\..\layouts\layout_intro.h"/>
-         <include file="..\..\..\tm_stm32fili9341\tm_stm32f4_ili9341.h"/>
-         <include file="..\..\..\tm_stm32fili9341\tm_stm32f4_fonts.h"/>
-         <include file="..\..\..\tm_stm32fstmpe811\tm_stm32f4_stmpe811.h"/>
-         <include file="..\..\..\layouts\intro.h"/>
-      </source>
       <source file="..\..\..\tm_stm32fspi\tm_stm32f4_spi.h" lastModified="14996673de1">
          <include file="..\..\..\cmsis_boot\stm32f4xx.h"/>
          <include file="..\..\..\cmsis_lib\include\stm32f4xx_rcc.h"/>
@@ -325,18 +318,18 @@
       <source file="..\..\..\cmsis_lib\include\stm32f4xx_i2c.h" lastModified="14239bc389f">
          <include file="..\..\..\cmsis_boot\stm32f4xx.h"/>
       </source>
-      <source file="..\..\..\cmsis_lib\include\stm32f4xx_can.h" lastModified="14239bc3747">
+      <source file="..\..\..\cmsis_lib\include\stm32f4xx_pwr.h" lastModified="14239bc38dd">
          <include file="..\..\..\cmsis_boot\stm32f4xx.h"/>
       </source>
-      <source file="..\..\..\cmsis_lib\include\stm32f4xx_pwr.h" lastModified="14239bc38dd">
+      <source file="..\..\..\cmsis_lib\include\stm32f4xx_can.h" lastModified="14239bc3747">
          <include file="..\..\..\cmsis_boot\stm32f4xx.h"/>
       </source>
       <source file="..\..\..\cmsis_boot\startup\startup_stm32f4xx.c" lastModified="1457784479b">
       </source>
-      <source file="..\..\..\cmsis_lib\include\stm32f4xx_gpio.h" lastModified="142485968fc">
+      <source file="..\..\..\cmsis_lib\include\stm32f4xx_rtc.h" lastModified="14239bc391c">
          <include file="..\..\..\cmsis_boot\stm32f4xx.h"/>
       </source>
-      <source file="..\..\..\cmsis_lib\include\stm32f4xx_rtc.h" lastModified="14239bc391c">
+      <source file="..\..\..\cmsis_lib\include\stm32f4xx_gpio.h" lastModified="142485968fc">
          <include file="..\..\..\cmsis_boot\stm32f4xx.h"/>
       </source>
       <source file="..\..\..\cmsis_lib\source\stm32f4xx_rng.c" lastModified="14239bc9758">
