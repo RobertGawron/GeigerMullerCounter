@@ -1,4 +1,4 @@
-uFormicarium
+GeigerMullerCounter
 ============
 
-An electronic device for gathering and analyzing statistics of environment conditions of ant colonies.
+A device for monitoring environmental radioactivity level.
