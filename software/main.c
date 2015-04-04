@@ -1,53 +1,126 @@
 #include "stm32f4xx.h"
+
+//#include "tm_stm32_defs.h"
+#include <stdio.h>
+
+/* LCD */
 #include "stm32f4xx_spi.h"
 #include "tm_stm32f4_ili9341.h"
 #include "tm_stm32f4_fonts.h"
-#include "tm_stm32f4_stmpe811.h"
 
-#include "defines.h"
+/* Pin interrupt */
+#include "stm32f4xx.h"
+#include "stm32f4xx_exti.h"
+#include "stm32f4xx_syscfg.h"
 
-#include "layout_intro.h"
-#include "layout_graph.h"
+//#include "stdio/printf.c"
 
-int main(void) {
-	TM_STMPE811_TouchData touchData;
+void Configure_PB12(void) {
+    /* Set variables used */
+    GPIO_InitTypeDef GPIO_InitStruct;
+    EXTI_InitTypeDef EXTI_InitStruct;
+    NVIC_InitTypeDef NVIC_InitStruct;
 
+    /* Enable clock for GPIOB */
+    RCC_AHB1PeriphClockCmd(RCC_AHB1Periph_GPIOB, ENABLE);
+    /* Enable clock for SYSCFG */
+    RCC_APB2PeriphClockCmd(RCC_APB2Periph_SYSCFG, ENABLE);
+
+    /* Set pin as input */
+    GPIO_InitStruct.GPIO_Mode = GPIO_Mode_IN;
+    GPIO_InitStruct.GPIO_OType = GPIO_OType_PP;
+    GPIO_InitStruct.GPIO_Pin = GPIO_Pin_12;
+    GPIO_InitStruct.GPIO_PuPd = GPIO_PuPd_UP;
+    GPIO_InitStruct.GPIO_Speed = GPIO_Speed_100MHz;
+    GPIO_Init(GPIOB, &GPIO_InitStruct);
+
+    /* Tell system that you will use PB12 for EXTI_Line12 */
+    SYSCFG_EXTILineConfig(EXTI_PortSourceGPIOB, EXTI_PinSource12);
+
+    /* PB12 is connected to EXTI_Line12 */
+    EXTI_InitStruct.EXTI_Line = EXTI_Line12;
+    /* Enable interrupt */
+    EXTI_InitStruct.EXTI_LineCmd = ENABLE;
+    /* Interrupt mode */
+    EXTI_InitStruct.EXTI_Mode = EXTI_Mode_Interrupt;
+    /* Triggers on rising and falling edge */
+    EXTI_InitStruct.EXTI_Trigger = EXTI_Trigger_Rising_Falling;
+    /* Add to EXTI */
+    EXTI_Init(&EXTI_InitStruct);
+
+    /* Add IRQ vector to NVIC */
+    /* PB12 is connected to EXTI_Line12, which has EXTI15_10_IRQn vector */
+    NVIC_InitStruct.NVIC_IRQChannel = EXTI15_10_IRQn;
+    /* Set priority */
+    NVIC_InitStruct.NVIC_IRQChannelPreemptionPriority = 0x00;
+    /* Set sub priority */
+    NVIC_InitStruct.NVIC_IRQChannelSubPriority = 0x01;
+    /* Enable interrupt */
+    NVIC_InitStruct.NVIC_IRQChannelCmd = ENABLE;
+    /* Add to NVIC */
+    NVIC_Init(&NVIC_InitStruct);
+}
+
+/* Set interrupt handlers */
+/* Handle PD0 interrupt */
+void EXTI0_IRQHandler(void) {
+    /* Make sure that interrupt flag is set */
+    if (EXTI_GetITStatus(EXTI_Line0) != RESET) {
+        /* Do your stuff when PD0 is changed */
+
+
+        /* Clear interrupt flag */
+        EXTI_ClearITPendingBit(EXTI_Line0);
+    }
+}
+
+/* Handle PB12 interrupt */
+void EXTI15_10_IRQHandler(void) {
+    /* Make sure that interrupt flag is set */
+    if (EXTI_GetITStatus(EXTI_Line12) != RESET) {
+        /* Do your stuff when PB12 is changed */
+
+    	static int x =0;
+    	x++;
+    	char s[10];
+    	sprintf(s, "%d", x);
+
+    	TM_ILI9341_Puts(70, 20, s, &TM_Font_16x26,
+    					ILI9341_COLOR_WHITE, ILI9341_COLOR_BLACK);
+
+        /* Clear interrupt flag */
+        EXTI_ClearITPendingBit(EXTI_Line12);
+    }
+}
+
+
+
+int main(void)
+{
 	SystemInit();
 
-	//Initialize Touch Sensor
-	if (TM_STMPE811_Init() != TM_STMPE811_State_Ok) {
-		//TM_ILI9341_Puts(20, 20, "STMPE811 Error", &TM_Font_11x18,
-		//		ILI9341_COLOR_ORANGE, ILI9341_COLOR_BLACK);
+	int counter = 0;
 
-		//while (1)
-		//	;
-	}
+	/* Configure PB12 as interrupt */
+	Configure_PB12();
+
+
 
 	/* Initialize ILI9341 LCD on board */
 	TM_ILI9341_Init();
-	//TM_ILI9341_Fill(ILI9341_COLOR_BLUE);
-	TM_ILI9341_Rotate(TM_ILI9341_Orientation_Landscape_2);
-	layout_intro_init();
+	TM_ILI9341_Fill(ILI9341_COLOR_BLACK);
+	TM_ILI9341_Rotate(TM_ILI9341_Orientation_Portrait_1);
 
-	//Select touch screen orientation
-	touchData.orientation = TM_STMPE811_Orientation_Portrait_2;
+	TM_ILI9341_Puts(5, 5, "Geiger-Muller counter", &TM_Font_7x10,
+					ILI9341_COLOR_WHITE, ILI9341_COLOR_BLACK);
 
-	while (1) {
-		if (TM_STMPE811_ReadTouch(&touchData) == TM_STMPE811_State_Pressed) {
-			layout_graph_init();
-		}
-		/*
-		 if (TM_STMPE811_ReadTouch(&touchData) == TM_STMPE811_State_Pressed) {
-		 //Touch valid
-		 //touchData.x,touchData.y
-		 TM_ILI9341_Puts(20, 80, "pressed", &TM_Font_11x18,
-		 ILI9341_COLOR_BLACK, ILI9341_COLOR_ORANGE);
+	TM_ILI9341_Puts(70, 20, "0", &TM_Font_16x26,
+					ILI9341_COLOR_WHITE, ILI9341_COLOR_BLACK);
 
-		 TM_ILI9341_DrawPixel(touchData.x, touchData.y, 0x0000);
-		 } else {
-		 TM_ILI9341_Puts(20, 80, "Not Pressed", &TM_Font_11x18,
-		 ILI9341_COLOR_BLACK, ILI9341_COLOR_ORANGE);
-		 }
-		 */
+	while (1)
+	{
+
+
 	}
+
 }
