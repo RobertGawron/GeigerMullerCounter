@@ -6,7 +6,7 @@
 <setting alwaysvectorfont="no"/>
 <setting verticaltext="up"/>
 </settings>
-<grid distance="0.1" unitdist="inch" unit="inch" style="lines" multiple="1" display="no" altdistance="0.01" altunitdist="inch" altunit="inch"/>
+<grid distance="0.05" unitdist="inch" unit="inch" style="lines" multiple="1" display="yes" altdistance="0.01" altunitdist="inch" altunit="inch"/>
 <layers>
 <layer number="1" name="Top" color="4" fill="1" visible="no" active="no"/>
 <layer number="16" name="Bottom" color="1" fill="1" visible="no" active="no"/>
@@ -15767,31 +15767,31 @@ grid 2.54 mm</description>
 <part name="R11" library="resistor" deviceset="R-EU_" device="M1206" value="1k"/>
 <part name="C6" library="resistor" deviceset="CPOL-US" device="A/3216-18W" value="330u"/>
 <part name="LED1" library="led" deviceset="LED" device="SFH482"/>
-<part name="R4" library="resistor" deviceset="R-EU_" device="0207/5V"/>
-<part name="R3" library="resistor" deviceset="R-EU_" device="0207/5V"/>
-<part name="D1" library="diode" deviceset="1N4004" device="" value=""/>
-<part name="R6" library="resistor" deviceset="R-EU_" device="0207/5V"/>
+<part name="R4" library="resistor" deviceset="R-EU_" device="0207/5V" value="10M"/>
+<part name="R3" library="resistor" deviceset="R-EU_" device="0207/5V" value="30k+1k"/>
+<part name="D1" library="diode" deviceset="1N4004" device="" value="1n4007"/>
+<part name="R6" library="resistor" deviceset="R-EU_" device="0207/5V" value="10k"/>
 <part name="SP1" library="buzzer" deviceset="KSS1201" device="" value="8R"/>
 <part name="T3" library="transistor-power" deviceset="BUZ11" device="BV" value="IRF840"/>
 <part name="T1" library="transistor" deviceset="*-PNP-" device="SOT23-BEC" technology="BC807-40"/>
 <part name="IC1" library="linear" deviceset="LM358" device="D" value="LM358D"/>
-<part name="R7" library="resistor" deviceset="R-EU_" device="0207/5V"/>
+<part name="R7" library="resistor" deviceset="R-EU_" device="0207/5V" value="470R"/>
 <part name="R8" library="resistor" deviceset="R-EU_" device="0207/5V"/>
 <part name="SV3(OUT)" library="con-lstb" deviceset="MA03-1" device=""/>
 <part name="SV2(GM)" library="con-lstb" deviceset="MA03-1" device=""/>
 <part name="SV4(POWER)" library="con-lstb" deviceset="MA03-1" device=""/>
-<part name="C3" library="resistor" deviceset="C-EU" device="050-025X075"/>
-<part name="R5" library="resistor" deviceset="R-EU_" device="0207/12"/>
+<part name="C3" library="resistor" deviceset="C-EU" device="050-025X075" value="102"/>
+<part name="R5" library="resistor" deviceset="R-EU_" device="0207/12" value="6M8"/>
 <part name="C5" library="resistor" deviceset="C-EU" device="C3216" value="100n"/>
-<part name="L1" library="resistor" deviceset="L-EU" device="0207/5V"/>
-<part name="C4" library="resistor" deviceset="C-EU" device="102-064X133"/>
-<part name="R2" library="resistor" deviceset="R-EU_" device="0207/5V"/>
+<part name="L1" library="resistor" deviceset="L-EU" device="0207/5V" value="680m"/>
+<part name="C4" library="resistor" deviceset="C-EU" device="102-064X133" value="100n/630V"/>
+<part name="R2" library="resistor" deviceset="R-EU_" device="0207/5V" value="10k"/>
 <part name="D2" library="diode" deviceset="BAS40" device=""/>
 <part name="T2" library="transistor-npn" deviceset="BC848*" device="SMD" technology="ALT1" value=""/>
 <part name="IC2" library="ic-package" deviceset="DIL8" device=""/>
-<part name="C1" library="resistor" deviceset="C-EU" device="050-025X075"/>
+<part name="C1" library="resistor" deviceset="C-EU" device="050-025X075" value="322"/>
 <part name="R1" library="resistor" deviceset="R-EU_" device="0207/5V"/>
-<part name="C2" library="resistor" deviceset="C-EU" device="C3216"/>
+<part name="C2" library="resistor" deviceset="C-EU" device="C3216" value="100n"/>
 <part name="C7" library="resistor" deviceset="CPOL-US" device="A/3216-18W" value="330u"/>
 </parts>
 <sheets>
@@ -15835,8 +15835,8 @@ grid 2.54 mm</description>
 <attribute name="VALUE" x="-34.798" y="34.29" size="1.778" layer="96" rot="R90"/>
 </instance>
 <instance part="D1" gate="1" x="-43.18" y="68.58" smashed="yes">
-<attribute name="NAME" x="-45.72" y="71.6026" size="1.778" layer="95"/>
-<attribute name="VALUE" x="-40.64" y="66.2686" size="1.778" layer="96"/>
+<attribute name="NAME" x="-44.45" y="70.3326" size="1.778" layer="95"/>
+<attribute name="VALUE" x="-46.99" y="64.9986" size="1.778" layer="96"/>
 </instance>
 <instance part="R6" gate="G$1" x="-15.24" y="33.02" smashed="yes" rot="R90">
 <attribute name="NAME" x="-16.7386" y="31.75" size="1.778" layer="95" rot="R90"/>
@@ -15889,7 +15889,10 @@ grid 2.54 mm</description>
 <attribute name="VALUE" x="-29.21" y="65.278" size="1.778" layer="96"/>
 </instance>
 <instance part="C5" gate="G$1" x="73.66" y="50.8"/>
-<instance part="L1" gate="G$1" x="-50.8" y="66.04"/>
+<instance part="L1" gate="G$1" x="-50.8" y="66.04" smashed="yes">
+<attribute name="NAME" x="-52.2986" y="62.23" size="1.778" layer="95" rot="R90"/>
+<attribute name="VALUE" x="-52.578" y="67.31" size="1.778" layer="96" rot="R90"/>
+</instance>
 <instance part="C4" gate="G$1" x="-33.02" y="45.72"/>
 <instance part="R2" gate="G$1" x="-81.28" y="35.56" smashed="yes" rot="R90">
 <attribute name="NAME" x="-82.7786" y="34.29" size="1.778" layer="95" rot="R90"/>
@@ -16097,24 +16100,6 @@ grid 2.54 mm</description>
 <junction x="-68.58" y="43.18"/>
 </segment>
 </net>
-<net name="N$18" class="0">
-<segment>
-<pinref part="T1" gate="G$1" pin="B"/>
-<wire x1="-78.74" y1="43.18" x2="-78.74" y2="35.56" width="0.1524" layer="91"/>
-<wire x1="-78.74" y1="35.56" x2="-73.66" y2="35.56" width="0.1524" layer="91"/>
-<pinref part="R2" gate="G$1" pin="2"/>
-<wire x1="-81.28" y1="40.64" x2="-81.28" y2="43.18" width="0.1524" layer="91"/>
-<wire x1="-81.28" y1="43.18" x2="-78.74" y2="43.18" width="0.1524" layer="91"/>
-<pinref part="D2" gate="1" pin="A"/>
-<wire x1="-78.74" y1="43.18" x2="-76.2" y2="43.18" width="0.1524" layer="91"/>
-<junction x="-78.74" y="43.18"/>
-<wire x1="-81.28" y1="43.18" x2="-88.9" y2="43.18" width="0.1524" layer="91"/>
-<wire x1="-88.9" y1="43.18" x2="-88.9" y2="53.34" width="0.1524" layer="91"/>
-<junction x="-81.28" y="43.18"/>
-<pinref part="IC2" gate="G$1" pin="3"/>
-<wire x1="-88.9" y1="53.34" x2="-83.82" y2="53.34" width="0.1524" layer="91"/>
-</segment>
-</net>
 <net name="N$22" class="0">
 <segment>
 <pinref part="IC1" gate="B" pin="-IN"/>
@@ -16266,9 +16251,27 @@ grid 2.54 mm</description>
 <net name="N$5" class="0">
 <segment>
 <pinref part="C1" gate="G$1" pin="1"/>
-<wire x1="-91.44" y1="38.1" x2="-91.44" y2="55.88" width="0.1524" layer="91"/>
+<wire x1="-91.44" y1="38.1" x2="-91.44" y2="53.34" width="0.1524" layer="91"/>
+<pinref part="IC2" gate="G$1" pin="3"/>
+<wire x1="-83.82" y1="53.34" x2="-91.44" y2="53.34" width="0.1524" layer="91"/>
+</segment>
+</net>
+<net name="N$14" class="0">
+<segment>
 <pinref part="IC2" gate="G$1" pin="2"/>
-<wire x1="-91.44" y1="55.88" x2="-83.82" y2="55.88" width="0.1524" layer="91"/>
+<wire x1="-83.82" y1="55.88" x2="-88.9" y2="55.88" width="0.1524" layer="91"/>
+<pinref part="T1" gate="G$1" pin="B"/>
+<wire x1="-78.74" y1="43.18" x2="-78.74" y2="35.56" width="0.1524" layer="91"/>
+<wire x1="-78.74" y1="35.56" x2="-73.66" y2="35.56" width="0.1524" layer="91"/>
+<pinref part="R2" gate="G$1" pin="2"/>
+<wire x1="-81.28" y1="40.64" x2="-81.28" y2="43.18" width="0.1524" layer="91"/>
+<wire x1="-81.28" y1="43.18" x2="-78.74" y2="43.18" width="0.1524" layer="91"/>
+<pinref part="D2" gate="1" pin="A"/>
+<wire x1="-78.74" y1="43.18" x2="-76.2" y2="43.18" width="0.1524" layer="91"/>
+<junction x="-78.74" y="43.18"/>
+<wire x1="-81.28" y1="43.18" x2="-88.9" y2="43.18" width="0.1524" layer="91"/>
+<wire x1="-88.9" y1="43.18" x2="-88.9" y2="55.88" width="0.1524" layer="91"/>
+<junction x="-81.28" y="43.18"/>
 </segment>
 </net>
 </nets>
