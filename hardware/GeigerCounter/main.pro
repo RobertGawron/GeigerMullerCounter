@@ -1,15 +1,15 @@
 EAGLE AutoRouter Statistics:
 
-Job           : C:/Users/rgawron/Documents/eagle/GeigerCounter/main.brd
+Job           : C:/Users/rgawron/GeigerMullerCounter/hardware/GeigerCounter/main.brd
 
-Start at      : 20:10:03 (2015-03-29)
-End at        : 20:10:12 (2015-03-29)
+Start at      : 02:20:06 (2015-05-26)
+End at        : 02:20:20 (2015-05-26)
 Elapsed time  : 00:00:00
 
-Signals       :    21   RoutingGrid: 9 mil  Layers: 1
-Connections   :    62   predefined:  50 ( 0 Vias )
+Signals       :    22   RoutingGrid: 5.5 mil  Layers: 1
+Connections   :    66   predefined:  59 ( 10 Vias )
 
-Router memory :   128232
+Router memory :   228000
 
 Job has been interrupted!
 
@@ -22,6 +22,6 @@ max. Total        :         0
 
 Routed            :         0
 Vias              :         0
-Resolution        :    80.6 %
+Resolution        :    89.4 %
 
-Final             : 80.6% finished
+Final             : 89.4% finished
