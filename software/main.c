@@ -13,7 +13,8 @@
 #include "stm32f4xx_exti.h"
 #include "stm32f4xx_syscfg.h"
 
-//#include "stdio/printf.c"
+//#include "stm32f4xx_tim.h"
+#include "tm_stm32f4_delay.h"
 
 void Configure_PB12(void) {
     /* Set variables used */
@@ -74,18 +75,20 @@ void EXTI0_IRQHandler(void) {
     }
 }
 
+static int GMCounts;
+static int oldGMCounts;
+
 /* Handle PB12 interrupt */
 void EXTI15_10_IRQHandler(void) {
     /* Make sure that interrupt flag is set */
     if (EXTI_GetITStatus(EXTI_Line12) != RESET) {
         /* Do your stuff when PB12 is changed */
 
-    	static int x =0;
-    	x++;
+    	GMCounts++;
     	char s[10];
-    	sprintf(s, "%d", x);
+    	sprintf(s, "Current:  %4d", GMCounts);
 
-    	TM_ILI9341_Puts(70, 20, s, &TM_Font_16x26,
+    	TM_ILI9341_Puts(5, 20, s, &TM_Font_16x26,
     					ILI9341_COLOR_WHITE, ILI9341_COLOR_BLACK);
 
         /* Clear interrupt flag */
@@ -93,13 +96,12 @@ void EXTI15_10_IRQHandler(void) {
     }
 }
 
-
-
 int main(void)
 {
 	SystemInit();
 
-	int counter = 0;
+	//TM_TIMER_Init();
+	TM_DELAY_Init();
 
 	/* Configure PB12 as interrupt */
 	Configure_PB12();
@@ -109,18 +111,34 @@ int main(void)
 	/* Initialize ILI9341 LCD on board */
 	TM_ILI9341_Init();
 	TM_ILI9341_Fill(ILI9341_COLOR_BLACK);
-	TM_ILI9341_Rotate(TM_ILI9341_Orientation_Portrait_1);
+	TM_ILI9341_Rotate(TM_ILI9341_Orientation_Landscape_1);
 
 	TM_ILI9341_Puts(5, 5, "Geiger-Muller counter", &TM_Font_7x10,
 					ILI9341_COLOR_WHITE, ILI9341_COLOR_BLACK);
 
-	TM_ILI9341_Puts(70, 20, "0", &TM_Font_16x26,
-					ILI9341_COLOR_WHITE, ILI9341_COLOR_BLACK);
+	GMCounts = 0;
+	TM_DELAY_SetTime(0);
 
 	while (1)
 	{
+		 if (TM_DELAY_Time() >= 60*1000)
+		 {
+			 /* Reset time */
+		     TM_DELAY_SetTime(0);
 
 
+		     oldGMCounts = GMCounts;
+		     GMCounts = 0;
+		     char textBuffer[10];
+		     sprintf(textBuffer, "Previous: %4d", oldGMCounts);
+
+		     TM_ILI9341_Puts(5, 50, textBuffer, &TM_Font_16x26,
+		    		 	 ILI9341_COLOR_WHITE, ILI9341_COLOR_BLACK);
+
+		     //TM_ILI9341_Puts(5, 20, textBuffer, &TM_Font_16x26,
+		     //    					ILI9341_COLOR_WHITE, ILI9341_COLOR_BLACK);
+
+		 }
 	}
 
 }
