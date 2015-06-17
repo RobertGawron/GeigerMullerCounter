@@ -36,8 +36,8 @@
 // TODO move to a separate file
 typedef struct gm_measurement_t
 {
-	uint8_t current_counts;
-	uint8_t previous_counts;
+    uint8_t current_counts;
+    uint8_t previous_counts;
 } gm_measurement_t;
 
 static gm_measurement_t gm_measurement;
@@ -50,12 +50,12 @@ void EXTI15_10_IRQHandler(void) {
     if (EXTI_GetITStatus(EXTI_Line12) != RESET) {
         /* Do your stuff when PB12 is changed */
 
-    	// TODO synchronization
-    	gm_measurement.current_counts++;
+        // TODO synchronization
+        gm_measurement.current_counts++;
 
-    	char textBuffer[10];
-    	sprintf(textBuffer, "Current:  %4d", gm_measurement.current_counts);
-    	gm_display_update(GM_DISPLAY_FIELD_CURRENT_VALUE, textBuffer);
+        char textBuffer[10];
+        sprintf(textBuffer, "Current:  %4d", gm_measurement.current_counts);
+        gm_display_update(GM_DISPLAY_FIELD_CURRENT_VALUE, textBuffer);
 
 
         /* Clear interrupt flag */
@@ -65,18 +65,18 @@ void EXTI15_10_IRQHandler(void) {
 
 int main(void)
 {
-	SystemInit();
+    SystemInit();
 
-	gm_display_init();
+    gm_display_init();
 
-	TM_DELAY_Init();
+    TM_DELAY_Init();
 
-	/* Configure PB12 as interrupt */
-	Configure_PB12();
+    /* Configure PB12 as interrupt */
+    Configure_PB12();
 
-	//GMCounts = 0;
-	gm_measurement.current_counts = 0U;
-	gm_measurement.previous_counts = 0U;
+    //GMCounts = 0;
+    gm_measurement.current_counts = 0U;
+    gm_measurement.previous_counts = 0U;
 
     char textBuffer[10];
 
@@ -87,24 +87,24 @@ int main(void)
     gm_display_update(GM_DISPLAY_FIELD_PREVIOUS_VALUE, textBuffer);
 
 
-	TM_DELAY_SetTime(0);
+    TM_DELAY_SetTime(0);
 
-	while (1)
-	{
-		 if (TM_DELAY_Time() >= 60*1000)
-		 {
-			 /* Reset time */
-		     TM_DELAY_SetTime(0);
+    while (1)
+    {
+         if (TM_DELAY_Time() >= 60*1000)
+         {
+             /* Reset time */
+             TM_DELAY_SetTime(0);
 
-		     gm_measurement.previous_counts = gm_measurement.current_counts;
-		     gm_measurement.current_counts = 0U;
+             gm_measurement.previous_counts = gm_measurement.current_counts;
+             gm_measurement.current_counts = 0U;
 
-		     sprintf(textBuffer, "Current: %4d", gm_measurement.previous_counts);
-		     gm_display_update(GM_DISPLAY_FIELD_CURRENT_VALUE, textBuffer);
+             sprintf(textBuffer, "Current: %4d", gm_measurement.previous_counts);
+             gm_display_update(GM_DISPLAY_FIELD_CURRENT_VALUE, textBuffer);
 
-		     sprintf(textBuffer, "Previous: %4d", gm_measurement.previous_counts);
-		     gm_display_update(GM_DISPLAY_FIELD_PREVIOUS_VALUE, textBuffer);
-		 }
-	}
+             sprintf(textBuffer, "Previous: %4d", gm_measurement.previous_counts);
+             gm_display_update(GM_DISPLAY_FIELD_PREVIOUS_VALUE, textBuffer);
+         }
+    }
 
 }
