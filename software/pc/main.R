@@ -1,0 +1,12 @@
+args <- commandArgs(TRUE)
+y <- scan(args[1])
+#print (y)
+#print (c(0:7))
+#x <- c(0,1,2,3,4,5,6)
+x <- c(1:length(y))
+png(filename = "results.png", height = 500, width = 800, bg = "white")
+par(pch=22, col="red") # plotting symbol and color 
+#plot(x, y, xlab = "time [min]", ylab = "counts", type="l", main="GM results")
+plot(x, y,  xlab = "time [min]", ylab = "counts")
+lines(x, y,  type="p") 
+lines(x, y,  type="h")
