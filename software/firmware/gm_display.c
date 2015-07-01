@@ -20,41 +20,36 @@
 #include "gm_display.h"
 
 const uint16_t GM_BACKGROUND_COLOR = ILI9341_COLOR_BLACK;
-const TM_ILI9341_Orientation_t GM_ORIENTATION = TM_ILI9341_Orientation_Landscape_1;
+const TM_ILI9341_Orientation_t GM_ORIENTATION =
+        TM_ILI9341_Orientation_Landscape_1;
 
-void gm_display_init()
-{
+void gm_display_init() {
     /* Initialize ILI9341 LCD on board */
     TM_ILI9341_Init();
     TM_ILI9341_Fill(GM_BACKGROUND_COLOR);
     TM_ILI9341_Rotate(GM_ORIENTATION);
 }
-void gm_display_update(enum gm_display_field field, char* content)
-{
+void gm_display_update(enum gm_display_field field, char* content) {
     // TODO remove magic numbers
-    switch (field)
-    {
-    case GM_DISPLAY_FIELD_CURRENT_VALUE:
-    {
-        TM_ILI9341_Puts(5, 20, content, &TM_Font_16x26,
-                                ILI9341_COLOR_WHITE, ILI9341_COLOR_BLACK);
+    switch (field) {
+        case GM_DISPLAY_FIELD_CURRENT_VALUE: {
+            TM_ILI9341_Puts(5, 20, content, &TM_Font_16x26, ILI9341_COLOR_WHITE,
+                    ILI9341_COLOR_BLACK);
 
-        break;
-    }
-    case GM_DISPLAY_FIELD_PREVIOUS_VALUE:
-    {
-        TM_ILI9341_Puts(5, 50, content, &TM_Font_16x26,
-                                ILI9341_COLOR_WHITE, ILI9341_COLOR_BLACK);
-        break;
-    }
+            break;
+        }
+        case GM_DISPLAY_FIELD_PREVIOUS_VALUE: {
+            TM_ILI9341_Puts(5, 50, content, &TM_Font_16x26, ILI9341_COLOR_WHITE,
+                    ILI9341_COLOR_BLACK);
+            break;
+        }
 
-    default:
-    {
-        // ignore incorrect fields
-        break;
-    }
+        default: {
+            // ignore incorrect fields
+            break;
+        }
     }
 }
 
-
-void gm_dummy_graph(){}
+void gm_dummy_graph() {
+}

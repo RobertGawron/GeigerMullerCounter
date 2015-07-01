@@ -32,7 +32,6 @@
 #include "gm_gpio.h"
 #include "gm_graph.h"
 
-
 static gm_measurements_t gm_measurements;
 
 // TODO move to gm_display file
@@ -44,15 +43,17 @@ void EXTI15_10_IRQHandler(void) {
         /* Do your stuff when PB12 is changed */
 
         // TODO synchronization
- /*       gm_measurement.current_counts++;
+        /*       gm_measurement.current_counts++;
 
+         char textBuffer[10];
+         sprintf(textBuffer, "Current:  %4d", gm_measurement.current_counts);
+         gm_display_update(GM_DISPLAY_FIELD_CURRENT_VALUE, textBuffer);
+         */
+        gm_measurements_update_sample(&gm_measurements);
         char textBuffer[10];
-        sprintf(textBuffer, "Current:  %4d", gm_measurement.current_counts);
-        gm_display_update(GM_DISPLAY_FIELD_CURRENT_VALUE, textBuffer);
-*/
-    	gm_measurements_update_sample(&gm_measurements);
-        char textBuffer[10];
-        sprintf(textBuffer, "Current:  %4d", gm_measurements_get(&gm_measurements, GM_MEASUREMENTS_ITERR_CURR));
+        sprintf(textBuffer, "Current:  %4d",
+                gm_measurements_get(&gm_measurements,
+                        GM_MEASUREMENTS_ITERR_CURR));
         gm_display_update(GM_DISPLAY_FIELD_CURRENT_VALUE, textBuffer);
 
         /* Clear interrupt flag */
@@ -60,8 +61,7 @@ void EXTI15_10_IRQHandler(void) {
     }
 }
 
-int main(void)
-{
+int main(void) {
     SystemInit();
 
     /* Configure display */
@@ -75,8 +75,6 @@ int main(void)
     /* Configure PB12 as interrupt */
     Configure_PB12();
 
-
-
     /* No data yet, show blank marks */
     char textBuffer[10];
 
@@ -86,60 +84,60 @@ int main(void)
     sprintf(textBuffer, "Previous: ..");
     gm_display_update(GM_DISPLAY_FIELD_PREVIOUS_VALUE, textBuffer);
 
-/*    gm_measurement.current_counts = 0U;
-    gm_measurement.previous_counts = 0U;
+    /*    gm_measurement.current_counts = 0U;
+     gm_measurement.previous_counts = 0U;
 
-    char textBuffer[10];
+     char textBuffer[10];
 
-    sprintf(textBuffer, "Counting: %4d", gm_measurement.previous_counts);
-    gm_display_update(GM_DISPLAY_FIELD_CURRENT_VALUE, textBuffer);
+     sprintf(textBuffer, "Counting: %4d", gm_measurement.previous_counts);
+     gm_display_update(GM_DISPLAY_FIELD_CURRENT_VALUE, textBuffer);
 
-    sprintf(textBuffer, "Previous: %4d", gm_measurement.previous_counts);
-    gm_display_update(GM_DISPLAY_FIELD_PREVIOUS_VALUE, textBuffer);
-*/
+     sprintf(textBuffer, "Previous: %4d", gm_measurement.previous_counts);
+     gm_display_update(GM_DISPLAY_FIELD_PREVIOUS_VALUE, textBuffer);
+     */
 
-/*
-    gm_measurements_init(&gm_measurements);
-    gm_measurements_update_sample(&gm_measurements);
-    gm_measurements_update_sample(&gm_measurements);
-    gm_measurements_update_sample(&gm_measurements);
- //   char textBuffer[10];
-    sprintf(textBuffer, "Counting: %4d", gm_measurements_get(&gm_measurements, GM_MEASUREMENTS_ITERR_CURR));
-    gm_display_update(GM_DISPLAY_FIELD_CURRENT_VALUE, textBuffer);
-*/
-
+    /*
+     gm_measurements_init(&gm_measurements);
+     gm_measurements_update_sample(&gm_measurements);
+     gm_measurements_update_sample(&gm_measurements);
+     gm_measurements_update_sample(&gm_measurements);
+     //   char textBuffer[10];
+     sprintf(textBuffer, "Counting: %4d", gm_measurements_get(&gm_measurements, GM_MEASUREMENTS_ITERR_CURR));
+     gm_display_update(GM_DISPLAY_FIELD_CURRENT_VALUE, textBuffer);
+     */
 
     TM_DELAY_SetTime(0);
 
-    while (1)
-    {
-         //if (TM_DELAY_Time() >= 60*1000)
-    	if (TM_DELAY_Time() >= 2*1000)
-         {
-             /* Reset time */
-             TM_DELAY_SetTime(0);
+    while (1) {
+        //if (TM_DELAY_Time() >= 60*1000)
+        if (TM_DELAY_Time() >= 2 * 1000) {
+            /* Reset time */
+            TM_DELAY_SetTime(0);
 
 //             gm_measurement.previous_counts = gm_measurement.current_counts;
 //             gm_measurement.current_counts = 0U;
-             gm_measurements_update_sample(&gm_measurements);
-               gm_measurements_update_sample(&gm_measurements);
-               gm_measurements_update_sample(&gm_measurements);
+            gm_measurements_update_sample(&gm_measurements);
+            gm_measurements_update_sample(&gm_measurements);
+            gm_measurements_update_sample(&gm_measurements);
 
+            sprintf(textBuffer, "Counting: %4d",
+                    gm_measurements_get(&gm_measurements,
+                            GM_MEASUREMENTS_ITERR_CURR));
+            gm_display_update(GM_DISPLAY_FIELD_CURRENT_VALUE, textBuffer);
 
-             sprintf(textBuffer, "Counting: %4d", gm_measurements_get(&gm_measurements, GM_MEASUREMENTS_ITERR_CURR));
-             gm_display_update(GM_DISPLAY_FIELD_CURRENT_VALUE, textBuffer);
+            sprintf(textBuffer, "Previous: %4d",
+                    gm_measurements_get(&gm_measurements,
+                            GM_MEASUREMENTS_ITERR_PREV));
+            gm_display_update(GM_DISPLAY_FIELD_PREVIOUS_VALUE, textBuffer);
 
-             sprintf(textBuffer, "Previous: %4d", gm_measurements_get(&gm_measurements, GM_MEASUREMENTS_ITERR_PREV));
-             gm_display_update(GM_DISPLAY_FIELD_PREVIOUS_VALUE, textBuffer);
-
-             //gm_display_update(GM_DISPLAY_FIELD_GRAPH, textBuffer, &gm_measurements);
-             /*
+            //gm_display_update(GM_DISPLAY_FIELD_GRAPH, textBuffer, &gm_measurements);
+            /*
              sprintf(textBuffer, "Counting: %4d", gm_measurement.previous_counts);
              gm_display_update(GM_DISPLAY_FIELD_CURRENT_VALUE, textBuffer);
 
              sprintf(textBuffer, "Previous: %4d", gm_measurement.previous_counts);
              gm_display_update(GM_DISPLAY_FIELD_PREVIOUS_VALUE, textBuffer);
-*/         }
+             */}
     }
 
 }

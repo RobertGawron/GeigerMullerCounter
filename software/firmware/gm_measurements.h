@@ -25,18 +25,15 @@
 #define GM_MAX_MEASUREMENTS_ITEMS 240
 
 /* Ring-buffer, fixed-size. */
-typedef struct gm_measurements_t
-{
-	uint8_t counts[GM_MAX_MEASUREMENTS_ITEMS];
+typedef struct gm_measurements_t {
+    uint8_t counts[GM_MAX_MEASUREMENTS_ITEMS];
     uint16_t index;
     uint16_t capacity;
 } gm_measurements_t;
 
 /* It's like a simple iterator but it isn't. */
-enum gm_measurements_iterr
-{
-	GM_MEASUREMENTS_ITERR_CURR,
-	GM_MEASUREMENTS_ITERR_PREV,
+enum gm_measurements_iterr {
+    GM_MEASUREMENTS_ITERR_CURR, GM_MEASUREMENTS_ITERR_PREV,
 
 };
 
@@ -46,6 +43,7 @@ void gm_measurements_update_sample(gm_measurements_t *object);
 
 void gm_measurements_next_sample(gm_measurements_t *object);
 
-uint8_t gm_measurements_get(gm_measurements_t *object, enum gm_measurements_iterr iterr);
+uint8_t gm_measurements_get(gm_measurements_t *object,
+        enum gm_measurements_iterr iterr);
 
 #endif

@@ -19,58 +19,47 @@
  */
 #include "gm_measurements.h"
 
-void gm_measurements_init(gm_measurements_t *object)
-{
-	object->index = 0U;
-	object->capacity = GM_MAX_MEASUREMENTS_ITEMS;
-	object->counts[0U] = 0U;
+void gm_measurements_init(gm_measurements_t *object) {
+    object->index = 0U;
+    object->capacity = GM_MAX_MEASUREMENTS_ITEMS;
+    object->counts[0U] = 0U;
 }
 
-void gm_measurements_update_sample(gm_measurements_t *object)
-{
-	object->counts[object->index]++;
+void gm_measurements_update_sample(gm_measurements_t *object) {
+    object->counts[object->index]++;
 }
 
-void gm_measurements_next_sample(gm_measurements_t *object)
-{
-	object->index++;
+void gm_measurements_next_sample(gm_measurements_t *object) {
+    object->index++;
 
-	if (object->index == object->capacity)
-	{
-		object->index = 0U;
-	}
+    if (object->index == object->capacity) {
+        object->index = 0U;
+    }
 }
 
-uint8_t gm_measurements_get(gm_measurements_t *object, enum gm_measurements_iterr iterr)
-{
-	uint8_t ret = 0U;
-	switch (iterr)
-	{
-		case GM_MEASUREMENTS_ITERR_CURR:
-		{
-			uint16_t index = object->index ;
-			ret = object->counts[index];
-			break;
-		}
-		case GM_MEASUREMENTS_ITERR_PREV:
-		{
-			if (object->index > 0U)
-			{
-				uint16_t index = object->index - 1U;
-				ret = object->counts[index];
-			}
-			else
-			{
-				uint16_t index = object->capacity - 1U;
-				ret = object->counts[index];
-			}
-		}
-		default:
-		{
-			/* should not happened */
-			ret = 0U;
-		}
-	}
+uint8_t gm_measurements_get(gm_measurements_t *object,
+        enum gm_measurements_iterr iterr) {
+    uint8_t ret = 0U;
+    switch (iterr) {
+        case GM_MEASUREMENTS_ITERR_CURR: {
+            uint16_t index = object->index;
+            ret = object->counts[index];
+            break;
+        }
+        case GM_MEASUREMENTS_ITERR_PREV: {
+            if (object->index > 0U) {
+                uint16_t index = object->index - 1U;
+                ret = object->counts[index];
+            } else {
+                uint16_t index = object->capacity - 1U;
+                ret = object->counts[index];
+            }
+        }
+        default: {
+            /* should not happened */
+            ret = 0U;
+        }
+    }
 
-	return ret;
+    return ret;
 }

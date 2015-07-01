@@ -28,12 +28,11 @@
 /* project */
 #include "gm_measurements.h"
 
-enum gm_display_field
-{
-	GM_DISPLAY_FIELD_CURRENT_VALUE,
-	GM_DISPLAY_FIELD_PREVIOUS_VALUE,
-	GM_DISPLAY_FIELD_GRAPH,
-	GM_DISPLAY_FIELD_LAST
+enum gm_display_field {
+    GM_DISPLAY_FIELD_CURRENT_VALUE,
+    GM_DISPLAY_FIELD_PREVIOUS_VALUE,
+    GM_DISPLAY_FIELD_GRAPH,
+    GM_DISPLAY_FIELD_LAST
 };
 
 void gm_display_init();
