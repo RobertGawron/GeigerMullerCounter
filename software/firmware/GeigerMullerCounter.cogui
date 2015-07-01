@@ -15,50 +15,58 @@
 <part id="2"/>
 <part id="3"/>
 <part id="4"/>
+<part id="5"/>
 </presentation>
 </folder>
 </info>
 </editorArea>
-<editor activePart="true" focus="true" id="org.eclipse.cdt.ui.editor.CEditor" name="main.c" partName="main.c" path="C:/Users/rgawron/GeigerMullerCounter/software/main.c" title="main.c" tooltip="C:/Users/rgawron/GeigerMullerCounter/software/main.c" workbook="DefaultEditorWorkbook">
+<editor id="org.eclipse.cdt.ui.editor.CEditor" name="main.c" partName="main.c" path="C:/Users/rgawron/GeigerMullerCounter/software/firmware/main.c" title="main.c" tooltip="C:/Users/rgawron/GeigerMullerCounter/software/firmware/main.c" workbook="DefaultEditorWorkbook">
 <input factoryID="org.eclipse.ui.part.FileEditorInputFactory" path="/GeigerMullerCounter/main.c"/>
-<editorState selectionHorizontalPixel="0" selectionLength="0" selectionOffset="3499" selectionTopPixel="1951"/>
+<editorState selectionHorizontalPixel="0" selectionLength="0" selectionOffset="962" selectionTopPixel="282"/>
 </editor>
-<editor id="org.eclipse.cdt.ui.editor.CEditor" name="gm_display.h" partName="gm_display.h" path="C:/Users/rgawron/GeigerMullerCounter/software/gm_display.h" title="gm_display.h" tooltip="C:/Users/rgawron/GeigerMullerCounter/software/gm_display.h" workbook="DefaultEditorWorkbook">
+<editor id="org.eclipse.cdt.ui.editor.CEditor" name="gm_display.h" partName="gm_display.h" path="C:/Users/rgawron/GeigerMullerCounter/software/firmware/gm_display.h" title="gm_display.h" tooltip="C:/Users/rgawron/GeigerMullerCounter/software/firmware/gm_display.h" workbook="DefaultEditorWorkbook">
 <input factoryID="org.eclipse.ui.part.FileEditorInputFactory" path="/GeigerMullerCounter/gm_display.h"/>
-<editorState selectionHorizontalPixel="0" selectionLength="76" selectionOffset="1276" selectionTopPixel="317"/>
+<editorState selectionHorizontalPixel="0" selectionLength="0" selectionOffset="1428" selectionTopPixel="441"/>
 </editor>
-<editor id="org.eclipse.cdt.ui.editor.CEditor" name="gm_display.c" partName="gm_display.c" path="C:/Users/rgawron/GeigerMullerCounter/software/gm_display.c" title="gm_display.c" tooltip="C:/Users/rgawron/GeigerMullerCounter/software/gm_display.c" workbook="DefaultEditorWorkbook">
+<editor id="org.eclipse.cdt.ui.editor.CEditor" name="gm_display.c" partName="gm_display.c" path="C:/Users/rgawron/GeigerMullerCounter/software/firmware/gm_display.c" title="gm_display.c" tooltip="C:/Users/rgawron/GeigerMullerCounter/software/firmware/gm_display.c" workbook="DefaultEditorWorkbook">
 <input factoryID="org.eclipse.ui.part.FileEditorInputFactory" path="/GeigerMullerCounter/gm_display.c"/>
-<editorState selectionHorizontalPixel="0" selectionLength="0" selectionOffset="1214" selectionTopPixel="232"/>
+<editorState selectionHorizontalPixel="0" selectionLength="25" selectionOffset="1934" selectionTopPixel="696"/>
 </editor>
-<editor id="org.eclipse.cdt.ui.editor.CEditor" name="tm_stm32f4_ili9341.h" partName="tm_stm32f4_ili9341.h" path="C:/Users/rgawron/GeigerMullerCounter/software/tm_stm32fili9341/tm_stm32f4_ili9341.h" title="tm_stm32f4_ili9341.h" tooltip="C:/Users/rgawron/GeigerMullerCounter/software/tm_stm32fili9341/tm_stm32f4_ili9341.h" workbook="DefaultEditorWorkbook">
+<editor id="org.eclipse.cdt.ui.editor.CEditor" name="tm_stm32f4_ili9341.h" partName="tm_stm32f4_ili9341.h" path="C:/Users/rgawron/GeigerMullerCounter/software/firmware/tm_stm32fili9341/tm_stm32f4_ili9341.h" title="tm_stm32f4_ili9341.h" tooltip="C:/Users/rgawron/GeigerMullerCounter/software/firmware/tm_stm32fili9341/tm_stm32f4_ili9341.h" workbook="DefaultEditorWorkbook">
 <input factoryID="org.eclipse.ui.part.FileEditorInputFactory" path="/GeigerMullerCounter/tm_stm32f4_ili9341/tm_stm32f4_ili9341.h"/>
-<editorState selectionHorizontalPixel="0" selectionLength="19" selectionOffset="4641" selectionTopPixel="2227"/>
+<editorState selectionHorizontalPixel="0" selectionLength="60" selectionOffset="4489" selectionTopPixel="2160"/>
 </editor>
-<editor id="org.eclipse.cdt.ui.editor.CEditor" name="tm_stm32f4_ili9341.c" partName="tm_stm32f4_ili9341.c" path="C:/Users/rgawron/GeigerMullerCounter/software/tm_stm32fili9341/tm_stm32f4_ili9341.c" title="tm_stm32f4_ili9341.c" tooltip="C:/Users/rgawron/GeigerMullerCounter/software/tm_stm32fili9341/tm_stm32f4_ili9341.c" workbook="DefaultEditorWorkbook">
-<input factoryID="org.eclipse.ui.part.FileEditorInputFactory" path="/GeigerMullerCounter/tm_stm32f4_ili9341/tm_stm32f4_ili9341.c"/>
-<editorState selectionHorizontalPixel="0" selectionLength="24" selectionOffset="6694" selectionTopPixel="3706"/>
+<editor id="org.eclipse.cdt.ui.editor.CEditor" name="gm_measurements.c" partName="gm_measurements.c" path="C:/Users/rgawron/GeigerMullerCounter/software/firmware/gm_measurements.c" title="gm_measurements.c" tooltip="C:/Users/rgawron/GeigerMullerCounter/software/firmware/gm_measurements.c" workbook="DefaultEditorWorkbook">
+<input factoryID="org.eclipse.ui.part.FileEditorInputFactory" path="/GeigerMullerCounter/gm_measurements.c"/>
+<editorState selectionHorizontalPixel="0" selectionLength="28" selectionOffset="940" selectionTopPixel="428"/>
+</editor>
+<editor activePart="true" focus="true" id="org.eclipse.cdt.ui.editor.CEditor" name="gm_measurements.h" partName="gm_measurements.h" path="C:/Users/rgawron/GeigerMullerCounter/software/firmware/gm_measurements.h" title="gm_measurements.h" tooltip="C:/Users/rgawron/GeigerMullerCounter/software/firmware/gm_measurements.h" workbook="DefaultEditorWorkbook">
+<input factoryID="org.eclipse.ui.part.FileEditorInputFactory" path="/GeigerMullerCounter/gm_measurements.h"/>
+<editorState selectionHorizontalPixel="0" selectionLength="0" selectionOffset="1109" selectionTopPixel="543"/>
 </editor>
 </editors>
 <views>
 <view id="org.coocox.builder.ui.views.ProjectView" partName="Project">
-<viewState CommonNavigator.LINKING_ENABLED="0" horizontalPosition="0" org.eclipse.ui.navigator.resources.workingSets.showTopLevelWorkingSets="0" verticalPosition="3">
+<viewState CommonNavigator.LINKING_ENABLED="0" horizontalPosition="0" org.eclipse.ui.navigator.resources.workingSets.showTopLevelWorkingSets="0" verticalPosition="2">
 <expanded>
 <element path="/GeigerMullerCounter"/>
 <element path="/GeigerMullerCounter/syscalls"/>
 </expanded>
 <selection>
-<element path="/GeigerMullerCounter/gm_display.c"/>
+<element path="/GeigerMullerCounter/gm_measurements.h"/>
 </selection>
 </viewState>
 </view>
 <view id="org.coocox.component.ui.ComponentView" partName="Components">
 <viewState/>
 </view>
-<view id="org.eclipse.ui.console.ConsoleView" partName="Console">
-<viewState/>
+<view id="org.eclipse.search.ui.views.SearchView" partName="Search">
+<viewState isPinned="false">
+<view IMemento.internal.id="org.eclipse.cdt.ui.pdomSearchViewPage" definitionColumnWidth="150" locationColumnWidth="300" matchColumnWidth="300" org.eclipse.search.lastActivation="1" org.eclipse.search.resultpage.layout="2" showEnclosingDefinitions="true"/>
+<view IMemento.internal.id="" org.eclipse.search.lastActivation="0"/>
+</viewState>
 </view>
-<view id="org.coocox.component.ui.Help" partName="Help">
+<view id="org.eclipse.ui.console.ConsoleView" partName="Console">
 <viewState/>
 </view>
 </views>
@@ -94,8 +102,8 @@
 <hide_toolbar_item_id id="org.eclipse.debug.ui.commands.TerminateAndRelaunch"/>
 <view id="org.coocox.component.ui.ComponentView"/>
 <view id="org.coocox.builder.ui.views.ProjectView"/>
-<view id="org.coocox.component.ui.Help"/>
 <view id="org.eclipse.ui.console.ConsoleView"/>
+<view id="org.eclipse.search.ui.views.SearchView"/>
 <fastViewBars/>
 <layout>
 <mainWindow>
@@ -113,25 +121,25 @@
 <page content="org.eclipse.ui.internal.introview" label="LabelNotFound"/>
 </folder>
 </info>
-<info folder="true" part="org.eclipse.ui.internal.ViewStack@10fb9e1" ratio="0.6805112" ratioLeft="426" ratioRight="200" relationship="4" relative="org.eclipse.ui.internal.ViewStack@a438d">
+<info folder="true" part="org.eclipse.ui.internal.ViewStack@10fb9e1" ratio="0.61821085" ratioLeft="387" ratioRight="239" relationship="4" relative="org.eclipse.ui.internal.ViewStack@a438d">
 <folder activePageID="org.eclipse.ui.console.ConsoleView" appearance="2" expanded="2">
 <page content="org.eclipse.ui.console.ConsoleView" label="Console"/>
+<page content="org.eclipse.search.ui.views.SearchView" label="Search"/>
 <presentation id="org.eclipse.ui.presentations.WorkbenchPresentationFactory">
 <part id="0"/>
+<part id="1"/>
 </presentation>
 </folder>
 </info>
 <info part="org.coocox.builder.ui.exampleView" ratio="0.21944036" ratioLeft="298" ratioRight="1060" relationship="2" relative="org.eclipse.ui.internal.ViewStack@a438d"/>
 <info folder="true" part="org.eclipse.ui.internal.ViewStack@f1aaba" ratio="0.7198113" ratioLeft="763" ratioRight="297" relationship="2" relative="org.coocox.builder.ui.exampleView">
-<folder activePageID="org.coocox.component.ui.Help" appearance="2" expanded="2">
-<page content="org.coocox.component.ui.Help" label="Help"/>
+<folder appearance="2" expanded="2">
+<page content="org.coocox.component.ui.Help" label="LabelNotFound"/>
 <page content="org.eclipse.debug.ui.BreakpointView" label="LabelNotFound"/>
 <page content="org.eclipse.ui.views.ContentOutline" label="LabelNotFound"/>
 <page content="org.coocox.coassistant.view.CoAssistantView" label="LabelNotFound"/>
 <page content="org.coocox.builder.ui.MoreExampleView" label="LabelNotFound"/>
-<presentation id="org.eclipse.ui.presentations.WorkbenchPresentationFactory">
-<part id="0"/>
-</presentation>
+<presentation id="org.eclipse.ui.presentations.WorkbenchPresentationFactory"/>
 </folder>
 </info>
 <info part="org.eclipse.ui.editorss" ratio="0.4499205" ratioLeft="283" ratioRight="346" relationship="4" relative="org.coocox.builder.ui.exampleView"/>
@@ -151,165 +159,161 @@
 <navigationHistory>
 <editors>
 <editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.cdt.ui.editor.CEditor" path="/GeigerMullerCounter/main.c"/>
-<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.cdt.ui.editor.CEditor" path="/GeigerMullerCounter/display.h"/>
-<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.cdt.ui.editor.CEditor" path="/GeigerMullerCounter/display.c"/>
 <editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.cdt.ui.editor.CEditor" path="/GeigerMullerCounter/gm_display.h"/>
-<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.cdt.ui.editor.CEditor" path="/GeigerMullerCounter/gm_display.c"/>
-<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.cdt.ui.editor.CEditor" path="/GeigerMullerCounter/tm_stm32fdelay/tm_stm32f4_delay.c"/>
-<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.cdt.ui.editor.CEditor" path="/GeigerMullerCounter/defines.h"/>
+<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.cdt.ui.editor.CEditor" path="/GeigerMullerCounter/gm_measurements.c"/>
+<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.cdt.ui.editor.CEditor" path="/GeigerMullerCounter/gm_measurements.h"/>
 <editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.cdt.ui.editor.CEditor" path="/GeigerMullerCounter/gm_display.c"/>
 <editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.cdt.ui.editor.CEditor" path="/GeigerMullerCounter/tm_stm32f4_ili9341/tm_stm32f4_ili9341.h"/>
-<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.cdt.ui.editor.CEditor" path="/GeigerMullerCounter/tm_stm32f4_ili9341/tm_stm32f4_ili9341.c"/>
 </editors>
-<item historyLabel="display.c" index="2">
-<position info="not_deleted" x="0" y="0"/>
+<item historyLabel="main.c" index="0">
+<position info="not_deleted" x="2753" y="0"/>
 </item>
 <item historyLabel="main.c" index="0">
-<position info="not_deleted" x="3796" y="0"/>
-</item>
-<item historyLabel="display.h" index="1">
-<position info="not_deleted" x="8" y="0"/>
-</item>
-<item historyLabel="gm_display.h" index="3">
-<position info="not_deleted" x="969" y="0"/>
-</item>
-<item historyLabel="gm_display.c" index="4">
-<position info="not_deleted" x="965" y="0"/>
-</item>
-<item historyLabel="tm_stm32f4_delay.c" index="5">
-<position info="not_deleted" x="0" y="876"/>
-</item>
-<item historyLabel="gm_display.h" index="3">
-<position info="not_deleted" x="709" y="0"/>
-</item>
-<item historyLabel="gm_display.c" index="4">
-<position info="not_deleted" x="954" y="0"/>
+<position info="not_deleted" x="2190" y="0"/>
 </item>
 <item historyLabel="main.c" index="0">
-<position info="not_deleted" x="3796" y="0"/>
+<position info="not_deleted" x="2436" y="0"/>
 </item>
 <item historyLabel="main.c" index="0">
-<position info="not_deleted" x="376" y="0"/>
-</item>
-<item historyLabel="gm_display.h" index="3">
-<position info="not_deleted" x="709" y="0"/>
-</item>
-<item historyLabel="gm_display.c" index="4">
-<position info="not_deleted" x="954" y="0"/>
-</item>
-<item historyLabel="defines.h" index="6">
-<position info="not_deleted" x="0" y="0"/>
-</item>
-<item historyLabel="gm_display.h" index="3">
-<position info="not_deleted" x="709" y="0"/>
+<position info="not_deleted" x="1990" y="90"/>
 </item>
 <item historyLabel="main.c" index="0">
-<position info="not_deleted" x="376" y="0"/>
-</item>
-<item historyLabel="gm_display.h" index="3">
-<position info="not_deleted" x="709" y="0"/>
+<position info="not_deleted" x="2112" y="0"/>
 </item>
 <item historyLabel="main.c" index="0">
-<position info="not_deleted" x="226" y="0"/>
-</item>
-<item historyLabel="defines.h" index="6">
-<position info="not_deleted" x="0" y="0"/>
+<position info="not_deleted" x="2755" y="3"/>
 </item>
 <item historyLabel="main.c" index="0">
-<position info="not_deleted" x="226" y="0"/>
-</item>
-<item historyLabel="gm_display.h" index="3">
-<position info="not_deleted" x="0" y="0"/>
-</item>
-<item historyLabel="gm_display.h" index="3">
-<position info="not_deleted" x="1249" y="23"/>
-</item>
-<item historyLabel="gm_display.c" index="7">
-<position info="not_deleted" x="1276" y="0"/>
+<position info="not_deleted" x="4024" y="0"/>
 </item>
 <item historyLabel="main.c" index="0">
-<position info="not_deleted" x="56" y="18"/>
-</item>
-<item historyLabel="gm_display.h" index="3">
-<position info="not_deleted" x="1253" y="0"/>
+<position info="not_deleted" x="4091" y="0"/>
 </item>
 <item historyLabel="main.c" index="0">
-<position info="not_deleted" x="3100" y="273"/>
+<position info="not_deleted" x="3998" y="45"/>
 </item>
-<item historyLabel="gm_display.h" index="3">
-<position info="not_deleted" x="1253" y="0"/>
+<item historyLabel="main.c" index="0">
+<position info="not_deleted" x="4572" y="84"/>
 </item>
-<item historyLabel="gm_display.c" index="7">
+<item historyLabel="main.c" index="0">
+<position info="not_deleted" x="4899" y="0"/>
+</item>
+<item historyLabel="main.c" index="0">
+<position info="not_deleted" x="3318" y="0"/>
+</item>
+<item historyLabel="main.c" index="0">
+<position info="not_deleted" x="3153" y="54"/>
+</item>
+<item historyLabel="gm_display.h" index="1">
+<position info="not_deleted" x="1253" y="22"/>
+</item>
+<item historyLabel="main.c" index="0">
 <position/>
 </item>
-<item historyLabel="tm_stm32f4_ili9341.h" index="8">
-<position info="not_deleted" x="4641" y="19"/>
+<item historyLabel="gm_measurements.c" index="2">
+<position info="not_deleted" x="2011" y="0"/>
 </item>
-<item historyLabel="gm_display.c" index="7">
-<position/>
+<item historyLabel="gm_measurements.h" index="3">
+<position info="not_deleted" x="1700" y="0"/>
 </item>
-<item historyLabel="tm_stm32f4_ili9341.h" index="8">
-<position info="not_deleted" x="4641" y="19"/>
+<item historyLabel="gm_display.h" index="1">
+<position info="not_deleted" x="0" y="938"/>
 </item>
-<item historyLabel="gm_display.c" index="7">
-<position/>
+<item historyLabel="gm_measurements.h" index="3">
+<position info="not_deleted" x="1700" y="0"/>
 </item>
-<item historyLabel="tm_stm32f4_ili9341.h" index="8">
-<position info="not_deleted" x="4641" y="19"/>
+<item historyLabel="gm_display.c" index="4">
+<position info="not_deleted" x="1695" y="0"/>
 </item>
-<item historyLabel="gm_display.c" index="7">
-<position info="not_deleted" x="1207" y="1"/>
+<item historyLabel="gm_measurements.c" index="2">
+<position info="not_deleted" x="2011" y="0"/>
 </item>
-<item historyLabel="tm_stm32f4_ili9341.c" index="9">
-<position info="not_deleted" x="6265" y="8"/>
+<item historyLabel="gm_display.h" index="1">
+<position info="not_deleted" x="0" y="938"/>
 </item>
-<item historyLabel="gm_display.c" index="7">
-<position info="not_deleted" x="1109" y="0"/>
+<item historyLabel="gm_measurements.c" index="2">
+<position info="not_deleted" x="2011" y="0"/>
 </item>
-<item historyLabel="gm_display.h" index="3">
-<position info="not_deleted" x="1253" y="0"/>
+<item historyLabel="gm_measurements.h" index="3">
+<position info="not_deleted" x="974" y="0"/>
 </item>
-<item historyLabel="main.c" index="0">
-<position info="not_deleted" x="89" y="90"/>
+<item historyLabel="tm_stm32f4_ili9341.h" index="5">
+<position info="not_deleted" x="4489" y="60"/>
 </item>
-<item historyLabel="gm_display.h" index="3">
-<position info="not_deleted" x="1247" y="0"/>
+<item historyLabel="gm_display.h" index="1">
+<position info="not_deleted" x="948" y="21"/>
 </item>
-<item historyLabel="gm_display.c" index="7">
-<position info="not_deleted" x="1248" y="0"/>
+<item historyLabel="gm_measurements.h" index="3">
+<position info="not_deleted" x="1010" y="0"/>
 </item>
-<item historyLabel="tm_stm32f4_ili9341.c" index="9">
-<position info="not_deleted" x="6694" y="24"/>
-</item>
-<item historyLabel="gm_display.c" index="7">
-<position info="not_deleted" x="1117" y="0"/>
-</item>
-<item historyLabel="gm_display.h" index="3">
-<position info="not_deleted" x="1006" y="0"/>
+<item historyLabel="gm_measurements.c" index="2">
+<position info="not_deleted" x="940" y="28"/>
 </item>
 <item historyLabel="main.c" index="0">
-<position info="not_deleted" x="3398" y="0"/>
+<position info="not_deleted" x="1232" y="0"/>
 </item>
-<item historyLabel="gm_display.c" index="7">
-<position info="not_deleted" x="1366" y="0"/>
+<item historyLabel="gm_measurements.c" index="2">
+<position info="not_deleted" x="2011" y="0"/>
 </item>
-<item historyLabel="gm_display.h" index="3">
-<position info="not_deleted" x="1350" y="0"/>
+<item historyLabel="gm_measurements.h" index="3">
+<position info="not_deleted" x="1597" y="0"/>
 </item>
-<item historyLabel="gm_display.c" index="7">
-<position info="not_deleted" x="1366" y="0"/>
+<item historyLabel="gm_measurements.c" index="2">
+<position info="not_deleted" x="2011" y="0"/>
 </item>
-<item historyLabel="gm_display.h" index="3">
-<position info="not_deleted" x="1276" y="76"/>
+<item historyLabel="gm_measurements.h" index="3">
+<position info="not_deleted" x="1150" y="45"/>
 </item>
-<item historyLabel="gm_display.c" index="7">
-<position info="not_deleted" x="1214" y="0"/>
+<item historyLabel="main.c" index="0">
+<position info="not_deleted" x="942" y="18"/>
 </item>
-<item historyLabel="gm_display.h" index="3">
-<position info="not_deleted" x="1276" y="76"/>
+<item historyLabel="gm_measurements.h" index="3">
+<position info="not_deleted" x="1036" y="0"/>
 </item>
-<item active="true" historyLabel="main.c" index="0">
-<position info="not_deleted" x="3398" y="0"/>
+<item historyLabel="main.c" index="0">
+<position info="not_deleted" x="962" y="0"/>
+</item>
+<item historyLabel="gm_measurements.h" index="3">
+<position info="not_deleted" x="1036" y="0"/>
+</item>
+<item historyLabel="main.c" index="0">
+<position info="not_deleted" x="962" y="0"/>
+</item>
+<item historyLabel="gm_display.c" index="4">
+<position info="not_deleted" x="1955" y="0"/>
+</item>
+<item historyLabel="gm_measurements.h" index="3">
+<position info="not_deleted" x="1036" y="0"/>
+</item>
+<item historyLabel="gm_measurements.c" index="2">
+<position info="not_deleted" x="940" y="28"/>
+</item>
+<item historyLabel="gm_display.h" index="1">
+<position info="not_deleted" x="948" y="21"/>
+</item>
+<item historyLabel="gm_display.c" index="4">
+<position info="not_deleted" x="1957" y="0"/>
+</item>
+<item historyLabel="gm_display.h" index="1">
+<position info="not_deleted" x="1121" y="0"/>
+</item>
+<item historyLabel="gm_display.c" index="4">
+<position info="not_deleted" x="1934" y="21"/>
+</item>
+<item historyLabel="gm_display.h" index="1">
+<position info="not_deleted" x="1428" y="0"/>
+</item>
+<item historyLabel="gm_measurements.c" index="2">
+<position info="not_deleted" x="940" y="28"/>
+</item>
+<item historyLabel="gm_display.c" index="4">
+<position info="not_deleted" x="1934" y="25"/>
+</item>
+<item historyLabel="gm_display.h" index="1">
+<position info="not_deleted" x="1428" y="0"/>
+</item>
+<item active="true" historyLabel="gm_measurements.h" index="3">
+<position info="not_deleted" x="1036" y="0"/>
 </item>
 </navigationHistory>
 <input factoryID="org.eclipse.ui.internal.model.ResourceFactory" path="/" type="8"/>
@@ -318,14 +322,38 @@
 <actionBarAdvisor/>
 </window>
 <mruList>
-<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.cdt.ui.editor.CEditor" name="tm_stm32f4_ili9341.c" tooltip="GeigerMullerCounter/tm_stm32f4_ili9341/tm_stm32f4_ili9341.c">
-<persistable path="/GeigerMullerCounter/tm_stm32f4_ili9341/tm_stm32f4_ili9341.c"/>
+<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.cdt.ui.editor.CEditor" name="gm_measurements.h" tooltip="GeigerMullerCounter/gm_measurements.h">
+<persistable path="/GeigerMullerCounter/gm_measurements.h"/>
+</file>
+<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.cdt.ui.editor.CEditor" name="gm_measurements.c" tooltip="GeigerMullerCounter/gm_measurements.c">
+<persistable path="/GeigerMullerCounter/gm_measurements.c"/>
 </file>
 <file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.cdt.ui.editor.CEditor" name="tm_stm32f4_ili9341.h" tooltip="GeigerMullerCounter/tm_stm32f4_ili9341/tm_stm32f4_ili9341.h">
 <persistable path="/GeigerMullerCounter/tm_stm32f4_ili9341/tm_stm32f4_ili9341.h"/>
 </file>
+<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.cdt.ui.editor.CEditor" name="tm_stm32f4_ili9341.c" tooltip="GeigerMullerCounter/tm_stm32f4_ili9341/tm_stm32f4_ili9341.c">
+<persistable path="/GeigerMullerCounter/tm_stm32f4_ili9341/tm_stm32f4_ili9341.c"/>
+</file>
+<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.cdt.ui.editor.CEditor" name="tm_stm32f4_gpio.c" tooltip="GeigerMullerCounter/tm_stm32fgpio/tm_stm32f4_gpio.c">
+<persistable path="/GeigerMullerCounter/tm_stm32fgpio/tm_stm32f4_gpio.c"/>
+</file>
+<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.cdt.ui.editor.CEditor" name="tm_stm32f4_spi.c" tooltip="GeigerMullerCounter/tm_stm32f4_spi/tm_stm32f4_spi.c">
+<persistable path="/GeigerMullerCounter/tm_stm32f4_spi/tm_stm32f4_spi.c"/>
+</file>
 <file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.cdt.ui.editor.CEditor" name="gm_display.c" tooltip="GeigerMullerCounter/gm_display.c">
 <persistable path="/GeigerMullerCounter/gm_display.c"/>
+</file>
+<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.cdt.ui.editor.CEditor" name="gm_graph.h" tooltip="GeigerMullerCounter/gm_graph.h">
+<persistable path="/GeigerMullerCounter/gm_graph.h"/>
+</file>
+<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.cdt.ui.editor.CEditor" name="gm_graph.c" tooltip="GeigerMullerCounter/gm_graph.c">
+<persistable path="/GeigerMullerCounter/gm_graph.c"/>
+</file>
+<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.cdt.ui.editor.CEditor" name="gm_gpio.h" tooltip="GeigerMullerCounter/gm_gpio.h">
+<persistable path="/GeigerMullerCounter/gm_gpio.h"/>
+</file>
+<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.cdt.ui.editor.CEditor" name="gm_gpio.c" tooltip="GeigerMullerCounter/gm_gpio.c">
+<persistable path="/GeigerMullerCounter/gm_gpio.c"/>
 </file>
 <file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.cdt.ui.editor.CEditor" name="gm_display.h" tooltip="GeigerMullerCounter/gm_display.h">
 <persistable path="/GeigerMullerCounter/gm_display.h"/>
@@ -338,31 +366,6 @@
 </file>
 <file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.cdt.ui.editor.CEditor" name="display.h" tooltip="GeigerMullerCounter/display.h">
 <persistable path="/GeigerMullerCounter/display.h"/>
-</file>
-<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.cdt.ui.editor.CEditor" name="tm_stm32f4_delay.c" tooltip="GeigerMullerCounter/tm_stm32fdelay/tm_stm32f4_delay.c">
-<persistable path="/GeigerMullerCounter/tm_stm32fdelay/tm_stm32f4_delay.c"/>
-</file>
-<file factoryID="org.coocox.component.ui.editors.repository.RepositoryElementFactory" id="org.coocox.builder.ui.editors.repository.RepositoryBrowser" name="Repository" tooltip="Repository">
-<persistable>&#x0A;<subPage/>
-</persistable>
-</file>
-<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.cdt.ui.editor.CEditor" name="tm_stm32f4_fonts.c" tooltip="GeigerMullerCounter/tm_stm32f4_ili9341/tm_stm32f4_fonts.c">
-<persistable path="/GeigerMullerCounter/tm_stm32f4_ili9341/tm_stm32f4_fonts.c"/>
-</file>
-<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.cdt.ui.editor.CEditor" name="layout_intro.c" tooltip="stm32f429_project/layouts/layout_intro.c">
-<persistable path="/stm32f429_project/layouts/layout_intro.c"/>
-</file>
-<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.cdt.ui.editor.CEditor" name="sensor_temperature.h" tooltip="stm32f429_project/sensors/sensor_temperature.h">
-<persistable path="/stm32f429_project/sensors/sensor_temperature.h"/>
-</file>
-<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.cdt.ui.editor.CEditor" name="sensor_temperature.c" tooltip="stm32f429_project/sensors/sensor_temperature.c">
-<persistable path="/stm32f429_project/sensors/sensor_temperature.c"/>
-</file>
-<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.cdt.ui.editor.CEditor" name="main.c" tooltip="stm32f429_project/main.c">
-<persistable path="/stm32f429_project/main.c"/>
-</file>
-<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.cdt.ui.editor.CEditor" name="layout_graph.c" tooltip="stm32f429_project/layouts/layout_graph.c">
-<persistable path="/stm32f429_project/layouts/layout_graph.c"/>
 </file>
 </mruList>
 </workbench>

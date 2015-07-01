@@ -47,6 +47,7 @@ void gm_display_update(enum gm_display_field field, char* content)
                                 ILI9341_COLOR_WHITE, ILI9341_COLOR_BLACK);
         break;
     }
+
     default:
     {
         // ignore incorrect fields
@@ -54,3 +55,6 @@ void gm_display_update(enum gm_display_field field, char* content)
     }
     }
 }
+
+
+void gm_dummy_graph(){}

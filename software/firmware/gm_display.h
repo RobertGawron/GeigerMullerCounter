@@ -20,21 +20,26 @@
 #ifndef __GM_DISPLAY_HEADER__
 #define __GM_DISPLAY_HEADER__
 
-//#include <stdbool.h>
-
+/* libs */
 #include "stm32f4xx_spi.h"
 #include "tm_stm32f4_ili9341.h"
 #include "tm_stm32f4_fonts.h"
+
+/* project */
+#include "gm_measurements.h"
 
 enum gm_display_field
 {
 	GM_DISPLAY_FIELD_CURRENT_VALUE,
 	GM_DISPLAY_FIELD_PREVIOUS_VALUE,
+	GM_DISPLAY_FIELD_GRAPH,
 	GM_DISPLAY_FIELD_LAST
 };
 
 void gm_display_init();
 
 void gm_display_update(enum gm_display_field field, char* content);
+
+void gm_dummy_graph();
 
 #endif
