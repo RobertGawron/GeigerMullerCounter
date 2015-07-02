@@ -1,4 +1,5 @@
-====GeigerMullerCounter====
+GeigerMullerCounter
+====
 
 Device to monitor radioactivity around us.
 
