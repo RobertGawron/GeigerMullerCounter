@@ -1,0 +1,38 @@
+Partlist exported from C:/Users/rgawron/GeigerMullerCounter/hardware/main.sch at 2015-07-04 11:56:20
+
+Part       Value     Device                 Package      Description                          MF MPN OC_FARNELL OC_NEWARK
+C1         32n       C-EU050-025X075        C050-025X075 CAPACITOR, European symbol                                      
+C2         100n      C-EUC3216              C3216        CAPACITOR, European symbol                                      
+C3         10n       C-EU050-025X075        C050-025X075 CAPACITOR, European symbol                                      
+C4         100n/630V C-EU102-064X133        C102-064X133 CAPACITOR, European symbol                                      
+C5         100n      C-EUC3216              C3216        CAPACITOR, European symbol                                      
+C6         330u      CPOL-USA/3216-18W      A/3216-18W   POLARIZED CAPACITOR, American symbol                            
+C7         330u      CPOL-USA/3216-18W      A/3216-18W   POLARIZED CAPACITOR, American symbol                            
+D1         1n4007    1N4004                 DO41-10      DIODE                                                           
+D2         BAS40     BAS40                  SOT23        Silicon Schottky Diodes                                         
+IC1        LM358D    LM358D                 SO08         OP AMP also LM158; LM258; LM2904                                
+IC2        MC34063   DIL8                   DIL08        Dual In Line / Socket                                           
+L1         680m      L-EU0207/5V            0207/5V      INDUCTOR, European symbol                                       
+LED1                 LEDSFH482              SFH482       LED                                                             
+R1         R22/0.5W  R-EU_0207/5V           0207/5V      RESISTOR, European symbol                                       
+R2         10k       R-EU_R1206             R1206        RESISTOR, European symbol                                       
+R3         30k+1k    R-EU_0207/5V           0207/5V      RESISTOR, European symbol                                       
+R4         10M       R-EU_0207/5V           0207/5V      RESISTOR, European symbol                                       
+R5         6M8       R-EU_0207/12           0207/12      RESISTOR, European symbol                                       
+R6         10k       R-EU_0207/5V           0207/5V      RESISTOR, European symbol                                       
+R7         470R      R-EU_0207/5V           0207/5V      RESISTOR, European symbol                                       
+R8                   R-EU_R1206             R1206        RESISTOR, European symbol                                       
+R9         1k        R-EU_M1206             M1206        RESISTOR, European symbol                                       
+R10        1k        R-EU_M1206             M1206        RESISTOR, European symbol                                       
+R11        1k        R-EU_M1206             M1206        RESISTOR, European symbol                                       
+R12        510R      R-EU_M1206             M1206        RESISTOR, European symbol                                       
+R13                  R-EU_M1206             M1206        RESISTOR, European symbol                                       
+SP1        8R        KSS1201                KSS1201      SPEAKER                                     unknown    unknown  
+SV2(GM)              MA03-1                 MA03-1       PIN HEADER                                  unknown    unknown  
+SV3(OUT)             MA03-1                 MA03-1       PIN HEADER                                  unknown    unknown  
+SV4(POWER)           MA03-1                 MA03-1       PIN HEADER                                  unknown    unknown  
+T1                   BC807-40-PNP-SOT23-BEC SOT23-BEC    PNP Transistror                                                 
+T2                   BC848ALT1SMD           SOT23        NPN Transistor                                                  
+T3         IRF840    BUZ11BV                TO220BV      N-CHANNEL MOS FET                                               
+T6                   BC848ALT1SMD           SOT23        NPN Transistor                                                  
+T7                   BC848ALT1SMD           SOT23        NPN Transistor                                                  
