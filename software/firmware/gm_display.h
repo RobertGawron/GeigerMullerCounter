@@ -36,22 +36,22 @@ enum gm_display_field {
 };
 
 /* no method overloading by arguments in C */
-enum gm_display_content_type {
+enum gm_display_data_type {
     GM_DISPLAY_CONTENT_TYPE_STRING,
     GM_DISPLAY_CONTENT_TYPE_UINT8,
     GM_DISPLAY_CONTENT_TYPE_LAST
 };
 
-typedef struct gm_display_content_value_t {
-    enum gm_display_content_type type;
-    union value {
+typedef struct gm_display_data {
+    enum gm_display_data_type type;
+    union {
         char* as_string;
         uint8_t as_uint8;
-    };
-} gm_display_content_value_t;
+    } value;
+} gm_display_data_t;
 
 void gm_display_init();
 
-void gm_display_update(enum gm_display_field field, char* content);
+void gm_display_update(enum gm_display_field field, gm_display_data_t* data);
 
 #endif

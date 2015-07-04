@@ -19,6 +19,6 @@
  */
 #include "gm_graph.h"
 
-void gm_graph_plot() {
+void gm_graph_plot(uint8_t value) {
 
 }

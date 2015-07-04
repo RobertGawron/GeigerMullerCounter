@@ -18,6 +18,7 @@
  * |----------------------------------------------------------------------
  */
 #include "gm_display.h"
+#include "gm_graph.h"
 
 const uint16_t GM_BACKGROUND_COLOR = ILI9341_COLOR_BLACK;
 const TM_ILI9341_Orientation_t GM_ORIENTATION = TM_ILI9341_Orientation_Landscape_1;
@@ -29,29 +30,20 @@ void gm_display_init() {
     TM_ILI9341_Rotate(GM_ORIENTATION);
 }
 
-void gm_display_update(enum gm_display_field field, char* content) {
+/* no check of correctness of the data */
+void gm_display_update(enum gm_display_field field, gm_display_data_t* data) {
     // TODO remove magic numbers
     switch (field) {
         case GM_DISPLAY_FIELD_CURRENT_VALUE: {
-            TM_ILI9341_Puts(5, 20, content, &TM_Font_16x26, ILI9341_COLOR_WHITE, ILI9341_COLOR_BLACK);
-
+            TM_ILI9341_Puts(5, 20, data->value.as_string, &TM_Font_16x26, ILI9341_COLOR_WHITE, ILI9341_COLOR_BLACK);
             break;
         }
         case GM_DISPLAY_FIELD_PREVIOUS_VALUE: {
-            TM_ILI9341_Puts(5, 50, content, &TM_Font_16x26, ILI9341_COLOR_WHITE, ILI9341_COLOR_BLACK);
+            TM_ILI9341_Puts(5, 50, data->value.as_string, &TM_Font_16x26, ILI9341_COLOR_WHITE, ILI9341_COLOR_BLACK);
             break;
         }
-
-        default: {
-            // ignore incorrect fields
-            break;
-        }
-    }
-}
-/*
-void gm_display_update(enum gm_display_field field, uint8_t content) {
-    switch (field) {
         case GM_DISPLAY_FIELD_GRAPH: {
+            gm_graph_plot(data->value.as_uint8);
             break;
         }
         default: {
@@ -60,4 +52,3 @@ void gm_display_update(enum gm_display_field field, uint8_t content) {
         }
     }
 }
-*/
