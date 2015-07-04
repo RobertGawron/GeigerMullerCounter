@@ -20,4 +20,8 @@
 #ifndef __GM_GRAPH_HEADER__
 #define __GM_GRAPH_HEADER__
 
+#include "gm_measurements.h"
+
+void gm_graph_plot();
+
 #endif
