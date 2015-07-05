@@ -19,11 +19,18 @@
  */
 #include "gm_measurements.h"
 
+/* libs */
+#include "stm32f4xx_spi.h"
+#include "tm_stm32f4_ili9341.h"
+#include "tm_stm32f4_fonts.h"
+#include <stdio.h>
+
+void gm_measurements_reset_samples(gm_measurements_t *object);
+
 void gm_measurements_init(gm_measurements_t *object) {
     object->capacity = GM_MAX_MEASUREMENTS_ITEMS;
+    gm_measurements_reset_samples(object);
     object->index = 0U;
-    // current measurement is zero counts
-    object->counts[0U] = 0U;
 }
 
 void gm_measurements_update_sample(gm_measurements_t *object) {
@@ -31,39 +38,46 @@ void gm_measurements_update_sample(gm_measurements_t *object) {
 }
 
 void gm_measurements_next_sample(gm_measurements_t *object) {
-    // set the index of the current measurement
+    // set index of the current sample
     object->index++;
+    object->index %= object->capacity;
 
-    if (object->index == object->capacity) {
-        object->index = 0U;
-    }
-
-    // current measurement is zero counts
+    // reset current sample value
     object->counts[object->index] = 0U;
 }
 
 uint8_t gm_measurements_get(gm_measurements_t *object, enum gm_measurements_iterr iterr) {
-    uint8_t ret = 0U;
+    uint8_t value = 0U;
+
     switch (iterr) {
         case GM_MEASUREMENTS_ITERR_CURR: {
             uint16_t index = object->index;
-            ret = object->counts[index];
+            value = object->counts[index];
             break;
         }
         case GM_MEASUREMENTS_ITERR_PREV: {
-            if (object->index > 0U) {
-                uint16_t index = object->index - 1U;
-                ret = object->counts[index];
+            uint16_t index = 0U;
+            if (object->index == 0U) {
+                index = object->capacity - 1U;
             } else {
-                uint16_t index = object->capacity - 1U;
-                ret = object->counts[index];
+                index = object->index - 1U;
             }
+            value = object->counts[index];
         }
         default: {
-            /* should not happened */
-            ret = 0U;
+            // should not happened
+            value = 0U;
         }
     }
 
-    return ret;
+    return value;
+}
+
+
+void gm_measurements_reset_samples(gm_measurements_t *object)
+{
+    uint16_t i;
+    for (i = 0U; i < object->capacity; i++) {
+        object->counts[i] = 0U;
+    }
 }

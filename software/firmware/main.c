@@ -20,7 +20,7 @@
 
 #include <stdio.h>
 
-/* Pin interrupt */
+/* interrupts */
 #include "stm32f4xx.h"
 #include "stm32f4xx_exti.h"
 #include "stm32f4xx_syscfg.h"
@@ -43,15 +43,15 @@ void EXTI15_10_IRQHandler(void) {
         // TODO synchronization
         gm_measurements_update_sample(&gm_measurements);
 
-        gm_display_data_t data;
+       /* gm_display_data_t data;
         data.type = GM_DISPLAY_CONTENT_TYPE_STRING;
         char textBuffer[20]; //TODO magic number
 
         data.value.as_string = &textBuffer[0];
 
-        sprintf(textBuffer, "Counting: %4d", gm_measurements_get(&gm_measurements, GM_MEASUREMENTS_ITERR_CURR));
+        sprintf(textBuffer, "Counting: %3d", gm_measurements_get(&gm_measurements, GM_MEASUREMENTS_ITERR_CURR));
         gm_display_update(GM_DISPLAY_FIELD_CURRENT_VALUE, &data);
-
+*/
         /* Clear interrupt flag */
         EXTI_ClearITPendingBit(EXTI_Line12);
     }
@@ -66,10 +66,6 @@ int main(void) {
     /* Configure measurements */
     gm_measurements_init(&gm_measurements);
 
-    TM_DELAY_Init();
-
-    /* Configure PB12 as interrupt */
-    Configure_PB12();
 
     /* No data yet, show blank marks */
     gm_display_data_t data;
@@ -81,31 +77,33 @@ int main(void) {
     data.value.as_string = "Previous: ..";
     gm_display_update(GM_DISPLAY_FIELD_PREVIOUS_VALUE, &data);
 
+    TM_DELAY_Init();
+
+    /* Configure PB12 as interrupt */
+    Configure_PB12();
+
     TM_DELAY_SetTime(0);
 
 
-
     while (1) {
-        //if (TM_DELAY_Time() >= 60*1000)
-        if (TM_DELAY_Time() >= 2 * 1000) {
+      //  if (TM_DELAY_Time() >= 60*1000){
+        if (TM_DELAY_Time() >= 3 * 1000) {
             /* Reset time */
             TM_DELAY_SetTime(0);
 
-            //m_measurements_update_sample(&gm_measurements);
-            //gm_measurements_update_sample(&gm_measurements);
-            //gm_measurements_update_sample(&gm_measurements);
 
-            gm_measurements_next_sample(&gm_measurements);
+            char text_buffer[20]; //TODO magic number
+            data.value.as_string = &text_buffer[0];
 
-            char textBuffer[20]; //TODO magic number
-            data.value.as_string = &textBuffer[0];
-
-            sprintf(textBuffer, "Counting: %4d", gm_measurements_get(&gm_measurements, GM_MEASUREMENTS_ITERR_CURR));
+            uint8_t current_value = gm_measurements_get(&gm_measurements, GM_MEASUREMENTS_ITERR_CURR);
+            sprintf(text_buffer, "Counting: %3d", current_value);
             gm_display_update(GM_DISPLAY_FIELD_CURRENT_VALUE, &data);
 
-            sprintf(textBuffer, "Previous: %4d", gm_measurements_get(&gm_measurements, GM_MEASUREMENTS_ITERR_PREV));
+            uint8_t previous_value = gm_measurements_get(&gm_measurements, GM_MEASUREMENTS_ITERR_PREV);
+            sprintf(text_buffer, "Previous: %3d", previous_value);
             gm_display_update(GM_DISPLAY_FIELD_PREVIOUS_VALUE, &data);
+
+            gm_measurements_next_sample(&gm_measurements);
         }
     }
-
 }
