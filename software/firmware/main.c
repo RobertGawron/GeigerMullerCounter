@@ -91,7 +91,6 @@ int main(void) {
             /* Reset time */
             TM_DELAY_SetTime(0);
 
-
             char text_buffer[20]; //TODO magic number
             data.value.as_string = &text_buffer[0];
 

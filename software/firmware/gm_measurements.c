@@ -19,13 +19,10 @@
  */
 #include "gm_measurements.h"
 
-/* libs */
-#include "stm32f4xx_spi.h"
-#include "tm_stm32f4_ili9341.h"
-#include "tm_stm32f4_fonts.h"
 #include <stdio.h>
 
 void gm_measurements_reset_samples(gm_measurements_t *object);
+uint16_t gm_measurements_prev_sample_index(gm_measurements_t *object);
 
 void gm_measurements_init(gm_measurements_t *object) {
     object->capacity = GM_MAX_MEASUREMENTS_ITEMS;
@@ -47,37 +44,38 @@ void gm_measurements_next_sample(gm_measurements_t *object) {
 }
 
 uint8_t gm_measurements_get(gm_measurements_t *object, enum gm_measurements_iterr iterr) {
-    uint8_t value = 0U;
+    uint16_t index = 0U;
 
     switch (iterr) {
         case GM_MEASUREMENTS_ITERR_CURR: {
-            uint16_t index = object->index;
-            value = object->counts[index];
+            index = object->index;
             break;
         }
         case GM_MEASUREMENTS_ITERR_PREV: {
-            uint16_t index = 0U;
-            if (object->index == 0U) {
-                index = object->capacity - 1U;
-            } else {
-                index = object->index - 1U;
-            }
-            value = object->counts[index];
+            index = gm_measurements_prev_sample_index(object);
+            break;
         }
         default: {
             // should not happened
-            value = 0U;
         }
     }
 
-    return value;
+    return object->counts[index];
 }
 
-
-void gm_measurements_reset_samples(gm_measurements_t *object)
-{
+void gm_measurements_reset_samples(gm_measurements_t *object) {
     uint16_t i;
     for (i = 0U; i < object->capacity; i++) {
         object->counts[i] = 0U;
     }
+}
+
+uint16_t gm_measurements_prev_sample_index(gm_measurements_t *object) {
+    uint16_t index = 0U;
+    if (object->index == 0U) {
+        index = object->capacity - 1U;
+    } else {
+        index = object->index - 1U;
+    }
+    return index;
 }
