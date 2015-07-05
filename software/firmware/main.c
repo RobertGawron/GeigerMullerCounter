@@ -27,6 +27,7 @@
 
 #include "tm_stm32f4_delay.h"
 
+#include "gm_defines.h"
 #include "gm_measurements.h"
 #include "gm_display.h"
 #include "gm_gpio.h"
@@ -43,14 +44,14 @@ void EXTI15_10_IRQHandler(void) {
         // TODO synchronization
         gm_measurements_update_sample(&gm_measurements);
         /*uint8_t current_value = gm_measurements_get(&gm_measurements, GM_MEASUREMENTS_ITERR_CURR);
-        char textBuffer[20]; //TODO magic number
-        gm_display_data_t data;
+         char textBuffer[20]; //TODO magic number
+         gm_display_data_t data;
 
-        data.value.as_string = &textBuffer[0];
-        data.type = GM_DISPLAY_CONTENT_TYPE_STRING;
-        sprintf(textBuffer, "Counting: %3d", current_value);
-        gm_display_update(GM_DISPLAY_FIELD_CURRENT_VALUE, &data);
-*/
+         data.value.as_string = &textBuffer[0];
+         data.type = GM_DISPLAY_CONTENT_TYPE_STRING;
+         sprintf(textBuffer, "Counting: %3d", current_value);
+         gm_display_update(GM_DISPLAY_FIELD_CURRENT_VALUE, &data);
+         */
         /* Clear interrupt flag */
         EXTI_ClearITPendingBit(EXTI_Line12);
     }
@@ -64,7 +65,6 @@ int main(void) {
 
     /* Configure measurements */
     gm_measurements_init(&gm_measurements);
-
 
     /* No data yet, show blank marks */
     gm_display_data_t data;
@@ -83,17 +83,16 @@ int main(void) {
 
     TM_DELAY_SetTime(0);
 
-
     while (1) {
-        if (TM_DELAY_Time() >= 60*1000){
-       // if (TM_DELAY_Time() >= 3 * 1000) {
+        if (TM_DELAY_Time() >= GM_SAMPLE_RATE) {
             /* Reset time */
             TM_DELAY_SetTime(0);
 
             char text_buffer[20]; //TODO magic number
 
             data.value.as_string = &text_buffer[0];
-            uint8_t current_value = gm_measurements_get(&gm_measurements, GM_MEASUREMENTS_ITERR_CURR);
+            uint8_t current_value =
+                    gm_measurements_get(&gm_measurements, GM_MEASUREMENTS_ITERR_CURR);
             sprintf(text_buffer, "Counting: %3d", current_value);
             gm_display_update(GM_DISPLAY_FIELD_CURRENT_VALUE, &data);
 
@@ -101,7 +100,8 @@ int main(void) {
             gm_display_update(GM_DISPLAY_FIELD_GRAPH, &data);
 
             data.value.as_string = &text_buffer[0];
-            uint8_t previous_value = gm_measurements_get(&gm_measurements, GM_MEASUREMENTS_ITERR_PREV);
+            uint8_t previous_value =
+                    gm_measurements_get(&gm_measurements, GM_MEASUREMENTS_ITERR_PREV);
             sprintf(text_buffer, "Previous: %3d", previous_value);
             gm_display_update(GM_DISPLAY_FIELD_PREVIOUS_VALUE, &data);
 
