@@ -42,9 +42,15 @@ void EXTI15_10_IRQHandler(void) {
 
         // TODO synchronization
         gm_measurements_update_sample(&gm_measurements);
-        char textBuffer[20];
-        sprintf(textBuffer, "Current:  %4d", gm_measurements_get(&gm_measurements, GM_MEASUREMENTS_ITERR_CURR));
-        //gm_display_update(GM_DISPLAY_FIELD_CURRENT_VALUE, textBuffer);
+
+        gm_display_data_t data;
+        data.type = GM_DISPLAY_CONTENT_TYPE_STRING;
+        char textBuffer[20]; //TODO magic number
+
+        data.value.as_string = &textBuffer[0];
+
+        sprintf(textBuffer, "Counting: %4d", gm_measurements_get(&gm_measurements, GM_MEASUREMENTS_ITERR_CURR));
+        gm_display_update(GM_DISPLAY_FIELD_CURRENT_VALUE, &data);
 
         /* Clear interrupt flag */
         EXTI_ClearITPendingBit(EXTI_Line12);
@@ -85,9 +91,11 @@ int main(void) {
             /* Reset time */
             TM_DELAY_SetTime(0);
 
-            gm_measurements_update_sample(&gm_measurements);
-            gm_measurements_update_sample(&gm_measurements);
-            gm_measurements_update_sample(&gm_measurements);
+            //m_measurements_update_sample(&gm_measurements);
+            //gm_measurements_update_sample(&gm_measurements);
+            //gm_measurements_update_sample(&gm_measurements);
+
+            gm_measurements_next_sample(&gm_measurements);
 
             char textBuffer[20]; //TODO magic number
             data.value.as_string = &textBuffer[0];

@@ -33,8 +33,8 @@ typedef struct gm_measurements_t {
 
 /* It's like a simple iterator but it isn't. */
 enum gm_measurements_iterr {
-    GM_MEASUREMENTS_ITERR_CURR, GM_MEASUREMENTS_ITERR_PREV,
-
+    GM_MEASUREMENTS_ITERR_CURR,
+    GM_MEASUREMENTS_ITERR_PREV,
 };
 
 void gm_measurements_init(gm_measurements_t *object);
@@ -43,7 +43,6 @@ void gm_measurements_update_sample(gm_measurements_t *object);
 
 void gm_measurements_next_sample(gm_measurements_t *object);
 
-uint8_t gm_measurements_get(gm_measurements_t *object,
-        enum gm_measurements_iterr iterr);
+uint8_t gm_measurements_get(gm_measurements_t *object, enum gm_measurements_iterr iterr);
 
 #endif
