@@ -20,6 +20,11 @@
 #include "gm_display.h"
 #include "gm_graph.h"
 
+/* libs */
+#include "stm32f4xx_spi.h"
+#include "tm_stm32f4_ili9341.h"
+#include "tm_stm32f4_fonts.h"
+
 const uint16_t GM_BACKGROUND_COLOR = ILI9341_COLOR_BLACK;
 const TM_ILI9341_Orientation_t GM_ORIENTATION = TM_ILI9341_Orientation_Landscape_1;
 
@@ -43,7 +48,7 @@ void gm_display_update(enum gm_display_field field, gm_display_data_t* data) {
             break;
         }
         case GM_DISPLAY_FIELD_GRAPH: {
-            gm_graph_plot(data->value.as_uint8);
+            gm_graph_plot(data->value.as_gm_measurements);
             break;
         }
         default: {

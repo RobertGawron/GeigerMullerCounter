@@ -43,6 +43,10 @@ void gm_measurements_next_sample(gm_measurements_t *object) {
     object->counts[object->index] = 0U;
 }
 
+uint8_t gm_measurements_index(gm_measurements_t *object){
+    return object->index;
+}
+
 uint8_t gm_measurements_get(gm_measurements_t *object, enum gm_measurements_iterr iterr) {
     uint16_t index = 0U;
 

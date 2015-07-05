@@ -20,11 +20,6 @@
 #ifndef __GM_DISPLAY_HEADER__
 #define __GM_DISPLAY_HEADER__
 
-/* libs */
-#include "stm32f4xx_spi.h"
-#include "tm_stm32f4_ili9341.h"
-#include "tm_stm32f4_fonts.h"
-
 /* project */
 #include "gm_measurements.h"
 
@@ -46,7 +41,7 @@ typedef struct gm_display_data {
     enum gm_display_data_type type;
     union {
         char* as_string;
-        uint8_t as_uint8;
+        gm_measurements_t* as_gm_measurements;
     } value;
 } gm_display_data_t;
 

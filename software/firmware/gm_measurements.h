@@ -45,4 +45,6 @@ void gm_measurements_next_sample(gm_measurements_t *object);
 
 uint8_t gm_measurements_get(gm_measurements_t *object, enum gm_measurements_iterr iterr);
 
+uint8_t gm_measurements_index(gm_measurements_t *object);
+
 #endif

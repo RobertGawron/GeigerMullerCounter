@@ -22,6 +22,6 @@
 
 #include "gm_measurements.h"
 
-void gm_graph_plot(uint8_t value);
+void gm_graph_plot(gm_measurements_t* data);
 
 #endif

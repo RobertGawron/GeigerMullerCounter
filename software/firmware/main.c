@@ -42,14 +42,13 @@ void EXTI15_10_IRQHandler(void) {
 
         // TODO synchronization
         gm_measurements_update_sample(&gm_measurements);
-
-       /* gm_display_data_t data;
-        data.type = GM_DISPLAY_CONTENT_TYPE_STRING;
+        /*uint8_t current_value = gm_measurements_get(&gm_measurements, GM_MEASUREMENTS_ITERR_CURR);
         char textBuffer[20]; //TODO magic number
+        gm_display_data_t data;
 
         data.value.as_string = &textBuffer[0];
-
-        sprintf(textBuffer, "Counting: %3d", gm_measurements_get(&gm_measurements, GM_MEASUREMENTS_ITERR_CURR));
+        data.type = GM_DISPLAY_CONTENT_TYPE_STRING;
+        sprintf(textBuffer, "Counting: %3d", current_value);
         gm_display_update(GM_DISPLAY_FIELD_CURRENT_VALUE, &data);
 */
         /* Clear interrupt flag */
@@ -86,18 +85,22 @@ int main(void) {
 
 
     while (1) {
-      //  if (TM_DELAY_Time() >= 60*1000){
-        if (TM_DELAY_Time() >= 3 * 1000) {
+        if (TM_DELAY_Time() >= 60*1000){
+       // if (TM_DELAY_Time() >= 3 * 1000) {
             /* Reset time */
             TM_DELAY_SetTime(0);
 
             char text_buffer[20]; //TODO magic number
-            data.value.as_string = &text_buffer[0];
 
+            data.value.as_string = &text_buffer[0];
             uint8_t current_value = gm_measurements_get(&gm_measurements, GM_MEASUREMENTS_ITERR_CURR);
             sprintf(text_buffer, "Counting: %3d", current_value);
             gm_display_update(GM_DISPLAY_FIELD_CURRENT_VALUE, &data);
 
+            data.value.as_gm_measurements = &gm_measurements;
+            gm_display_update(GM_DISPLAY_FIELD_GRAPH, &data);
+
+            data.value.as_string = &text_buffer[0];
             uint8_t previous_value = gm_measurements_get(&gm_measurements, GM_MEASUREMENTS_ITERR_PREV);
             sprintf(text_buffer, "Previous: %3d", previous_value);
             gm_display_update(GM_DISPLAY_FIELD_PREVIOUS_VALUE, &data);
