@@ -1,4 +1,4 @@
-/**
+/*
  * |----------------------------------------------------------------------
  * | Copyright (C) Robert Gawron, 2015
  * | Homepage https://github.com/RobertGawron/GeigerMullerCounter
@@ -16,6 +16,16 @@
  * | You should have received a copy of the GNU General Public License
  * | along with this program.  If not, see <http://www.gnu.org/licenses/>.
  * |----------------------------------------------------------------------
+ */
+
+/**
+ * \file gm_defines.h
+ * \brief Project specific defines.
+ * \author Robert Gawron
+ * \version 0.1
+ *
+ * All project specific defines goes here.
+ *
  */
 #ifndef __GM_DEFINES_HEADER__
 #define __GM_DEFINES_HEADER__

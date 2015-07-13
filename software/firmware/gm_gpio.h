@@ -1,4 +1,4 @@
-/**
+/*
  * |----------------------------------------------------------------------
  * | Copyright (C) Robert Gawron, 2015
  * | Homepage https://github.com/RobertGawron/GeigerMullerCounter
@@ -16,6 +16,16 @@
  * | You should have received a copy of the GNU General Public License
  * | along with this program.  If not, see <http://www.gnu.org/licenses/>.
  * |----------------------------------------------------------------------
+ */
+
+/**
+ * \file gm_gpio.h
+ * \brief Receive data from the GM device.
+ * \author Robert Gawron
+ * \version 0.1
+ *
+ * The file is responsible for interrupt configuration for the GM device. GM device is connected to PB12 and raises an interrupt when a pulse is observed.
+ *
  */
 #ifndef __GM_GPIO_HEADER__
 #define __GM_GPIO_HEADER__

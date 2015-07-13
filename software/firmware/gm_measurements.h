@@ -1,4 +1,4 @@
-/**
+/*
  * |----------------------------------------------------------------------
  * | Copyright (C) Robert Gawron, 2015
  * | Homepage https://github.com/RobertGawron/GeigerMullerCounter
@@ -16,6 +16,16 @@
  * | You should have received a copy of the GNU General Public License
  * | along with this program.  If not, see <http://www.gnu.org/licenses/>.
  * |----------------------------------------------------------------------
+ */
+
+/**
+ * \file gm_measurements.h
+ * \brief Store and manipulate obtained samples .
+ * \author Robert Gawron
+ * \version 0.1
+ *
+ * Circular buffer of obtained samples.
+ *
  */
 #ifndef __GM_MEASUREMENTS_HEADER__
 #define __GM_MEASUREMENTS_HEADER__
@@ -39,7 +49,7 @@ enum gm_measurements_iterr {
 
 void gm_measurements_init(gm_measurements_t *object);
 
-void gm_measurements_update_sample(gm_measurements_t *object);
+void gm_measurements_count(gm_measurements_t *object);
 
 void gm_measurements_next_sample(gm_measurements_t *object);
 

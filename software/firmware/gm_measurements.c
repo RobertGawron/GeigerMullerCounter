@@ -30,7 +30,7 @@ void gm_measurements_init(gm_measurements_t *object) {
     object->index = 0U;
 }
 
-void gm_measurements_update_sample(gm_measurements_t *object) {
+void gm_measurements_count(gm_measurements_t *object) {
     object->counts[object->index]++;
 }
 

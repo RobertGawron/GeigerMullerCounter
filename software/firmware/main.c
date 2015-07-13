@@ -41,17 +41,23 @@ void EXTI15_10_IRQHandler(void) {
     /* Make sure that interrupt flag is set */
     if (EXTI_GetITStatus(EXTI_Line12) != RESET) {
 
-        // TODO synchronization
-        gm_measurements_update_sample(&gm_measurements);
-        /*uint8_t current_value = gm_measurements_get(&gm_measurements, GM_MEASUREMENTS_ITERR_CURR);
-         char textBuffer[20]; //TODO magic number
-         gm_display_data_t data;
+        gm_measurements_count(&gm_measurements);
 
-         data.value.as_string = &textBuffer[0];
-         data.type = GM_DISPLAY_CONTENT_TYPE_STRING;
-         sprintf(textBuffer, "Counting: %3d", current_value);
-         gm_display_update(GM_DISPLAY_FIELD_CURRENT_VALUE, &data);
-         */
+        gm_display_data_t data;
+        char text_buffer[20]; //TODO magic number
+
+        data.type = GM_DISPLAY_CONTENT_TYPE_STRING;
+        uint8_t current_value = gm_measurements_get(&gm_measurements, GM_MEASUREMENTS_ITERR_CURR);
+        sprintf(text_buffer, "%3d counts (now)", current_value);
+        data.value.as_string = &text_buffer[0];
+        gm_display_update(GM_DISPLAY_FIELD_CURRENT_VALUE, &data);
+
+        data.type = GM_DISPLAY_CONTENT_TYPE_STRING;
+        data.value.as_string = &text_buffer[0];
+        uint8_t previous_value = gm_measurements_get(&gm_measurements, GM_MEASUREMENTS_ITERR_PREV);
+        sprintf(text_buffer, "%3d counts (prev)", previous_value);
+        gm_display_update(GM_DISPLAY_FIELD_PREVIOUS_VALUE, &data);
+
         /* Clear interrupt flag */
         EXTI_ClearITPendingBit(EXTI_Line12);
     }
@@ -66,16 +72,6 @@ int main(void) {
     /* Configure measurements */
     gm_measurements_init(&gm_measurements);
 
-    /* No data yet, show blank marks */
-    gm_display_data_t data;
-    data.type = GM_DISPLAY_CONTENT_TYPE_STRING;
-
-    data.value.as_string = "Current: ..";
-    gm_display_update(GM_DISPLAY_FIELD_CURRENT_VALUE, &data);
-
-    data.value.as_string = "Previous: ..";
-    gm_display_update(GM_DISPLAY_FIELD_PREVIOUS_VALUE, &data);
-
     TM_DELAY_Init();
 
     /* Configure PB12 as interrupt */
@@ -87,23 +83,6 @@ int main(void) {
         if (TM_DELAY_Time() >= GM_SAMPLE_RATE) {
             /* Reset time */
             TM_DELAY_SetTime(0);
-
-            char text_buffer[20]; //TODO magic number
-
-            data.value.as_string = &text_buffer[0];
-            uint8_t current_value =
-                    gm_measurements_get(&gm_measurements, GM_MEASUREMENTS_ITERR_CURR);
-            sprintf(text_buffer, "Counting: %3d", current_value);
-            gm_display_update(GM_DISPLAY_FIELD_CURRENT_VALUE, &data);
-
-            data.value.as_gm_measurements = &gm_measurements;
-            gm_display_update(GM_DISPLAY_FIELD_GRAPH, &data);
-
-            data.value.as_string = &text_buffer[0];
-            uint8_t previous_value =
-                    gm_measurements_get(&gm_measurements, GM_MEASUREMENTS_ITERR_PREV);
-            sprintf(text_buffer, "Previous: %3d", previous_value);
-            gm_display_update(GM_DISPLAY_FIELD_PREVIOUS_VALUE, &data);
 
             gm_measurements_next_sample(&gm_measurements);
         }

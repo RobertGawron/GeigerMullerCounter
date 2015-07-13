@@ -1,4 +1,4 @@
-/**
+/*
  * |----------------------------------------------------------------------
  * | Copyright (C) Robert Gawron, 2015
  * | Homepage https://github.com/RobertGawron/GeigerMullerCounter
@@ -17,17 +17,26 @@
  * | along with this program.  If not, see <http://www.gnu.org/licenses/>.
  * |----------------------------------------------------------------------
  */
+
+/**
+ * \file gm_display.h
+ * \brief Update of the layout content.
+ * \author Robert Gawron
+ * \version 0.1
+ *
+ * Makes layout updates more flexible. Decides where particular elements should be displayed, and how their content should be updated.
+ *
+ */
 #ifndef __GM_DISPLAY_HEADER__
 #define __GM_DISPLAY_HEADER__
 
-/* project */
 #include "gm_measurements.h"
 
 enum gm_display_field {
-    GM_DISPLAY_FIELD_CURRENT_VALUE,
-    GM_DISPLAY_FIELD_PREVIOUS_VALUE,
-    GM_DISPLAY_FIELD_GRAPH,
-    GM_DISPLAY_FIELD_LAST
+    GM_DISPLAY_FIELD_CURRENT_VALUE, /*!< Current measurement. */
+    GM_DISPLAY_FIELD_PREVIOUS_VALUE, /*!< Previous measurement. */
+    GM_DISPLAY_FIELD_GRAPH, /*!< Graph of the measurements. */
+    GM_DISPLAY_FIELD_LAST /*!< Last item in the enum. */
 };
 
 /* no method overloading by arguments in C */
