@@ -54,6 +54,7 @@
 <layer number="96" name="Values" color="7" fill="1" visible="no" active="no"/>
 <layer number="97" name="Info" color="7" fill="1" visible="no" active="no"/>
 <layer number="98" name="Guide" color="6" fill="1" visible="no" active="no"/>
+<layer number="116" name="centerDrill" color="7" fill="1" visible="yes" active="yes"/>
 </layers>
 <board>
 <plain>
@@ -65,6 +66,36 @@
 <hole x="67.5" y="12.5" drill="0.6"/>
 <hole x="67.5" y="72.5" drill="0.6"/>
 <hole x="47.5" y="72.5" drill="0.6"/>
+<text x="67.5" y="30" size="6.4516" layer="1" font="vector">+</text>
+<text x="2.5" y="32.5" size="6.4516" layer="1">-</text>
+<text x="2.5" y="60" size="3.81" layer="1" font="vector">GM1</text>
+<text x="62.5" y="60" size="3.81" layer="1" font="vector">GM1</text>
+<text x="2.5" y="45" size="3.81" layer="1" font="vector">GM2</text>
+<text x="2.5" y="22.5" size="3.81" layer="1" font="vector">GM3</text>
+<text x="62.5" y="45" size="3.81" layer="1" font="vector">GM2</text>
+<text x="62.5" y="22.5" size="3.81" layer="1" font="vector">GM3</text>
+<circle x="7.5" y="72.5" radius="0.3" width="0.1" layer="116"/>
+<circle x="27.5" y="72.5" radius="0.3" width="0.1" layer="116"/>
+<circle x="7.5" y="12.5" radius="0.3" width="0.1" layer="116"/>
+<circle x="27.5" y="12.5" radius="0.3" width="0.1" layer="116"/>
+<circle x="47.5" y="12.5" radius="0.3" width="0.1" layer="116"/>
+<circle x="67.5" y="12.5" radius="0.3" width="0.1" layer="116"/>
+<circle x="67.5" y="72.5" radius="0.3" width="0.1" layer="116"/>
+<circle x="47.5" y="72.5" radius="0.3" width="0.1" layer="116"/>
+<circle x="5" y="40" radius="0.404" width="0.308" layer="116"/>
+<circle x="70" y="40" radius="0.404" width="0.308" layer="116"/>
+<circle x="20" y="45" radius="0.35" width="0.2" layer="116"/>
+<circle x="20" y="40" radius="0.35" width="0.2" layer="116"/>
+<circle x="20" y="65" radius="0.35" width="0.2" layer="116"/>
+<circle x="20" y="60" radius="0.35" width="0.2" layer="116"/>
+<circle x="20" y="25" radius="0.35" width="0.2" layer="116"/>
+<circle x="20" y="20" radius="0.35" width="0.2" layer="116"/>
+<circle x="55" y="45" radius="0.35" width="0.2" layer="116"/>
+<circle x="55" y="40" radius="0.35" width="0.2" layer="116"/>
+<circle x="55" y="65" radius="0.35" width="0.2" layer="116"/>
+<circle x="55" y="60" radius="0.35" width="0.2" layer="116"/>
+<circle x="55" y="25" radius="0.35" width="0.2" layer="116"/>
+<circle x="55" y="20" radius="0.35" width="0.2" layer="116"/>
 </plain>
 <libraries>
 <library name="pinhead">
