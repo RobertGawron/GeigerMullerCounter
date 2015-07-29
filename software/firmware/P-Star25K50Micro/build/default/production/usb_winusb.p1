@@ -1,0 +1,64 @@
+Version 3.2 HI-TECH Software Intermediate Code
+[; ;stdint.h: 13: typedef signed char int8_t;
+[; ;stdint.h: 20: typedef signed int int16_t;
+[; ;stdint.h: 28: typedef signed short long int int24_t;
+[; ;stdint.h: 36: typedef signed long int int32_t;
+[; ;stdint.h: 43: typedef unsigned char uint8_t;
+[; ;stdint.h: 49: typedef unsigned int uint16_t;
+[; ;stdint.h: 56: typedef unsigned short long int uint24_t;
+[; ;stdint.h: 63: typedef unsigned long int uint32_t;
+[; ;stdint.h: 71: typedef signed char int_least8_t;
+[; ;stdint.h: 78: typedef signed int int_least16_t;
+[; ;stdint.h: 90: typedef signed short long int int_least24_t;
+[; ;stdint.h: 98: typedef signed long int int_least32_t;
+[; ;stdint.h: 105: typedef unsigned char uint_least8_t;
+[; ;stdint.h: 111: typedef unsigned int uint_least16_t;
+[; ;stdint.h: 121: typedef unsigned short long int uint_least24_t;
+[; ;stdint.h: 128: typedef unsigned long int uint_least32_t;
+[; ;stdint.h: 137: typedef signed char int_fast8_t;
+[; ;stdint.h: 144: typedef signed int int_fast16_t;
+[; ;stdint.h: 156: typedef signed short long int int_fast24_t;
+[; ;stdint.h: 164: typedef signed long int int_fast32_t;
+[; ;stdint.h: 171: typedef unsigned char uint_fast8_t;
+[; ;stdint.h: 177: typedef unsigned int uint_fast16_t;
+[; ;stdint.h: 187: typedef unsigned short long int uint_fast24_t;
+[; ;stdint.h: 194: typedef unsigned long int uint_fast32_t;
+[; ;stdint.h: 200: typedef int32_t intmax_t;
+[; ;stdint.h: 205: typedef uint32_t uintmax_t;
+[; ;stdint.h: 210: typedef int16_t intptr_t;
+[; ;stdint.h: 215: typedef uint16_t uintptr_t;
+[; ;usb_microsoft.h: 65: struct microsoft_os_descriptor {
+[; ;usb_microsoft.h: 66: uint8_t bLength;
+[; ;usb_microsoft.h: 67: uint8_t bDescriptorType;
+[; ;usb_microsoft.h: 68: uint16_t qwSignature[7];
+[; ;usb_microsoft.h: 69: uint8_t bMS_VendorCode;
+[; ;usb_microsoft.h: 72: uint8_t bPad;
+[; ;usb_microsoft.h: 73: };
+[; ;usb_microsoft.h: 79: struct microsoft_extended_compat_header {
+[; ;usb_microsoft.h: 80: uint32_t dwLength;
+[; ;usb_microsoft.h: 81: uint16_t bcdVersion;
+[; ;usb_microsoft.h: 82: uint16_t wIndex;
+[; ;usb_microsoft.h: 83: uint8_t bCount;
+[; ;usb_microsoft.h: 84: uint8_t reserved[7];
+[; ;usb_microsoft.h: 85: };
+[; ;usb_microsoft.h: 91: struct microsoft_extended_compat_function {
+[; ;usb_microsoft.h: 92: uint8_t bFirstInterfaceNumber;
+[; ;usb_microsoft.h: 93: uint8_t reserved;
+[; ;usb_microsoft.h: 94: uint8_t compatibleID[8];
+[; ;usb_microsoft.h: 95: uint8_t subCompatibleID[8];
+[; ;usb_microsoft.h: 96: uint8_t reserved2[6];
+[; ;usb_microsoft.h: 97: };
+[; ;usb_microsoft.h: 103: struct microsoft_extended_properties_header {
+[; ;usb_microsoft.h: 104: uint32_t dwLength;
+[; ;usb_microsoft.h: 105: uint16_t bcdVersion;
+[; ;usb_microsoft.h: 106: uint16_t wIndex;
+[; ;usb_microsoft.h: 107: uint16_t bCount;
+[; ;usb_microsoft.h: 108: };
+[; ;usb_microsoft.h: 117: struct microsoft_extended_property_section_header {
+[; ;usb_microsoft.h: 118: uint32_t dwSize;
+[; ;usb_microsoft.h: 119: uint32_t dwPropertyDataType;
+[; ;usb_microsoft.h: 127: };
+[; ;usb_winusb.h: 34: uint16_t m_stack_winusb_get_microsoft_compat(uint8_t interface,
+[; ;usb_winusb.h: 35: const void **descriptor);
+[; ;usb_winusb.h: 37: uint16_t m_stack_winusb_get_microsoft_property(uint8_t interface,
+[; ;usb_winusb.h: 38: const void **descriptor);

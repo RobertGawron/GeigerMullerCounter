@@ -1,0 +1,1165 @@
+Version 3.2 HI-TECH Software Intermediate Code
+"181 usb_ch9.h
+[s S6 `uc 1 `uc 1 `ui 1 `uc 1 `uc 1 `uc 1 `uc 1 `ui 1 `ui 1 `ui 1 `uc 1 `uc 1 `uc 1 `uc 1 ]
+[n S6 device_descriptor bLength bDescriptorType bcdUSB bDeviceClass bDeviceSubclass bDeviceProtocol bMaxPacketSize0 idVendor idProduct bcdDevice iManufacturer iProduct iSerialNumber bNumConfigurations ]
+"87 usb_descriptors.c
+[c E264 1 2 3 4 5 6 7 8 9 10 11 .. ]
+[n E264 DescriptorTypes DESC_DEVICE DESC_CONFIGURATION DESC_STRING DESC_INTERFACE DESC_ENDPOINT DESC_DEVICE_QUALIFIER DESC_OTHER_SPEED_CONFIGURATION DESC_INTERFACE_POWER DESC_OTG DESC_DEBUG DESC_INTERFACE_ASSOCIATION  ]
+"89
+[c E276 0 239 254 255 .. ]
+[n E276 DeviceClassCodes DEVICE_CLASS_DEFINED_AT_INTERFACE_LEVEL DEVICE_CLASS_MISC DEVICE_CLASS_APPLICATION_SPECIFIC DEVICE_CLASS_VENDOR_SPECIFIC  ]
+"199 usb_ch9.h
+[s S7 `uc 1 `uc 1 `ui 1 `uc 1 `uc 1 `uc 1 `uc 1 `uc 1 ]
+[n S7 configuration_descriptor bLength bDescriptorType wTotalLength bNumInterfaces bConfigurationValue iConfiguration bmAttributes bMaxPower ]
+"246
+[s S13 `uc 1 `uc 1 `uc 1 `uc 1 `uc 1 `uc 1 `uc 1 `uc 1 ]
+[n S13 interface_association_descriptor bLength bDescriptorType bFirstInterface bInterfaceCount bFunctionClass bFunctionSubClass bFunctionProtocol iFunction ]
+"211
+[s S10 `uc 1 `uc 1 `uc 1 `uc 1 `uc 1 `uc 1 `uc 1 `uc 1 `uc 1 ]
+[n S10 interface_descriptor bLength bDescriptorType bInterfaceNumber bAlternateSetting bNumEndpoints bInterfaceClass bInterfaceSubclass bInterfaceProtocol iInterface ]
+"168 usb_cdc.h
+[s S14 `uc 1 `uc 1 `uc 1 `ui 1 ]
+[n S14 cdc_functional_descriptor_header bFunctionLength bDescriptorType bDescriptorSubtype bcdCDC ]
+"179
+[s S15 `uc 1 `uc 1 `uc 1 `uc 1 ]
+[n S15 cdc_acm_functional_descriptor bFunctionLength bDescriptorType bDescriptorSubtype bmCapabilities ]
+"190
+[s S16 `uc 1 `uc 1 `uc 1 `uc 1 `uc 1 ]
+[n S16 cdc_union_functional_descriptor bFunctionLength bDescriptorType bDescriptorSubtype bMasterInterface bSlaveInterface0 ]
+"224 usb_ch9.h
+[s S11 `uc 1 `uc 1 `uc 1 `uc 1 `ui 1 `uc 1 ]
+[n S11 endpoint_descriptor bLength bDescriptorType bEndpointAddress bmAttributes wMaxPacketSize bInterval ]
+"58 usb_descriptors.c
+[s S24 `S7 1 `S13 1 `S10 1 `S14 1 `S15 1 `S16 1 `S11 1 `S10 1 `S11 1 `S11 1 ]
+[n S24 configuration_1_packet config iad cdc_class_interface cdc_func_header cdc_acm cdc_union cdc_ep cdc_data_interface data_ep_in data_ep_out ]
+"155
+[c E350 36 37 .. ]
+[n E350 CDCDescriptorTypes DESC_CS_INTERFACE DESC_CS_ENDPOINT  ]
+"156
+[c E353 0 2 6 .. ]
+[n E353 CDCFunctionalDescriptorSubtypes CDC_FUNCTIONAL_DESCRIPTOR_SUBTYPE_HEADER CDC_FUNCTIONAL_DESCRIPTOR_SUBTYPE_ACM CDC_FUNCTIONAL_DESCRIPTOR_SUBTYPE_UNION  ]
+"167
+[c E357 1 2 4 8 .. ]
+[n E357 CDCACMCapabilities CDC_ACM_CAPABILITY_COMM_FEATURES CDC_ACM_CAPABILITY_LINE_CODINGS CDC_ACM_CAPABILITY_SEND_BREAK CDC_ACM_CAPABILITY_NETWORK_CONNECTION  ]
+"184
+[c E281 0 1 2 3 .. ]
+[n E281 EndpointAttributes EP_CONTROL EP_ISOCHRONOUS EP_BULK EP_INTERRUPT  ]
+"236
+[s S25 `uc 1 `uc 1 `ui 1 ]
+[n S25 . bLength bDescriptorType lang ]
+"242
+[s S26 `uc 1 `uc 1 `ui -> 23 `i ]
+[n S26 . bLength bDescriptorType chars ]
+"248
+[s S27 `uc 1 `uc 1 `ui -> 12 `i ]
+[n S27 . bLength bDescriptorType chars ]
+"254
+[s S28 `uc 1 `uc 1 `ui -> 13 `i ]
+[n S28 . bLength bDescriptorType chars ]
+"260
+[s S29 `uc 1 `uc 1 `ui -> 18 `i ]
+[n S29 . bLength bDescriptorType chars ]
+"266
+[s S30 `uc 1 `uc 1 `ui -> 59 `i ]
+[n S30 . bLength bDescriptorType chars ]
+[; ;stdint.h: 13: typedef signed char int8_t;
+[; ;stdint.h: 20: typedef signed int int16_t;
+[; ;stdint.h: 28: typedef signed short long int int24_t;
+[; ;stdint.h: 36: typedef signed long int int32_t;
+[; ;stdint.h: 43: typedef unsigned char uint8_t;
+[; ;stdint.h: 49: typedef unsigned int uint16_t;
+[; ;stdint.h: 56: typedef unsigned short long int uint24_t;
+[; ;stdint.h: 63: typedef unsigned long int uint32_t;
+[; ;stdint.h: 71: typedef signed char int_least8_t;
+[; ;stdint.h: 78: typedef signed int int_least16_t;
+[; ;stdint.h: 90: typedef signed short long int int_least24_t;
+[; ;stdint.h: 98: typedef signed long int int_least32_t;
+[; ;stdint.h: 105: typedef unsigned char uint_least8_t;
+[; ;stdint.h: 111: typedef unsigned int uint_least16_t;
+[; ;stdint.h: 121: typedef unsigned short long int uint_least24_t;
+[; ;stdint.h: 128: typedef unsigned long int uint_least32_t;
+[; ;stdint.h: 137: typedef signed char int_fast8_t;
+[; ;stdint.h: 144: typedef signed int int_fast16_t;
+[; ;stdint.h: 156: typedef signed short long int int_fast24_t;
+[; ;stdint.h: 164: typedef signed long int int_fast32_t;
+[; ;stdint.h: 171: typedef unsigned char uint_fast8_t;
+[; ;stdint.h: 177: typedef unsigned int uint_fast16_t;
+[; ;stdint.h: 187: typedef unsigned short long int uint_fast24_t;
+[; ;stdint.h: 194: typedef unsigned long int uint_fast32_t;
+[; ;stdint.h: 200: typedef int32_t intmax_t;
+[; ;stdint.h: 205: typedef uint32_t uintmax_t;
+[; ;stdint.h: 210: typedef int16_t intptr_t;
+[; ;stdint.h: 215: typedef uint16_t uintptr_t;
+[; ;stdbool.h: 12: typedef unsigned char bool;
+[; ;stdlib.h: 4: typedef int ptrdiff_t;
+[; ;stdlib.h: 5: typedef unsigned size_t;
+[; ;stdlib.h: 6: typedef unsigned short wchar_t;
+[; ;stdlib.h: 16: extern int errno;
+[; ;stdlib.h: 27: typedef struct {
+[; ;stdlib.h: 28: int rem;
+[; ;stdlib.h: 29: int quot;
+[; ;stdlib.h: 30: } div_t;
+[; ;stdlib.h: 31: typedef struct {
+[; ;stdlib.h: 32: unsigned rem;
+[; ;stdlib.h: 33: unsigned quot;
+[; ;stdlib.h: 34: } udiv_t;
+[; ;stdlib.h: 35: typedef struct {
+[; ;stdlib.h: 36: long quot;
+[; ;stdlib.h: 37: long rem;
+[; ;stdlib.h: 38: } ldiv_t;
+[; ;stdlib.h: 39: typedef struct {
+[; ;stdlib.h: 40: unsigned long quot;
+[; ;stdlib.h: 41: unsigned long rem;
+[; ;stdlib.h: 42: } uldiv_t;
+[; ;stdlib.h: 65: extern double atof(const char *);
+[; ;stdlib.h: 66: extern double strtod(const char *, const char **);
+[; ;stdlib.h: 67: extern int atoi(const char *);
+[; ;stdlib.h: 68: extern unsigned xtoi(const char *);
+[; ;stdlib.h: 69: extern long atol(const char *);
+[; ;stdlib.h: 70: extern long strtol(const char *, char **, int);
+[; ;stdlib.h: 72: extern int rand(void);
+[; ;stdlib.h: 73: extern void srand(unsigned int);
+[; ;stdlib.h: 74: extern void * calloc(size_t, size_t);
+[; ;stdlib.h: 75: extern div_t div(int numer, int denom);
+[; ;stdlib.h: 76: extern udiv_t udiv(unsigned numer, unsigned denom);
+[; ;stdlib.h: 77: extern ldiv_t ldiv(long numer, long denom);
+[; ;stdlib.h: 78: extern uldiv_t uldiv(unsigned long numer,unsigned long denom);
+[; ;stdlib.h: 79: extern unsigned long _lrotl(unsigned long value, unsigned int shift);
+[; ;stdlib.h: 80: extern unsigned long _lrotr(unsigned long value, unsigned int shift);
+[; ;stdlib.h: 81: extern unsigned int _rotl(unsigned int value, unsigned int shift);
+[; ;stdlib.h: 82: extern unsigned int _rotr(unsigned int value, unsigned int shift);
+[; ;stdlib.h: 87: extern void * malloc(size_t);
+[; ;stdlib.h: 88: extern void free(void *);
+[; ;stdlib.h: 89: extern void * realloc(void *, size_t);
+[; ;xc8debug.h: 14: extern void __builtin_software_breakpoint(void);
+[; ;stdlib.h: 98: extern int atexit(void (*)(void));
+[; ;stdlib.h: 99: extern char * getenv(const char *);
+[; ;stdlib.h: 100: extern char ** environ;
+[; ;stdlib.h: 101: extern int system(char *);
+[; ;stdlib.h: 102: extern void qsort(void *, size_t, size_t, int (*)(const void *, const void *));
+[; ;stdlib.h: 103: extern void * bsearch(const void *, void *, size_t, size_t, int(*)(const void *, const void *));
+[; ;stdlib.h: 104: extern int abs(int);
+[; ;stdlib.h: 105: extern long labs(long);
+[; ;stdlib.h: 108: extern char * itoa(char * buf, int val, int base);
+[; ;stdlib.h: 109: extern char * utoa(char * buf, unsigned val, int base);
+[; ;stdlib.h: 114: extern char * ltoa(char * buf, long val, int base);
+[; ;stdlib.h: 115: extern char * ultoa(char * buf, unsigned long val, int base);
+[; ;stdlib.h: 117: extern char * ftoa(float f, int * status);
+[; ;usb.h: 46: struct setup_packet;
+[; ;usb.h: 83: extern int16_t usb_application_get_string(uint8_t string_number, const void **ptr);
+[; ;usb.h: 92: extern const struct device_descriptor this_device_descriptor;
+[; ;usb.h: 110: extern const struct configuration_descriptor *usb_application_config_descs[];
+[; ;usb.h: 144: void app_set_configuration_callback(uint8_t configuration);
+[; ;usb.h: 158: uint16_t app_get_device_status_callback();
+[; ;usb.h: 172: void app_endpoint_halt_callback(uint8_t endpoint, bool halted);
+[; ;usb.h: 191: int8_t app_set_interface_callback(uint8_t interface, uint8_t alt_setting);
+[; ;usb.h: 209: int8_t app_get_interface_callback(uint8_t interface);
+[; ;usb.h: 226: void app_out_transaction_callback(uint8_t endpoint);
+[; ;usb.h: 243: void app_in_transaction_complete_callback(uint8_t endpoint);
+[; ;usb.h: 290: int8_t app_unknown_setup_request_callback(const struct setup_packet *pkt);
+[; ;usb.h: 316: int16_t app_unknown_get_descriptor_callback(const struct setup_packet *pkt, const void **descriptor);
+[; ;usb.h: 327: void app_start_of_frame_callback(void);
+[; ;usb.h: 337: void app_usb_reset_callback(void);
+[; ;usb.h: 350: void usb_init(void);
+[; ;usb.h: 364: void usb_service(void);
+[; ;usb.h: 375: uint8_t usb_get_configuration(void);
+[; ;usb.h: 402: unsigned char *usb_get_in_buffer(uint8_t endpoint);
+[; ;usb.h: 416: void usb_send_in_buffer(uint8_t endpoint, size_t len);
+[; ;usb.h: 428: bool usb_in_endpoint_busy(uint8_t endpoint);
+[; ;usb.h: 441: bool usb_in_endpoint_halted(uint8_t endpoint);
+[; ;usb.h: 454: bool usb_out_endpoint_has_data(uint8_t endpoint);
+[; ;usb.h: 466: void usb_arm_out_endpoint(uint8_t endpoint);
+[; ;usb.h: 480: bool usb_out_endpoint_halted(uint8_t endpoint);
+[; ;usb.h: 495: uint8_t usb_get_out_buffer(uint8_t endpoint, const unsigned char **buffer);
+[; ;usb.h: 508: typedef void (*usb_ep0_data_stage_callback)(bool transfer_ok, void *context);
+[; ;usb.h: 533: void usb_start_receive_ep0_data_stage(char *buffer, size_t len,
+[; ;usb.h: 534: usb_ep0_data_stage_callback callback, void *context);
+[; ;usb.h: 562: void usb_send_data_stage(char *buffer, size_t len,
+[; ;usb.h: 563: usb_ep0_data_stage_callback callback, void *context);
+[; ;usb_ch9.h: 59: enum PID {
+[; ;usb_ch9.h: 60: PID_OUT = 0x01,
+[; ;usb_ch9.h: 61: PID_IN = 0x09,
+[; ;usb_ch9.h: 62: PID_SOF = 0x05,
+[; ;usb_ch9.h: 63: PID_SETUP = 0x0D,
+[; ;usb_ch9.h: 64: PID_DATA0 = 0x03,
+[; ;usb_ch9.h: 65: PID_DATA1 = 0x0B,
+[; ;usb_ch9.h: 66: PID_DATA2 = 0x07,
+[; ;usb_ch9.h: 67: PID_MDATA = 0x0F,
+[; ;usb_ch9.h: 68: PID_ACK = 0x02,
+[; ;usb_ch9.h: 69: PID_NAK = 0x0A,
+[; ;usb_ch9.h: 70: PID_STALL = 0x0E,
+[; ;usb_ch9.h: 71: PID_NYET = 0x06,
+[; ;usb_ch9.h: 72: PID_PRE = 0x0C,
+[; ;usb_ch9.h: 73: PID_ERR = 0x0C,
+[; ;usb_ch9.h: 74: PID_SPLIT = 0x08,
+[; ;usb_ch9.h: 75: PID_PING = 0x04,
+[; ;usb_ch9.h: 76: PID_RESERVED = 0x00,
+[; ;usb_ch9.h: 77: };
+[; ;usb_ch9.h: 83: enum DestinationType {
+[; ;usb_ch9.h: 84: DEST_DEVICE = 0,
+[; ;usb_ch9.h: 85: DEST_INTERFACE = 1,
+[; ;usb_ch9.h: 86: DEST_ENDPOINT = 2,
+[; ;usb_ch9.h: 87: DEST_OTHER_ELEMENT = 3,
+[; ;usb_ch9.h: 88: };
+[; ;usb_ch9.h: 94: enum RequestType {
+[; ;usb_ch9.h: 95: REQUEST_TYPE_STANDARD = 0,
+[; ;usb_ch9.h: 96: REQUEST_TYPE_CLASS = 1,
+[; ;usb_ch9.h: 97: REQUEST_TYPE_VENDOR = 2,
+[; ;usb_ch9.h: 98: REQUEST_TYPE_RESERVED = 3,
+[; ;usb_ch9.h: 99: };
+[; ;usb_ch9.h: 105: enum StandardControlRequest {
+[; ;usb_ch9.h: 106: GET_STATUS = 0x0,
+[; ;usb_ch9.h: 107: CLEAR_FEATURE = 0x1,
+[; ;usb_ch9.h: 108: SET_FEATURE = 0x3,
+[; ;usb_ch9.h: 109: SET_ADDRESS = 0x5,
+[; ;usb_ch9.h: 110: GET_DESCRIPTOR = 0x6,
+[; ;usb_ch9.h: 111: SET_DESCRIPTOR = 0x7,
+[; ;usb_ch9.h: 112: GET_CONFIGURATION = 0x8,
+[; ;usb_ch9.h: 113: SET_CONFIGURATION = 0x9,
+[; ;usb_ch9.h: 114: GET_INTERFACE = 0xA,
+[; ;usb_ch9.h: 115: SET_INTERFACE = 0xB,
+[; ;usb_ch9.h: 116: SYNCH_FRAME = 0xC,
+[; ;usb_ch9.h: 117: };
+[; ;usb_ch9.h: 120: enum DescriptorTypes {
+[; ;usb_ch9.h: 121: DESC_DEVICE = 0x1,
+[; ;usb_ch9.h: 122: DESC_CONFIGURATION = 0x2,
+[; ;usb_ch9.h: 123: DESC_STRING = 0x3,
+[; ;usb_ch9.h: 124: DESC_INTERFACE = 0x4,
+[; ;usb_ch9.h: 125: DESC_ENDPOINT = 0x5,
+[; ;usb_ch9.h: 126: DESC_DEVICE_QUALIFIER = 0x6,
+[; ;usb_ch9.h: 127: DESC_OTHER_SPEED_CONFIGURATION = 0x7,
+[; ;usb_ch9.h: 128: DESC_INTERFACE_POWER = 0x8,
+[; ;usb_ch9.h: 129: DESC_OTG = 0x9,
+[; ;usb_ch9.h: 130: DESC_DEBUG = 0xA,
+[; ;usb_ch9.h: 131: DESC_INTERFACE_ASSOCIATION = 0xB,
+[; ;usb_ch9.h: 132: };
+[; ;usb_ch9.h: 143: enum DeviceClassCodes {
+[; ;usb_ch9.h: 144: DEVICE_CLASS_DEFINED_AT_INTERFACE_LEVEL = 0x0,
+[; ;usb_ch9.h: 145: DEVICE_CLASS_MISC = 0xef,
+[; ;usb_ch9.h: 146: DEVICE_CLASS_APPLICATION_SPECIFIC = 0xfe,
+[; ;usb_ch9.h: 147: DEVICE_CLASS_VENDOR_SPECIFIC = 0xff,
+[; ;usb_ch9.h: 148: };
+[; ;usb_ch9.h: 151: enum EndpointAttributes {
+[; ;usb_ch9.h: 152: EP_CONTROL = 0x0,
+[; ;usb_ch9.h: 153: EP_ISOCHRONOUS = 0x1,
+[; ;usb_ch9.h: 154: EP_BULK = 0x2,
+[; ;usb_ch9.h: 155: EP_INTERRUPT = 0x3,
+[; ;usb_ch9.h: 158: };
+[; ;usb_ch9.h: 165: struct setup_packet {
+[; ;usb_ch9.h: 166: union {
+[; ;usb_ch9.h: 167: struct {
+[; ;usb_ch9.h: 168: uint8_t destination : 5;
+[; ;usb_ch9.h: 169: uint8_t type : 2;
+[; ;usb_ch9.h: 170: uint8_t direction : 1;
+[; ;usb_ch9.h: 171: };
+[; ;usb_ch9.h: 172: uint8_t bmRequestType;
+[; ;usb_ch9.h: 173: } REQUEST;
+[; ;usb_ch9.h: 174: uint8_t bRequest;
+[; ;usb_ch9.h: 175: uint16_t wValue;
+[; ;usb_ch9.h: 176: uint16_t wIndex;
+[; ;usb_ch9.h: 177: uint16_t wLength;
+[; ;usb_ch9.h: 178: };
+[; ;usb_ch9.h: 181: struct device_descriptor {
+[; ;usb_ch9.h: 182: uint8_t bLength;
+[; ;usb_ch9.h: 183: uint8_t bDescriptorType;
+[; ;usb_ch9.h: 184: uint16_t bcdUSB;
+[; ;usb_ch9.h: 185: uint8_t bDeviceClass;
+[; ;usb_ch9.h: 186: uint8_t bDeviceSubclass;
+[; ;usb_ch9.h: 187: uint8_t bDeviceProtocol;
+[; ;usb_ch9.h: 188: uint8_t bMaxPacketSize0;
+[; ;usb_ch9.h: 189: uint16_t idVendor;
+[; ;usb_ch9.h: 190: uint16_t idProduct;
+[; ;usb_ch9.h: 191: uint16_t bcdDevice;
+[; ;usb_ch9.h: 192: uint8_t iManufacturer;
+[; ;usb_ch9.h: 193: uint8_t iProduct;
+[; ;usb_ch9.h: 194: uint8_t iSerialNumber;
+[; ;usb_ch9.h: 195: uint8_t bNumConfigurations;
+[; ;usb_ch9.h: 196: };
+[; ;usb_ch9.h: 199: struct configuration_descriptor {
+[; ;usb_ch9.h: 200: uint8_t bLength;
+[; ;usb_ch9.h: 201: uint8_t bDescriptorType;
+[; ;usb_ch9.h: 202: uint16_t wTotalLength;
+[; ;usb_ch9.h: 203: uint8_t bNumInterfaces;
+[; ;usb_ch9.h: 204: uint8_t bConfigurationValue;
+[; ;usb_ch9.h: 205: uint8_t iConfiguration;
+[; ;usb_ch9.h: 206: uint8_t bmAttributes;
+[; ;usb_ch9.h: 207: uint8_t bMaxPower;
+[; ;usb_ch9.h: 208: };
+[; ;usb_ch9.h: 211: struct interface_descriptor {
+[; ;usb_ch9.h: 212: uint8_t bLength;
+[; ;usb_ch9.h: 213: uint8_t bDescriptorType;
+[; ;usb_ch9.h: 214: uint8_t bInterfaceNumber;
+[; ;usb_ch9.h: 215: uint8_t bAlternateSetting;
+[; ;usb_ch9.h: 216: uint8_t bNumEndpoints;
+[; ;usb_ch9.h: 217: uint8_t bInterfaceClass;
+[; ;usb_ch9.h: 218: uint8_t bInterfaceSubclass;
+[; ;usb_ch9.h: 219: uint8_t bInterfaceProtocol;
+[; ;usb_ch9.h: 220: uint8_t iInterface;
+[; ;usb_ch9.h: 221: };
+[; ;usb_ch9.h: 224: struct endpoint_descriptor {
+[; ;usb_ch9.h: 226: uint8_t bLength;
+[; ;usb_ch9.h: 227: uint8_t bDescriptorType;
+[; ;usb_ch9.h: 228: uint8_t bEndpointAddress;
+[; ;usb_ch9.h: 229: uint8_t bmAttributes;
+[; ;usb_ch9.h: 230: uint16_t wMaxPacketSize;
+[; ;usb_ch9.h: 231: uint8_t bInterval;
+[; ;usb_ch9.h: 232: };
+[; ;usb_ch9.h: 235: struct string_descriptor {
+[; ;usb_ch9.h: 236: uint8_t bLength;
+[; ;usb_ch9.h: 237: uint8_t bDescriptorType;
+[; ;usb_ch9.h: 238: uint16_t chars[];
+[; ;usb_ch9.h: 239: };
+[; ;usb_ch9.h: 246: struct interface_association_descriptor {
+[; ;usb_ch9.h: 247: uint8_t bLength;
+[; ;usb_ch9.h: 248: uint8_t bDescriptorType;
+[; ;usb_ch9.h: 249: uint8_t bFirstInterface;
+[; ;usb_ch9.h: 250: uint8_t bInterfaceCount;
+[; ;usb_ch9.h: 251: uint8_t bFunctionClass;
+[; ;usb_ch9.h: 252: uint8_t bFunctionSubClass;
+[; ;usb_ch9.h: 253: uint8_t bFunctionProtocol;
+[; ;usb_ch9.h: 254: uint8_t iFunction;
+[; ;usb_ch9.h: 255: };
+[; ;usb_cdc.h: 74: enum CDCDescriptorTypes {
+[; ;usb_cdc.h: 75: DESC_CS_INTERFACE = 0x24,
+[; ;usb_cdc.h: 76: DESC_CS_ENDPOINT = 0x25,
+[; ;usb_cdc.h: 77: };
+[; ;usb_cdc.h: 80: enum CDCFunctionalDescriptorSubtypes {
+[; ;usb_cdc.h: 81: CDC_FUNCTIONAL_DESCRIPTOR_SUBTYPE_HEADER = 0x0,
+[; ;usb_cdc.h: 82: CDC_FUNCTIONAL_DESCRIPTOR_SUBTYPE_ACM = 0x2,
+[; ;usb_cdc.h: 83: CDC_FUNCTIONAL_DESCRIPTOR_SUBTYPE_UNION = 0x6,
+[; ;usb_cdc.h: 84: };
+[; ;usb_cdc.h: 92: enum CDCACMCapabilities {
+[; ;usb_cdc.h: 93: CDC_ACM_CAPABILITY_COMM_FEATURES = 0x1,
+[; ;usb_cdc.h: 94: CDC_ACM_CAPABILITY_LINE_CODINGS = 0x2,
+[; ;usb_cdc.h: 95: CDC_ACM_CAPABILITY_SEND_BREAK = 0x4,
+[; ;usb_cdc.h: 96: CDC_ACM_CAPABILITY_NETWORK_CONNECTION = 0x8,
+[; ;usb_cdc.h: 97: };
+[; ;usb_cdc.h: 105: enum CDCRequests {
+[; ;usb_cdc.h: 106: CDC_SEND_ENCAPSULATED_COMMAND = 0x0,
+[; ;usb_cdc.h: 107: CDC_GET_ENCAPSULATED_RESPONSE = 0x1,
+[; ;usb_cdc.h: 108: CDC_SET_COMM_FEATURE = 0x2,
+[; ;usb_cdc.h: 109: CDC_GET_COMM_FEATURE = 0x3,
+[; ;usb_cdc.h: 110: CDC_CLEAR_COMM_FEATURE = 0x4,
+[; ;usb_cdc.h: 111: CDC_SET_LINE_CODING = 0x20,
+[; ;usb_cdc.h: 112: CDC_GET_LINE_CODING = 0x21,
+[; ;usb_cdc.h: 113: CDC_SET_CONTROL_LINE_STATE = 0x22,
+[; ;usb_cdc.h: 114: CDC_SEND_BREAK = 0x23,
+[; ;usb_cdc.h: 115: };
+[; ;usb_cdc.h: 121: enum CDCCommFeatureSelector {
+[; ;usb_cdc.h: 122: CDC_FEATURE_ABSTRACT_STATE = 0x1,
+[; ;usb_cdc.h: 123: CDC_FEATURE_COUNTRY_SETTING = 0x2,
+[; ;usb_cdc.h: 124: };
+[; ;usb_cdc.h: 132: enum CDCCharFormat {
+[; ;usb_cdc.h: 133: CDC_CHAR_FORMAT_1_STOP_BIT = 0,
+[; ;usb_cdc.h: 134: CDC_CHAR_FORMAT_1_POINT_5_STOP_BITS = 1,
+[; ;usb_cdc.h: 135: CDC_CHAR_FORMAT_2_STOP_BITS = 2,
+[; ;usb_cdc.h: 136: };
+[; ;usb_cdc.h: 144: enum CDCParityType {
+[; ;usb_cdc.h: 145: CDC_PARITY_NONE = 0,
+[; ;usb_cdc.h: 146: CDC_PARITY_ODD = 1,
+[; ;usb_cdc.h: 147: CDC_PARITY_EVEN = 2,
+[; ;usb_cdc.h: 148: CDC_PARITY_MARK = 3,
+[; ;usb_cdc.h: 149: CDC_PARITY_SPACE = 4,
+[; ;usb_cdc.h: 150: };
+[; ;usb_cdc.h: 156: enum CDCNotifications {
+[; ;usb_cdc.h: 157: CDC_NETWORK_CONNECTION = 0x0,
+[; ;usb_cdc.h: 158: CDC_RESPONSE_AVAILABLE = 0x1,
+[; ;usb_cdc.h: 159: CDC_SERIAL_STATE = 0x20,
+[; ;usb_cdc.h: 160: };
+[; ;usb_cdc.h: 168: struct cdc_functional_descriptor_header {
+[; ;usb_cdc.h: 169: uint8_t bFunctionLength;
+[; ;usb_cdc.h: 170: uint8_t bDescriptorType;
+[; ;usb_cdc.h: 171: uint8_t bDescriptorSubtype;
+[; ;usb_cdc.h: 172: uint16_t bcdCDC;
+[; ;usb_cdc.h: 173: };
+[; ;usb_cdc.h: 179: struct cdc_acm_functional_descriptor {
+[; ;usb_cdc.h: 180: uint8_t bFunctionLength;
+[; ;usb_cdc.h: 181: uint8_t bDescriptorType;
+[; ;usb_cdc.h: 182: uint8_t bDescriptorSubtype;
+[; ;usb_cdc.h: 183: uint8_t bmCapabilities;
+[; ;usb_cdc.h: 184: };
+[; ;usb_cdc.h: 190: struct cdc_union_functional_descriptor {
+[; ;usb_cdc.h: 191: uint8_t bFunctionLength;
+[; ;usb_cdc.h: 192: uint8_t bDescriptorType;
+[; ;usb_cdc.h: 193: uint8_t bDescriptorSubtype;
+[; ;usb_cdc.h: 194: uint8_t bMasterInterface;
+[; ;usb_cdc.h: 195: uint8_t bSlaveInterface0;
+[; ;usb_cdc.h: 199: };
+[; ;usb_cdc.h: 206: struct cdc_notification_header {
+[; ;usb_cdc.h: 207: union {
+[; ;usb_cdc.h: 208: struct {
+[; ;usb_cdc.h: 209: uint8_t destination : 5;
+[; ;usb_cdc.h: 210: uint8_t type : 2;
+[; ;usb_cdc.h: 211: uint8_t direction : 1;
+[; ;usb_cdc.h: 212: };
+[; ;usb_cdc.h: 213: uint8_t bmRequestType;
+[; ;usb_cdc.h: 214: } REQUEST;
+[; ;usb_cdc.h: 215: uint8_t bNotification;
+[; ;usb_cdc.h: 216: uint16_t wValue;
+[; ;usb_cdc.h: 217: uint16_t wIndex;
+[; ;usb_cdc.h: 218: uint16_t wLength;
+[; ;usb_cdc.h: 219: };
+[; ;usb_cdc.h: 226: struct cdc_serial_state_notification {
+[; ;usb_cdc.h: 227: struct cdc_notification_header header;
+[; ;usb_cdc.h: 228: union {
+[; ;usb_cdc.h: 229: struct {
+[; ;usb_cdc.h: 230: uint16_t bRxCarrier : 1;
+[; ;usb_cdc.h: 231: uint16_t bTxCarrier : 1;
+[; ;usb_cdc.h: 232: uint16_t bBreak : 1;
+[; ;usb_cdc.h: 233: uint16_t bRingSignal : 1;
+[; ;usb_cdc.h: 234: uint16_t bFraming : 1;
+[; ;usb_cdc.h: 235: uint16_t bParity : 1;
+[; ;usb_cdc.h: 236: uint16_t bOverrun : 1;
+[; ;usb_cdc.h: 237: uint16_t : 1;
+[; ;usb_cdc.h: 238: uint16_t : 8;
+[; ;usb_cdc.h: 239: } bits;
+[; ;usb_cdc.h: 240: uint16_t serial_state;
+[; ;usb_cdc.h: 241: } data;
+[; ;usb_cdc.h: 242: };
+[; ;usb_cdc.h: 253: struct cdc_line_coding {
+[; ;usb_cdc.h: 254: uint32_t dwDTERate;
+[; ;usb_cdc.h: 255: uint8_t bCharFormat;
+[; ;usb_cdc.h: 256: uint8_t bParityType;
+[; ;usb_cdc.h: 257: uint8_t bDataBits;
+[; ;usb_cdc.h: 258: };
+[; ;usb_cdc.h: 273: uint8_t process_cdc_setup_request(const struct setup_packet *setup);
+[; ;usb_cdc.h: 307: extern int8_t app_send_encapsulated_command(uint8_t interface,
+[; ;usb_cdc.h: 308: uint16_t length);
+[; ;usb_cdc.h: 339: extern int16_t app_get_encapsulated_response(uint8_t interface,
+[; ;usb_cdc.h: 340: uint16_t length, const void **response,
+[; ;usb_cdc.h: 341: usb_ep0_data_stage_callback *callback,
+[; ;usb_cdc.h: 342: void **context);
+[; ;usb_cdc.h: 360: extern void app_set_comm_feature_callback(uint8_t interface,
+[; ;usb_cdc.h: 361: bool idle_setting,
+[; ;usb_cdc.h: 362: bool data_multiplexed_state);
+[; ;usb_cdc.h: 380: extern void app_clear_comm_feature_callback(uint8_t interface,
+[; ;usb_cdc.h: 381: bool idle_setting,
+[; ;usb_cdc.h: 382: bool data_multiplexed_state);
+[; ;usb_cdc.h: 401: extern int8_t app_get_comm_feature_callback(
+[; ;usb_cdc.h: 402: uint8_t interface,
+[; ;usb_cdc.h: 403: bool *idle_setting,
+[; ;usb_cdc.h: 404: bool *data_multiplexed_state);
+[; ;usb_cdc.h: 420: extern void app_set_line_coding_callback(uint8_t interface,
+[; ;usb_cdc.h: 421: const struct cdc_line_coding *coding);
+[; ;usb_cdc.h: 446: extern int8_t app_get_line_coding_callback(uint8_t interface,
+[; ;usb_cdc.h: 447: struct cdc_line_coding *coding);
+[; ;usb_cdc.h: 465: extern int8_t app_set_control_line_state_callback(uint8_t interface,
+[; ;usb_cdc.h: 466: bool dtr, bool dts);
+[; ;usb_cdc.h: 483: extern int8_t app_send_break_callback(uint8_t interface, uint16_t duration);
+[; ;usb_descriptors.c: 58: struct configuration_1_packet {
+[; ;usb_descriptors.c: 59: struct configuration_descriptor config;
+[; ;usb_descriptors.c: 60: struct interface_association_descriptor iad;
+[; ;usb_descriptors.c: 63: struct interface_descriptor cdc_class_interface;
+[; ;usb_descriptors.c: 64: struct cdc_functional_descriptor_header cdc_func_header;
+[; ;usb_descriptors.c: 65: struct cdc_acm_functional_descriptor cdc_acm;
+[; ;usb_descriptors.c: 66: struct cdc_union_functional_descriptor cdc_union;
+[; ;usb_descriptors.c: 67: struct endpoint_descriptor cdc_ep;
+[; ;usb_descriptors.c: 70: struct interface_descriptor cdc_data_interface;
+[; ;usb_descriptors.c: 71: struct endpoint_descriptor data_ep_in;
+[; ;usb_descriptors.c: 72: struct endpoint_descriptor data_ep_out;
+[; ;usb_descriptors.c: 74: };
+"84 usb_descriptors.c
+[v _this_device_descriptor `CS6 ~T0 @X0 1 e ]
+[i _this_device_descriptor
+:U ..
+:U ..
+"86
+-> -> # `S6 `ui `uc
+"87
+-> . `E264 0 `uc
+"88
+-> -> 512 `i `ui
+"89
+-> . `E276 1 `uc
+"90
+-> -> 2 `i `uc
+"92
+-> -> 1 `i `uc
+"93
+-> -> 8 `i `uc
+"94
+-> 41120 `ui
+"95
+-> -> 4 `i `ui
+"96
+-> -> 1 `i `ui
+"97
+-> -> 1 `i `uc
+"98
+-> -> 2 `i `uc
+"99
+-> -> 5 `i `uc
+"101
+-> -> 1 `i `uc
+..
+..
+]
+[; ;usb_descriptors.c: 84: const  struct device_descriptor this_device_descriptor =
+[; ;usb_descriptors.c: 85: {
+[; ;usb_descriptors.c: 86: sizeof(struct device_descriptor),
+[; ;usb_descriptors.c: 87: DESC_DEVICE,
+[; ;usb_descriptors.c: 88: 0x0200,
+[; ;usb_descriptors.c: 89: DEVICE_CLASS_MISC,
+[; ;usb_descriptors.c: 90: 0x02,
+[; ;usb_descriptors.c: 92: 0x01,
+[; ;usb_descriptors.c: 93: 8,
+[; ;usb_descriptors.c: 94: 0xA0A0,
+[; ;usb_descriptors.c: 95: 0x0004,
+[; ;usb_descriptors.c: 96: 0x0001,
+[; ;usb_descriptors.c: 97: 1,
+[; ;usb_descriptors.c: 98: 2,
+[; ;usb_descriptors.c: 99: 5,
+[; ;usb_descriptors.c: 100: 1
+[; ;usb_descriptors.c: 101: };
+"112
+[v _configuration_1 `CS24 ~T0 @X0 1 s ]
+[i _configuration_1
+:U ..
+:U ..
+:U ..
+:U ..
+"116
+-> -> # `S7 `ui `uc
+"117
+-> . `E264 1 `uc
+"118
+-> # _configuration_1 `ui
+"119
+-> -> 2 `i `uc
+"120
+-> -> 1 `i `uc
+"121
+-> -> 2 `i `uc
+"122
+-> -> 128 `i `uc
+"123
+-> / -> 100 `i -> 2 `i `uc
+..
+..
+:U ..
+:U ..
+"128
+-> -> # `S13 `ui `uc
+"129
+-> . `E264 10 `uc
+"130
+-> -> 0 `i `uc
+"131
+-> -> 2 `i `uc
+"132
+-> -> 2 `i `uc
+"133
+-> -> 2 `i `uc
+"134
+-> -> 0 `i `uc
+"135
+-> -> 2 `i `uc
+..
+..
+:U ..
+:U ..
+"141
+-> -> # `S10 `ui `uc
+"142
+-> . `E264 3 `uc
+"143
+-> -> 0 `i `uc
+"144
+-> -> 0 `i `uc
+"145
+-> -> 1 `i `uc
+"146
+-> -> 2 `i `uc
+"147
+-> -> 2 `i `uc
+"148
+-> -> 0 `i `uc
+"149
+-> -> 3 `i `uc
+..
+..
+:U ..
+:U ..
+"154
+-> -> # `S14 `ui `uc
+"155
+-> . `E350 0 `uc
+"156
+-> . `E353 0 `uc
+"157
+-> -> 272 `i `ui
+..
+..
+:U ..
+:U ..
+"162
+-> -> # `S15 `ui `uc
+"163
+-> . `E350 0 `uc
+"164
+-> . `E353 1 `uc
+"167
+-> | -> . `E357 1 `i -> . `E357 2 `i `uc
+..
+..
+:U ..
+:U ..
+"172
+-> -> # `S16 `ui `uc
+"173
+-> . `E350 0 `uc
+"174
+-> . `E353 2 `uc
+"175
+-> -> 0 `i `uc
+"176
+-> -> 1 `i `uc
+..
+..
+:U ..
+:U ..
+"181
+-> -> # `S11 `ui `uc
+"182
+-> . `E264 4 `uc
+"183
+-> | -> 1 `i -> 128 `i `uc
+"184
+-> . `E281 3 `uc
+"185
+-> -> 10 `i `ui
+"186
+-> -> 1 `i `uc
+..
+..
+:U ..
+:U ..
+"192
+-> -> # `S10 `ui `uc
+"193
+-> . `E264 3 `uc
+"194
+-> -> 1 `i `uc
+"195
+-> -> 0 `i `uc
+"196
+-> -> 2 `i `uc
+"197
+-> -> 10 `i `uc
+"198
+-> -> 0 `i `uc
+"199
+-> -> 0 `i `uc
+"200
+-> -> 4 `i `uc
+..
+..
+:U ..
+:U ..
+"205
+-> -> # `S11 `ui `uc
+"206
+-> . `E264 4 `uc
+"207
+-> | -> 2 `i -> 128 `i `uc
+"208
+-> . `E281 2 `uc
+"209
+-> -> 64 `i `ui
+"210
+-> -> 1 `i `uc
+..
+..
+:U ..
+:U ..
+"215
+-> -> # `S11 `ui `uc
+"216
+-> . `E264 4 `uc
+"217
+-> -> 2 `i `uc
+"218
+-> . `E281 2 `uc
+"219
+-> -> 64 `i `ui
+"220
+-> -> 1 `i `uc
+..
+..
+..
+..
+]
+[; ;usb_descriptors.c: 112: static const  struct configuration_1_packet configuration_1 =
+[; ;usb_descriptors.c: 113: {
+[; ;usb_descriptors.c: 114: {
+[; ;usb_descriptors.c: 116: sizeof(struct configuration_descriptor),
+[; ;usb_descriptors.c: 117: DESC_CONFIGURATION,
+[; ;usb_descriptors.c: 118: sizeof(configuration_1),
+[; ;usb_descriptors.c: 119: 2,
+[; ;usb_descriptors.c: 120: 1,
+[; ;usb_descriptors.c: 121: 2,
+[; ;usb_descriptors.c: 122: 0b10000000,
+[; ;usb_descriptors.c: 123: 100/2,
+[; ;usb_descriptors.c: 124: },
+[; ;usb_descriptors.c: 127: {
+[; ;usb_descriptors.c: 128: sizeof(struct interface_association_descriptor),
+[; ;usb_descriptors.c: 129: DESC_INTERFACE_ASSOCIATION,
+[; ;usb_descriptors.c: 130: 0,
+[; ;usb_descriptors.c: 131: 2,
+[; ;usb_descriptors.c: 132: 0x02,
+[; ;usb_descriptors.c: 133: 0x02,
+[; ;usb_descriptors.c: 134: 0,
+[; ;usb_descriptors.c: 135: 2,
+[; ;usb_descriptors.c: 136: },
+[; ;usb_descriptors.c: 139: {
+[; ;usb_descriptors.c: 141: sizeof(struct interface_descriptor),
+[; ;usb_descriptors.c: 142: DESC_INTERFACE,
+[; ;usb_descriptors.c: 143: 0x0,
+[; ;usb_descriptors.c: 144: 0x0,
+[; ;usb_descriptors.c: 145: 0x1,
+[; ;usb_descriptors.c: 146: 0x02,
+[; ;usb_descriptors.c: 147: 0x02,
+[; ;usb_descriptors.c: 148: 0x00,
+[; ;usb_descriptors.c: 149: 0x03,
+[; ;usb_descriptors.c: 150: },
+[; ;usb_descriptors.c: 153: {
+[; ;usb_descriptors.c: 154: sizeof(struct cdc_functional_descriptor_header),
+[; ;usb_descriptors.c: 155: DESC_CS_INTERFACE,
+[; ;usb_descriptors.c: 156: CDC_FUNCTIONAL_DESCRIPTOR_SUBTYPE_HEADER,
+[; ;usb_descriptors.c: 157: 0x0110,
+[; ;usb_descriptors.c: 158: },
+[; ;usb_descriptors.c: 161: {
+[; ;usb_descriptors.c: 162: sizeof(struct cdc_acm_functional_descriptor),
+[; ;usb_descriptors.c: 163: DESC_CS_INTERFACE,
+[; ;usb_descriptors.c: 164: CDC_FUNCTIONAL_DESCRIPTOR_SUBTYPE_ACM,
+[; ;usb_descriptors.c: 167: CDC_ACM_CAPABILITY_LINE_CODINGS | CDC_ACM_CAPABILITY_SEND_BREAK,
+[; ;usb_descriptors.c: 168: },
+[; ;usb_descriptors.c: 171: {
+[; ;usb_descriptors.c: 172: sizeof (struct cdc_union_functional_descriptor),
+[; ;usb_descriptors.c: 173: DESC_CS_INTERFACE,
+[; ;usb_descriptors.c: 174: CDC_FUNCTIONAL_DESCRIPTOR_SUBTYPE_UNION,
+[; ;usb_descriptors.c: 175: 0,
+[; ;usb_descriptors.c: 176: 1,
+[; ;usb_descriptors.c: 177: },
+[; ;usb_descriptors.c: 180: {
+[; ;usb_descriptors.c: 181: sizeof(struct endpoint_descriptor),
+[; ;usb_descriptors.c: 182: DESC_ENDPOINT,
+[; ;usb_descriptors.c: 183: 0x01 | 0x80,
+[; ;usb_descriptors.c: 184: EP_INTERRUPT,
+[; ;usb_descriptors.c: 185: 10,
+[; ;usb_descriptors.c: 186: 1,
+[; ;usb_descriptors.c: 187: },
+[; ;usb_descriptors.c: 190: {
+[; ;usb_descriptors.c: 192: sizeof(struct interface_descriptor),
+[; ;usb_descriptors.c: 193: DESC_INTERFACE,
+[; ;usb_descriptors.c: 194: 0x1,
+[; ;usb_descriptors.c: 195: 0x0,
+[; ;usb_descriptors.c: 196: 0x2,
+[; ;usb_descriptors.c: 197: 0x0a,
+[; ;usb_descriptors.c: 198: 0,
+[; ;usb_descriptors.c: 199: 0x0,
+[; ;usb_descriptors.c: 200: 0x04,
+[; ;usb_descriptors.c: 201: },
+[; ;usb_descriptors.c: 204: {
+[; ;usb_descriptors.c: 205: sizeof(struct endpoint_descriptor),
+[; ;usb_descriptors.c: 206: DESC_ENDPOINT,
+[; ;usb_descriptors.c: 207: 0x02 | 0x80,
+[; ;usb_descriptors.c: 208: EP_BULK,
+[; ;usb_descriptors.c: 209: 64,
+[; ;usb_descriptors.c: 210: 1,
+[; ;usb_descriptors.c: 211: },
+[; ;usb_descriptors.c: 214: {
+[; ;usb_descriptors.c: 215: sizeof(struct endpoint_descriptor),
+[; ;usb_descriptors.c: 216: DESC_ENDPOINT,
+[; ;usb_descriptors.c: 217: 0x02 ,
+[; ;usb_descriptors.c: 218: EP_BULK,
+[; ;usb_descriptors.c: 219: 64,
+[; ;usb_descriptors.c: 220: 1,
+[; ;usb_descriptors.c: 221: },
+[; ;usb_descriptors.c: 222: };
+"236
+[v _str00 `CS25 ~T0 @X0 1 s ]
+[i _str00
+:U ..
+:U ..
+"237
+-> -> # _str00 `ui `uc
+"238
+-> . `E264 2 `uc
+"240
+-> -> 1033 `i `ui
+..
+..
+]
+[; ;usb_descriptors.c: 236: static const  struct {uint8_t bLength;uint8_t bDescriptorType; uint16_t lang; } str00 = {
+[; ;usb_descriptors.c: 237: sizeof(str00),
+[; ;usb_descriptors.c: 238: DESC_STRING,
+[; ;usb_descriptors.c: 239: 0x0409
+[; ;usb_descriptors.c: 240: };
+"242
+[v _vendor_string `CS26 ~T0 @X0 1 s ]
+[i _vendor_string
+:U ..
+:U ..
+"243
+-> -> # _vendor_string `ui `uc
+"244
+-> . `E264 2 `uc
+:U ..
+"245
+-> 83 `ui
+-> 105 `ui
+-> 103 `ui
+-> 110 `ui
+-> 97 `ui
+-> 108 `ui
+-> 32 `ui
+-> 49 `ui
+-> 49 `ui
+-> 32 `ui
+-> 83 `ui
+-> 111 `ui
+-> 102 `ui
+-> 116 `ui
+-> 119 `ui
+-> 97 `ui
+-> 114 `ui
+-> 101 `ui
+-> 32 `ui
+-> 76 `ui
+-> 76 `ui
+-> 67 `ui
+-> 46 `ui
+..
+..
+..
+]
+[; ;usb_descriptors.c: 242: static const  struct {uint8_t bLength;uint8_t bDescriptorType; uint16_t chars[23]; } vendor_string = {
+[; ;usb_descriptors.c: 243: sizeof(vendor_string),
+[; ;usb_descriptors.c: 244: DESC_STRING,
+[; ;usb_descriptors.c: 245: {'S','i','g','n','a','l',' ','1','1',' ','S','o','f','t','w','a','r','e',' ','L','L','C','.'}
+[; ;usb_descriptors.c: 246: };
+"248
+[v _product_string `CS27 ~T0 @X0 1 s ]
+[i _product_string
+:U ..
+:U ..
+"249
+-> -> # _product_string `ui `uc
+"250
+-> . `E264 2 `uc
+:U ..
+"251
+-> 85 `ui
+-> 83 `ui
+-> 66 `ui
+-> 32 `ui
+-> 67 `ui
+-> 68 `ui
+-> 67 `ui
+-> 32 `ui
+-> 84 `ui
+-> 101 `ui
+-> 115 `ui
+-> 116 `ui
+..
+..
+..
+]
+[; ;usb_descriptors.c: 248: static const  struct {uint8_t bLength;uint8_t bDescriptorType; uint16_t chars[12]; } product_string = {
+[; ;usb_descriptors.c: 249: sizeof(product_string),
+[; ;usb_descriptors.c: 250: DESC_STRING,
+[; ;usb_descriptors.c: 251: {'U','S','B',' ','C','D','C',' ','T','e','s','t',}
+[; ;usb_descriptors.c: 252: };
+"254
+[v _cdc_interface_string `CS28 ~T0 @X0 1 s ]
+[i _cdc_interface_string
+:U ..
+:U ..
+"255
+-> -> # _cdc_interface_string `ui `uc
+"256
+-> . `E264 2 `uc
+:U ..
+"257
+-> 67 `ui
+-> 68 `ui
+-> 67 `ui
+-> 32 `ui
+-> 73 `ui
+-> 110 `ui
+-> 116 `ui
+-> 101 `ui
+-> 114 `ui
+-> 102 `ui
+-> 97 `ui
+-> 99 `ui
+-> 101 `ui
+..
+..
+..
+]
+[; ;usb_descriptors.c: 254: static const  struct {uint8_t bLength;uint8_t bDescriptorType; uint16_t chars[13]; } cdc_interface_string = {
+[; ;usb_descriptors.c: 255: sizeof(cdc_interface_string),
+[; ;usb_descriptors.c: 256: DESC_STRING,
+[; ;usb_descriptors.c: 257: {'C','D','C',' ','I','n','t','e','r','f','a','c','e'}
+[; ;usb_descriptors.c: 258: };
+"260
+[v _cdc_data_string `CS29 ~T0 @X0 1 s ]
+[i _cdc_data_string
+:U ..
+:U ..
+"261
+-> -> # _cdc_data_string `ui `uc
+"262
+-> . `E264 2 `uc
+:U ..
+"263
+-> 67 `ui
+-> 68 `ui
+-> 67 `ui
+-> 32 `ui
+-> 68 `ui
+-> 97 `ui
+-> 116 `ui
+-> 97 `ui
+-> 32 `ui
+-> 73 `ui
+-> 110 `ui
+-> 116 `ui
+-> 101 `ui
+-> 114 `ui
+-> 102 `ui
+-> 97 `ui
+-> 99 `ui
+-> 101 `ui
+..
+..
+..
+]
+[; ;usb_descriptors.c: 260: static const  struct {uint8_t bLength;uint8_t bDescriptorType; uint16_t chars[18]; } cdc_data_string = {
+[; ;usb_descriptors.c: 261: sizeof(cdc_data_string),
+[; ;usb_descriptors.c: 262: DESC_STRING,
+[; ;usb_descriptors.c: 263: {'C','D','C',' ','D','a','t','a',' ','I','n','t','e','r','f','a','c','e'}
+[; ;usb_descriptors.c: 264: };
+"266
+[v _fake_serial_num `CS30 ~T0 @X0 1 s ]
+[i _fake_serial_num
+:U ..
+:U ..
+"267
+-> -> # _fake_serial_num `ui `uc
+"268
+-> . `E264 2 `uc
+:U ..
+"269
+-> 70 `ui
+-> 65 `ui
+-> 75 `ui
+-> 69 `ui
+-> 32 `ui
+-> 83 `ui
+-> 101 `ui
+-> 114 `ui
+-> 105 `ui
+-> 97 `ui
+-> 108 `ui
+-> 32 `ui
+"270
+-> 78 `ui
+-> 117 `ui
+-> 109 `ui
+-> 98 `ui
+-> 101 `ui
+-> 114 `ui
+-> 58 `ui
+-> 32 `ui
+"271
+-> 68 `ui
+-> 111 `ui
+-> 110 `ui
+-> 39 `ui
+-> 116 `ui
+-> 32 `ui
+-> 115 `ui
+-> 104 `ui
+-> 105 `ui
+-> 112 `ui
+-> 32 `ui
+-> 97 `ui
+-> 32 `ui
+"272
+-> 112 `ui
+-> 114 `ui
+-> 111 `ui
+-> 100 `ui
+-> 117 `ui
+-> 99 `ui
+-> 116 `ui
+-> 32 `ui
+-> 108 `ui
+-> 105 `ui
+-> 107 `ui
+-> 101 `ui
+-> 32 `ui
+"273
+-> 116 `ui
+-> 104 `ui
+-> 105 `ui
+-> 115 `ui
+-> 46 `ui
+-> 32 `ui
+-> 80 `ui
+-> 76 `ui
+-> 69 `ui
+-> 65 `ui
+-> 83 `ui
+-> 69 `ui
+-> 33 `ui
+..
+..
+..
+]
+[; ;usb_descriptors.c: 266: static const  struct {uint8_t bLength;uint8_t bDescriptorType; uint16_t chars[59]; } fake_serial_num = {
+[; ;usb_descriptors.c: 267: sizeof(fake_serial_num),
+[; ;usb_descriptors.c: 268: DESC_STRING,
+[; ;usb_descriptors.c: 269: {'F','A','K','E',' ','S','e','r','i','a','l',' ',
+[; ;usb_descriptors.c: 270: 'N','u','m','b','e','r',':',' ',
+[; ;usb_descriptors.c: 271: 'D','o','n','\'','t',' ','s','h','i','p',' ','a',' ',
+[; ;usb_descriptors.c: 272: 'p','r','o','d','u','c','t',' ','l','i','k','e',' ',
+[; ;usb_descriptors.c: 273: 't','h','i','s','.',' ','P','L','E','A','S','E','!', }
+[; ;usb_descriptors.c: 274: };
+"287
+[v _usb_application_get_string `(i ~T0 @X0 1 ef2`uc`**Cv ]
+"288
+{
+[; ;usb_descriptors.c: 287: int16_t usb_application_get_string(uint8_t string_number, const void **ptr)
+[; ;usb_descriptors.c: 288: {
+[e :U _usb_application_get_string ]
+"287
+[v _string_number `uc ~T0 @X0 1 r1 ]
+[v _ptr `**Cv ~T0 @X0 1 r2 ]
+"288
+[f ]
+[; ;usb_descriptors.c: 289: if (string_number == 0) {
+"289
+[e $ ! == -> _string_number `i -> 0 `i 32  ]
+{
+[; ;usb_descriptors.c: 290: *ptr = &str00;
+"290
+[e = *U _ptr -> &U _str00 `*Cv ]
+[; ;usb_descriptors.c: 291: return sizeof(str00);
+"291
+[e ) -> -> # _str00 `ui `i ]
+[e $UE 31  ]
+"292
+}
+[; ;usb_descriptors.c: 292: }
+[e $U 33  ]
+"293
+[e :U 32 ]
+[; ;usb_descriptors.c: 293: else if (string_number == 1) {
+[e $ ! == -> _string_number `i -> 1 `i 34  ]
+{
+[; ;usb_descriptors.c: 294: *ptr = &vendor_string;
+"294
+[e = *U _ptr -> &U _vendor_string `*Cv ]
+[; ;usb_descriptors.c: 295: return sizeof(vendor_string);
+"295
+[e ) -> -> # _vendor_string `ui `i ]
+[e $UE 31  ]
+"296
+}
+[; ;usb_descriptors.c: 296: }
+[e $U 35  ]
+"297
+[e :U 34 ]
+[; ;usb_descriptors.c: 297: else if (string_number == 2) {
+[e $ ! == -> _string_number `i -> 2 `i 36  ]
+{
+[; ;usb_descriptors.c: 298: *ptr = &product_string;
+"298
+[e = *U _ptr -> &U _product_string `*Cv ]
+[; ;usb_descriptors.c: 299: return sizeof(product_string);
+"299
+[e ) -> -> # _product_string `ui `i ]
+[e $UE 31  ]
+"300
+}
+[; ;usb_descriptors.c: 300: }
+[e $U 37  ]
+"301
+[e :U 36 ]
+[; ;usb_descriptors.c: 301: else if (string_number == 3) {
+[e $ ! == -> _string_number `i -> 3 `i 38  ]
+{
+[; ;usb_descriptors.c: 302: *ptr = &cdc_interface_string;
+"302
+[e = *U _ptr -> &U _cdc_interface_string `*Cv ]
+[; ;usb_descriptors.c: 303: return sizeof(cdc_interface_string);
+"303
+[e ) -> -> # _cdc_interface_string `ui `i ]
+[e $UE 31  ]
+"304
+}
+[; ;usb_descriptors.c: 304: }
+[e $U 39  ]
+"305
+[e :U 38 ]
+[; ;usb_descriptors.c: 305: else if (string_number == 4) {
+[e $ ! == -> _string_number `i -> 4 `i 40  ]
+{
+[; ;usb_descriptors.c: 306: *ptr = &cdc_data_string;
+"306
+[e = *U _ptr -> &U _cdc_data_string `*Cv ]
+[; ;usb_descriptors.c: 307: return sizeof(cdc_data_string);
+"307
+[e ) -> -> # _cdc_data_string `ui `i ]
+[e $UE 31  ]
+"308
+}
+[; ;usb_descriptors.c: 308: }
+[e $U 41  ]
+"309
+[e :U 40 ]
+[; ;usb_descriptors.c: 309: else if (string_number == 5) {
+[e $ ! == -> _string_number `i -> 5 `i 42  ]
+{
+[; ;usb_descriptors.c: 318: *ptr = &fake_serial_num;
+"318
+[e = *U _ptr -> &U _fake_serial_num `*Cv ]
+[; ;usb_descriptors.c: 319: return sizeof(fake_serial_num);
+"319
+[e ) -> -> # _fake_serial_num `ui `i ]
+[e $UE 31  ]
+"320
+}
+[e :U 42 ]
+"322
+[e :U 41 ]
+[e :U 39 ]
+[e :U 37 ]
+[e :U 35 ]
+[e :U 33 ]
+[; ;usb_descriptors.c: 320: }
+[; ;usb_descriptors.c: 322: return -1;
+[e ) -U -> 1 `i ]
+[e $UE 31  ]
+[; ;usb_descriptors.c: 323: }
+"323
+[e :UE 31 ]
+}
+"336
+[v _usb_application_config_descs `*CS7 ~T0 @X0 -> 0 `x e ]
+[i _usb_application_config_descs
+:U ..
+"338
+-> -> &U _configuration_1 `*S7 `*CS7
+..
+]
+[; ;usb_descriptors.c: 336: const struct configuration_descriptor *usb_application_config_descs[] =
+[; ;usb_descriptors.c: 337: {
+[; ;usb_descriptors.c: 338: (struct configuration_descriptor*) &configuration_1,
+[; ;usb_descriptors.c: 339: };
+[; ;usb_descriptors.c: 340: typedef char STATIC_SIZE_CHECK_LINE_340 [((sizeof(usb_application_config_descs)/sizeof(*usb_application_config_descs))==1)?1:-1];
+[; ;usb_descriptors.c: 341: typedef char STATIC_SIZE_CHECK_LINE_341 [(sizeof(this_device_descriptor)==18)?1:-1];
