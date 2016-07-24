@@ -189,7 +189,7 @@ void loop()
     static uint8_t currentLayoutId = 0U;
 
     // time before display update
-    const unsigned long updateInterval = 5L * 1000L;
+    const unsigned long updateInterval = 15L * 1000L;
     unsigned long currentMillis = millis();
     static unsigned long previousMillis = 0;   
 
