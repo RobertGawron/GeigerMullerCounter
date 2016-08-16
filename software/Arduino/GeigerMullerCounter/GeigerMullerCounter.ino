@@ -53,7 +53,7 @@ inline void setupGPIO()
     attachInterrupt(digitalPinToInterrupt(gmInputPin), interruptHandler, CHANGE);
 
     // setup button to select requested layout
-//    pinMode(userKeyPin, INPUT);
+    pinMode(userKeyPin, INPUT);
 //    attachInterrupt(digitalPinToInterrupt(userKeyPin), interruptHandler, CHANGE);
 
 
@@ -152,9 +152,9 @@ void loop()
     static GMCounter<4 * 60> minuteGMCounter;
  
     minuteGMCounter.addSample(10);
-    minuteGMCounter.addSample(12);
+    minuteGMCounter.addSample(10);
     minuteGMCounter.addSample(34);
-    minuteGMCounter.addSample(45);
+    minuteGMCounter.addSample(44);
     minuteGMCounter.addSample(44);
     minuteGMCounter.addSample(22);
     minuteGMCounter.addSample(5);
@@ -167,7 +167,7 @@ void loop()
 
     layoutHistogram.draw(&minuteGMCounter, conf);
 
-    Serial.print("layout end");
+    Serial.print("\nlayout end\n");
     
     while(1);
 #endif

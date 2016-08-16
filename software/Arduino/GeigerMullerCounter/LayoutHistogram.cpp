@@ -19,7 +19,11 @@ void LayoutHistogram::draw(GMCounterBase* data, layoutConfig_t& conf)
     uint8_t binsCount = getBinsCount(data);
     uint16_t maxValue = getMaxHistogramSampleValue(data, binsCount);
 
-    const uint16_t binWidth = itsDisplay.width() / binsCount;
+   const uint16_t binWidth = itsDisplay.width() / binsCount;
+
+    // avoid problem with number rounding by using substitution and addition
+    uint8_t x0 = 0;
+    uint8_t x1 = binWidth;
 
     for (uint16_t i = 0U; (i < binsCount) && (i < itsDisplay.width()); i++)
     {
@@ -28,8 +32,6 @@ void LayoutHistogram::draw(GMCounterBase* data, layoutConfig_t& conf)
         // data normalization
         binValue = uint8_t( (float(binValue) / float(maxValue)) *float(graphHeight));        
 
-        const uint8_t x0 = (i * binWidth);
-        const uint8_t x1 = (x1 + binWidth);
         const uint8_t y0 = itsDisplay.height() - binValue;
         const uint8_t y1 = itsDisplay.height();
 
@@ -38,6 +40,9 @@ void LayoutHistogram::draw(GMCounterBase* data, layoutConfig_t& conf)
             itsDisplay.drawLine(j, y0, j, y1, BLACK);
 
         }
+
+        x0+= binWidth;
+        x1+= binWidth;
     }
 
     itsDisplay.display();
@@ -52,7 +57,12 @@ uint8_t LayoutHistogram::getBinsCount(GMCounterBase* data)
     sample_t minimum = data->getMinSampleValue();
     
     binsCount = sample_t( float(maximum - minimum ) / binDivider);
+    binsCount = (binsCount < data->getSampleCount() ) ? binsCount : (data->getSampleCount() / binDivider);
     binsCount = (binsCount < LCDWIDTH ) ? binsCount : (LCDWIDTH - 1U); 
+
+
+  Serial.println(binsCount);
+
 
     return binsCount;
 }
