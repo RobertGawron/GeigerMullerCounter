@@ -12,7 +12,9 @@ void LayoutPulseCounter::draw(GMCounterBase* data, layoutConfig_t& conf)
     // show legend
     uint8_t currentValue = data->getSample(0U);
     drawNumber(currentValue, 0U, 0U);
-    drawText("cpm", 20U, 0U);
+    //drawText(conf.legendText, 20U, 0U);
+    drawText(conf.legendText, 20U, 0U);
+//Serial.println(conf.legendText);
 
     // show graph
     const uint8_t graphHeight = 40U;

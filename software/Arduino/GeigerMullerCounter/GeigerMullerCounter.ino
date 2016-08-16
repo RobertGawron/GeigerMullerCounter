@@ -53,7 +53,8 @@ inline void setupGPIO()
     attachInterrupt(digitalPinToInterrupt(gmInputPin), interruptHandler, CHANGE);
 
     // setup button to select requested layout
-    pinMode(userKeyPin, INPUT);
+  //  pinMode(userKeyPin, INPUT);
+    DDRB = DDRB | B00000000; 
 //    attachInterrupt(digitalPinToInterrupt(userKeyPin), interruptHandler, CHANGE);
 
 
@@ -190,12 +191,12 @@ void loop()
     static uint8_t currentLayoutId = 0U;
 
     // time before display update
-    const unsigned long updateInterval = 8L * 1000L;
+    const unsigned long updateInterval = 60L * 1000L;
     unsigned long currentMillis = millis();
     static unsigned long previousMillis = 0;   
 
     // key related
-    uint8_t previousKeyState = HIGH;
+    static uint8_t previousKeyState = HIGH;
 
     // handle data processing
     if (currentMillis - previousMillis >= updateInterval) 
@@ -221,16 +222,25 @@ void loop()
         isLayoutUpdate = true;
     }
 
-    // handle key processing
-    uint8_t currentKeyState = digitalRead(userKeyPin);
 
-    if ((currentKeyState == LOW) && (previousKeyState == HIGH))
+    // TODO: this key debouncing sucks
+    if(((currentMillis - previousMillis) % 500U) == 0U) 
     {
-        isLayoutUpdate = true;
-        currentLayoutId++;
-    }
+      // handle key processing
+      uint8_t currentKeyState = digitalRead(userKeyPin);
+      //static uint8_t debounceCounter = 0U;
+      //static bool isDebounceActive = false;
 
-    previousKeyState = currentKeyState;
+
+      if ((currentKeyState == HIGH) && (previousKeyState == LOW))
+      {
+          isLayoutUpdate = true;
+          currentLayoutId++; 
+          Serial.println(currentKeyState); 
+      }
+  
+      previousKeyState = currentKeyState;
+    }
     
     // handle layout processing
     if (isLayoutUpdate)
@@ -244,30 +254,51 @@ void loop()
             case 0:
             {
                 layoutConfig_t conf;
+                conf.legendText = "cpm";
                 layoutPulseCounter.draw(&minuteGMCounter, conf);
             } 
             break;
 
-            // histogram 1 minute interval
+#if 0
+            // pulse counter 1 hour interval
             case 1:
             {
                 layoutConfig_t conf;
-                conf.legendText = "1min int hist";
-                layoutHistogram.draw(&minuteGMCounter, conf);
+                conf.legendText = "cph";
+                layoutPulseCounter.draw(&hourGMCounter, conf);
             } 
             break;
 
-            // pulse counter 1 minute interval
-            default:
+
+            // histogram 1 minute interval
+            case 2:
             {
                 layoutConfig_t conf;
-                layoutPulseCounter.draw(&minuteGMCounter, conf);
-                // circulating layouts
-                currentLayoutId = 1U;
+                conf.legendText = "1min hist";
+                layoutHistogram.draw(&minuteGMCounter, conf);
+
             } 
             break;
+#endif
+
+            // histogram 1 hour interval
+            default:
+            {
+/*                layoutConfig_t conf;
+                conf.legendText = "1h hist";
+                layoutHistogram.draw(&hourGMCounter, conf);
+*/
+                layoutConfig_t conf;
+                conf.legendText = "1min hist";
+                layoutHistogram.draw(&minuteGMCounter, conf);
 
 
+                
+                // circulating layouts
+                currentLayoutId = 0U;
+            } 
+            break;
+            
         };
 
         isLayoutUpdate = false;
