@@ -14,11 +14,12 @@
 // pin 5 - Data/Command select (D/C)
 // pin 4 - LCD chip select (CS)
 // pin 3 - LCD reset (RST)
-Adafruit_PCD8544 display = Adafruit_PCD8544(7, 6, 5, 4, 3);
+//Adafruit_PCD8544 display = Adafruit_PCD8544(7, 6, 5, 4, 3);
+Adafruit_PCD8544 display = Adafruit_PCD8544(3,4,5,6,7);
 
 const byte ledPin = 13;
 const byte gmInputPin = 2;
-const byte userKeyPin = 12;
+const byte userKeyPin = 8;
 
 
 // global variables for interrupt handling
@@ -189,7 +190,7 @@ void loop()
     static uint8_t currentLayoutId = 0U;
 
     // time before display update
-    const unsigned long updateInterval = 15L * 1000L;
+    const unsigned long updateInterval = 8L * 1000L;
     unsigned long currentMillis = millis();
     static unsigned long previousMillis = 0;   
 
