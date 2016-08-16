@@ -6,7 +6,7 @@
 <setting alwaysvectorfont="no"/>
 <setting verticaltext="up"/>
 </settings>
-<grid distance="0.1" unitdist="inch" unit="inch" style="lines" multiple="1" display="yes" altdistance="0.01" altunitdist="inch" altunit="inch"/>
+<grid distance="0.1" unitdist="inch" unit="inch" style="lines" multiple="1" display="no" altdistance="0.01" altunitdist="inch" altunit="inch"/>
 <layers>
 <layer number="1" name="Top" color="4" fill="1" visible="no" active="no"/>
 <layer number="2" name="Route2" color="1" fill="3" visible="no" active="no"/>
@@ -7007,7 +7007,7 @@ wire to board 2.54 mm (.1 inch) pitch header</description>
 <part name="GND11" library="supply1" deviceset="GND" device=""/>
 <part name="C5" library="resistor" deviceset="C-EU" device="C0805K" value="10n"/>
 <part name="C6" library="resistor" deviceset="C-EU" device="C0805K" value="10n"/>
-<part name="R5" library="resistor" deviceset="R-EU_" device="0207/10" value="10k"/>
+<part name="R5" library="resistor" deviceset="R-EU_" device="0207/10" value="220R"/>
 <part name="GM_SIGNAL" library="con-molex" deviceset="22-?-02" device="05-7028"/>
 <part name="GND13" library="supply1" deviceset="GND" device=""/>
 <part name="C7" library="resistor" deviceset="C-EU" device="C0805K" value="10n"/>
