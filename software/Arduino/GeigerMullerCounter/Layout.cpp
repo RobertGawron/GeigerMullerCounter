@@ -1,6 +1,5 @@
 #include "Layout.h"
 
-
 Layout::Layout(display_t& display) : itsDisplay(display)
 {
     // empty

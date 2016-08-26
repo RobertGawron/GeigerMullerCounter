@@ -183,7 +183,9 @@ void loop()
 
     // changing layout specific
     bool isLayoutUpdate = false;
-    static uint8_t currentLayoutId = 0U;
+    bool isLayoutSwitch = false;
+
+
    
     // time before display update
     const unsigned long updateInterval = 60L * 1000L;
@@ -226,15 +228,24 @@ void loop()
 
         if ((currentKeyState == LOW) && (previousKeyState == HIGH))
         {
-            isLayoutUpdate = true;
-            currentLayoutId++; 
+            isLayoutSwitch = true;
+            //isLayoutUpdate = true;
+            //currentLayoutId++; 
         }
         previousKeyState = currentKeyState;
     }
     
     // handle layout processing
-    if (isLayoutUpdate)
-    {
+    if (isLayoutUpdate || isLayoutSwitch)
+    {    
+        static int8_t currentLayoutId = 0U;
+        
+        if(isLayoutSwitch)
+        {
+            currentLayoutId++; 
+        }
+       
+ 
         switch (currentLayoutId)
         {
             case 0:
@@ -269,7 +280,7 @@ void loop()
                 layoutHistogram.draw(&hourGMCounter, conf);
 
                 // circulating layouts
-                currentLayoutId = 0U;
+                currentLayoutId = -1;
             } break;
             
         };
