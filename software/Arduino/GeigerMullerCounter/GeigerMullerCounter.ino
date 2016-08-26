@@ -53,11 +53,7 @@ inline void setupGPIO()
     attachInterrupt(digitalPinToInterrupt(gmInputPin), interruptHandler, CHANGE);
 
     // setup button to select requested layout
-  //  pinMode(userKeyPin, INPUT);
-    DDRB = DDRB | B00000000; 
-//    attachInterrupt(digitalPinToInterrupt(userKeyPin), interruptHandler, CHANGE);
-
-
+    pinMode(userKeyPin, INPUT);
 }
 
 inline void setupDisplay()
@@ -176,20 +172,19 @@ void loop()
 
 
 #if 1 
-
     // GM data specific
     static GMCounter<4 * 60> minuteGMCounter;
     static GMCounter<4 * 24> hourGMCounter;
-
     static uint8_t minuteCounter = 0U;
-    
+
     // layout handling specific
     static LayoutHistogram layoutHistogram(display);
     static LayoutPulseCounter layoutPulseCounter(display);
 
+    // changing layout specific
     bool isLayoutUpdate = false;
     static uint8_t currentLayoutId = 0U;
-
+   
     // time before display update
     const unsigned long updateInterval = 60L * 1000L;
     unsigned long currentMillis = millis();
@@ -204,100 +199,78 @@ void loop()
         previousMillis = currentMillis;
         minuteCounter++;
  
-        // handle GM data
+        // handle minute interval GM data
         minuteGMCounter.addSample(pulseCounter);
         pulseCounter = 0U;
 
-        // handle hour interval data colection
+        // handle hour interval GM data
         const uint8_t minutesInHour = 60U;
      
-        if(minuteCounter++ == minutesInHour)
+        if(minuteCounter == minutesInHour)
         {
             sample_t hourSample = minuteGMCounter.getMean(minutesInHour);
             hourGMCounter.addSample(hourSample);
             minuteCounter = 0U;
         }
        
-        // repaint is needed
+        // new data is available - repaint current layout
         isLayoutUpdate = true;
     }
 
 
-    // TODO: this key debouncing sucks
-    if(((currentMillis - previousMillis) % 500U) == 0U) 
+    // TODO: this 50 below is a dirty way, make it better 
+    if(((currentMillis - previousMillis) % 50U) == 0U) 
     {
-      // handle key processing
-      uint8_t currentKeyState = digitalRead(userKeyPin);
-      //static uint8_t debounceCounter = 0U;
-      //static bool isDebounceActive = false;
+        // handle key processing, no software debouncing!
+        uint8_t currentKeyState = digitalRead(userKeyPin);
 
-
-      if ((currentKeyState == HIGH) && (previousKeyState == LOW))
-      {
-          isLayoutUpdate = true;
-          currentLayoutId++; 
-          Serial.println(currentKeyState); 
-      }
-  
-      previousKeyState = currentKeyState;
+        if ((currentKeyState == LOW) && (previousKeyState == HIGH))
+        {
+            isLayoutUpdate = true;
+            currentLayoutId++; 
+        }
+        previousKeyState = currentKeyState;
     }
     
     // handle layout processing
     if (isLayoutUpdate)
     {
-        Serial.println(currentLayoutId);
- 
-    
         switch (currentLayoutId)
         {
-            // pulse counter 1 minute interval
             case 0:
             {
+                // pulse counter 1 minute interval
                 layoutConfig_t conf;
                 conf.legendText = "cpm";
                 layoutPulseCounter.draw(&minuteGMCounter, conf);
-            } 
-            break;
+            } break;
 
-#if 0
-            // pulse counter 1 hour interval
             case 1:
             {
+                // pulse counter 1 hour interval
                 layoutConfig_t conf;
                 conf.legendText = "cph";
                 layoutPulseCounter.draw(&hourGMCounter, conf);
-            } 
-            break;
+            } break;
 
-
-            // histogram 1 minute interval
             case 2:
             {
+                // histogram 1 minute interval
                 layoutConfig_t conf;
                 conf.legendText = "1min hist";
                 layoutHistogram.draw(&minuteGMCounter, conf);
+            } break;
 
-            } 
-            break;
-#endif
-
-            // histogram 1 hour interval
             default:
             {
-/*                layoutConfig_t conf;
+                // histogram 1 hour interval
+                layoutConfig_t conf;
                 conf.legendText = "1h hist";
                 layoutHistogram.draw(&hourGMCounter, conf);
-*/
-                layoutConfig_t conf;
-                conf.legendText = "1min hist";
-                layoutHistogram.draw(&minuteGMCounter, conf);
 
-
-                
                 // circulating layouts
                 currentLayoutId = 0U;
-            } 
-            break;
+            } break;
             
         };
 
