@@ -26,11 +26,13 @@ public:
     virtual sample_t getMinSampleValue();
     
     virtual sample_t getMean(uint16_t sampleRange);
+
+    virtual float getDose();
 };
 
 
 
-template <size_t ITEM_MAX>
+template <size_t ITEM_MAX, uint8_t AMOUNT_OF_PRRALLEL_TUBES>
 class GMCounter: public GMCounterBase
 {
 public:
@@ -109,6 +111,16 @@ public:
         }
 
         return retValue;
+    }
+   
+    // returns value in uSv/h 
+    float getDose()
+    {
+        float dose = float(getSample(0)) / float(AMOUNT_OF_PRRALLEL_TUBES);
+        // for STS-5 tube, 25 counts per minute = 0.1 uSv per hour 
+        dose /= 2.5;
+
+        return dose;
     }
 
 private:

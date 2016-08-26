@@ -7,6 +7,8 @@
 #include "LayoutHistogram.h"
 #include "LayoutPulseCounter.h"
 
+// the device has three parallel tubes.
+static const uint8_t AMOUNT_OF_PRRALLEL_TUBES = 3U;
 
 // Software SPI (slower updates, more flexible pin options):
 // pin 7 - Serial clock out (SCLK)
@@ -173,8 +175,8 @@ void loop()
 
 #if 1 
     // GM data specific
-    static GMCounter<4 * 60> minuteGMCounter;
-    static GMCounter<4 * 24> hourGMCounter;
+    static GMCounter<4 * 60, AMOUNT_OF_PRRALLEL_TUBES> minuteGMCounter;
+    static GMCounter<4 * 24, AMOUNT_OF_PRRALLEL_TUBES> hourGMCounter;
     static uint8_t minuteCounter = 0U;
 
     // layout handling specific

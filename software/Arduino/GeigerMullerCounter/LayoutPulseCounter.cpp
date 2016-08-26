@@ -15,25 +15,19 @@ void LayoutPulseCounter::draw(GMCounterBase* data, layoutConfig_t& conf)
     drawText(conf.pulseConfig.pulseLabel, 18U, 0U);
     
 
-    // TODO: very dirty hack
+    // TODO: dirty hack, we want to show value only when
+    // showing graph for pulses per minute.
     if(conf.pulseConfig.doseLabel != "")
     {
-        //pulseValue=75;
-        float tmp = pulseValue/3.0; // 3 lamps in parallel
-        tmp /=25.0; // 25 cpm = 0.1usv/h
-        tmp/=10;
-       //tmp*=100; 
-        //drawNumber(tmp, 40U, 0U);
-
+        // TODO use a wrapper for writting numbers
+        float doseValue = data->getDose();
         itsDisplay.setTextSize(0);
         itsDisplay.setTextColor(BLACK);
         itsDisplay.setCursor(36, 0);
-        itsDisplay.print(tmp);
-
+        itsDisplay.print(doseValue);
 
         drawText(conf.pulseConfig.doseLabel, 59U, 0U);
     }
-
 
 
     // show graph
