@@ -9,10 +9,16 @@
 
 typedef Adafruit_PCD8544 display_t;
 
+typedef struct pulseCounterConfig
+{
+    char* pulseLabel;
+    char* doseLabel;
+} pulseCounterConfig_t;
+
 typedef union layoutConfig
 {
     char* legendText;
-
+    pulseCounterConfig_t pulseConfig; 
 } layoutConfig_t;
 
 

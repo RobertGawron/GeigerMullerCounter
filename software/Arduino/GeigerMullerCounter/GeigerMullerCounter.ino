@@ -247,7 +247,8 @@ void loop()
             {
                 // pulse counter 1 minute interval
                 layoutConfig_t conf;
-                conf.legendText = "cpm";
+                conf.pulseConfig.pulseLabel = "cpm";
+                conf.pulseConfig.doseLabel  = "uS/h";
                 layoutPulseCounter.draw(&minuteGMCounter, conf);
             } break;
 
@@ -255,7 +256,8 @@ void loop()
             {
                 // pulse counter 1 hour interval
                 layoutConfig_t conf;
-                conf.legendText = "cph";
+                conf.pulseConfig.pulseLabel = "cph";
+                conf.pulseConfig.doseLabel  = "";
                 layoutPulseCounter.draw(&hourGMCounter, conf);
             } break;
 
