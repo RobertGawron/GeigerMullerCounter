@@ -184,8 +184,6 @@ void loop()
     // changing layout specific
     bool isLayoutUpdate = false;
     bool isLayoutSwitch = false;
-
-
    
     // time before display update
     const unsigned long updateInterval = 60L * 1000L;
@@ -229,8 +227,6 @@ void loop()
         if ((currentKeyState == LOW) && (previousKeyState == HIGH))
         {
             isLayoutSwitch = true;
-            //isLayoutUpdate = true;
-            //currentLayoutId++; 
         }
         previousKeyState = currentKeyState;
     }
@@ -244,7 +240,6 @@ void loop()
         {
             currentLayoutId++; 
         }
-       
  
         switch (currentLayoutId)
         {
@@ -282,7 +277,6 @@ void loop()
                 // circulating layouts
                 currentLayoutId = -1;
             } break;
-            
         };
 
         isLayoutUpdate = false;
