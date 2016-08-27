@@ -75,7 +75,7 @@ public:
 
     virtual sample_t getMean(uint16_t sampleRange)
     {
-        sample_t retValue = 0U;
+        uint16_t retValue = 0U;
 
         for(uint16_t i = 0U; i < sampleRange; i++)
         {
@@ -84,7 +84,7 @@ public:
 
         retValue /= sampleRange;
         
-        return retValue;
+        return sample_t(retValue);
     }
 
     // binTotal counts from 1, not from 0 as e.g. array indexes
@@ -117,8 +117,10 @@ public:
     float getDose()
     {
         float dose = float(getSample(0)) / float(AMOUNT_OF_PRRALLEL_TUBES);
-        // for STS-5 tube, 25 counts per minute = 0.1 uSv per hour 
-        dose /= 2.5;
+        // from https://mightyohm.com/forum/viewtopic.php?f=15&t=454
+        // STS-5 is an older verson SBM-20, but they are quite the same, 
+        // so the conversion should be validtube
+        dose /= 57.0;
 
         return dose;
     }

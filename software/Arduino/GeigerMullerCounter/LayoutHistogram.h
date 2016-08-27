@@ -22,7 +22,7 @@ private:
     const uint8_t graphHeight = 40U;
 
     // arbitrary value
-    float binDivider = 1.25;
+    float binDivider = 1.5;
 
 };
 
