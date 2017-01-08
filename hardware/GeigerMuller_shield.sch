@@ -6988,7 +6988,7 @@ wire to board 2.54 mm (.1 inch) pitch header</description>
 <part name="R2" library="resistor" deviceset="R-EU_" device="R0805" value="1k"/>
 <part name="GND5" library="supply1" deviceset="GND" device=""/>
 <part name="+5V" library="supply1" deviceset="+5V" device=""/>
-<part name="RESET1" library="switch-omron" deviceset="10-XX" device=""/>
+<part name="UP" library="switch-omron" deviceset="10-XX" device=""/>
 <part name="C1" library="resistor" deviceset="C-EU" device="C0805K" value="10n"/>
 <part name="C2" library="resistor" deviceset="C-EU" device="C0805K" value="100n"/>
 <part name="GND6" library="supply1" deviceset="GND" device=""/>
@@ -6997,7 +6997,7 @@ wire to board 2.54 mm (.1 inch) pitch header</description>
 <part name="R4" library="resistor" deviceset="R-EU_" device="R0805" value="1k"/>
 <part name="GND8" library="supply1" deviceset="GND" device=""/>
 <part name="P+3" library="supply1" deviceset="+5V" device=""/>
-<part name="RESET2" library="switch-omron" deviceset="10-XX" device=""/>
+<part name="DOWN" library="switch-omron" deviceset="10-XX" device=""/>
 <part name="C3" library="resistor" deviceset="C-EU" device="C0805K" value="10n"/>
 <part name="C4" library="resistor" deviceset="C-EU" device="C0805K" value="100n"/>
 <part name="GND9" library="supply1" deviceset="GND" device=""/>
@@ -7059,7 +7059,7 @@ wire to board 2.54 mm (.1 inch) pitch header</description>
 <instance part="R2" gate="G$1" x="172.72" y="93.98"/>
 <instance part="GND5" gate="1" x="165.1" y="76.2"/>
 <instance part="+5V" gate="1" x="165.1" y="121.92"/>
-<instance part="RESET1" gate="1" x="162.56" y="86.36"/>
+<instance part="UP" gate="1" x="162.56" y="86.36"/>
 <instance part="C1" gate="G$1" x="180.34" y="88.9"/>
 <instance part="C2" gate="G$1" x="172.72" y="111.76"/>
 <instance part="GND6" gate="1" x="180.34" y="76.2"/>
@@ -7068,7 +7068,7 @@ wire to board 2.54 mm (.1 inch) pitch header</description>
 <instance part="R4" gate="G$1" x="215.9" y="93.98"/>
 <instance part="GND8" gate="1" x="208.28" y="76.2"/>
 <instance part="P+3" gate="1" x="208.28" y="121.92"/>
-<instance part="RESET2" gate="1" x="205.74" y="86.36"/>
+<instance part="DOWN" gate="1" x="205.74" y="86.36"/>
 <instance part="C3" gate="G$1" x="223.52" y="88.9"/>
 <instance part="C4" gate="G$1" x="215.9" y="111.76"/>
 <instance part="GND9" gate="1" x="223.52" y="76.2"/>
@@ -7121,7 +7121,7 @@ wire to board 2.54 mm (.1 inch) pitch header</description>
 </segment>
 <segment>
 <pinref part="GND5" gate="1" pin="GND"/>
-<pinref part="RESET1" gate="1" pin="P1"/>
+<pinref part="UP" gate="1" pin="P1"/>
 <wire x1="165.1" y1="78.74" x2="165.1" y2="81.28" width="0.1524" layer="91"/>
 </segment>
 <segment>
@@ -7136,7 +7136,7 @@ wire to board 2.54 mm (.1 inch) pitch header</description>
 </segment>
 <segment>
 <pinref part="GND8" gate="1" pin="GND"/>
-<pinref part="RESET2" gate="1" pin="P1"/>
+<pinref part="DOWN" gate="1" pin="P1"/>
 <wire x1="208.28" y1="78.74" x2="208.28" y2="81.28" width="0.1524" layer="91"/>
 </segment>
 <segment>
@@ -7247,10 +7247,10 @@ wire to board 2.54 mm (.1 inch) pitch header</description>
 <junction x="93.98" y="53.34"/>
 </segment>
 <segment>
-<pinref part="J8" gate="A" pin="1"/>
-<wire x1="157.48" y1="58.42" x2="157.48" y2="30.48" width="0.1524" layer="91"/>
-<wire x1="157.48" y1="30.48" x2="187.96" y2="30.48" width="0.1524" layer="91"/>
+<wire x1="167.64" y1="30.48" x2="187.96" y2="30.48" width="0.1524" layer="91"/>
 <label x="177.8" y="30.48" size="1.778" layer="95"/>
+<pinref part="J8" gate="A" pin="5"/>
+<wire x1="167.64" y1="30.48" x2="167.64" y2="58.42" width="0.1524" layer="91"/>
 </segment>
 </net>
 <net name="LCD_CS" class="0">
@@ -7265,10 +7265,10 @@ wire to board 2.54 mm (.1 inch) pitch header</description>
 <junction x="96.52" y="50.8"/>
 </segment>
 <segment>
-<pinref part="J8" gate="A" pin="2"/>
-<wire x1="160.02" y1="58.42" x2="160.02" y2="33.02" width="0.1524" layer="91"/>
-<wire x1="160.02" y1="33.02" x2="187.96" y2="33.02" width="0.1524" layer="91"/>
+<wire x1="165.1" y1="33.02" x2="187.96" y2="33.02" width="0.1524" layer="91"/>
 <label x="177.8" y="33.02" size="1.778" layer="95"/>
+<pinref part="J8" gate="A" pin="4"/>
+<wire x1="165.1" y1="33.02" x2="165.1" y2="58.42" width="0.1524" layer="91"/>
 </segment>
 </net>
 <net name="LCD_DC" class="0">
@@ -7283,10 +7283,10 @@ wire to board 2.54 mm (.1 inch) pitch header</description>
 <junction x="99.06" y="48.26"/>
 </segment>
 <segment>
-<pinref part="J8" gate="A" pin="3"/>
-<wire x1="162.56" y1="58.42" x2="162.56" y2="35.56" width="0.1524" layer="91"/>
 <wire x1="162.56" y1="35.56" x2="187.96" y2="35.56" width="0.1524" layer="91"/>
 <label x="177.8" y="35.56" size="1.778" layer="95"/>
+<pinref part="J8" gate="A" pin="3"/>
+<wire x1="162.56" y1="35.56" x2="162.56" y2="58.42" width="0.1524" layer="91"/>
 </segment>
 </net>
 <net name="LCD_DIN" class="0">
@@ -7301,10 +7301,10 @@ wire to board 2.54 mm (.1 inch) pitch header</description>
 <junction x="101.6" y="45.72"/>
 </segment>
 <segment>
-<pinref part="J8" gate="A" pin="4"/>
-<wire x1="165.1" y1="58.42" x2="165.1" y2="38.1" width="0.1524" layer="91"/>
-<wire x1="165.1" y1="38.1" x2="187.96" y2="38.1" width="0.1524" layer="91"/>
+<wire x1="160.02" y1="38.1" x2="187.96" y2="38.1" width="0.1524" layer="91"/>
 <label x="177.8" y="38.1" size="1.778" layer="95"/>
+<pinref part="J8" gate="A" pin="2"/>
+<wire x1="160.02" y1="38.1" x2="160.02" y2="58.42" width="0.1524" layer="91"/>
 </segment>
 </net>
 <net name="LCD_SCLK" class="0">
@@ -7319,10 +7319,10 @@ wire to board 2.54 mm (.1 inch) pitch header</description>
 <junction x="104.14" y="43.18"/>
 </segment>
 <segment>
-<pinref part="J8" gate="A" pin="5"/>
-<wire x1="167.64" y1="58.42" x2="167.64" y2="40.64" width="0.1524" layer="91"/>
-<wire x1="167.64" y1="40.64" x2="187.96" y2="40.64" width="0.1524" layer="91"/>
+<wire x1="157.48" y1="40.64" x2="187.96" y2="40.64" width="0.1524" layer="91"/>
 <label x="177.8" y="40.64" size="1.778" layer="95"/>
+<pinref part="J8" gate="A" pin="1"/>
+<wire x1="157.48" y1="40.64" x2="157.48" y2="58.42" width="0.1524" layer="91"/>
 </segment>
 </net>
 <net name="N$18" class="0">
@@ -7462,7 +7462,7 @@ wire to board 2.54 mm (.1 inch) pitch header</description>
 </net>
 <net name="N$5" class="0">
 <segment>
-<pinref part="RESET1" gate="1" pin="S1"/>
+<pinref part="UP" gate="1" pin="S1"/>
 <pinref part="R1" gate="G$1" pin="1"/>
 <wire x1="165.1" y1="91.44" x2="165.1" y2="93.98" width="0.1524" layer="91"/>
 <pinref part="R2" gate="G$1" pin="1"/>
@@ -7494,7 +7494,7 @@ wire to board 2.54 mm (.1 inch) pitch header</description>
 </net>
 <net name="N$17" class="0">
 <segment>
-<pinref part="RESET2" gate="1" pin="S1"/>
+<pinref part="DOWN" gate="1" pin="S1"/>
 <pinref part="R3" gate="G$1" pin="1"/>
 <wire x1="208.28" y1="91.44" x2="208.28" y2="93.98" width="0.1524" layer="91"/>
 <pinref part="R4" gate="G$1" pin="1"/>
