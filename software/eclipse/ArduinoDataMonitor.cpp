@@ -1,14 +1,4 @@
-#if 0
-#include <Arduino.h>
 
-void setup() {
-
-}
-
-void loop() {
-
-}
-#endif
 
 #include <SPI.h>
 #include <Adafruit_GFX.h>
@@ -19,43 +9,15 @@ void loop() {
 #include "LayoutHistogram.h"
 #include "LayoutPulseCounter.h"
 
+#include "ApplicationBuilder.h"
+
 // the device has three parallel tubes.
 static const uint8_t AMOUNT_OF_PRRALLEL_TUBES = 3U;
 
-// Software SPI (slower updates, more flexible pin options):
-// pin 7 - Serial clock out (SCLK)
-// pin 6 - Serial data out (DIN)
-// pin 5 - Data/Command select (D/C)
-// pin 4 - LCD chip select (CS)
-// pin 3 - LCD reset (RST)
-//Adafruit_PCD8544 display = Adafruit_PCD8544(7, 6, 5, 4, 3);
-Adafruit_PCD8544 display = Adafruit_PCD8544(3,4,5,6,7);
-
-const byte ledPin = 13;
-const byte gmInputPin = 2;
-const byte userKeyPin = 8;
 
 
-// global variables for interrupt handling
 
-volatile byte gmPinState = LOW;
-volatile int pulseCounter = 0;
-
-
-// interrupt handling routine
-
-void interruptHandler()
-{
-    gmPinState = !gmPinState;
-
-    if (gmPinState == HIGH)
-    {
-        pulseCounter++;
-    }
-
-    digitalWrite(ledPin, gmPinState);
-}
-
+#if 0
 
 inline void setupGPIO()
 {
@@ -72,26 +34,30 @@ inline void setupGPIO()
 
 inline void setupDisplay()
 {
-    display.begin();
-    display.setContrast(47);
-
     // show welcome screen untill we don't have data
     LayoutWelcome w(display);
     layoutConfig_t lconf;
     w.draw(NULL, lconf);
 }
+#endif
 
+ApplicationBuilder application;
 
 void setup()
 {
+    application.init();
+#if 0
     Serial.begin(57600);
     setupGPIO();
     setupDisplay();
+#endif
 }
 
 
 void loop()
 {
+    application.run();
+
 #if 0
     // Circular Buffer test
 
@@ -184,7 +150,7 @@ void loop()
 #endif
 
 
-#if 1
+#if 0
     // GM data specific
     static GMCounter<4 * 60, AMOUNT_OF_PRRALLEL_TUBES> minuteGMCounter;
     static GMCounter<4 * 24, AMOUNT_OF_PRRALLEL_TUBES> hourGMCounter;
