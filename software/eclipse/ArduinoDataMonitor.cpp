@@ -1,3 +1,15 @@
+#if 0
+#include <Arduino.h>
+
+void setup() {
+
+}
+
+void loop() {
+
+}
+#endif
+
 #include <SPI.h>
 #include <Adafruit_GFX.h>
 #include <Adafruit_PCD8544.h>
@@ -32,7 +44,7 @@ volatile int pulseCounter = 0;
 
 // interrupt handling routine
 
-void interruptHandler() 
+void interruptHandler()
 {
     gmPinState = !gmPinState;
 
@@ -70,7 +82,7 @@ inline void setupDisplay()
 }
 
 
-void setup()   
+void setup()
 {
     Serial.begin(57600);
     setupGPIO();
@@ -78,9 +90,9 @@ void setup()
 }
 
 
-void loop() 
+void loop()
 {
-#if 0 
+#if 0
     // Circular Buffer test
 
     CircularBuffer<uint8_t, 5U> b;
@@ -106,7 +118,7 @@ void loop()
     while(1);
 #endif
 
-#if 0 
+#if 0
     // GM Counter test: overview
     GMCounter<5U> gm;
     gm.addSample(4);
@@ -118,17 +130,17 @@ void loop()
 
     Serial.print(gm.getSample(0));
     Serial.println(" ");
- 
+
     Serial.print(gm.getSample(1));
     Serial.println(" ");
- 
+
     Serial.print(gm.getMaxSampleValue());
     Serial.println(" ");
- 
-    while(1); 
+
+    while(1);
 #endif
 
-#if 0 
+#if 0
     // GM Counter test: histogram
     GMCounter<6U> gm;
     gm.addSample(14);
@@ -142,14 +154,14 @@ void loop()
     Serial.println(gm.getBinValue(0, 2));
     Serial.println(gm.getBinValue(1, 2));
 
-    while(1); 
+    while(1);
 #endif
 
 #if 0
     // Histogram layout test
     static LayoutHistogram layoutHistogram(display);
     static GMCounter<4 * 60> minuteGMCounter;
- 
+
     minuteGMCounter.addSample(10);
     minuteGMCounter.addSample(10);
     minuteGMCounter.addSample(34);
@@ -160,20 +172,19 @@ void loop()
     minuteGMCounter.addSample(45);
     minuteGMCounter.addSample(70);
     minuteGMCounter.addSample(66);
- 
+
     layoutConfig_t conf;
     conf.legendText = "1min int hist";
 
     layoutHistogram.draw(&minuteGMCounter, conf);
 
     Serial.print("\nlayout end\n");
-    
+
     while(1);
 #endif
 
 
-
-#if 1 
+#if 1
     // GM data specific
     static GMCounter<4 * 60, AMOUNT_OF_PRRALLEL_TUBES> minuteGMCounter;
     static GMCounter<4 * 24, AMOUNT_OF_PRRALLEL_TUBES> hourGMCounter;
@@ -186,42 +197,42 @@ void loop()
     // changing layout specific
     bool isLayoutUpdate = false;
     bool isLayoutSwitch = false;
-   
+
     // time before display update
     const unsigned long updateInterval = 60L * 1000L;
     unsigned long currentMillis = millis();
-    static unsigned long previousMillis = 0;   
+    static unsigned long previousMillis = 0;
 
     // key related
     static uint8_t previousKeyState = HIGH;
 
     // handle data processing
-    if (currentMillis - previousMillis >= updateInterval) 
+    if (currentMillis - previousMillis >= updateInterval)
     {
         previousMillis = currentMillis;
         minuteCounter++;
- 
+
         // handle minute interval GM data
         minuteGMCounter.addSample(pulseCounter);
         pulseCounter = 0U;
 
         // handle hour interval GM data
         const uint8_t minutesInHour = 60U;
-     
+
         if(minuteCounter == minutesInHour)
         {
             sample_t hourSample = minuteGMCounter.getMean(minutesInHour);
             hourGMCounter.addSample(hourSample);
             minuteCounter = 0U;
         }
-       
+
         // new data is available - repaint current layout
         isLayoutUpdate = true;
     }
 
 
-    // TODO: this 50 below is a dirty way, make it better 
-    if(((currentMillis - previousMillis) % 50U) == 0U) 
+    // TODO: this 50 below is a dirty way, make it better
+    if(((currentMillis - previousMillis) % 50U) == 0U)
     {
         // handle key processing, no software debouncing!
         uint8_t currentKeyState = digitalRead(userKeyPin);
@@ -232,17 +243,17 @@ void loop()
         }
         previousKeyState = currentKeyState;
     }
-    
+
     // handle layout processing
     if (isLayoutUpdate || isLayoutSwitch)
-    {    
+    {
         static int8_t currentLayoutId = 0U;
-        
+
         if(isLayoutSwitch)
         {
-            currentLayoutId++; 
+            currentLayoutId++;
         }
- 
+
         switch (currentLayoutId)
         {
             case 0:
