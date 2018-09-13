@@ -18,7 +18,6 @@ LayoutHandler::LayoutHandler(DisplayDevice& hwDisplay, MeasurementHistory& data)
     userLayouts[1] = &layoutPulseCounterHourInterval;
 }
 
-
 void LayoutHandler::handleKeyPress()
 {
     userLayouts[currentLayoutIndex]->draw(data);
@@ -26,4 +25,3 @@ void LayoutHandler::handleKeyPress()
     currentLayoutIndex++;
     currentLayoutIndex %= userLayoutsCount;
 }
-
