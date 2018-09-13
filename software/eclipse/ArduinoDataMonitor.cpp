@@ -1,56 +1,11 @@
-
-
-#include <SPI.h>
-#include <Adafruit_GFX.h>
-#include <Adafruit_PCD8544.h>
-
-#include "GMCounter.h"
-#include "LayoutWelcome.h"
-#include "LayoutHistogram.h"
-#include "LayoutPulseCounter.h"
-
 #include "ApplicationBuilder.h"
 
-// the device has three parallel tubes.
-static const uint8_t AMOUNT_OF_PRRALLEL_TUBES = 3U;
 
-
-
-
-#if 0
-
-inline void setupGPIO()
-{
-    // setup GM status diode
-    pinMode(ledPin, OUTPUT);
-
-    // setup GM input pin
-    pinMode(gmInputPin, INPUT);
-    attachInterrupt(digitalPinToInterrupt(gmInputPin), interruptHandler, CHANGE);
-
-    // setup button to select requested layout
-    pinMode(userKeyPin, INPUT);
-}
-
-inline void setupDisplay()
-{
-    // show welcome screen untill we don't have data
-    LayoutWelcome w(display);
-    layoutConfig_t lconf;
-    w.draw(NULL, lconf);
-}
-#endif
-
-ApplicationBuilder application;
+static ApplicationBuilder application;
 
 void setup()
 {
     application.init();
-#if 0
-    Serial.begin(57600);
-    setupGPIO();
-    setupDisplay();
-#endif
 }
 
 
@@ -58,99 +13,13 @@ void loop()
 {
     application.run();
 
-#if 0
-    // Circular Buffer test
-
-    CircularBuffer<uint8_t, 5U> b;
-
-    b.add(4);
-    b.add(7);
-    b.add(8);
-    b.add(12);
-    b.add(43);
-    b.add(120);
-    uint8_t count = b.count();
-    Serial.print("count() = ");
-    Serial.println(count);
-
-    for(uint8_t j = 0U; j < b.count(); j++)
-    {
-        uint8_t item = b.get(j);
-        Serial.print(item);
-        Serial.print(", ");
-    }
-    Serial.println(" ");
-
-    while(1);
-#endif
 
 #if 0
-    // GM Counter test: overview
-    GMCounter<5U> gm;
-    gm.addSample(4);
-    gm.addSample(14);
-    gm.addSample(23);
-    gm.addSample(12);
-    gm.addSample(56);
-    gm.addSample(14);
 
-    Serial.print(gm.getSample(0));
-    Serial.println(" ");
+    //
+    // the device has three parallel tubes.
+    //static const uint8_t AMOUNT_OF_PRRALLEL_TUBES = 3U;
 
-    Serial.print(gm.getSample(1));
-    Serial.println(" ");
-
-    Serial.print(gm.getMaxSampleValue());
-    Serial.println(" ");
-
-    while(1);
-#endif
-
-#if 0
-    // GM Counter test: histogram
-    GMCounter<6U> gm;
-    gm.addSample(14);
-    gm.addSample(23);
-    gm.addSample(12);
-    gm.addSample(56);
-    gm.addSample(22);
-    gm.addSample(14);
-
-    // min: 14, max: 56, mean: 21
-    Serial.println(gm.getBinValue(0, 2));
-    Serial.println(gm.getBinValue(1, 2));
-
-    while(1);
-#endif
-
-#if 0
-    // Histogram layout test
-    static LayoutHistogram layoutHistogram(display);
-    static GMCounter<4 * 60> minuteGMCounter;
-
-    minuteGMCounter.addSample(10);
-    minuteGMCounter.addSample(10);
-    minuteGMCounter.addSample(34);
-    minuteGMCounter.addSample(44);
-    minuteGMCounter.addSample(44);
-    minuteGMCounter.addSample(22);
-    minuteGMCounter.addSample(5);
-    minuteGMCounter.addSample(45);
-    minuteGMCounter.addSample(70);
-    minuteGMCounter.addSample(66);
-
-    layoutConfig_t conf;
-    conf.legendText = "1min int hist";
-
-    layoutHistogram.draw(&minuteGMCounter, conf);
-
-    Serial.print("\nlayout end\n");
-
-    while(1);
-#endif
-
-
-#if 0
     // GM data specific
     static GMCounter<4 * 60, AMOUNT_OF_PRRALLEL_TUBES> minuteGMCounter;
     static GMCounter<4 * 24, AMOUNT_OF_PRRALLEL_TUBES> hourGMCounter;

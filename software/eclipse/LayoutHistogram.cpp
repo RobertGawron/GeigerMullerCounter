@@ -1,6 +1,6 @@
 #include "LayoutHistogram.h"
 
-
+#if 0
 
 #include <stddef.h>
 #include <stdint.h>
@@ -84,3 +84,4 @@ uint16_t LayoutHistogram::getMaxHistogramSampleValue(GMCounterBase* data, uint8_
     return maxValue;
 }
 
+#endif

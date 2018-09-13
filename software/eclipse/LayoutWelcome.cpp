@@ -1,5 +1,5 @@
 #include "LayoutWelcome.h"
-
+#if 0
 LayoutWelcome::LayoutWelcome(display_t& display) : Layout(display)
 {
     // empty
@@ -15,4 +15,4 @@ void LayoutWelcome::draw(GMCounterBase* data, layoutConfig_t& conf)
 
     itsDisplay.display();
 }
-
+#endif

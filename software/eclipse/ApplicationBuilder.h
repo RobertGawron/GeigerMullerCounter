@@ -12,6 +12,8 @@
 #include "DisplayDevice.h"
 #include "KeyboardDevice.h"
 
+//#include "LayoutWelcome.h"
+
 class ApplicationBuilder
 {
 public:
@@ -21,9 +23,13 @@ public:
 	void run();
 
 private:
+	static const uint16_t SerialBaudRateDefault = 9600U;
+
 	DisplayDevice hwDisplay;
 	GMDevice hwGeigerMuller;
-	KeyboardDevice keyboardDevice;
+	KeyboardDevice hwKeyboard;
+
+	//LayoutWelcome layoutWelcome;
 };
 
 #endif /* APPLICATIONBUILDER_H_ */

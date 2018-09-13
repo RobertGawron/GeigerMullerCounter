@@ -1,6 +1,6 @@
 #ifndef LAYOUT_WELCOME_H
 #define LAYOUT_WELCOME_H
-
+#if 0
 #include "Layout.h"
 
 class LayoutWelcome: public Layout
@@ -14,3 +14,4 @@ public:
 
 #endif
 
+#endif

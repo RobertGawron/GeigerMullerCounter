@@ -1,6 +1,6 @@
 #ifndef LAYOUT_H
 #define LAYOUT_H
-
+#if 0
 #include "GMCounter.h"
 
 #include <SPI.h>
@@ -38,5 +38,6 @@ protected:
     display_t& itsDisplay;
 };
 
+#endif
 #endif
 

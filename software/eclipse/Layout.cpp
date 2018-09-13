@@ -1,5 +1,5 @@
 #include "Layout.h"
-
+#if 0
 Layout::Layout(display_t& display) : itsDisplay(display)
 {
     // empty
@@ -21,3 +21,4 @@ void Layout::drawNumber(uint8_t data, uint8_t x, uint8_t y)
     itsDisplay.print(data);
 }
 
+#endif

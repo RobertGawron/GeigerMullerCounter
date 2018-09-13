@@ -26,8 +26,17 @@ void DisplayDevice::init()
 
 }
 
-DisplayDevice::~DisplayDevice()
+void DisplayDevice::clean()
 {
-	// TODO Auto-generated destructor stub
+    display.clearDisplay();
+    display.display();
 }
 
+DisplayDevice::~DisplayDevice()
+{
+}
+
+DisplayDevice::DeviceHandle_t& DisplayDevice::getDisplayHandle()
+{
+    return display;
+}

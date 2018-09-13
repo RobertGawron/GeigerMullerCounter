@@ -16,9 +16,11 @@ public:
     KeyboardDevice();
     virtual ~KeyboardDevice();
     void init();
+    bool wasKeyPressObserved();
 
 private:
     static const uint8_t userKeyPin = 8;
+    uint8_t keyWasPressedInPreviousTick;
 };
 
 #endif /* KEYBOARDDEVICE_H_ */

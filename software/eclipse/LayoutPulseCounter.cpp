@@ -1,5 +1,5 @@
 #include "LayoutPulseCounter.h"
-
+#if 0
 LayoutPulseCounter::LayoutPulseCounter(display_t& display) : Layout(display)
 {
     // empty
@@ -48,3 +48,4 @@ void LayoutPulseCounter::draw(GMCounterBase* data, layoutConfig_t& conf)
     itsDisplay.display();
 }
 
+#endif

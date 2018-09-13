@@ -7,8 +7,10 @@
 
 #include "KeyboardDevice.h"
 #include <Arduino.h>
+#include <stdint.h>
 
-KeyboardDevice::KeyboardDevice()
+KeyboardDevice::KeyboardDevice():
+    keyWasPressedInPreviousTick(false)
 {
 }
 
@@ -18,6 +20,17 @@ KeyboardDevice::~KeyboardDevice()
 
 void KeyboardDevice::init()
 {
-    // setup button to select requested layout
+    // only one button is supported
     pinMode(userKeyPin, INPUT);
+}
+
+bool KeyboardDevice::wasKeyPressObserved()
+{
+    uint8_t hwKeyState = digitalRead(userKeyPin); //HW low means key is pressed
+
+    bool logicalKeyState = (hwKeyState == 0) ? true : false;
+    bool keyEvent = ( logicalKeyState & (!keyWasPressedInPreviousTick) );
+    keyWasPressedInPreviousTick = logicalKeyState;
+
+    return keyEvent;
 }

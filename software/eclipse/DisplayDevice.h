@@ -14,10 +14,17 @@
 
 class DisplayDevice {
 public:
+    typedef Adafruit_PCD8544 DeviceHandle_t;
+
 	DisplayDevice();
 	virtual ~DisplayDevice();
 	void init();
+
+	DeviceHandle_t& getDisplayHandle();
+	void clean();
+
 private:
+
 	Adafruit_PCD8544 display;
 	static const uint8_t contrastLevelDefault = 45U;
 };
