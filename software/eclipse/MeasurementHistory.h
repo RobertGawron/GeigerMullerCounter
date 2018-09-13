@@ -12,6 +12,7 @@ public:
     void a(){}
 };
 
+// This is circular buffer
 template <typename ELEMENT_TYPE, size_t SIZE>
 class MeasurementHistory : public ISampleBuffer
 {
@@ -40,6 +41,8 @@ public:
 
     ELEMENT_TYPE get(uint16_t index)
     {
+        //int16_t localIndex =
+
         return item[index];
 #if 0
         // no index checking!
@@ -73,8 +76,6 @@ public:
 
         for(uint16_t i = 0U; i < count(); i++)
         {
-           // Serial.print(item[i]);
-           /// Serial.print(".");
             if(item[i] > maxValue)
             {
                 maxValue = item[i];
