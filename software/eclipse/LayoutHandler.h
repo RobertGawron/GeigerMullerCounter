@@ -24,7 +24,7 @@ private:
     LayoutPulseCounter layoutPulseCounterMinuteInterval;
     LayoutPulseCounter layoutPulseCounterHourInterval;
 
-    // It's one less that defined, because we don't want to use LayoutWelcome in runtime.
+    // It's one less than defined above, because we don't want to use LayoutWelcome in runtime.
     static const uint8_t userLayoutsCount = 2;
     Layout* userLayouts[userLayoutsCount];
     uint8_t currentLayoutIndex;
