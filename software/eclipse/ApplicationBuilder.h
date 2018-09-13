@@ -11,8 +11,8 @@
 #include "GMDevice.h"
 #include "DisplayDevice.h"
 #include "KeyboardDevice.h"
+#include "LayoutHandler.h"
 #include "MeasurementHistory.h"
-#include "LayoutBuilder.h"
 
 
 class ApplicationBuilder
@@ -33,7 +33,7 @@ private:
 	MeasurementHistory<uint16_t, 100U> sampleBufferPerMinute;
 	MeasurementHistory<uint16_t, 100U> sampleBufferPerHour;
 
-	LayoutBuilder layoutBuilder;
+	LayoutHandler layoutHandler;
 };
 
 #endif /* APPLICATIONBUILDER_H_ */

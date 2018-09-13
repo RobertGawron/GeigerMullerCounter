@@ -5,13 +5,25 @@
  *      Author: robert
  */
 
-#include "LayoutBuilder.h"
+#include "LayoutHandler.h"
 
-LayoutBuilder::LayoutBuilder(DisplayDevice& hwDisplay):
+LayoutHandler::LayoutHandler(DisplayDevice& hwDisplay, IMeasurementHistory& data):
     layoutWelcome(hwDisplay),
     layoutPulseCounterMinuteInterval(hwDisplay, LayoutPulseCounter::MINUTE_INTERVALS),
-    layoutPulseCounterHourInterval(hwDisplay, LayoutPulseCounter::HOUR_INTERVALS)
+    layoutPulseCounterHourInterval(hwDisplay, LayoutPulseCounter::HOUR_INTERVALS),
+    currentLayoutIndex(0U),
+    data(data)
 {
+    userLayouts[0] = &layoutPulseCounterMinuteInterval;
+    userLayouts[1] = &layoutPulseCounterHourInterval;
 }
 
+
+void LayoutHandler::handleKeyPress()
+{
+    userLayouts[currentLayoutIndex]->draw(data);
+
+    currentLayoutIndex++;
+    currentLayoutIndex %= userLayoutsCount;
+}
 
