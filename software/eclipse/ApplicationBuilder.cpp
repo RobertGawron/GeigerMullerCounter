@@ -19,7 +19,6 @@ ApplicationBuilder::ApplicationBuilder():
 {
 }
 
-
 void ApplicationBuilder::init()
 {
     Serial.begin(SerialBaudRateDefault);

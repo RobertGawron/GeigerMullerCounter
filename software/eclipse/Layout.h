@@ -3,11 +3,12 @@
 
 #include "DisplayDevice.h"
 #include "MeasurementHistory.h"
+
 class Layout
 {
 public:
     virtual ~Layout() = default;
-    virtual void draw(ISampleBuffer& data) = 0;
+    virtual void draw(IMeasurementHistory& data) = 0;
 };
 
 #endif

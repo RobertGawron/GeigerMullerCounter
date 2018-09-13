@@ -7,14 +7,14 @@
 #include <stdint.h>
 
 
-class ISampleBuffer{
+class IMeasurementHistory{
 public:
     void a(){}
 };
 
 // This is circular buffer
 template <typename ELEMENT_TYPE, size_t SIZE>
-class MeasurementHistory : public ISampleBuffer
+class MeasurementHistory : public IMeasurementHistory
 {
 public:
 

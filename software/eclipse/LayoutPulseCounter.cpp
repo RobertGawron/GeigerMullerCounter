@@ -1,4 +1,5 @@
 #include "LayoutPulseCounter.h"
+#include "DoseCounter.h"
 
 const char* LayoutPulseCounter::labelForMinuteCounter = "cpm";
 const char* LayoutPulseCounter::labelForHourCounter = "cph";
@@ -8,7 +9,7 @@ LayoutPulseCounter::LayoutPulseCounter(DisplayDevice& display, IntervalMode_t mo
 {
 }
 
-void LayoutPulseCounter::draw(ISampleBuffer& data)
+void LayoutPulseCounter::draw(IMeasurementHistory& data)
 {
     display.clean();
     drawLegend(data);
@@ -16,7 +17,7 @@ void LayoutPulseCounter::draw(ISampleBuffer& data)
     display.paint();
 }
 
-void LayoutPulseCounter::drawLegend(ISampleBuffer& data)
+void LayoutPulseCounter::drawLegend(IMeasurementHistory& data)
 {
     // TODO: for debug
     MeasurementHistory<int, 20> buffer;
@@ -24,10 +25,30 @@ void LayoutPulseCounter::drawLegend(ISampleBuffer& data)
     buffer.add(5);
     buffer.add(3);
 
-
+    switch(mode)
+    {
+        case MINUTE_INTERVALS:
+        {
+            display.drawText(labelForMinuteCounter, 0, 0);
+        }
+        break;
+        case HOUR_INTERVALS:
+        {
+            display.drawText(labelForHourCounter, 0, 0);
+            DoseCounter doseCounter;
+            doseCounter.calculate();
+            display.drawText(labelDosageUnit, 59U, 0U);
+        }
+        break;
+        default:
+        {
+            // shouldn't happen
+        }
+        break;
+    }
 }
 
-void LayoutPulseCounter::drawGraph(ISampleBuffer& data)
+void LayoutPulseCounter::drawGraph(IMeasurementHistory& data)
 {
     // TODO: for debug
     MeasurementHistory<int, 20> buffer;

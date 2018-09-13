@@ -15,6 +15,7 @@
 #include "LayoutPulseCounter.h"
 #include "MeasurementHistory.h"
 
+
 class ApplicationBuilder
 {
 public:
@@ -22,6 +23,8 @@ public:
 	virtual ~ApplicationBuilder() = default;
 	void init();
 	void run();
+
+
 
 private:
 	static const uint16_t SerialBaudRateDefault = 9600U;

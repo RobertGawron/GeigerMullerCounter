@@ -62,10 +62,6 @@ uint8_t LayoutHistogram::getBinsCount(GMCounterBase* data)
     binsCount = (binsCount < data->getSampleCount() ) ? binsCount : (data->getSampleCount() / binDivider);
     binsCount = (binsCount < LCDWIDTH ) ? binsCount : (LCDWIDTH - 1U); 
 
-
-  //Serial.println(binsCount);
-
-
     return binsCount;
 }
 
