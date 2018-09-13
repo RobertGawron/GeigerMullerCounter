@@ -23,6 +23,7 @@ void DisplayDevice::init()
 {
     display.begin();
     display.setContrast(contrastLevelDefault);
+    clean();
 
 }
 

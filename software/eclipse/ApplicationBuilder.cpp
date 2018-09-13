@@ -11,8 +11,8 @@
 ApplicationBuilder::ApplicationBuilder():
 	hwDisplay(),
 	hwGeigerMuller(),
-	hwKeyboard()//,
-	//layoutWelcome(hwDisplay)
+	hwKeyboard(),
+	layoutWelcome(hwDisplay)
 {
 }
 
@@ -31,18 +31,35 @@ void ApplicationBuilder::init()
 
 void ApplicationBuilder::run()
 {
-    hwDisplay.clean();
     bool wasKeyPressObserved = hwKeyboard.wasKeyPressObserved();
 
     if(wasKeyPressObserved)
     {
         Serial.print("key\n");
+        layoutWelcome.draw();
     }
 
-   // Serial.print("key\n");
     delay(1);
 
 #if 0
+    void Layout::drawText(char* data, uint8_t x, uint8_t y)
+    {
+        itsDisplay.setTextSize(0);
+        itsDisplay.setTextColor(BLACK);
+        itsDisplay.setCursor(x, y);
+        itsDisplay.print(data);
+    }
+
+    void Layout::drawNumber(uint8_t data, uint8_t x, uint8_t y)
+    {
+        itsDisplay.setTextSize(0);
+        itsDisplay.setTextColor(BLACK);
+        itsDisplay.setCursor(x, y);
+        itsDisplay.print(data);
+    }
+
+
+
     hwDisplay.getDisplayHandle().setTextSize(0);
     hwDisplay.getDisplayHandle().setTextColor(BLACK);
     hwDisplay.getDisplayHandle().setCursor(0, 0);

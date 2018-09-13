@@ -1,18 +1,20 @@
 #include "LayoutWelcome.h"
-#if 0
-LayoutWelcome::LayoutWelcome(display_t& display) : Layout(display)
+
+LayoutWelcome::LayoutWelcome(DisplayDevice& display) : display(display)
 {
-    // empty
 }
 
-
-void LayoutWelcome::draw(GMCounterBase* data, layoutConfig_t& conf)
+void LayoutWelcome::draw(/*GMCounterBase* data, layoutConfig_t& conf*/)
 {
-    itsDisplay.clearDisplay();
+    display.getDisplayHandle().clearDisplay();
     
     char* welcomeText = "initializing\n\nwait 60 sec";
-    drawText(welcomeText, 0U, 0U);
+    //drawText(welcomeText, 0U, 0U);
+    display.getDisplayHandle().setTextSize(0);
+    display.getDisplayHandle().setTextColor(BLACK);
+    display.getDisplayHandle().setCursor(2, 1);
+    display.getDisplayHandle().print(welcomeText);
 
-    itsDisplay.display();
+    display.getDisplayHandle().display();
 }
-#endif
+

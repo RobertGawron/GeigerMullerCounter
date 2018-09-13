@@ -12,7 +12,7 @@
 #include "DisplayDevice.h"
 #include "KeyboardDevice.h"
 
-//#include "LayoutWelcome.h"
+#include "LayoutWelcome.h"
 
 class ApplicationBuilder
 {
@@ -29,7 +29,7 @@ private:
 	GMDevice hwGeigerMuller;
 	KeyboardDevice hwKeyboard;
 
-	//LayoutWelcome layoutWelcome;
+	LayoutWelcome layoutWelcome;
 };
 
 #endif /* APPLICATIONBUILDER_H_ */
