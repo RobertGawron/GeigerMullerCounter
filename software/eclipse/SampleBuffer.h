@@ -7,25 +7,30 @@
 #include <stdint.h>
 
 
+class ISampleBuffer{
+public:
+    void a(){}
+};
+
 template <typename ELEMENT_TYPE, size_t SIZE>
-class CircularBuffer
+class SampleBuffer : public ISampleBuffer
 {
 public:
 
-    CircularBuffer(): itsIndex(0U), itemCount(0U)
+    SampleBuffer(): newElementIndex(0U), lastElementIndex(0U), itemCount(0U)
     {
         for(uint16_t i = 0U; i < SIZE; i++)
         {
-            localItem[i] = 0U;
+            item[i] = 0U;
         }
     }
 
-    void add(ELEMENT_TYPE item)
+    void add(ELEMENT_TYPE itemToAdd)
     {
-        localItem[itsIndex] = item;
+        item[newElementIndex] = itemToAdd;
 
-        itsIndex++;
-        itsIndex %= SIZE;
+        newElementIndex++;
+        newElementIndex %= SIZE;
 
         if(itemCount < SIZE)
         {
@@ -35,11 +40,13 @@ public:
 
     ELEMENT_TYPE get(uint16_t index)
     {
+        return item[index];
+#if 0
         // no index checking!
 
         uint16_t localIndex = 0U;
 
-        localIndex = itsIndex;
+        localIndex = newElementIndex;
 
         if(localIndex >= (index + 1U))
         {
@@ -52,6 +59,7 @@ public:
         }
 
         return localItem[localIndex];
+#endif
     }
 
     uint16_t count()
@@ -59,17 +67,35 @@ public:
         return itemCount;
     }
 
+    ELEMENT_TYPE getMaxValue()
+    {
+        ELEMENT_TYPE maxValue;
+
+        for(uint16_t i = 0U; i < count(); i++)
+        {
+           // Serial.print(item[i]);
+           /// Serial.print(".");
+            if(item[i] > maxValue)
+            {
+                maxValue = item[i];
+            }
+        }
+
+        return maxValue;
+    }
 
     void reset()
     {
         itemCount = 0U;
-        itsIndex = 0U;
+        newElementIndex = 0U;
     }
 
 private:
 
-    ELEMENT_TYPE localItem[SIZE];
-    uint16_t itsIndex; 
+    ELEMENT_TYPE item[SIZE];
+
+    uint16_t newElementIndex;
+    uint16_t lastElementIndex;
     uint16_t itemCount;
 };
 

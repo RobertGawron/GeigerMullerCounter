@@ -12,6 +12,8 @@ ApplicationBuilder::ApplicationBuilder():
 	hwDisplay(),
 	hwGeigerMuller(),
 	hwKeyboard(),
+	sampleBufferPerMinute(),
+	sampleBufferPerHour(),
 	layoutWelcome(hwDisplay),
 	layoutPulseCounter(hwDisplay)
 {
@@ -25,6 +27,9 @@ void ApplicationBuilder::init()
     hwDisplay.init();
     hwGeigerMuller.init();
     hwKeyboard.init();
+
+    sampleBufferPerMinute.add(1);
+    sampleBufferPerMinute.add(17);
 }
 
 void ApplicationBuilder::run()
@@ -34,11 +39,11 @@ void ApplicationBuilder::run()
     if(wasKeyPressObserved)
     {
         Serial.print("key\n");
-        //layoutWelcome.draw();
+        layoutWelcome.draw(sampleBufferPerMinute);
 
     }
 
-    layoutPulseCounter.draw();
-
+    layoutPulseCounter.draw(sampleBufferPerMinute);
+while(1);
     delay(10);
 }

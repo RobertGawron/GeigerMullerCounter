@@ -6,7 +6,7 @@ LayoutWelcome::LayoutWelcome(DisplayDevice& display) : display(display)
 {
 }
 
-void LayoutWelcome::draw(/*GMCounterBase* data, layoutConfig_t& conf*/)
+void LayoutWelcome::draw(ISampleBuffer& data)
 {
     display.clean();
     display.drawText(welcomeText, textXCoordinate, textYCoordinate);

@@ -12,7 +12,7 @@
 // global variables for interrupt handling
 static const uint8_t  ledPin = 13;
 volatile uint8_t gmPinState = LOW;
-volatile int pulseCounter = 0;
+volatile uint8_t pulseCounter = 0;
 
 void interruptHandlerGM()
 {
@@ -42,6 +42,4 @@ void GMDevice::init()
     // setup GM input pin
     pinMode(gmInputPin, INPUT);
     attachInterrupt(digitalPinToInterrupt(gmInputPin), interruptHandlerGM, CHANGE);
-
-
 }

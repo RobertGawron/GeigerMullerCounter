@@ -8,7 +8,7 @@ class LayoutWelcome: public Layout
 public:
     LayoutWelcome(DisplayDevice& display);
     ~LayoutWelcome() = default;
-    virtual void draw(/*GMCounterBase* data, layoutConfig_t& conf*/);
+    virtual void draw(ISampleBuffer& data);
 private:
     DisplayDevice& display;
 

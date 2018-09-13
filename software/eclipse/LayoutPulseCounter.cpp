@@ -4,24 +4,27 @@ LayoutPulseCounter::LayoutPulseCounter(DisplayDevice& display) : display(display
 {
 }
 
-void LayoutPulseCounter::draw(/*GMCounterBase* data, layoutConfig_t& conf*/)
+void LayoutPulseCounter::draw(ISampleBuffer& data)
 {
     display.clean();
 
+    SampleBuffer<int, 20> buffer;
+    buffer.add(10);
+    buffer.add(5);
+    buffer.add(3);
 
-    const uint8_t graphHeight = display.getHeight() - 20U; // TODO: magic number, because we need space for text too
-    //int maxValue = data->getMaxSampleValue();
 
-    for (uint16_t i = 0U; /*(i < data->getSampleCount()) &&*/ (i < display.getWidth()); i++)
+    const uint8_t graphHeight = display.getHeight() - 10U; // TODO: magic number, because we need space for text too
+    int maxValue = buffer.getMaxValue();
+
+    for (uint16_t i = 0U; (i < buffer.count()) && (i < display.getWidth()); i++)
     {
-        int sampleValue = i%7;//data->getSample(i);
+        int sampleValue = buffer.get(i);
 
-        // data normalization
-      //  sampleValue = uint8_t( (float(sampleValue) / float(maxValue)) *graphHeight);
+        // data normalization to nicely fit to screen low/high values
+        sampleValue = uint8_t( (float(sampleValue) / float(maxValue)) *graphHeight);
 
         display.drawLine(i, 0, i, sampleValue);
-        //const uint16_t x = LCDWIDTH - i - 1U;
-        //itsDisplay.drawLine(x, itsDisplay.height(), x, itsDisplay.height() - sampleValue, BLACK);
     }
 
     display.paint();

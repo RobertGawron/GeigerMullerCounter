@@ -8,7 +8,7 @@ class LayoutPulseCounter: public Layout
 public:
     LayoutPulseCounter(DisplayDevice& display);
     ~LayoutPulseCounter() = default;
-    virtual void draw(/*GMCounterBase* data, layoutConfig_t& conf*/);
+    virtual void draw(ISampleBuffer& data);
 private:
     DisplayDevice& display;
 };
