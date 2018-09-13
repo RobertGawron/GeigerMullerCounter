@@ -92,7 +92,4 @@ private:
     uint16_t itemCount;
 };
 
-
-
-
 #endif /* CIRCULARBUFFER_H_ */
