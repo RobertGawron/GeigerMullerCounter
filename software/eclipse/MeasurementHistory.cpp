@@ -6,24 +6,37 @@
  */
 
 #include "MeasurementHistory.h"
+#include <Arduino.h>
 
-void TODO_class::addMeasurement(const MeasurementDuration_t measurementDuration, const uint16_t measurementValue)
+MeasurementHistory::MeasurementHistory():
+    sampleBufferPerMinute(),
+    sampleBufferPerHour()
 {
-
 }
 
-uint16_t TODO_class::getMeasurement(const uint16_t elementIndex) const
+void MeasurementHistory::addMeasurement(const MeasurementDuration_t measurementDuration, const uint16_t measurementValue)
 {
-    const uint16_t indeex = 6;
-    return 0;//sampleBufferPerMinute.get(indeex);
+    sampleBufferPerMinute.add(measurementValue);
 }
 
-uint16_t TODO_class::getMaximumMeasurement() const
+uint16_t MeasurementHistory::getMeasurement(const uint16_t elementIndex) const
 {
-    return 0;
+    /*Serial.print(elementIndex);
+    Serial.print("-");
+    Serial.print(sampleBufferPerMinute.getElement(elementIndex));
+    Serial.print("     ");*/
+    return sampleBufferPerMinute.getElement(elementIndex);
 }
 
-uint16_t TODO_class::getMeasurementCount() const
+uint16_t MeasurementHistory::getMaximumMeasurement() const
 {
-    return 0;
+    Serial.print( sampleBufferPerMinute.getMaximalElement());
+    Serial.print("-");
+    return sampleBufferPerMinute.getMaximalElement();
+}
+
+uint16_t MeasurementHistory::getMeasurementCount() const
+{
+    //Serial.print(sampleBufferPerMinute.getElementCount());
+    return sampleBufferPerMinute.getElementCount();
 }

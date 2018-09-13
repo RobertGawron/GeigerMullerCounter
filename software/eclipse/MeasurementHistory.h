@@ -10,18 +10,12 @@
 #include "MeasurementRegistrator.h"
 
 
-class IMeasurementHistory{
-public:
-    void a(){}
-};
-
-// This is circular buffer
 template <typename ELEMENT_TYPE, size_t SIZE>
-class MeasurementHistory : public IMeasurementHistory
+class CircularBuffer
 {
 public:
 
-    MeasurementHistory(): newElementIndex(0U), lastElementIndex(0U), itemCount(0U)
+    CircularBuffer(): newElementIndex(0U), lastElementIndex(0U), itemCount(0U)
     {
         for(uint16_t i = 0U; i < SIZE; i++)
         {
@@ -42,7 +36,7 @@ public:
         }
     }
 
-    ELEMENT_TYPE get(const uint16_t index)
+    ELEMENT_TYPE getElement(const uint16_t index) const
     {
         //int16_t localIndex =
 
@@ -68,16 +62,16 @@ public:
 #endif
     }
 
-    uint16_t count()
+    uint16_t getElementCount() const
     {
         return itemCount;
     }
 
-    ELEMENT_TYPE getMaxValue()
+    ELEMENT_TYPE getMaximalElement() const
     {
         ELEMENT_TYPE maxValue;
 
-        for(uint16_t i = 0U; i < count(); i++)
+        for(uint16_t i = 0U; i < getElementCount(); i++)
         {
             if(item[i] > maxValue)
             {
@@ -86,12 +80,6 @@ public:
         }
 
         return maxValue;
-    }
-
-    void reset()
-    {
-        itemCount = 0U;
-        newElementIndex = 0U;
     }
 
 private:
@@ -104,12 +92,12 @@ private:
 };
 
 
-class TODO_class: public MeasurementProcessing, MeasurementRegistrator
+class MeasurementHistory: public MeasurementProcessing, MeasurementRegistrator
 {
 public:
-    TODO_class() = default;
-    ~TODO_class() = default;
-    TODO_class(const TODO_class&) = delete;
+    MeasurementHistory();
+    ~MeasurementHistory() = default;
+    MeasurementHistory(const MeasurementHistory&) = delete;
 
     void addMeasurement(const MeasurementDuration_t measurementDuration, const uint16_t measurementValue);
 
@@ -118,8 +106,8 @@ public:
     uint16_t getMeasurementCount() const;
 
 private:
-    MeasurementHistory<uint16_t, 100U> sampleBufferPerMinute;
-    MeasurementHistory<uint16_t, 100U> sampleBufferPerHour;
+    CircularBuffer<uint16_t, 100U> sampleBufferPerMinute;
+    CircularBuffer<uint16_t, 100U> sampleBufferPerHour;
 };
 
 #endif

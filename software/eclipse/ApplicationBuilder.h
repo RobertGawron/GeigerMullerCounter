@@ -29,7 +29,7 @@ private:
 	GMDevice hwGeigerMuller;
 	KeyboardDevice hwKeyboard;
 
-	TODO_class measurementHistory;
+	MeasurementHistory measurementHistory;
 	LayoutHandler layoutHandler;
 };
 

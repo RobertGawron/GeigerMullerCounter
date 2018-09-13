@@ -14,7 +14,7 @@
 class LayoutHandler
 {
 public:
-    LayoutHandler(DisplayDevice& hwDisplay, TODO_class& data);
+    LayoutHandler(DisplayDevice& hwDisplay, MeasurementHistory& data);
     virtual ~LayoutHandler() = default;
 
     void handleKeyPress();
@@ -29,7 +29,7 @@ private:
     Layout* userLayouts[userLayoutsCount];
     uint8_t currentLayoutIndex;
 
-    TODO_class& data;
+    MeasurementHistory& data;
 };
 
 #endif /* LAYOUTHANDLER_H_ */

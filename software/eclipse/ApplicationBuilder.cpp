@@ -28,17 +28,20 @@ void ApplicationBuilder::init()
 
 void ApplicationBuilder::run()
 {
-    // TODO: data processing: measurementHistory.addMeasurement();
-    measurementHistory.addMeasurement(MeasurementRegistrator::MEASUREMENT_MINUTE, 12);
-    measurementHistory.addMeasurement(MeasurementRegistrator::MEASUREMENT_MINUTE, 8);
 
     bool wasKeyPressObserved = hwKeyboard.wasKeyPressObserved();
 
     if(wasKeyPressObserved)
     {
+
+        // TODO: data processing: measurementHistory.addMeasurement();
+        measurementHistory.addMeasurement(MeasurementRegistrator::MEASUREMENT_MINUTE, 12);
+        measurementHistory.addMeasurement(MeasurementRegistrator::MEASUREMENT_MINUTE, 8);
+        measurementHistory.addMeasurement(MeasurementRegistrator::MEASUREMENT_MINUTE, 20);
+
         layoutHandler.handleKeyPress();
     }
 
-   // while(1);// TODO: this is for debug
+    // while(1);// TODO: this is for debug
     delay(10);
 }

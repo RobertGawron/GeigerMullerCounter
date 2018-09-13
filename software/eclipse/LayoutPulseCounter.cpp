@@ -19,12 +19,6 @@ void LayoutPulseCounter::draw(MeasurementProcessing& meassurements)
 
 void LayoutPulseCounter::drawLegend(MeasurementProcessing& meassurements)
 {
-    // TODO: for debug
-    MeasurementHistory<int, 20> buffer;
-    buffer.add(10);
-    buffer.add(5);
-    buffer.add(3);
-
     switch(mode)
     {
         case MINUTE_INTERVALS:
@@ -33,35 +27,28 @@ void LayoutPulseCounter::drawLegend(MeasurementProcessing& meassurements)
             DoseCounter doseCounter;
             doseCounter.calculate();
             display.drawText(labelDosageUnit, 59U, 0U);
-        }
-        break;
+        } break;
+
         case HOUR_INTERVALS:
         {
             display.drawText(labelForHourCounter, 0, 0);
-        }
-        break;
+        } break;
+
         default:
         {
             // shouldn't happen
-        }
-        break;
+        } break;
     }
 }
 
 void LayoutPulseCounter::drawGraph(MeasurementProcessing& meassurements)
 {
-    // TODO: for debug
-    MeasurementHistory<int, 20> buffer;
-    buffer.add(10);
-    buffer.add(50);
-    buffer.add(3);
-
     const uint8_t graphHeight = display.getHeight() - 10U; // TODO: magic number, because we need space for text too
-    int maxValue = buffer.getMaxValue();
+    int maxValue = meassurements.getMaximumMeasurement();
 
-    for (uint16_t i = 0U; (i < buffer.count()) && (i < display.getWidth()); i++)
+    for (uint16_t i = 0U; (i < meassurements.getMeasurementCount()) && (i < display.getWidth()); i++)
     {
-        int sampleValue = buffer.get(i);
+        int sampleValue = meassurements.getMeasurement(i);
 
         // data normalization to nicely fit to screen low/high values
         sampleValue = uint8_t( (float(sampleValue) / float(maxValue)) *graphHeight);
