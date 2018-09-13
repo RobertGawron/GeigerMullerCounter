@@ -29,7 +29,7 @@ void DisplayDevice::init()
 void DisplayDevice::clean()
 {
     display.clearDisplay();
-    display.display();
+    paint();
 }
 
 uint8_t DisplayDevice::getHeight() const
@@ -58,7 +58,5 @@ void DisplayDevice::drawText(const char* text, const uint8_t x, const uint8_t y)
        display.setTextColor(BLACK);
        display.setCursor(2, 1);
        display.print(text);
-
-       display.display();
 }
 

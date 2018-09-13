@@ -14,10 +14,6 @@ KeyboardDevice::KeyboardDevice():
 {
 }
 
-KeyboardDevice::~KeyboardDevice()
-{
-}
-
 void KeyboardDevice::init()
 {
     // only one button is supported

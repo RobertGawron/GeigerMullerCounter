@@ -14,7 +14,7 @@ class KeyboardDevice
 {
 public:
     KeyboardDevice();
-    virtual ~KeyboardDevice();
+    virtual ~KeyboardDevice() = default;
     void init();
     bool wasKeyPressObserved();
 

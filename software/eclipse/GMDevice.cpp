@@ -26,14 +26,6 @@ void interruptHandlerGM()
     digitalWrite(ledPin, gmPinState);
 }
 
-GMDevice::GMDevice()
-{
-}
-
-GMDevice::~GMDevice()
-{
-}
-
 void GMDevice::init()
 {
     // setup GM status diode

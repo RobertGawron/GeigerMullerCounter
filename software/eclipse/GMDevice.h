@@ -13,8 +13,8 @@
 class GMDevice
 {
 public:
-	GMDevice();
-	virtual ~GMDevice();
+	GMDevice() = default;
+	virtual ~GMDevice() = default;
 	void init();
 
 private:

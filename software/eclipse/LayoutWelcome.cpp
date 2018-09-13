@@ -10,5 +10,5 @@ void LayoutWelcome::draw(IMeasurementHistory& data)
 {
     display.clean();
     display.drawText(welcomeText, textXCoordinate, textYCoordinate);
+    display.paint();
 }
-
