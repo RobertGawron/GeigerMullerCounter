@@ -11,9 +11,8 @@
 #include "GMDevice.h"
 #include "DisplayDevice.h"
 #include "KeyboardDevice.h"
-#include "LayoutWelcome.h"
-#include "LayoutPulseCounter.h"
 #include "MeasurementHistory.h"
+#include "LayoutBuilder.h"
 
 
 class ApplicationBuilder
@@ -23,8 +22,6 @@ public:
 	virtual ~ApplicationBuilder() = default;
 	void init();
 	void run();
-
-
 
 private:
 	static const uint16_t SerialBaudRateDefault = 9600U;
@@ -36,8 +33,7 @@ private:
 	MeasurementHistory<uint16_t, 100U> sampleBufferPerMinute;
 	MeasurementHistory<uint16_t, 100U> sampleBufferPerHour;
 
-	LayoutWelcome layoutWelcome;
-	LayoutPulseCounter layoutPulseCounter;
+	LayoutBuilder layoutBuilder;
 };
 
 #endif /* APPLICATIONBUILDER_H_ */

@@ -14,8 +14,7 @@ ApplicationBuilder::ApplicationBuilder():
 	hwKeyboard(),
 	sampleBufferPerMinute(),
 	sampleBufferPerHour(),
-	layoutWelcome(hwDisplay),
-	layoutPulseCounter(hwDisplay, LayoutPulseCounter::MINUTE_INTERVALS)
+	layoutBuilder(hwDisplay)
 {
 }
 
@@ -38,10 +37,10 @@ void ApplicationBuilder::run()
     if(wasKeyPressObserved)
     {
         Serial.print("key\n");
-        layoutWelcome.draw(sampleBufferPerMinute);// TODO: this is for debug
+        //layoutWelcome.draw(sampleBufferPerMinute);// TODO: this is for debug
     }
 
-    layoutPulseCounter.draw(sampleBufferPerMinute);
+    //layoutPulseCounter.draw(sampleBufferPerMinute);
 
     while(1);// TODO: this is for debug
     delay(10);
