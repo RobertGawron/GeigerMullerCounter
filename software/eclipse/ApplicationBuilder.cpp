@@ -12,9 +12,8 @@ ApplicationBuilder::ApplicationBuilder():
 	hwDisplay(),
 	hwGeigerMuller(),
 	hwKeyboard(),
-	sampleBufferPerMinute(),
-	sampleBufferPerHour(),
-	layoutHandler(hwDisplay, sampleBufferPerHour)
+	measurementHistory(),
+	layoutHandler(hwDisplay, measurementHistory)
 {
 }
 
@@ -25,23 +24,18 @@ void ApplicationBuilder::init()
     hwDisplay.init();
     hwGeigerMuller.init();
     hwKeyboard.init();
-
-    sampleBufferPerMinute.add(1);
-    sampleBufferPerMinute.add(17);
 }
 
 void ApplicationBuilder::run()
 {
+    // TODO: data processing: measurementHistory.addMeasurement();
+
     bool wasKeyPressObserved = hwKeyboard.wasKeyPressObserved();
 
     if(wasKeyPressObserved)
     {
         layoutHandler.handleKeyPress();
-        Serial.print("key\n");
-        //layoutWelcome.draw(sampleBufferPerMinute);// TODO: this is for debug
     }
-
-    //layoutPulseCounter.draw(sampleBufferPerMinute);
 
    // while(1);// TODO: this is for debug
     delay(10);

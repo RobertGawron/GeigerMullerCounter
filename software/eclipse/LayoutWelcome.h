@@ -8,7 +8,7 @@ class LayoutWelcome: public Layout
 public:
     LayoutWelcome(DisplayDevice& display);
     ~LayoutWelcome() = default;
-    virtual void draw(IMeasurementHistory& data);
+    virtual void draw(MeasurementProcessing& data);
 private:
     DisplayDevice& display;
 

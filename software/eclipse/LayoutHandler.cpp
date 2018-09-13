@@ -7,7 +7,7 @@
 
 #include "LayoutHandler.h"
 
-LayoutHandler::LayoutHandler(DisplayDevice& hwDisplay, IMeasurementHistory& data):
+LayoutHandler::LayoutHandler(DisplayDevice& hwDisplay, TODO_class& data):
     layoutWelcome(hwDisplay),
     layoutPulseCounterMinuteInterval(hwDisplay, LayoutPulseCounter::MINUTE_INTERVALS),
     layoutPulseCounterHourInterval(hwDisplay, LayoutPulseCounter::HOUR_INTERVALS),

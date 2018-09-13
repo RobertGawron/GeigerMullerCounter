@@ -9,7 +9,7 @@ LayoutPulseCounter::LayoutPulseCounter(DisplayDevice& display, IntervalMode_t mo
 {
 }
 
-void LayoutPulseCounter::draw(IMeasurementHistory& data)
+void LayoutPulseCounter::draw(MeasurementProcessing& data)
 {
     display.clean();
     drawLegend(data);
@@ -17,7 +17,7 @@ void LayoutPulseCounter::draw(IMeasurementHistory& data)
     display.paint();
 }
 
-void LayoutPulseCounter::drawLegend(IMeasurementHistory& data)
+void LayoutPulseCounter::drawLegend(MeasurementProcessing& data)
 {
     // TODO: for debug
     MeasurementHistory<int, 20> buffer;
@@ -48,12 +48,12 @@ void LayoutPulseCounter::drawLegend(IMeasurementHistory& data)
     }
 }
 
-void LayoutPulseCounter::drawGraph(IMeasurementHistory& data)
+void LayoutPulseCounter::drawGraph(MeasurementProcessing& data)
 {
     // TODO: for debug
     MeasurementHistory<int, 20> buffer;
     buffer.add(10);
-    buffer.add(5);
+    buffer.add(50);
     buffer.add(3);
 
     const uint8_t graphHeight = display.getHeight() - 10U; // TODO: magic number, because we need space for text too

@@ -8,7 +8,7 @@ class Layout
 {
 public:
     virtual ~Layout() = default;
-    virtual void draw(IMeasurementHistory& data) = 0;
+    virtual void draw(MeasurementProcessing& data) = 0;
 };
 
 #endif

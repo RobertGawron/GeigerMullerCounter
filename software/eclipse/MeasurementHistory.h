@@ -6,6 +6,9 @@
 #include <stddef.h>
 #include <stdint.h>
 
+#include "MeasurementProcessing.h"
+#include "MeasurementRegistrator.h"
+
 
 class IMeasurementHistory{
 public:
@@ -98,6 +101,25 @@ private:
     uint16_t newElementIndex;
     uint16_t lastElementIndex;
     uint16_t itemCount;
+};
+
+
+class TODO_class: public MeasurementProcessing, MeasurementRegistrator
+{
+public:
+    TODO_class() = default;
+    ~TODO_class() = default;
+    TODO_class(const TODO_class&) = delete;
+
+    void addMeasurement(const MeasurementDuration_t measurementDuration, const uint16_t measurementValue);
+
+    uint16_t getSample(const uint16_t index) const;
+    uint16_t getMaximumValue() const;
+    uint16_t count() const;
+
+private:
+    MeasurementHistory<uint16_t, 100U> sampleBufferPerMinute;
+    MeasurementHistory<uint16_t, 100U> sampleBufferPerHour;
 };
 
 #endif

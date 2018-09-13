@@ -14,7 +14,6 @@
 #include "LayoutHandler.h"
 #include "MeasurementHistory.h"
 
-
 class ApplicationBuilder
 {
 public:
@@ -30,9 +29,7 @@ private:
 	GMDevice hwGeigerMuller;
 	KeyboardDevice hwKeyboard;
 
-	MeasurementHistory<uint16_t, 100U> sampleBufferPerMinute;
-	MeasurementHistory<uint16_t, 100U> sampleBufferPerHour;
-
+	TODO_class measurementHistory;
 	LayoutHandler layoutHandler;
 };
 
