@@ -29,6 +29,8 @@ void ApplicationBuilder::init()
 void ApplicationBuilder::run()
 {
     // TODO: data processing: measurementHistory.addMeasurement();
+    measurementHistory.addMeasurement(MeasurementRegistrator::MEASUREMENT_MINUTE, 12);
+    measurementHistory.addMeasurement(MeasurementRegistrator::MEASUREMENT_MINUTE, 8);
 
     bool wasKeyPressObserved = hwKeyboard.wasKeyPressObserved();
 

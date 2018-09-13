@@ -42,7 +42,7 @@ public:
         }
     }
 
-    ELEMENT_TYPE get(uint16_t index)
+    ELEMENT_TYPE get(const uint16_t index)
     {
         //int16_t localIndex =
 
@@ -113,9 +113,9 @@ public:
 
     void addMeasurement(const MeasurementDuration_t measurementDuration, const uint16_t measurementValue);
 
-    uint16_t getSample(const uint16_t index) const;
-    uint16_t getMaximumValue() const;
-    uint16_t count() const;
+    uint16_t getMeasurement(const uint16_t index) const;
+    uint16_t getMaximumMeasurement() const;
+    uint16_t getMeasurementCount() const;
 
 private:
     MeasurementHistory<uint16_t, 100U> sampleBufferPerMinute;

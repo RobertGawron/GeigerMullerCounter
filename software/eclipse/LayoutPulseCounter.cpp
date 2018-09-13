@@ -9,15 +9,15 @@ LayoutPulseCounter::LayoutPulseCounter(DisplayDevice& display, IntervalMode_t mo
 {
 }
 
-void LayoutPulseCounter::draw(MeasurementProcessing& data)
+void LayoutPulseCounter::draw(MeasurementProcessing& meassurements)
 {
     display.clean();
-    drawLegend(data);
-    drawGraph(data);
+    drawLegend(meassurements);
+    drawGraph(meassurements);
     display.paint();
 }
 
-void LayoutPulseCounter::drawLegend(MeasurementProcessing& data)
+void LayoutPulseCounter::drawLegend(MeasurementProcessing& meassurements)
 {
     // TODO: for debug
     MeasurementHistory<int, 20> buffer;
@@ -30,14 +30,14 @@ void LayoutPulseCounter::drawLegend(MeasurementProcessing& data)
         case MINUTE_INTERVALS:
         {
             display.drawText(labelForMinuteCounter, 0, 0);
+            DoseCounter doseCounter;
+            doseCounter.calculate();
+            display.drawText(labelDosageUnit, 59U, 0U);
         }
         break;
         case HOUR_INTERVALS:
         {
             display.drawText(labelForHourCounter, 0, 0);
-            DoseCounter doseCounter;
-            doseCounter.calculate();
-            display.drawText(labelDosageUnit, 59U, 0U);
         }
         break;
         default:
@@ -48,7 +48,7 @@ void LayoutPulseCounter::drawLegend(MeasurementProcessing& data)
     }
 }
 
-void LayoutPulseCounter::drawGraph(MeasurementProcessing& data)
+void LayoutPulseCounter::drawGraph(MeasurementProcessing& meassurements)
 {
     // TODO: for debug
     MeasurementHistory<int, 20> buffer;

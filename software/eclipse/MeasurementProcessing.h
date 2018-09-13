@@ -16,9 +16,9 @@ public:
     MeasurementProcessing() = default;
     virtual ~MeasurementProcessing() = default;
 
-    virtual uint16_t getSample(const uint16_t index) const = 0;
-    virtual uint16_t getMaximumValue() const = 0;
-    virtual uint16_t count() const = 0;
+    virtual uint16_t getMeasurement(const uint16_t index) const = 0;
+    virtual uint16_t getMaximumMeasurement() const = 0;
+    virtual uint16_t getMeasurementCount() const = 0;
 };
 
 #endif /* MEASUREMENTPROCESSING_H_ */

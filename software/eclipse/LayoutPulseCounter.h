@@ -9,11 +9,11 @@ public:
     enum IntervalMode_t { MINUTE_INTERVALS = 0, HOUR_INTERVALS = 1 };
     LayoutPulseCounter(DisplayDevice& display, IntervalMode_t mode);
     ~LayoutPulseCounter() = default;
-    virtual void draw(MeasurementProcessing& data);
+    virtual void draw(MeasurementProcessing& meassurements);
 
 private:
-    void drawLegend(MeasurementProcessing& data);
-    void drawGraph(MeasurementProcessing& data);
+    void drawLegend(MeasurementProcessing& meassurements);
+    void drawGraph(MeasurementProcessing& meassurements);
 
     DisplayDevice& display;
     IntervalMode_t mode;

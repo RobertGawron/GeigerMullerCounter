@@ -12,17 +12,18 @@ void TODO_class::addMeasurement(const MeasurementDuration_t measurementDuration,
 
 }
 
-uint16_t TODO_class::getSample(const uint16_t index) const
+uint16_t TODO_class::getMeasurement(const uint16_t elementIndex) const
 {
-return 0;
+    const uint16_t indeex = 6;
+    return 0;//sampleBufferPerMinute.get(indeex);
 }
 
-uint16_t TODO_class::getMaximumValue() const
+uint16_t TODO_class::getMaximumMeasurement() const
 {
     return 0;
 }
 
-uint16_t TODO_class::count() const
+uint16_t TODO_class::getMeasurementCount() const
 {
     return 0;
 }

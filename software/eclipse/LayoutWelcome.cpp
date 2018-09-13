@@ -6,7 +6,7 @@ LayoutWelcome::LayoutWelcome(DisplayDevice& display) : display(display)
 {
 }
 
-void LayoutWelcome::draw(MeasurementProcessing& data)
+void LayoutWelcome::draw(MeasurementProcessing& meassurements)
 {
     display.clean();
     display.drawText(welcomeText, textXCoordinate, textYCoordinate);
