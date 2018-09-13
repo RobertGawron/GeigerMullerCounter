@@ -18,8 +18,8 @@ public:
 	void init();
 
 private:
-	static const uint8_t  ledPin = 13;
-	static const uint8_t  gmInputPin = 2;
+	static const uint8_t ledPin = 13;
+	static const uint8_t gmInputPin = 2;
 
 };
 

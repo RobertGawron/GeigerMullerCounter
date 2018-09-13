@@ -11,10 +11,9 @@
 #include "GMDevice.h"
 #include "DisplayDevice.h"
 #include "KeyboardDevice.h"
-#include "SampleBuffer.h"
-
 #include "LayoutWelcome.h"
 #include "LayoutPulseCounter.h"
+#include "MeasurementHistory.h"
 
 class ApplicationBuilder
 {
@@ -31,8 +30,8 @@ private:
 	GMDevice hwGeigerMuller;
 	KeyboardDevice hwKeyboard;
 
-	SampleBuffer<uint16_t, 100U> sampleBufferPerMinute;
-	SampleBuffer<uint16_t, 100U> sampleBufferPerHour;
+	MeasurementHistory<uint16_t, 100U> sampleBufferPerMinute;
+	MeasurementHistory<uint16_t, 100U> sampleBufferPerHour;
 
 	LayoutWelcome layoutWelcome;
 	LayoutPulseCounter layoutPulseCounter;

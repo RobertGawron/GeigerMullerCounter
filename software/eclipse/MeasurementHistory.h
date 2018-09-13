@@ -13,11 +13,11 @@ public:
 };
 
 template <typename ELEMENT_TYPE, size_t SIZE>
-class SampleBuffer : public ISampleBuffer
+class MeasurementHistory : public ISampleBuffer
 {
 public:
 
-    SampleBuffer(): newElementIndex(0U), lastElementIndex(0U), itemCount(0U)
+    MeasurementHistory(): newElementIndex(0U), lastElementIndex(0U), itemCount(0U)
     {
         for(uint16_t i = 0U; i < SIZE; i++)
         {

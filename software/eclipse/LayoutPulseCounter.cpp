@@ -8,7 +8,7 @@ void LayoutPulseCounter::draw(ISampleBuffer& data)
 {
     display.clean();
 
-    SampleBuffer<int, 20> buffer;
+    MeasurementHistory<int, 20> buffer;
     buffer.add(10);
     buffer.add(5);
     buffer.add(3);

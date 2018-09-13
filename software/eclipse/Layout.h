@@ -2,7 +2,7 @@
 #define LAYOUT_H
 
 #include "DisplayDevice.h"
-#include "SampleBuffer.h"
+#include "MeasurementHistory.h"
 class Layout
 {
 public:
