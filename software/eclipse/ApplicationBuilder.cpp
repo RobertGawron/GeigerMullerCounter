@@ -12,13 +12,11 @@ ApplicationBuilder::ApplicationBuilder():
 	hwDisplay(),
 	hwGeigerMuller(),
 	hwKeyboard(),
-	layoutWelcome(hwDisplay)
+	layoutWelcome(hwDisplay),
+	layoutPulseCounter(hwDisplay)
 {
 }
 
-ApplicationBuilder::~ApplicationBuilder()
-{
-}
 
 void ApplicationBuilder::init()
 {
@@ -36,34 +34,11 @@ void ApplicationBuilder::run()
     if(wasKeyPressObserved)
     {
         Serial.print("key\n");
-        layoutWelcome.draw();
+        //layoutWelcome.draw();
+
     }
 
-    delay(1);
+    layoutPulseCounter.draw();
 
-#if 0
-    void Layout::drawText(char* data, uint8_t x, uint8_t y)
-    {
-        itsDisplay.setTextSize(0);
-        itsDisplay.setTextColor(BLACK);
-        itsDisplay.setCursor(x, y);
-        itsDisplay.print(data);
-    }
-
-    void Layout::drawNumber(uint8_t data, uint8_t x, uint8_t y)
-    {
-        itsDisplay.setTextSize(0);
-        itsDisplay.setTextColor(BLACK);
-        itsDisplay.setCursor(x, y);
-        itsDisplay.print(data);
-    }
-
-
-
-    hwDisplay.getDisplayHandle().setTextSize(0);
-    hwDisplay.getDisplayHandle().setTextColor(BLACK);
-    hwDisplay.getDisplayHandle().setCursor(0, 0);
-    hwDisplay.getDisplayHandle().print("xxx");
-    hwDisplay.getDisplayHandle().display();
-#endif
+    delay(10);
 }

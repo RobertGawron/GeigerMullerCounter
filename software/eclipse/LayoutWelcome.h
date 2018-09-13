@@ -11,6 +11,10 @@ public:
     virtual void draw(/*GMCounterBase* data, layoutConfig_t& conf*/);
 private:
     DisplayDevice& display;
+
+    static const char* welcomeText;
+    static const uint8_t textXCoordinate = 0U;
+    static const uint8_t textYCoordinate = 0U;
 };
 
 #endif

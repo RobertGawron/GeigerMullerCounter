@@ -33,11 +33,33 @@ void DisplayDevice::clean()
     display.display();
 }
 
-DisplayDevice::~DisplayDevice()
+uint8_t DisplayDevice::getHeight() const
 {
+    return LCDHEIGHT;
 }
 
-DisplayDevice::DeviceHandle_t& DisplayDevice::getDisplayHandle()
+uint8_t DisplayDevice::getWidth() const
 {
-    return display;
+    return LCDWIDTH;
 }
+
+void DisplayDevice::drawLine(const uint8_t x, const uint8_t y, const uint8_t dx, const uint8_t dy)
+{
+    display.drawLine(x, (getHeight() - y), x, (getHeight() - dy), BLACK);
+}
+
+void DisplayDevice::paint()
+{
+    display.display();
+}
+
+void DisplayDevice::drawText(const char* text, const uint8_t x, const uint8_t y)
+{
+       display.setTextSize(0);
+       display.setTextColor(BLACK);
+       display.setCursor(2, 1);
+       display.print(text);
+
+       display.display();
+}
+

@@ -7,33 +7,33 @@
 #include <stdint.h>
 
 
-template <typename item_t, size_t ITEM_MAX>
+template <typename ELEMENT_TYPE, size_t SIZE>
 class CircularBuffer
 {
 public:
 
     CircularBuffer(): itsIndex(0U), itemCount(0U)
     {
-        for(uint16_t i = 0U; i < ITEM_MAX; i++)
+        for(uint16_t i = 0U; i < SIZE; i++)
         {
             localItem[i] = 0U;
         }
     }
 
-    void add(item_t item)
+    void add(ELEMENT_TYPE item)
     {
         localItem[itsIndex] = item;
 
         itsIndex++;
-        itsIndex %= ITEM_MAX;
+        itsIndex %= SIZE;
 
-        if(itemCount < ITEM_MAX)
+        if(itemCount < SIZE)
         {
             itemCount++;
         }
     }
 
-    item_t get(uint16_t index)
+    ELEMENT_TYPE get(uint16_t index)
     {
         // no index checking!
 
@@ -48,7 +48,7 @@ public:
         else
         {
             index -= (localIndex - 1U);
-            localIndex = ITEM_MAX - index;
+            localIndex = SIZE - index;
         }
 
         return localItem[localIndex];
@@ -59,16 +59,16 @@ public:
         return itemCount;
     }
 
-#if 0
+
     void reset()
     {
         itemCount = 0U;
         itsIndex = 0U;
     }
-#endif
+
 private:
 
-    item_t localItem[ITEM_MAX];
+    ELEMENT_TYPE localItem[SIZE];
     uint16_t itsIndex; 
     uint16_t itemCount;
 };

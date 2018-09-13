@@ -1,12 +1,32 @@
 #include "LayoutPulseCounter.h"
-#if 0
-LayoutPulseCounter::LayoutPulseCounter(display_t& display) : Layout(display)
+
+LayoutPulseCounter::LayoutPulseCounter(DisplayDevice& display) : display(display)
 {
-    // empty
 }
 
-void LayoutPulseCounter::draw(GMCounterBase* data, layoutConfig_t& conf)
+void LayoutPulseCounter::draw(/*GMCounterBase* data, layoutConfig_t& conf*/)
 {
+    display.clean();
+
+
+    const uint8_t graphHeight = display.getHeight() - 20U; // TODO: magic number, because we need space for text too
+    //int maxValue = data->getMaxSampleValue();
+
+    for (uint16_t i = 0U; /*(i < data->getSampleCount()) &&*/ (i < display.getWidth()); i++)
+    {
+        int sampleValue = i%7;//data->getSample(i);
+
+        // data normalization
+      //  sampleValue = uint8_t( (float(sampleValue) / float(maxValue)) *graphHeight);
+
+        display.drawLine(i, 0, i, sampleValue);
+        //const uint16_t x = LCDWIDTH - i - 1U;
+        //itsDisplay.drawLine(x, itsDisplay.height(), x, itsDisplay.height() - sampleValue, BLACK);
+    }
+
+    display.paint();
+
+#if 0
     itsDisplay.clearDisplay();
 
     // show legend
@@ -46,6 +66,7 @@ void LayoutPulseCounter::draw(GMCounterBase* data, layoutConfig_t& conf)
     }
 
     itsDisplay.display();
-}
-
 #endif
+
+
+}

@@ -17,11 +17,16 @@ public:
     typedef Adafruit_PCD8544 DeviceHandle_t;
 
 	DisplayDevice();
-	virtual ~DisplayDevice();
+	virtual ~DisplayDevice() = default;
 	void init();
 
-	DeviceHandle_t& getDisplayHandle();
 	void clean();
+	void paint();
+    uint8_t getHeight() const;
+    uint8_t getWidth() const;
+	void drawText(const char* text, const uint8_t x, const uint8_t y);
+	// coordinates starts from lower right corner
+	void drawLine(const uint8_t x, const uint8_t y, const uint8_t dx, const uint8_t dy);
 
 private:
 

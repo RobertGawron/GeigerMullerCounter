@@ -13,12 +13,12 @@
 #include "KeyboardDevice.h"
 
 #include "LayoutWelcome.h"
-
+#include "LayoutPulseCounter.h"
 class ApplicationBuilder
 {
 public:
 	ApplicationBuilder();
-	virtual ~ApplicationBuilder();
+	virtual ~ApplicationBuilder() = default;
 	void init();
 	void run();
 
@@ -30,6 +30,7 @@ private:
 	KeyboardDevice hwKeyboard;
 
 	LayoutWelcome layoutWelcome;
+	LayoutPulseCounter layoutPulseCounter;
 };
 
 #endif /* APPLICATIONBUILDER_H_ */

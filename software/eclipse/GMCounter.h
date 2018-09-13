@@ -3,7 +3,7 @@
 #ifndef GM_COUNTER_H
 #define GM_COUNTER_H
 
-#include "CircularBuffer.h"
+#include "SampleBuffer.h"
 
 
 typedef uint8_t sample_t;
