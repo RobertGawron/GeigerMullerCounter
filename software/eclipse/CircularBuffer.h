@@ -8,6 +8,7 @@
 #ifndef CIRCULARBUFFER_H_
 #define CIRCULARBUFFER_H_
 
+#include <Arduino.h>
 #include <stddef.h>
 #include <stdint.h>
 
@@ -28,39 +29,31 @@ public:
     {
         item[newElementIndex] = itemToAdd;
 
+        lastElementIndex++;
+
         newElementIndex++;
         newElementIndex %= SIZE;
 
         if(itemCount < SIZE)
         {
+            // buffer is full, so we removed oldest element
             itemCount++;
         }
     }
 
+    // TODO: should check boundaries.
     ELEMENT_TYPE getElement(const uint16_t index) const
     {
-        //int16_t localIndex =
+       int16_t localIndex = newElementIndex-1 - index;
 
-        return item[index];
-#if 0
-        // no index checking!
+       if (localIndex < 0)
+       {
+           localIndex += SIZE;
+       }
 
-        uint16_t localIndex = 0U;
+       Serial.println(localIndex);
 
-        localIndex = newElementIndex;
-
-        if(localIndex >= (index + 1U))
-        {
-            localIndex -= (index + 1U);
-        }
-        else
-        {
-            index -= (localIndex - 1U);
-            localIndex = SIZE - index;
-        }
-
-        return localItem[localIndex];
-#endif
+       return item[localIndex];
     }
 
     uint16_t getElementCount() const
@@ -86,7 +79,6 @@ public:
 private:
 
     ELEMENT_TYPE item[SIZE];
-
     uint16_t newElementIndex;
     uint16_t lastElementIndex;
     uint16_t itemCount;

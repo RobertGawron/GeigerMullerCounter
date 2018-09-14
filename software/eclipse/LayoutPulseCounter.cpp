@@ -1,6 +1,8 @@
 #include "LayoutPulseCounter.h"
 #include "DoseCounter.h"
 
+#include "MeasurementRegistrator.h"
+
 const char* LayoutPulseCounter::labelForMinuteCounter = "cpm";
 const char* LayoutPulseCounter::labelForHourCounter = "cph";
 const char* LayoutPulseCounter::labelDosageUnit = "uS/h";
@@ -43,12 +45,14 @@ void LayoutPulseCounter::drawLegend(MeasurementProcessing& meassurements)
 
 void LayoutPulseCounter::drawGraph(MeasurementProcessing& meassurements)
 {
-    const uint8_t graphHeight = display.getHeight() - 10U; // TODO: magic number, because we need space for text too
-    int maxValue = meassurements.getMaximumMeasurement();
+    MeasurementProcessing::MeasurementDuration_t measurementDuration = MeasurementProcessing::MEASUREMENT_MINUTE;
 
-    for (uint16_t i = 0U; (i < meassurements.getMeasurementCount()) && (i < display.getWidth()); i++)
+    const uint8_t graphHeight = display.getHeight() - 10U; // TODO: magic number, because we need space for text too
+    int maxValue = meassurements.getMaximumMeasurement(measurementDuration);
+
+    for (uint16_t i = 0U; (i < meassurements.getMeasurementCount(measurementDuration)) && (i < display.getWidth()); i++)
     {
-        int sampleValue = meassurements.getMeasurement(i);
+        int sampleValue = meassurements.getMeasurement(measurementDuration, i);
 
         // data normalization to nicely fit to screen low/high values
         sampleValue = uint8_t( (float(sampleValue) / float(maxValue)) *graphHeight);

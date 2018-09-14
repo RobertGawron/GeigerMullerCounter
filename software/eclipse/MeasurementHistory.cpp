@@ -14,29 +14,22 @@ MeasurementHistory::MeasurementHistory():
 {
 }
 
-void MeasurementHistory::addMeasurement(const MeasurementDuration_t measurementDuration, const uint16_t measurementValue)
+void MeasurementHistory::addMeasurement(const uint16_t measurementValue)
 {
     sampleBufferPerMinute.add(measurementValue);
 }
 
-uint16_t MeasurementHistory::getMeasurement(const uint16_t elementIndex) const
+uint16_t MeasurementHistory::getMeasurement(const MeasurementDuration_t measurementDuration, const uint16_t elementIndex) const
 {
-    /*Serial.print(elementIndex);
-    Serial.print("-");
-    Serial.print(sampleBufferPerMinute.getElement(elementIndex));
-    Serial.print("     ");*/
     return sampleBufferPerMinute.getElement(elementIndex);
 }
 
-uint16_t MeasurementHistory::getMaximumMeasurement() const
+uint16_t MeasurementHistory::getMaximumMeasurement(const MeasurementDuration_t measurementDuration) const
 {
-    Serial.print( sampleBufferPerMinute.getMaximalElement());
-    Serial.print("-");
     return sampleBufferPerMinute.getMaximalElement();
 }
 
-uint16_t MeasurementHistory::getMeasurementCount() const
+uint16_t MeasurementHistory::getMeasurementCount(const MeasurementDuration_t measurementDuration) const
 {
-    //Serial.print(sampleBufferPerMinute.getElementCount());
     return sampleBufferPerMinute.getElementCount();
 }

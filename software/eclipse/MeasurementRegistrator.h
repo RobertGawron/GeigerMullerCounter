@@ -13,12 +13,10 @@
 class MeasurementRegistrator
 {
 public:
-    enum MeasurementDuration_t { MEASUREMENT_MINUTE = 0U, MEASUREMENT_HOUR = 1U };
-
     MeasurementRegistrator() = default;
     virtual ~MeasurementRegistrator() = default;
 
-    virtual void addMeasurement(const MeasurementDuration_t measurementDuration, const uint16_t measurementValue) = 0;
+    virtual void addMeasurement(const uint16_t measurementValue) = 0;
 };
 
 #endif /* MEASUREMENTREGISTRATOR_H_ */
