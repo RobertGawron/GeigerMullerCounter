@@ -28,19 +28,36 @@ void ApplicationBuilder::init()
 
 void ApplicationBuilder::run()
 {
-    bool wasKeyPressObserved = hwKeyboard.wasKeyPressObserved();
+    uint16_t currentMillis = 0U;
+    uint16_t previousKeyHandlingMillis = 0U;
+    uint16_t previousGMDataHandlingMillis = 0U;
+    bool wasKeyPressObserved = false;
 
-    if(wasKeyPressObserved)
+    while(true)
     {
+        currentMillis = millis();
 
-        // TODO: data processing: measurementHistory.addMeasurement();
-        measurementHistory.addMeasurement(12);
-        measurementHistory.addMeasurement(8);
-        measurementHistory.addMeasurement(20);
+        // Step 1: handle data from GM counter
+        if (currentMillis - previousGMDataHandlingMillis >= intervalLoopGMDataHandling)
+        {
+            previousGMDataHandlingMillis = currentMillis;
 
-        layoutHandler.handleKeyPress();
+            uint16_t pulseCounterValue = hwGeigerMuller.getCounterValue();
+            hwGeigerMuller.resetCounterValue();
+            measurementHistory.addMeasurement(pulseCounterValue);
+        }
+
+        // Step 2: handle key press
+        if (currentMillis - previousKeyHandlingMillis >= intervalLoopKeyHandling)
+        {
+            previousKeyHandlingMillis = currentMillis;
+
+            wasKeyPressObserved = hwKeyboard.wasKeyPressObserved();
+
+            if(wasKeyPressObserved)
+            {
+                layoutHandler.handleKeyPress();
+            }
+        }
     }
-
-    // while(1);// TODO: this is for debug
-    delay(10);
 }

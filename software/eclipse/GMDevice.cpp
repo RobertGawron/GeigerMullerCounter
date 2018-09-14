@@ -6,32 +6,29 @@
  */
 
 #include "GMDevice.h"
-
 #include <Arduino.h>
 
-// global variables for interrupt handling
-static const uint8_t  ledPin = 13;
-volatile uint8_t gmPinState = LOW;
+// global variable for interrupt handling
 volatile uint8_t pulseCounter = 0;
 
 void interruptHandlerGM()
 {
-    gmPinState = !gmPinState;
+    pulseCounter++;
+}
 
-    if (gmPinState == HIGH)
-    {
-        pulseCounter++;
-    }
+uint16_t GMDevice::getCounterValue()
+{
+    return pulseCounter;
+}
 
-    digitalWrite(ledPin, gmPinState);
+void GMDevice::resetCounterValue()
+{
+    pulseCounter = 0U;
 }
 
 void GMDevice::init()
 {
-    // setup GM status diode
-    pinMode(ledPin, OUTPUT);
-
     // setup GM input pin
     pinMode(gmInputPin, INPUT);
-    attachInterrupt(digitalPinToInterrupt(gmInputPin), interruptHandlerGM, CHANGE);
+    attachInterrupt(digitalPinToInterrupt(gmInputPin), interruptHandlerGM, RISING);
 }

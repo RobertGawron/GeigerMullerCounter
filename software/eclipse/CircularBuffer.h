@@ -17,7 +17,7 @@ class CircularBuffer
 {
 public:
 
-    CircularBuffer(): newElementIndex(0U), lastElementIndex(0U), itemCount(0U)
+    CircularBuffer(): newElementIndex(0U), itemCount(0U)
     {
         for(uint16_t i = 0U; i < SIZE; i++)
         {
@@ -28,8 +28,6 @@ public:
     void add(ELEMENT_TYPE itemToAdd)
     {
         item[newElementIndex] = itemToAdd;
-
-        lastElementIndex++;
 
         newElementIndex++;
         newElementIndex %= SIZE;
@@ -44,16 +42,17 @@ public:
     // TODO: should check boundaries.
     ELEMENT_TYPE getElement(const uint16_t index) const
     {
-       int16_t localIndex = newElementIndex-1 - index;
+        //
+        int16_t localIndex = newElementIndex -1U - index;
 
-       if (localIndex < 0)
-       {
-           localIndex += SIZE;
-       }
+        if (localIndex < 0)
+        {
+            localIndex += SIZE;
+        }
 
-       Serial.println(localIndex);
+        Serial.println(localIndex);
 
-       return item[localIndex];
+        return item[localIndex];
     }
 
     uint16_t getElementCount() const
@@ -80,7 +79,6 @@ private:
 
     ELEMENT_TYPE item[SIZE];
     uint16_t newElementIndex;
-    uint16_t lastElementIndex;
     uint16_t itemCount;
 };
 

@@ -16,11 +16,11 @@ public:
 	GMDevice() = default;
 	virtual ~GMDevice() = default;
 	void init();
+	uint16_t getCounterValue();
+	void resetCounterValue();
 
 private:
-	static const uint8_t ledPin = 13;
 	static const uint8_t gmInputPin = 2;
-
 };
 
 #endif /* GMDEVICE_H_ */

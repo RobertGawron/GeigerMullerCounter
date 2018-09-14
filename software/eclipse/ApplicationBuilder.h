@@ -25,6 +25,9 @@ public:
 private:
 	static const uint16_t SerialBaudRateDefault = 9600U;
 
+	static const uint16_t intervalLoopKeyHandling = 10U;
+	static const uint16_t intervalLoopGMDataHandling = 1000U;
+
 	DisplayDevice hwDisplay;
 	GMDevice hwGeigerMuller;
 	KeyboardDevice hwKeyboard;
