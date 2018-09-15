@@ -43,6 +43,7 @@ void ApplicationBuilder::run()
             previousGMDataHandlingMillis = currentMillis;
 
             uint16_t pulseCounterValue = hwGeigerMuller.getCounterValue();
+            //Serial.println(pulseCounterValue);
             hwGeigerMuller.resetCounterValue();
             measurementHistory.addMeasurement(pulseCounterValue);
         }

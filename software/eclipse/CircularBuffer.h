@@ -34,7 +34,6 @@ public:
 
         if(itemCount < SIZE)
         {
-            // buffer is full, so we removed oldest element
             itemCount++;
         }
     }
@@ -66,9 +65,9 @@ public:
 
         for(uint16_t i = 0U; i < getElementCount(); i++)
         {
-            if(item[i] > maxValue)
+            if(getElement(i) > maxValue)
             {
-                maxValue = item[i];
+                maxValue = getElement(i);
             }
         }
 
