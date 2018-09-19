@@ -1,4 +1,5 @@
 EESchema Schematic File Version 4
+LIBS:main-cache
 EELAYER 26 0
 EELAYER END
 $Descr User 13234 8268
@@ -710,8 +711,6 @@ F 3 "~" H 1950 4100 50  0001 C CNN
 $EndComp
 Wire Wire Line
 	1950 3950 1950 2900
-Wire Wire Line
-	1750 2900 1950 2900
 Connection ~ 1950 2900
 Wire Wire Line
 	1950 2900 2350 2900
@@ -806,4 +805,44 @@ Wire Wire Line
 	6250 3700 6250 4100
 Wire Wire Line
 	6100 4100 6250 4100
+$Comp
+L power:PWR_FLAG #FLG?
+U 1 1 5BA8EA25
+P 1850 2700
+F 0 "#FLG?" H 1850 2775 50  0001 C CNN
+F 1 "PWR_FLAG" H 1850 2874 50  0000 C CNN
+F 2 "" H 1850 2700 50  0001 C CNN
+F 3 "~" H 1850 2700 50  0001 C CNN
+	1    1850 2700
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	1850 2700 1850 2900
+Wire Wire Line
+	1750 2900 1850 2900
+Connection ~ 1850 2900
+Wire Wire Line
+	1850 2900 1950 2900
+$Comp
+L 74xx:74469 U?
+U 1 1 5BA9A521
+P 3050 1200
+F 0 "U?" H 3050 2278 50  0000 C CNN
+F 1 "74469" H 3050 2187 50  0000 C CNN
+F 2 "" H 3050 1200 50  0001 C CNN
+F 3 "http://www.ti.com/lit/gpn/sn74469" H 3050 1200 50  0001 C CNN
+	1    3050 1200
+	1    0    0    -1  
+$EndComp
+$Comp
+L 74xx:74469 U?
+U 1 1 5BAA05AC
+P 5600 1300
+F 0 "U?" H 5600 2378 50  0000 C CNN
+F 1 "74469" H 5600 2287 50  0000 C CNN
+F 2 "" H 5600 1300 50  0001 C CNN
+F 3 "http://www.ti.com/lit/gpn/sn74469" H 5600 1300 50  0001 C CNN
+	1    5600 1300
+	1    0    0    -1  
+$EndComp
 $EndSCHEMATC
