@@ -1,11 +1,54 @@
 EESchema-LIBRARY Version 2.4
 #encoding utf-8
 #
-# Device:CP
+# Connector_Conn_01x02_Male
 #
-DEF Device:CP C 0 10 N Y 1 F N
+DEF Connector_Conn_01x02_Male J 0 40 Y N 1 F N
+F0 "J" 0 100 50 H V C CNN
+F1 "Connector_Conn_01x02_Male" 0 -200 50 H V C CNN
+F2 "" 0 0 50 H I C CNN
+F3 "" 0 0 50 H I C CNN
+$FPLIST
+ Connector*:*_1x??_*
+$ENDFPLIST
+DRAW
+S 34 -95 0 -105 1 1 6 F
+S 34 5 0 -5 1 1 6 F
+P 2 1 1 6 50 -100 34 -100 N
+P 2 1 1 6 50 0 34 0 N
+X Pin_1 1 200 0 150 L 50 50 1 1 P
+X Pin_2 2 200 -100 150 L 50 50 1 1 P
+ENDDRAW
+ENDDEF
+#
+# Connector_Conn_01x03_Male
+#
+DEF Connector_Conn_01x03_Male J 0 40 Y N 1 F N
+F0 "J" 0 200 50 H V C CNN
+F1 "Connector_Conn_01x03_Male" 0 -200 50 H V C CNN
+F2 "" 0 0 50 H I C CNN
+F3 "" 0 0 50 H I C CNN
+$FPLIST
+ Connector*:*_1x??_*
+$ENDFPLIST
+DRAW
+S 34 -95 0 -105 1 1 6 F
+S 34 5 0 -5 1 1 6 F
+S 34 105 0 95 1 1 6 F
+P 2 1 1 6 50 -100 34 -100 N
+P 2 1 1 6 50 0 34 0 N
+P 2 1 1 6 50 100 34 100 N
+X Pin_1 1 200 100 150 L 50 50 1 1 P
+X Pin_2 2 200 0 150 L 50 50 1 1 P
+X Pin_3 3 200 -100 150 L 50 50 1 1 P
+ENDDRAW
+ENDDEF
+#
+# Device_CP
+#
+DEF Device_CP C 0 10 N Y 1 F N
 F0 "C" 25 100 50 H V L CNN
-F1 "Device:CP" 25 -100 50 H V L CNN
+F1 "Device_CP" 25 -100 50 H V L CNN
 F2 "" 38 -150 50 H I C CNN
 F3 "" 0 0 50 H I C CNN
 $FPLIST
@@ -24,11 +67,11 @@ X ~ 2 0 -150 110 U 50 50 1 1 P
 ENDDRAW
 ENDDEF
 #
-# Device:D
+# Device_D
 #
-DEF Device:D D 0 40 N N 1 F N
+DEF Device_D D 0 40 N N 1 F N
 F0 "D" 0 100 50 H V C CNN
-F1 "Device:D" 0 -100 50 H V C CNN
+F1 "Device_D" 0 -100 50 H V C CNN
 F2 "" 0 0 50 H I C CNN
 F3 "" 0 0 50 H I C CNN
 $FPLIST
@@ -46,11 +89,11 @@ X A 2 150 0 100 L 50 50 1 1 P
 ENDDRAW
 ENDDEF
 #
-# Device:D_Schottky
+# Device_D_Schottky
 #
-DEF Device:D_Schottky D 0 40 N N 1 F N
+DEF Device_D_Schottky D 0 40 N N 1 F N
 F0 "D" 0 100 50 H V C CNN
-F1 "Device:D_Schottky" 0 -100 50 H V C CNN
+F1 "Device_D_Schottky" 0 -100 50 H V C CNN
 F2 "" 0 0 50 H I C CNN
 F3 "" 0 0 50 H I C CNN
 $FPLIST
@@ -68,11 +111,33 @@ X A 2 150 0 100 L 50 50 1 1 P
 ENDDRAW
 ENDDEF
 #
-# Device:LED
+# Device_D_Zener
 #
-DEF Device:LED D 0 40 N N 1 F N
+DEF Device_D_Zener D 0 40 N N 1 F N
 F0 "D" 0 100 50 H V C CNN
-F1 "Device:LED" 0 -100 50 H V C CNN
+F1 "Device_D_Zener" 0 -100 50 H V C CNN
+F2 "" 0 0 50 H I C CNN
+F3 "" 0 0 50 H I C CNN
+$FPLIST
+ TO-???*
+ *_Diode_*
+ *SingleDiode*
+ D_*
+$ENDFPLIST
+DRAW
+P 2 0 1 0 50 0 -50 0 N
+P 3 0 1 8 -50 -50 -50 50 -30 50 N
+P 4 0 1 8 50 -50 50 50 -50 0 50 -50 N
+X K 1 -150 0 100 R 50 50 1 1 P
+X A 2 150 0 100 L 50 50 1 1 P
+ENDDRAW
+ENDDEF
+#
+# Device_LED
+#
+DEF Device_LED D 0 40 N N 1 F N
+F0 "D" 0 100 50 H V C CNN
+F1 "Device_LED" 0 -100 50 H V C CNN
 F2 "" 0 0 50 H I C CNN
 F3 "" 0 0 50 H I C CNN
 $FPLIST
@@ -91,11 +156,11 @@ X A 2 150 0 100 L 50 50 1 1 P
 ENDDRAW
 ENDDEF
 #
-# Device:Q_NMOS_GDS
+# Device_Q_NMOS_GDS
 #
-DEF Device:Q_NMOS_GDS Q 0 0 Y N 1 F N
+DEF Device_Q_NMOS_GDS Q 0 0 Y N 1 F N
 F0 "Q" 200 50 50 H V L CNN
-F1 "Device:Q_NMOS_GDS" 200 -50 50 H V L CNN
+F1 "Device_Q_NMOS_GDS" 200 -50 50 H V L CNN
 F2 "" 200 100 50 H I C CNN
 F3 "" 0 0 50 H I C CNN
 DRAW
@@ -123,11 +188,11 @@ X S 3 100 -200 100 U 50 50 1 1 P
 ENDDRAW
 ENDDEF
 #
-# Device:Q_PNP_BEC
+# Device_Q_PNP_BEC
 #
-DEF Device:Q_PNP_BEC Q 0 0 Y N 1 F N
+DEF Device_Q_PNP_BEC Q 0 0 Y N 1 F N
 F0 "Q" 200 50 50 H V L CNN
-F1 "Device:Q_PNP_BEC" 200 -50 50 H V L CNN
+F1 "Device_Q_PNP_BEC" 200 -50 50 H V L CNN
 F2 "" 200 100 50 H I C CNN
 F3 "" 0 0 50 H I C CNN
 DRAW
@@ -142,26 +207,33 @@ X C 3 100 200 100 D 50 50 1 1 P
 ENDDRAW
 ENDDEF
 #
-# main-eagle-import:22-?-0205-7028
+# Jumper_Jumper_3_Bridged12
 #
-DEF ~main-eagle-import:22-?-0205-7028 J 0 40 Y Y 2 L N
-F0 "J" 100 -30 51 H V L BNN
-F1 "main-eagle-import:22-?-0205-7028" -30 55 59 H I L BNN
+DEF Jumper_Jumper_3_Bridged12 JP 0 0 Y N 1 F N
+F0 "JP" -100 -100 50 H V C CNN
+F1 "Jumper_Jumper_3_Bridged12" 0 110 50 H V C CNN
 F2 "" 0 0 50 H I C CNN
 F3 "" 0 0 50 H I C CNN
+$FPLIST
+ Jumper*Bridged12*
+$ENDFPLIST
 DRAW
-P 2 1 0 0 50 0 0 0 N
-P 2 2 0 0 50 0 0 0 N
-X S 1 -100 0 100 R 0 0 1 0 P
-X S 2 -100 0 100 R 0 0 2 0 P
+A -65 -50 89 1282 518 0 1 0 N -120 20 -10 20
+C -130 0 20 0 0 0 N
+C 0 0 20 0 0 0 N
+C 130 0 20 0 0 0 N
+P 2 0 1 0 0 -50 0 -20 N
+X A 1 -250 0 100 R 50 50 1 1 P
+X C 2 0 -150 100 U 50 50 1 1 I
+X B 3 250 0 100 L 50 50 1 1 P
 ENDDRAW
 ENDDEF
 #
-# main-eagle-import:BC848SMD
+# main-eagle-import_BC848SMD
 #
-DEF main-eagle-import:BC848SMD Q 0 40 Y Y 1 L N
+DEF main-eagle-import_BC848SMD Q 0 40 Y Y 1 L N
 F0 "Q" -400 300 59 H V L BNN
-F1 "main-eagle-import:BC848SMD" -400 200 59 H V L BNN
+F1 "main-eagle-import_BC848SMD" -400 200 59 H V L BNN
 F2 "" 0 0 50 H I C CNN
 F3 "" 0 0 50 H I C CNN
 DRAW
@@ -182,11 +254,11 @@ X C 3 100 200 100 D 0 0 1 0 P
 ENDDRAW
 ENDDEF
 #
-# main-eagle-import:C-EU102-064X133
+# main-eagle-import_C-EU102-064X133
 #
-DEF main-eagle-import:C-EU102-064X133 C 0 40 Y Y 1 L N
+DEF main-eagle-import_C-EU102-064X133 C 0 40 Y Y 1 L N
 F0 "C" 60 15 59 H V L BNN
-F1 "main-eagle-import:C-EU102-064X133" 60 -185 59 H V L BNN
+F1 "main-eagle-import_C-EU102-064X133" 60 -185 59 H V L BNN
 F2 "" 0 0 50 H I C CNN
 F3 "" 0 0 50 H I C CNN
 DRAW
@@ -199,11 +271,11 @@ X 2 2 0 -200 100 U 0 0 1 0 P
 ENDDRAW
 ENDDEF
 #
-# main-eagle-import:C-EUC0805
+# main-eagle-import_C-EUC0805
 #
-DEF main-eagle-import:C-EUC0805 C 0 40 Y Y 1 L N
+DEF main-eagle-import_C-EUC0805 C 0 40 Y Y 1 L N
 F0 "C" 60 15 59 H V L BNN
-F1 "main-eagle-import:C-EUC0805" 60 -185 59 H V L BNN
+F1 "main-eagle-import_C-EUC0805" 60 -185 59 H V L BNN
 F2 "" 0 0 50 H I C CNN
 F3 "" 0 0 50 H I C CNN
 DRAW
@@ -216,32 +288,11 @@ X 2 2 0 -200 100 U 0 0 1 0 P
 ENDDRAW
 ENDDEF
 #
-# main-eagle-import:JP1E
+# main-eagle-import_L-EU0207_5V
 #
-DEF main-eagle-import:JP1E JP 0 40 Y Y 1 L N
-F0 "JP" -50 0 59 V V L BNN
-F1 "main-eagle-import:JP1E" 225 0 59 V V L BNN
-F2 "" 0 0 50 H I C CNN
-F3 "" 0 0 50 H I C CNN
-DRAW
-P 2 1 0 0 -25 0 125 0 N
-P 2 1 0 0 -25 25 -25 0 N
-P 2 1 0 0 0 0 0 50 N
-P 2 1 0 0 0 100 0 50 N
-P 2 1 0 0 100 0 100 50 N
-P 2 1 0 0 100 100 100 50 N
-P 2 1 0 0 125 0 125 25 N
-P 2 1 0 0 125 25 -25 25 N
-X 1 1 0 -100 100 U 50 0 1 0 P
-X 2 2 100 -100 100 U 50 0 1 0 P
-ENDDRAW
-ENDDEF
-#
-# main-eagle-import:L-EU0207_5V
-#
-DEF main-eagle-import:L-EU0207_5V L 0 40 Y Y 1 L N
+DEF main-eagle-import_L-EU0207_5V L 0 40 Y Y 1 L N
 F0 "L" -59 -150 59 V V L BNN
-F1 "main-eagle-import:L-EU0207_5V" 130 -150 59 V V L BNN
+F1 "main-eagle-import_L-EU0207_5V" 130 -150 59 V V L BNN
 F2 "" 0 0 50 H I C CNN
 F3 "" 0 0 50 H I C CNN
 DRAW
@@ -251,11 +302,11 @@ X 2 2 0 -200 100 U 0 0 1 0 P
 ENDDRAW
 ENDDEF
 #
-# main-eagle-import:LM358D
+# main-eagle-import_LM358D
 #
-DEF ~main-eagle-import:LM358D IC 0 40 Y Y 3 L N
+DEF ~main-eagle-import_LM358D IC 0 40 Y Y 3 L N
 F0 "IC" 100 125 59 H I L BNN
-F1 "main-eagle-import:LM358D" 100 -200 59 H I L BNN
+F1 "main-eagle-import_LM358D" 100 -200 59 H I L BNN
 F2 "" 0 0 50 H I C CNN
 F3 "" 0 0 50 H I C CNN
 DRAW
@@ -284,32 +335,11 @@ X V+ 8 0 300 200 D 50 0 3 0 W
 ENDDRAW
 ENDDEF
 #
-# main-eagle-import:MA03-1
+# main-eagle-import_MC34063AD
 #
-DEF main-eagle-import:MA03-1 SV 0 40 Y Y 1 L N
-F0 "SV" -50 230 59 H V L BNN
-F1 "main-eagle-import:MA03-1" -50 -300 59 H V L BNN
-F2 "" 0 0 50 H I C CNN
-F3 "" 0 0 50 H I C CNN
-DRAW
-P 2 1 0 0 -50 200 -50 -200 N
-P 2 1 0 0 -50 200 150 200 N
-P 2 1 0 0 50 -100 100 -100 N
-P 2 1 0 0 50 0 100 0 N
-P 2 1 0 0 50 100 100 100 N
-P 2 1 0 0 150 -200 -50 -200 N
-P 2 1 0 0 150 -200 150 200 N
-X 1 1 300 -100 200 L 50 0 1 0 P
-X 2 2 300 0 200 L 50 0 1 0 P
-X 3 3 300 100 200 L 50 0 1 0 P
-ENDDRAW
-ENDDEF
-#
-# main-eagle-import:MC34063AD
-#
-DEF main-eagle-import:MC34063AD IC 0 40 Y Y 1 L N
+DEF main-eagle-import_MC34063AD IC 0 40 Y Y 1 L N
 F0 "IC" -400 100 59 H V L BNN
-F1 "main-eagle-import:MC34063AD" -400 -500 59 H V L BNN
+F1 "main-eagle-import_MC34063AD" -400 -500 59 H V L BNN
 F2 "" 0 0 50 H I C CNN
 F3 "" 0 0 50 H I C CNN
 DRAW
@@ -328,11 +358,11 @@ X DC 8 -600 0 200 R 50 50 1 0 P
 ENDDRAW
 ENDDEF
 #
-# main-eagle-import:R-EU_0207_5V
+# main-eagle-import_R-EU_0207_5V
 #
-DEF main-eagle-import:R-EU_0207_5V R 0 40 Y Y 1 L N
+DEF main-eagle-import_R-EU_0207_5V R 0 40 Y Y 1 L N
 F0 "R" -150 59 59 H V L BNN
-F1 "main-eagle-import:R-EU_0207_5V" -150 -130 59 H V L BNN
+F1 "main-eagle-import_R-EU_0207_5V" -150 -130 59 H V L BNN
 F2 "" 0 0 50 H I C CNN
 F3 "" 0 0 50 H I C CNN
 DRAW
@@ -345,11 +375,11 @@ X 2 2 200 0 100 L 0 0 1 0 P
 ENDDRAW
 ENDDEF
 #
-# main-eagle-import:R-EU_M0805
+# main-eagle-import_R-EU_M0805
 #
-DEF main-eagle-import:R-EU_M0805 R 0 40 Y Y 1 L N
+DEF main-eagle-import_R-EU_M0805 R 0 40 Y Y 1 L N
 F0 "R" -150 59 59 H V L BNN
-F1 "main-eagle-import:R-EU_M0805" -150 -130 59 H V L BNN
+F1 "main-eagle-import_R-EU_M0805" -150 -130 59 H V L BNN
 F2 "" 0 0 50 H I C CNN
 F3 "" 0 0 50 H I C CNN
 DRAW
@@ -362,11 +392,11 @@ X 2 2 200 0 100 L 0 0 1 0 P
 ENDDRAW
 ENDDEF
 #
-# main-eagle-import:R-EU_R0805
+# main-eagle-import_R-EU_R0805
 #
-DEF main-eagle-import:R-EU_R0805 R 0 40 Y Y 1 L N
+DEF main-eagle-import_R-EU_R0805 R 0 40 Y Y 1 L N
 F0 "R" -150 59 59 H V L BNN
-F1 "main-eagle-import:R-EU_R0805" -150 -130 59 H V L BNN
+F1 "main-eagle-import_R-EU_R0805" -150 -130 59 H V L BNN
 F2 "" 0 0 50 H I C CNN
 F3 "" 0 0 50 H I C CNN
 DRAW
@@ -379,11 +409,11 @@ X 2 2 200 0 100 L 0 0 1 0 P
 ENDDRAW
 ENDDEF
 #
-# power:GND
+# power_GND
 #
-DEF power:GND #PWR 0 0 Y Y 1 F P
+DEF power_GND #PWR 0 0 Y Y 1 F P
 F0 "#PWR" 0 -250 50 H I C CNN
-F1 "power:GND" 0 -150 50 H V C CNN
+F1 "power_GND" 0 -150 50 H V C CNN
 F2 "" 0 0 50 H I C CNN
 F3 "" 0 0 50 H I C CNN
 DRAW
@@ -392,11 +422,11 @@ X GND 1 0 0 0 D 50 50 1 1 W N
 ENDDRAW
 ENDDEF
 #
-# power:PWR_FLAG
+# power_PWR_FLAG
 #
-DEF power:PWR_FLAG #FLG 0 0 N N 1 F P
+DEF power_PWR_FLAG #FLG 0 0 N N 1 F P
 F0 "#FLG" 0 75 50 H I C CNN
-F1 "power:PWR_FLAG" 0 150 50 H V C CNN
+F1 "power_PWR_FLAG" 0 150 50 H V C CNN
 F2 "" 0 0 50 H I C CNN
 F3 "" 0 0 50 H I C CNN
 DRAW
