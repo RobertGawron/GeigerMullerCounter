@@ -44,7 +44,7 @@ Wire Wire Line
 Wire Wire Line
 	6100 3000 6100 2900
 Wire Wire Line
-	1750 2900 1750 4000
+	1550 2900 1550 4000
 Wire Wire Line
 	2350 2900 2350 3700
 Wire Wire Line
@@ -164,9 +164,7 @@ Wire Wire Line
 Wire Wire Line
 	3500 5400 3500 5200
 Wire Wire Line
-	1750 4200 1750 5400
-Wire Wire Line
-	1750 5400 1800 5400
+	1550 4200 1550 5400
 Wire Wire Line
 	2350 4400 2350 4500
 Wire Wire Line
@@ -560,23 +558,23 @@ $EndComp
 $Comp
 L main-eagle-import:22-?-0205-7028 J1
 U 1 0 449C7C68
-P 1550 4200
-F 0 "J1" H 1650 4170 51  0000 L BNN
-F 1 "Power" H 1520 4255 59  0001 L BNN
-F 2 "Pin_Headers:Pin_Header_Angled_1x02_Pitch2.54mm" H 1550 4200 50  0001 C CNN
-F 3 "" H 1550 4200 50  0001 C CNN
-	1    1550 4200
+P 1350 4200
+F 0 "J1" H 1450 4170 51  0000 L BNN
+F 1 "Power" H 1320 4255 59  0001 L BNN
+F 2 "Pin_Headers:Pin_Header_Angled_1x02_Pitch2.54mm" H 1350 4200 50  0001 C CNN
+F 3 "" H 1350 4200 50  0001 C CNN
+	1    1350 4200
 	-1   0    0    1   
 $EndComp
 $Comp
 L main-eagle-import:22-?-0205-7028 J1
 U 2 0 449C7C64
-P 1550 4000
-F 0 "J1" H 1650 3970 51  0000 L BNN
-F 1 "Power" H 1520 4055 59  0001 L BNN
-F 2 "Pin_Headers:Pin_Header_Angled_1x02_Pitch2.54mm" H 1550 4000 50  0001 C CNN
-F 3 "" H 1550 4000 50  0001 C CNN
-	2    1550 4000
+P 1350 4000
+F 0 "J1" H 1450 3970 51  0000 L BNN
+F 1 "Power" H 1320 4055 59  0001 L BNN
+F 2 "Pin_Headers:Pin_Header_Angled_1x02_Pitch2.54mm" H 1350 4000 50  0001 C CNN
+F 3 "" H 1350 4000 50  0001 C CNN
+	2    1350 4000
 	-1   0    0    1   
 $EndComp
 $Comp
@@ -613,13 +611,13 @@ F 3 "" H 8400 4150 50  0001 C CNN
 	1    0    0    -1  
 $EndComp
 Wire Notes Line
-	1250 2200 3300 2200
+	1050 2200 3300 2200
 Wire Notes Line
 	3300 2200 3300 5800
 Wire Notes Line
-	3300 5800 1250 5800
+	3300 5800 1050 5800
 Wire Notes Line
-	1250 5800 1250 2200
+	1050 5800 1050 2200
 Wire Notes Line
 	3400 5800 7500 5800
 Wire Notes Line
@@ -644,8 +642,8 @@ Wire Notes Line
 	8800 5800 8800 2200
 Wire Notes Line
 	8800 2200 7600 2200
-Text Notes 1500 2500 0    150  ~ 0
-Power supply
+Text Notes 1200 2550 0    150  ~ 0
+5V power supply
 Text Notes 4100 2500 0    150  ~ 0
 5V/400V DC/DC converter
 Text Notes 7700 2750 0    150  ~ 0
@@ -684,9 +682,9 @@ Connection ~ 5150 5400
 Wire Wire Line
 	5150 5400 5600 5400
 Wire Wire Line
-	1750 4000 1650 4000
+	1550 4000 1450 4000
 Wire Wire Line
-	1750 4200 1650 4200
+	1550 4200 1450 4200
 $Comp
 L Device:CP C7
 U 1 1 5BA7ECB0
@@ -700,7 +698,6 @@ F 3 "~" H 1950 4100 50  0001 C CNN
 $EndComp
 Wire Wire Line
 	1950 3950 1950 2900
-Connection ~ 1950 2900
 Wire Wire Line
 	1950 2900 2350 2900
 Wire Wire Line
@@ -797,41 +794,32 @@ Wire Wire Line
 $Comp
 L power:PWR_FLAG #FLG0101
 U 1 1 5BA8EA25
-P 1850 2800
-F 0 "#FLG0101" H 1850 2875 50  0001 C CNN
-F 1 "PWR_FLAG" H 1850 2974 50  0000 C CNN
-F 2 "" H 1850 2800 50  0001 C CNN
-F 3 "~" H 1850 2800 50  0001 C CNN
-	1    1850 2800
+P 1600 2800
+F 0 "#FLG0101" H 1600 2875 50  0001 C CNN
+F 1 "PWR_FLAG" H 1600 2974 50  0000 C CNN
+F 2 "" H 1600 2800 50  0001 C CNN
+F 3 "~" H 1600 2800 50  0001 C CNN
+	1    1600 2800
 	1    0    0    -1  
 $EndComp
 Wire Wire Line
-	1850 2800 1850 2900
+	1600 2800 1600 2900
 Wire Wire Line
-	1750 2900 1850 2900
-Connection ~ 1850 2900
+	1550 2900 1600 2900
+Connection ~ 1600 2900
 Wire Wire Line
-	1850 2900 1950 2900
+	1600 2900 1950 2900
 $Comp
 L power:PWR_FLAG #FLG0102
 U 1 1 5BAA09D1
-P 1450 5500
-F 0 "#FLG0102" H 1450 5575 50  0001 C CNN
-F 1 "PWR_FLAG" H 1450 5674 50  0000 C CNN
-F 2 "" H 1450 5500 50  0001 C CNN
-F 3 "~" H 1450 5500 50  0001 C CNN
-	1    1450 5500
-	1    0    0    -1  
+P 1600 5550
+F 0 "#FLG0102" H 1600 5625 50  0001 C CNN
+F 1 "PWR_FLAG" H 1600 5724 50  0000 C CNN
+F 2 "" H 1600 5550 50  0001 C CNN
+F 3 "~" H 1600 5550 50  0001 C CNN
+	1    1600 5550
+	-1   0    0    1   
 $EndComp
-Wire Wire Line
-	1450 5500 1450 5700
-Wire Wire Line
-	1450 5700 1800 5700
-Wire Wire Line
-	1800 5700 1800 5400
-Connection ~ 1800 5400
-Wire Wire Line
-	1800 5400 1900 5400
 $Comp
 L Device:Q_PNP_BEC Q2
 U 1 1 5BB1EC0F
@@ -843,4 +831,12 @@ F 3 "~" H 5050 5000 50  0001 C CNN
 	1    5050 5000
 	1    0    0    -1  
 $EndComp
+Wire Wire Line
+	1550 5400 1600 5400
+Wire Wire Line
+	1600 5550 1600 5400
+Connection ~ 1600 5400
+Wire Wire Line
+	1600 5400 1900 5400
+Connection ~ 1950 2900
 $EndSCHEMATC
