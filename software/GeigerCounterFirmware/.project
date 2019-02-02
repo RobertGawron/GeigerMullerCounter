@@ -1,18 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <projectDescription>
-	<name>ArduinoDataMonitor</name>
-	<comment></comment>
+	<name>GeigerCounterFirmware</name>
+	<comment />
 	<projects>
 	</projects>
 	<buildSpec>
 		<buildCommand>
 			<name>org.eclipse.cdt.managedbuilder.core.genmakebuilder</name>
-			<triggers>clean,full,incremental,</triggers>
-			<arguments>
-			</arguments>
-		</buildCommand>
-		<buildCommand>
-			<name>org.eclipse.cdt.core.cBuilder</name>
 			<triggers>clean,full,incremental,</triggers>
 			<arguments>
 			</arguments>
@@ -26,9 +20,11 @@
 	</buildSpec>
 	<natures>
 		<nature>org.eclipse.cdt.core.cnature</nature>
-		<nature>org.eclipse.cdt.core.ccnature</nature>
-		<nature>org.eclipse.cdt.arduino.core.arduinoNature</nature>
 		<nature>org.eclipse.cdt.managedbuilder.core.managedBuildNature</nature>
 		<nature>org.eclipse.cdt.managedbuilder.core.ScannerConfigNature</nature>
+		<nature>fr.ac6.mcu.ide.core.MCUProjectNature</nature>
 	</natures>
+	<linkedResources>
+		
+	</linkedResources>
 </projectDescription>
