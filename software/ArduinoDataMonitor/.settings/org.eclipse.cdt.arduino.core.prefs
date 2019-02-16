@@ -1,2 +1,0 @@
-eclipse.preferences.version=1
-libraries=["Adafruit PCD8544 Nokia 5110 LCD library",{"package"\:"arduino","platform"\:"avr","library"\:"SPI"},"Adafruit GFX Library"]
