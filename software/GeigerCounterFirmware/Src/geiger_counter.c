@@ -8,7 +8,7 @@
 #include "geiger_counter.h"
 #include "circular_buffer.h"
 #include "sample_storage.h"
-
+static uint16_t SampleStorage_ElementMaxValue = UINT16_MAX;
 // use for tests if no real hw is available
 #define USE_RANDOM_TEST_COUNT 0
 
@@ -16,7 +16,7 @@
     #include <stdlib.h>
 #endif
 
-volatile static SampleStorage_Element_t occurenceCounter;
+static volatile SampleStorage_Element_t occurenceCounter;
 extern uint16_t SampleStorage_ElementMaxValue;
 
 inline void GeigerCounter_OnTimeSampleFinish()

@@ -41,7 +41,7 @@
 
 #include "geiger_counter.h"
 #include "display_updater.h"
-#include "sample_storage.h""
+#include "sample_storage.h"
 /* USER CODE END Includes */
 
 /* Private typedef -----------------------------------------------------------*/
@@ -66,6 +66,10 @@ extern UART_HandleTypeDef huart2;
 
 /* Private function prototypes -----------------------------------------------*/
 /* USER CODE BEGIN PFP */
+
+#include <string.h>
+#include "circular_buffer.h"
+
 void uinttochar(char* a, unsigned int n)
 {
   if (n == 0)
@@ -269,7 +273,7 @@ void TIM2_IRQHandler(void)
   static uint16_t counter = 0;
   counter ++;
   //if (counter == 60000)
-  if (counter == 30000)
+  if (counter == 6000)
   {
       GeigerCounter_OnTimeSampleFinish();
       DisplayUpdater_Update();

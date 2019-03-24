@@ -13,6 +13,6 @@
 
 typedef uint16_t SampleStorage_Element_t;
 
-static uint16_t SampleStorage_ElementMaxValue = UINT16_MAX;
+//static uint16_t SampleStorage_ElementMaxValue = UINT16_MAX;
 
 #endif /* SAMPLE_STORAGE_H_ */

@@ -32,10 +32,10 @@ void DisplayUpdater_Update()
     SampleStorage_Element_t maxValue = CircularBuff_GetMaxElement();
 
 
-    for(int i = 0; i < CircularBuff_GetElementCount(); i++)
+    for(uint16_t i = 0; i < CircularBuff_GetElementCount(); i++)
     {
         SampleStorage_Element_t sampleValue;
-        uint16_t indexInBuffer = CircularBuff_GetElementCount() - i;
+        uint16_t indexInBuffer = (uint16_t)(CircularBuff_GetElementCount() - i);
         bool status = CircularBuff_GetElement(&sampleValue, indexInBuffer);
 
         if(status)
@@ -46,7 +46,7 @@ void DisplayUpdater_Update()
 
             uint16_t graphHeight = DisplayUpdater_LCDHeightBlue;
             uint16_t  normalizedSampleValue = (uint16_t)( ((float)(sampleValue) / (float)(maxValue)) * graphHeight);
-            uint16_t y1 = DisplayUpdater_LCDHeight - normalizedSampleValue;
+            uint16_t y1 = (uint16_t)(DisplayUpdater_LCDHeight - normalizedSampleValue);
 
             Display_DrawLine(i, y0, i, y1);
         }
