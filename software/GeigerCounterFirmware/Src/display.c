@@ -5,6 +5,11 @@ void Display_Init()
     (void)SSD1306_Init();
 }
 
+void Display_Clean()
+{
+    SSD1306_Fill(0);
+}
+
 void Display_Update()
 {
     SSD1306_UpdateScreen();

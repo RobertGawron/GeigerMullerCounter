@@ -7,31 +7,43 @@
 
 #include "display_updater.h"
 #include "circular_buffer.h"
+#include "dose_counter.h"
 #include "display.h"
+
+#include <stdlib.h>
 
 static const uint16_t DisplayUpdater_LCDHeightBlue = 48u;
 static const uint16_t DisplayUpdater_LCDHeightYellow = 16u;
 //static const uint16_t DisplayUpdater_LCDWidth = 128u;
 
-const char* labelMinuteCounter = "cpm";
-const char* labelHourCounter = "cph";
-const char* labelDosageUnit = "uS/h";
+static const char* labelMinuteCounter = "cpm,";
+static const char* labelDosageUnit = "uS/h";
+
+static char* labeWelcomeTop = "collecting sample";
+static char* labeWelcomeBottom = "please wait 60sec.";
+
+static const char* labelError = "## error ##";
+
+
+#define LABEL_DOSE_LENGTH 16U
+char labelDose[LABEL_DOSE_LENGTH];
+
+static void DisplayUpdater_PrintDoseLabel();
 
 void DisplayUpdater_Init()
 {
-    // empty
+    Display_DrawText(0, DisplayUpdater_LCDHeightYellow, labeWelcomeTop);
+    Display_DrawText(0, DisplayUpdater_LCDHeightYellow + 10U, labeWelcomeBottom);
+
+    Display_Update();
 }
 
 void DisplayUpdater_Update()
 {
-    SSD1306_Fill(0);
+    Display_Clean();
 
-    Display_DrawText(0, 0, "33cpm 1uS/h");
-
-#if DEBUG_SAMPLES
-    CircularBuff_Insert(50U);
-    CircularBuff_Insert(100U);
-#endif
+    // draw dose label
+    DisplayUpdater_PrintDoseLabel();
 
     // draw bar graph
     SampleStorage_Element_t maxValue = CircularBuff_GetMaxElement();
@@ -58,4 +70,37 @@ void DisplayUpdater_Update()
     }
 
     Display_Update();
+}
+
+void DisplayUpdater_PrintDoseLabel()
+{
+    SampleStorage_Element_t latestSampleValue;
+    uint16_t latestSampleIndex = 0U;
+    bool status = CircularBuff_GetElement(&latestSampleValue, latestSampleIndex);
+
+    uint16_t stringOffset = 0U;
+
+    if (status)
+    {
+        // TODO check string size to avoid buffer overflow
+
+        uint16_t base = 10;
+        itoa(latestSampleValue, &labelDose[stringOffset], base);
+
+        stringOffset = strlen(labelDose);
+        strcpy(&labelDose[stringOffset], labelMinuteCounter);
+
+        uint16_t dosage = DoseCounter_calculate();
+        stringOffset = strlen(labelDose);
+        itoa(dosage, &labelDose[stringOffset], base);
+
+        stringOffset = strlen(labelDose);
+        strcpy(&labelDose[stringOffset], labelDosageUnit);
+    }
+    else
+    {
+        strcpy(&labelDose[stringOffset], labelError);
+    }
+
+    Display_DrawText(0, 0, labelDose);
 }
