@@ -28,6 +28,11 @@ void DisplayUpdater_Update()
 
     Display_DrawText(0, 0, "33cpm 1uS/h");
 
+#if DEBUG_SAMPLES
+    CircularBuff_Insert(50U);
+    CircularBuff_Insert(100U);
+#endif
+
     // draw bar graph
     SampleStorage_Element_t maxValue = CircularBuff_GetMaxElement();
 
@@ -35,7 +40,7 @@ void DisplayUpdater_Update()
     for(uint16_t i = 0; i < CircularBuff_GetElementCount(); i++)
     {
         SampleStorage_Element_t sampleValue;
-        uint16_t indexInBuffer = (uint16_t)(CircularBuff_GetElementCount() - i);
+        uint16_t indexInBuffer = (uint16_t)(CircularBuff_GetElementCount() - (i + 1U));
         bool status = CircularBuff_GetElement(&sampleValue, indexInBuffer);
 
         if(status)
