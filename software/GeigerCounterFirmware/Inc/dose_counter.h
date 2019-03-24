@@ -10,7 +10,8 @@
 
 #include "stm32f1xx_hal.h"
 #include <stdint.h>
+#include "sample_storage.h"
 
-uint16_t DoseCounter_calculate();
+float DoseCounter_calculate(SampleStorage_Element_t count);
 
 #endif /* DOSE_COUNTER_H_ */

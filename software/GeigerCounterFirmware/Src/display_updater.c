@@ -16,8 +16,11 @@ static const uint16_t DisplayUpdater_LCDHeightBlue = 48u;
 static const uint16_t DisplayUpdater_LCDHeightYellow = 16u;
 //static const uint16_t DisplayUpdater_LCDWidth = 128u;
 
-static const char* labelMinuteCounter = "cpm,";
+static const char* labelMinuteCounter = "cpm";
+
+#if 0
 static const char* labelDosageUnit = "uS/h";
+#endif
 
 static char* labeWelcomeTop = "collecting sample";
 static char* labeWelcomeBottom = "please wait 60sec.";
@@ -89,13 +92,14 @@ void DisplayUpdater_PrintDoseLabel()
 
         stringOffset = strlen(labelDose);
         strcpy(&labelDose[stringOffset], labelMinuteCounter);
-
+#if 0
         uint16_t dosage = DoseCounter_calculate();
         stringOffset = strlen(labelDose);
         itoa(dosage, &labelDose[stringOffset], base);
 
         stringOffset = strlen(labelDose);
         strcpy(&labelDose[stringOffset], labelDosageUnit);
+#endif
     }
     else
     {

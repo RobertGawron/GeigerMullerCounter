@@ -272,8 +272,8 @@ void TIM2_IRQHandler(void)
 
   static uint16_t counter = 0;
   counter ++;
-  //if (counter == 60000)
-  if (counter == 3000)
+  if (counter == 60000)
+ // if (counter == 3000)
   {
       GeigerCounter_OnTimeSampleFinish();
       DisplayUpdater_Update();

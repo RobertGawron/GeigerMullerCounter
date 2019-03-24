@@ -7,8 +7,13 @@
 
 #include "dose_counter.h"
 
-uint16_t DoseCounter_calculate()
+float DoseCounter_calculate(SampleStorage_Element_t count)
 {
-    return 10;
+    // from https://mightyohm.com/forum/viewtopic.php?f=15&t=454
+    // STS-5 is an older verson SBM-20, but they are quite the same,
+    // so the conversion should be valid
+    float dose = (float)count / 57.0;
+
+    return dose;
 }
 

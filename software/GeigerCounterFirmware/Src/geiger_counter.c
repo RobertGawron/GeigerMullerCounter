@@ -9,11 +9,7 @@
 #include "circular_buffer.h"
 #include "sample_storage.h"
 
-static uint16_t SampleStorage_ElementMaxValue = UINT16_MAX;
-
-
 static volatile SampleStorage_Element_t occurenceCounter;
-//extern uint16_t SampleStorage_ElementMaxValue;
 
 inline void GeigerCounter_OnTimeSampleFinish()
 {
@@ -30,9 +26,8 @@ void GeigerCounter_Init()
 
 void GeigerCounter_OnPulseObserved()
 {
-    if (occurenceCounter < SampleStorage_ElementMaxValue)
+    if (occurenceCounter < SAMPLE_STORAGE_ELEMENT_MAX_VALUE)
     {
         occurenceCounter++;
     }
 }
-
