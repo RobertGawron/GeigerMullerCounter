@@ -42,6 +42,8 @@
 #include "geiger_counter.h"
 #include "display_updater.h"
 #include "sample_storage.h"
+#include "serial_port.h"
+
 /* USER CODE END Includes */
 
 /* Private typedef -----------------------------------------------------------*/
@@ -67,33 +69,6 @@ extern UART_HandleTypeDef huart2;
 /* Private function prototypes -----------------------------------------------*/
 /* USER CODE BEGIN PFP */
 
-#include <string.h>
-#include "circular_buffer.h"
-
-void uinttochar(char* a, unsigned int n)
-{
-  if (n == 0)
-  {
-    *a = '0';
-    *(a+1) = '\0';
-    return;
-  }
-
-  char aux[20];
-  aux[19] = '\0';
-  char* auxp = aux + 19;
-
-  int c = 1;
-  while (n != 0)
-  {
-    int mod = n % 10;
-    *(--auxp) = mod | 0x30;
-    n /=  10;
-    c++;
-  }
-
-  memcpy(a, auxp, c);
-}
 /* USER CODE END PFP */
 
 /* Private user code ---------------------------------------------------------*/
@@ -272,21 +247,13 @@ void TIM2_IRQHandler(void)
 
   static uint16_t counter = 0;
   counter ++;
+
   if (counter == 60000)
- // if (counter == 3000)
   {
       GeigerCounter_OnTimeSampleFinish();
       DisplayUpdater_Update();
+      SerialPort_SendData();
 
-      char msg[100];// = "xxx\n";
-      SampleStorage_Element_t sampleValue;
-      CircularBuff_GetElement(&sampleValue, 0);
-      uinttochar(&msg[0], sampleValue);
-      int len = strlen(msg);
-      msg[len] = '\r';
-      msg[len+1] = '\n';
-      msg[len+2] = '\0';
-      HAL_UART_Transmit(&huart2, (uint8_t*)msg, strlen(msg), 0xFFFF);
       counter = 0;
   }
 
