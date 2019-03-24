@@ -28,7 +28,7 @@ void CircularBuff_Init()
 SampleStorage_Element_t CircularBuff_GetMaxElement()
 {
     SampleStorage_Element_t maxValue = 0u;
-    for(int i = 0; i < CircularBuff_GetElementCount(); i++)
+    for(uint16_t i = 0; i < CircularBuff_GetElementCount(); i++)
     {
         SampleStorage_Element_t element;
         bool status = CircularBuff_GetElement(&element, i);
@@ -67,10 +67,10 @@ bool CircularBuff_GetElement(SampleStorage_Element_t* element, uint16_t index)
 {
     if(index < MAX_ELEMENTS)
     {
-        int16_t localIndex = (buffer.indexOfNextToInsert - 1U) - index;
+        int16_t localIndex = (int16_t)( (int16_t)(buffer.indexOfNextToInsert - 1) - (int16_t)index );
         if(localIndex < 0)
         {
-            localIndex = (MAX_ELEMENTS + localIndex);
+            localIndex = (int16_t)(MAX_ELEMENTS + localIndex);
         }
 
         *element = buffer.data[localIndex];

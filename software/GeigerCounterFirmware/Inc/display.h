@@ -15,6 +15,8 @@
 
 void Display_Init();
 
+void Display_Clean();
+
 void Display_Update();
 
 void Display_DrawLine(uint16_t x0, uint16_t y0, uint16_t x1, uint16_t y1);

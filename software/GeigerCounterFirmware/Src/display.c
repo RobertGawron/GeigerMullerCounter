@@ -5,6 +5,11 @@ void Display_Init()
     (void)SSD1306_Init();
 }
 
+void Display_Clean()
+{
+    SSD1306_Fill(0);
+}
+
 void Display_Update()
 {
     SSD1306_UpdateScreen();
@@ -12,7 +17,7 @@ void Display_Update()
 
 void Display_DrawLine(uint16_t x0, uint16_t y0, uint16_t x1, uint16_t y1)
 {
-    SSD1306_DrawLine(x0, y0, x0, y1, SSD1306_COLOR_WHITE);
+    SSD1306_DrawLine(x0, y0, x1, y1, SSD1306_COLOR_WHITE);
 }
 
 void Display_DrawText(uint16_t x0, uint16_t y0, char* str)

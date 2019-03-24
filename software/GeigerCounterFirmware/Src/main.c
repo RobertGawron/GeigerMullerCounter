@@ -128,18 +128,10 @@ int main(void)
   /* USER CODE BEGIN 2 */
 
   Display_Init();
-
-  //DisplayUpdater_Update();
-
   CircularBuff_Init();
   DisplayUpdater_Init();
- // DisplayUpdater_Update();
 
   HAL_TIM_Base_Start_IT(&htim2);      //start timer2 in interrupt mode.
- // RCC_APB2PeriphClockCmd(RCC_APB2Periph_AFIO, ENABLE);
- // RCC_APB2PeriphClockCmd(RCC_APB2Periph_GPIOA | RCC_APB2Periph_GPIOB | RCC_APB2Periph_GPIOC | RCC_APB2Periph_GPIOD, ENABLE);
- // char *msg = "Hello Nucleo Fun!\n\r";
-
 
   /* USER CODE END 2 */
 
@@ -150,7 +142,6 @@ int main(void)
     /* USER CODE END WHILE */
 
     /* USER CODE BEGIN 3 */
-      //HAL_UART_Transmit(&huart2, (uint8_t*)msg, strlen(msg), 0xFFFF);
 
 	__WFI(); // CPU sleep
   }
@@ -339,7 +330,7 @@ static void MX_GPIO_Init(void)
   /*Configure GPIO pin : PB5 */
   GPIO_InitStruct.Pin = GPIO_PIN_5;
   GPIO_InitStruct.Mode = GPIO_MODE_IT_FALLING;
-  GPIO_InitStruct.Pull = GPIO_PULLDOWN;
+  GPIO_InitStruct.Pull = GPIO_PULLUP;
   HAL_GPIO_Init(GPIOB, &GPIO_InitStruct);
 
   /* EXTI interrupt init*/

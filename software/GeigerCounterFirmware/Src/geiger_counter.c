@@ -9,22 +9,10 @@
 #include "circular_buffer.h"
 #include "sample_storage.h"
 
-// use for tests if no real hw is available
-#define USE_RANDOM_TEST_COUNT 0
-
-#if USE_RANDOM_TEST_COUNT
-    #include <stdlib.h>
-#endif
-
-volatile static SampleStorage_Element_t occurenceCounter;
-extern uint16_t SampleStorage_ElementMaxValue;
+static volatile SampleStorage_Element_t occurenceCounter;
 
 inline void GeigerCounter_OnTimeSampleFinish()
 {
-#if USE_RANDOM_TEST_COUNT
-    occurenceCounter = (rand() % 20) + 50;
-#endif
-
     CircularBuff_Insert(occurenceCounter);
 
     // reset counter to start from the beginning for the new sample
@@ -34,17 +22,12 @@ inline void GeigerCounter_OnTimeSampleFinish()
 void GeigerCounter_Init()
 {
     occurenceCounter = 0U;
-
-#if USE_RANDOM_TEST_COUNT
-    srand(123456);
-#endif
 }
 
 void GeigerCounter_OnPulseObserved()
 {
-    if (occurenceCounter < SampleStorage_ElementMaxValue)
+    if (occurenceCounter < SAMPLE_STORAGE_ELEMENT_MAX_VALUE)
     {
         occurenceCounter++;
     }
 }
-
