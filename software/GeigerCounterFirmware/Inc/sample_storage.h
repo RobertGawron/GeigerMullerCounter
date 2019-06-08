@@ -8,7 +8,6 @@
 #ifndef SAMPLE_STORAGE_H_
 #define SAMPLE_STORAGE_H_
 
-#include "stm32f1xx_hal.h"
 #include <stdint.h>
 
 typedef uint16_t SampleStorage_Element_t;

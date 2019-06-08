@@ -44,10 +44,6 @@
 /* Private includes ----------------------------------------------------------*/
 /* USER CODE BEGIN Includes */
 
-// drivers
-#include "display.h"
-
-// business logic
 #include "display_updater.h"
 #include "circular_buffer.h"
 #include "stm32f1xx_it.h"
@@ -127,7 +123,6 @@ int main(void)
   MX_TIM2_Init();
   /* USER CODE BEGIN 2 */
 
-  Display_Init();
   CircularBuff_Init();
   DisplayUpdater_Init();
 

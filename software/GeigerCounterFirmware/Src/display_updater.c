@@ -5,77 +5,51 @@
  *      Author: robert
  */
 
+#include <stdlib.h>
 #include "display_updater.h"
 #include "circular_buffer.h"
 #include "dose_counter.h"
 #include "display.h"
-
-#include <stdlib.h>
+#include "display_textlabels.h"
 
 static const uint16_t DisplayUpdater_LCDHeightBlue = 48u;
 static const uint16_t DisplayUpdater_LCDHeightYellow = 16u;
 //static const uint16_t DisplayUpdater_LCDWidth = 128u;
 
-static const char* labelMinuteCounter = "cpm";
-
-#if 0
-static const char* labelDosageUnit = "uS/h";
-#endif
-
-static char* labeWelcomeTop = "collecting sample";
-static char* labeWelcomeBottom = "please wait 60sec.";
-
-static const char* labelError = "## error ##";
-
 
 #define LABEL_DOSE_LENGTH 16U
 char labelDose[LABEL_DOSE_LENGTH];
 
+// used on startup
+static void DisplayUpdater_PrintInitialLaoyout();
+
+// used in normal mode
 static void DisplayUpdater_PrintDoseLabel();
+static void DisplayUpdater_PrintBargraph();
 
 void DisplayUpdater_Init()
 {
-    Display_DrawText(0, DisplayUpdater_LCDHeightYellow, labeWelcomeTop);
-    Display_DrawText(0, DisplayUpdater_LCDHeightYellow + 10U, labeWelcomeBottom);
+    Display_Init();
 
+    DisplayUpdater_PrintInitialLaoyout();
     Display_Update();
 }
 
 void DisplayUpdater_Update()
 {
     Display_Clean();
-
-    // draw dose label
     DisplayUpdater_PrintDoseLabel();
-
-    // draw bar graph
-    SampleStorage_Element_t maxValue = CircularBuff_GetMaxElement();
-
-
-    for(uint16_t i = 0; i < CircularBuff_GetElementCount(); i++)
-    {
-        SampleStorage_Element_t sampleValue;
-        uint16_t indexInBuffer = (uint16_t)(CircularBuff_GetElementCount() - (i + 1U));
-        bool status = CircularBuff_GetElement(&sampleValue, indexInBuffer);
-
-        if(status)
-        {
-            const uint16_t DisplayUpdater_LCDHeight = (DisplayUpdater_LCDHeightBlue + DisplayUpdater_LCDHeightYellow);
-
-            uint16_t y0 = DisplayUpdater_LCDHeight;
-
-            uint16_t graphHeight = DisplayUpdater_LCDHeightBlue;
-            uint16_t  normalizedSampleValue = (uint16_t)( ((float)(sampleValue) / (float)(maxValue)) * graphHeight);
-            uint16_t y1 = (uint16_t)(DisplayUpdater_LCDHeight - normalizedSampleValue);
-
-            Display_DrawLine(i, y0, i, y1);
-        }
-    }
-
+    DisplayUpdater_PrintBargraph();
     Display_Update();
 }
 
-void DisplayUpdater_PrintDoseLabel()
+static void DisplayUpdater_PrintInitialLaoyout()
+{
+    Display_DrawText(0, DisplayUpdater_LCDHeightYellow,  (char*)labeWelcomeTop);
+    Display_DrawText(0, DisplayUpdater_LCDHeightYellow + 10U, (char*)labeWelcomeBottom);
+}
+
+static void DisplayUpdater_PrintDoseLabel()
 {
     SampleStorage_Element_t latestSampleValue;
     uint16_t latestSampleIndex = 0U;
@@ -107,4 +81,31 @@ void DisplayUpdater_PrintDoseLabel()
     }
 
     Display_DrawText(0, 0, labelDose);
+}
+
+
+static void DisplayUpdater_PrintBargraph()
+{
+    SampleStorage_Element_t maxValue = CircularBuff_GetMaxElement();
+
+
+    for(uint16_t i = 0; i < CircularBuff_GetElementCount(); i++)
+    {
+        SampleStorage_Element_t sampleValue;
+        uint16_t indexInBuffer = (uint16_t)(CircularBuff_GetElementCount() - (i + 1U));
+        bool status = CircularBuff_GetElement(&sampleValue, indexInBuffer);
+
+        if(status)
+        {
+            const uint16_t DisplayUpdater_LCDHeight = (DisplayUpdater_LCDHeightBlue + DisplayUpdater_LCDHeightYellow);
+
+            uint16_t y0 = DisplayUpdater_LCDHeight;
+
+            uint16_t graphHeight = DisplayUpdater_LCDHeightBlue;
+            uint16_t  normalizedSampleValue = (uint16_t)( ((float)(sampleValue) / (float)(maxValue)) * graphHeight);
+            uint16_t y1 = (uint16_t)(DisplayUpdater_LCDHeight - normalizedSampleValue);
+
+            Display_DrawLine(i, y0, i, y1);
+        }
+    }
 }

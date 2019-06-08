@@ -8,9 +8,7 @@
 #ifndef CIRCULAR_BUFFER_H_
 #define CIRCULAR_BUFFER_H_
 
-#include "stm32f1xx_hal.h"
 #include <stdbool.h>
-
 #include "sample_storage.h"
 
 void CircularBuff_Init();

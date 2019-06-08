@@ -7,7 +7,7 @@
 
 #include "dose_counter.h"
 
-float DoseCounter_calculate(SampleStorage_Element_t count)
+float DoseCounter_Calculate(SampleStorage_Element_t count)
 {
     // from https://mightyohm.com/forum/viewtopic.php?f=15&t=454
     // STS-5 is an older verson SBM-20, but they are quite the same,
