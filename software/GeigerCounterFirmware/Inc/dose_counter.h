@@ -12,6 +12,6 @@
 #include <stdint.h>
 #include "sample_storage.h"
 
-float DoseCounter_calculate(SampleStorage_Element_t count);
+float DoseCounter_Calculate(SampleStorage_Element_t count);
 
 #endif /* DOSE_COUNTER_H_ */

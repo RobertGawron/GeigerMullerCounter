@@ -8,7 +8,6 @@
 #ifndef DISPLAY_H_
 #define DISPLAY_H_
 
-#include "stm32f1xx_hal.h"
 #include "ssd1306.h"
 
 // this file wraps hardware related stuff of the display

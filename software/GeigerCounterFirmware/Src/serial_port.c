@@ -7,8 +7,8 @@
 
 #include <stdlib.h>
 #include <string.h>
-
 #include "serial_port.h"
+#include "stm32f1xx_hal.h"
 #include "circular_buffer.h"
 
 extern UART_HandleTypeDef huart2;
@@ -23,12 +23,10 @@ void SerialPort_Init()
 
 void SerialPort_SendData()
 {
-    uint16_t base = 10;
-
     SampleStorage_Element_t latestSampleValue;
     CircularBuff_GetElement(&latestSampleValue, 0);
 
-
+    uint16_t base = 10;
     itoa(latestSampleValue, &txBuffer[0], base);
     uint16_t stringOffset = strlen(txBuffer);
 
