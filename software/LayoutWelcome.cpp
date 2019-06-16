@@ -1,18 +1,14 @@
 #include "LayoutWelcome.h"
 
-LayoutWelcome::LayoutWelcome(display_t& display) : Layout(display)
+const char* LayoutWelcome::welcomeText = "Collecting..\n\nWait 60s.";
+
+LayoutWelcome::LayoutWelcome(DisplayDevice& display) : display(display)
 {
-    // empty
 }
 
-
-void LayoutWelcome::draw(GMCounterBase* data, layoutConfig_t& conf)
+void LayoutWelcome::draw(MeasurementProcessing& meassurements)
 {
-    itsDisplay.clearDisplay();
-    
-    char* welcomeText = "initializing\n\nwait 60 sec";
-    drawText(welcomeText, 0U, 0U);
-
-    itsDisplay.display();
+    display.clean();
+    display.drawText(welcomeText, textXCoordinate, textYCoordinate);
+    display.paint();
 }
-

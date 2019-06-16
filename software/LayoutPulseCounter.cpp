@@ -1,50 +1,62 @@
 #include "LayoutPulseCounter.h"
+#include "DoseCounter.h"
 
-LayoutPulseCounter::LayoutPulseCounter(display_t& display) : Layout(display)
+#include "MeasurementRegistrator.h"
+
+const char* LayoutPulseCounter::labelForMinuteCounter = "cpm";
+const char* LayoutPulseCounter::labelForHourCounter = "cph";
+const char* LayoutPulseCounter::labelDosageUnit = "uS/h";
+
+LayoutPulseCounter::LayoutPulseCounter(DisplayDevice& display, IntervalMode_t mode) : display(display), mode(mode)
 {
-    // empty
 }
 
-void LayoutPulseCounter::draw(GMCounterBase* data, layoutConfig_t& conf)
+void LayoutPulseCounter::draw(MeasurementProcessing& meassurements)
 {
-    itsDisplay.clearDisplay();
-
-    // show legend
-    uint8_t pulseValue = data->getSample(0U);
-    drawNumber(pulseValue, 0U, 0U);
-    drawText(conf.pulseConfig.pulseLabel, 18U, 0U);
-    
-
-    // TODO: dirty hack, we want to show value only when
-    // showing graph for pulses per minute.
-    if(conf.pulseConfig.doseLabel != "")
-    {
-        // TODO use a wrapper for writting numbers
-        float doseValue = data->getDose();
-        itsDisplay.setTextSize(0);
-        itsDisplay.setTextColor(BLACK);
-        itsDisplay.setCursor(36, 0);
-        itsDisplay.print(doseValue);
-
-        drawText(conf.pulseConfig.doseLabel, 59U, 0U);
-    }
-
-
-    // show graph
-    const uint8_t graphHeight = 40U;
-    sample_t maxValue = data->getMaxSampleValue();
-
-    for (uint16_t i = 0U; (i < data->getSampleCount()) && (i < LCDWIDTH); i++)
-    {
-        sample_t sampleValue = data->getSample(i);
-        
-        // data normalization
-        sampleValue = uint8_t( (float(sampleValue) / float(maxValue)) *graphHeight);        
-
-        const uint16_t x = LCDWIDTH - i - 1U;
-        itsDisplay.drawLine(x, itsDisplay.height(), x, itsDisplay.height() - sampleValue, BLACK);
-    }
-
-    itsDisplay.display();
+    display.clean();
+    drawLegend(meassurements);
+    drawGraph(meassurements);
+    display.paint();
 }
 
+void LayoutPulseCounter::drawLegend(MeasurementProcessing& meassurements)
+{
+    switch(mode)
+    {
+        case MINUTE_INTERVALS:
+        {
+            display.drawText(labelForMinuteCounter, 0, 0);
+            DoseCounter doseCounter;
+            doseCounter.calculate();
+            display.drawText(labelDosageUnit, 59U, 0U);
+        } break;
+
+        case HOUR_INTERVALS:
+        {
+            display.drawText(labelForHourCounter, 0, 0);
+        } break;
+
+        default:
+        {
+            // shouldn't happen
+        } break;
+    }
+}
+
+void LayoutPulseCounter::drawGraph(MeasurementProcessing& meassurements)
+{
+    MeasurementProcessing::MeasurementDuration_t measurementDuration = MeasurementProcessing::MEASUREMENT_MINUTE;
+
+    const uint8_t graphHeight = display.getHeight() - 10U; // TODO: magic number, because we need space for text too
+    int maxValue = meassurements.getMaximumMeasurement(measurementDuration);
+
+    for (uint16_t i = 0U; (i < meassurements.getMeasurementCount(measurementDuration)) && (i < display.getWidth()); i++)
+    {
+        int sampleValue = meassurements.getMeasurement(measurementDuration, i);
+
+        // data normalization to nicely fit to screen low/high values
+        sampleValue = uint8_t( (float(sampleValue) / float(maxValue)) *graphHeight);
+
+        display.drawLine(i, 0, i, sampleValue);
+    }
+}

@@ -6,11 +6,15 @@
 class LayoutWelcome: public Layout
 {
 public:
-    LayoutWelcome(display_t& display);
+    LayoutWelcome(DisplayDevice& display);
+    ~LayoutWelcome() = default;
+    virtual void draw(MeasurementProcessing& meassurements);
+private:
+    DisplayDevice& display;
 
-    virtual void draw(GMCounterBase* data, layoutConfig_t& conf);
-
+    static const char* welcomeText;
+    static const uint8_t textXCoordinate = 0U;
+    static const uint8_t textYCoordinate = 0U;
 };
 
 #endif
-
