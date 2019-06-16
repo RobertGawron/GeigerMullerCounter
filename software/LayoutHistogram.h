@@ -1,6 +1,6 @@
 #ifndef LAYOUT_HISTOGRAM_H
 #define LAYOUT_HISTOGRAM_H
-
+#if 0
 #include "Layout.h"
 
 class LayoutHistogram: public Layout
@@ -28,3 +28,4 @@ private:
 
 #endif
 
+#endif
