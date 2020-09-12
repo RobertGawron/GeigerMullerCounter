@@ -19,7 +19,7 @@
         {
             "label": "Load Firmware",
             "type": "shell",
-            "command": "st-flash write ./build/vsarm_firmware.bin 0x08000000",
+            "command": "st-flash write ./build/GeigerCounterFirmware.bin 0x08000000",
             "options": {
                 "cwd": "${workspaceRoot}"
             },

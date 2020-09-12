@@ -10,16 +10,11 @@
         "${env:VSARM}/armcc/lib/gcc/arm-none-eabi/7.2.1/include",
         "${env:VSARM}/armcc/lib/gcc/arm-none-eabi/7.2.1/include-fixed",
         "${env:VSARM}/armcc/arm-none-eabi/include",
-        "${workspaceRoot}/Drivers/CMSIS/Include/",
-        "${workspaceRoot}/Drivers/CMSIS/Include/",
-        "${workspaceRoot}/Drivers/CMSIS/Device/ST/STM32F3xx/Include/",
-        "${workspaceRoot}/Core/Inc",
-        "${workspaceRoot}/Core/Src",
+        "${workspaceRoot}/Drivers/STM32F1xx_HAL_Driver/Inc",
+        "${workspaceRoot}/Drivers/STM32F1xx_HAL_Driver/Src",
+        "${workspaceRoot}/Drivers/CMSIS/Device/ST/STM32F1xx/Include",
         "${workspaceRoot}/Inc",
-        "${workspaceRoot}/Src",
-        "${workspaceRoot}/Drivers/STM32F3xx_HAL_Driver/Inc",
-        "${workspaceRoot}/Drivers/STM32F3xx_HAL_Driver/Inc/Legacy/",
-        "${workspaceRoot}/Drivers/STM32F3xx_HAL_Driver/Src"
+        "${workspaceRoot}/Src" 
     ],
     "defines": [
         "DEBUG",
@@ -27,8 +22,8 @@
         "HSE_VALUE=8000000",
         "OS_INCLUDE_STARTUP_INIT_MULTIPLE_RAM_SECTIONS",
         "PB_MSGID",
-        "STM32F303",
-        "STM32F303x8",
+        "STM32F103",
+ 
         "USE_DEVICE_MODE",
         "USE_FULL_ASSERT",
         "USE_HAL_DRIVER",

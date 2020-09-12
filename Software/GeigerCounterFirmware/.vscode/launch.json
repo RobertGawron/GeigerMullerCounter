@@ -9,9 +9,9 @@
         "request": "launch",
         "servertype": "stutil",
         "cwd": "${workspaceRoot}",
-        "executable": "./Debug/GeigerCounterFirmware.elf",
+        "executable": "${workspaceRoot}/build/GeigerCounterFirmware.elf",
         "name": "Debug (ST-Util)",
-        "device": "STM32F303K8",
+        "device": "STM32F103K8",
         "v1": false,
         "svdFile": "${workspaceRoot}/STM32F103.svd"
         }
