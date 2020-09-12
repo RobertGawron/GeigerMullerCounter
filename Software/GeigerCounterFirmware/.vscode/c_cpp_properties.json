@@ -1,0 +1,44 @@
+{
+    
+    "configurations": [
+    {
+    "name": "STM32 Debug",
+    "includePath": [
+        "${env:VSARM}/armcc/arm-none-eabi/include/c++/7.3.1",
+        "${env:VSARM}/armcc/arm-none-eabi/include/c++/7.3.1/arm-none-eabi",
+        "${env:VSARM}/armcc/arm-none-eabi/include/c++/7.3.1/backward",
+        "${env:VSARM}/armcc/lib/gcc/arm-none-eabi/7.2.1/include",
+        "${env:VSARM}/armcc/lib/gcc/arm-none-eabi/7.2.1/include-fixed",
+        "${env:VSARM}/armcc/arm-none-eabi/include",
+        "${workspaceRoot}/Drivers/STM32F1xx_HAL_Driver/Inc",
+        "${workspaceRoot}/Drivers/STM32F1xx_HAL_Driver/Src",
+        "${workspaceRoot}/Drivers/CMSIS/Device/ST/STM32F1xx/Include",
+        "${workspaceRoot}/Inc",
+        "${workspaceRoot}/Src" 
+    ],
+    "defines": [
+        "DEBUG",
+        "DEFAULT_STACK_SIZE=2048",
+        "HSE_VALUE=8000000",
+        "OS_INCLUDE_STARTUP_INIT_MULTIPLE_RAM_SECTIONS",
+        "PB_MSGID",
+        "STM32F103",
+ 
+        "USE_DEVICE_MODE",
+        "USE_FULL_ASSERT",
+        "USE_HAL_DRIVER",
+        "USE_USB_OTG_FS"
+    ],
+    "intelliSenseMode": "clang-x64",
+    "browse": {
+    "path": [
+        "${workspaceRoot}",
+        "${env:VSARM}/armcc"
+    ],
+    "limitSymbolsToIncludedHeaders": false,
+    "databaseFilename": ""
+    }
+    }
+    ],
+    "version": 4
+}
