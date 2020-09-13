@@ -1,0 +1,13 @@
+[
+  {
+      "key": "ctrl+b",
+      "command": "workbench.action.tasks.runTask",
+      "args": "Make Firmware"
+    }
+
+    {
+      "key": "ctrl+f",
+      "command": "workbench.action.tasks.runTask",
+      "args": "Load Firmware"
+    }
+  ]
