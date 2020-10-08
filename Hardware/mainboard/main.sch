@@ -1,5 +1,5 @@
 EESchema Schematic File Version 4
-EELAYER 29 0
+EELAYER 30 0
 EELAYER END
 $Descr User 13234 8268
 encoding utf-8
@@ -14,8 +14,6 @@ Comment3 ""
 Comment4 ""
 $EndDescr
 Wire Wire Line
-	11050 4150 11050 4250
-Wire Wire Line
 	11050 4250 11050 4700
 Wire Wire Line
 	11450 3650 11250 3650
@@ -28,8 +26,6 @@ Wire Wire Line
 	5200 2550 5800 2550
 Wire Wire Line
 	5800 2550 6450 2550
-Wire Wire Line
-	9100 4000 9100 2550
 Wire Wire Line
 	10650 2850 10650 2550
 Wire Wire Line
@@ -78,14 +74,8 @@ Connection ~ 6100 4100
 Wire Wire Line
 	8200 4800 8200 4600
 Wire Wire Line
-	9100 4400 9100 4800
-Wire Wire Line
-	9100 4800 9100 4900
-Wire Wire Line
 	9200 4800 9100 4800
 Connection ~ 9100 4800
-Wire Wire Line
-	11050 3750 11050 3550
 Wire Wire Line
 	11050 3550 11450 3550
 Wire Wire Line
@@ -122,15 +112,11 @@ Wire Wire Line
 Wire Wire Line
 	6100 5400 5750 5400
 Wire Wire Line
-	9100 5300 9100 5400
-Wire Wire Line
 	11450 3750 11350 3750
 Wire Wire Line
 	6500 5000 6500 5400
 Wire Wire Line
 	7150 4800 7150 5400
-Wire Wire Line
-	4000 5300 4000 5400
 Wire Wire Line
 	3400 5400 3700 5400
 Wire Wire Line
@@ -205,8 +191,6 @@ Wire Wire Line
 Wire Wire Line
 	4200 4700 4200 5000
 Wire Wire Line
-	4000 4900 4000 4700
-Wire Wire Line
 	4000 4700 4200 4700
 Wire Wire Line
 	4000 4700 3600 4700
@@ -238,7 +222,7 @@ Wire Wire Line
 Wire Wire Line
 	8100 3700 8200 3700
 $Comp
-L main-eagle-import:R-EU_M0805 R13
+L main-eagle-import:R-EU_R0805 R13
 U 1 1 0DC92F2E
 P 10650 3050
 F 0 "R13" H 10600 3109 59  0000 L BNN
@@ -249,37 +233,26 @@ F 3 "" H 10650 3050 50  0001 C CNN
 	0    -1   -1   0   
 $EndComp
 $Comp
-L main-eagle-import:R-EU_M0805 R11
+L Device:R R11
 U 1 1 B4AB49B7
 P 10100 4200
-F 0 "R11" H 9950 4259 59  0000 L BNN
-F 1 "1k" H 10150 4270 59  0000 L BNN
+F 0 "R11" V 9872 4200 59  0000 C CNN
+F 1 "1k" V 9977 4200 59  0000 C CNN
 F 2 "Resistor_SMD:R_0805_2012Metric_Pad1.15x1.40mm_HandSolder" H 10100 4200 50  0001 C CNN
 F 3 "" H 10100 4200 50  0001 C CNN
 	1    10100 4200
-	1    0    0    -1  
+	0    1    1    0   
 $EndComp
 $Comp
-L main-eagle-import:R-EU_M0805 R12
+L Device:R R12
 U 1 1 7BF552FC
 P 10100 4900
-F 0 "R12" H 9950 4959 59  0000 L BNN
-F 1 "1k" H 10150 4970 59  0000 L BNN
+F 0 "R12" V 9872 4900 59  0000 C CNN
+F 1 "1k" V 9977 4900 59  0000 C CNN
 F 2 "Resistor_SMD:R_0805_2012Metric_Pad1.15x1.40mm_HandSolder" H 10100 4900 50  0001 C CNN
 F 3 "" H 10100 4900 50  0001 C CNN
 	1    10100 4900
-	1    0    0    -1  
-$EndComp
-$Comp
-L main-eagle-import:R-EU_M0805 R14
-U 1 1 52B5C5D8
-P 11050 3950
-F 0 "R14" H 11000 4009 59  0000 L BNN
-F 1 "1k" H 10900 3820 59  0000 L BNN
-F 2 "Resistor_SMD:R_0805_2012Metric_Pad1.15x1.40mm_HandSolder" H 11050 3950 50  0001 C CNN
-F 3 "" H 11050 3950 50  0001 C CNN
-	1    11050 3950
-	0    -1   -1   0   
+	0    1    1    0   
 $EndComp
 $Comp
 L main-eagle-import:R-EU_0207_5V R3
@@ -337,26 +310,26 @@ F 3 "" H 2450 5000 50  0001 C CNN
 	1    0    0    -1  
 $EndComp
 $Comp
-L main-eagle-import:R-EU_R0805 R9
+L Device:R R9
 U 1 1 FA58AD2D
 P 9100 5100
-F 0 "R9" H 8950 4959 59  0000 L BNN
-F 1 "470R" H 8950 4850 59  0000 L BNN
+F 0 "R9" H 9170 5153 59  0000 L CNN
+F 1 "470R" H 9170 5048 59  0000 L CNN
 F 2 "Resistor_SMD:R_0805_2012Metric_Pad1.15x1.40mm_HandSolder" H 9100 5100 50  0001 C CNN
 F 3 "" H 9100 5100 50  0001 C CNN
 	1    9100 5100
-	0    -1   -1   0   
+	1    0    0    -1  
 $EndComp
 $Comp
-L main-eagle-import:R-EU_R0805 R8
+L Device:R R8
 U 1 1 3B37D644
 P 9100 4200
-F 0 "R8" H 9050 4259 59  0000 L BNN
-F 1 "10k" H 8950 4070 59  0000 L BNN
+F 0 "R8" H 9170 4253 59  0000 L CNN
+F 1 "10k" H 9170 4148 59  0000 L CNN
 F 2 "Resistor_SMD:R_0805_2012Metric_Pad1.15x1.40mm_HandSolder" H 9100 4200 50  0001 C CNN
 F 3 "" H 9100 4200 50  0001 C CNN
 	1    9100 4200
-	0    -1   -1   0   
+	1    0    0    -1  
 $EndComp
 $Comp
 L main-eagle-import:C-EUC0805 C4
@@ -392,14 +365,14 @@ F 3 "" H 7900 3700 50  0001 C CNN
 	1    0    0    -1  
 $EndComp
 $Comp
-L main-eagle-import:C-EUC0805 C6
+L Device:C C6
 U 1 1 E24BCDB6
-P 2250 4100
-F 0 "C6" H 2000 4200 59  0000 L BNN
-F 1 "100n" H 1900 4100 59  0000 L BNN
-F 2 "Capacitor_SMD:C_0805_2012Metric_Pad1.15x1.40mm_HandSolder" H 2250 4100 50  0001 C CNN
-F 3 "" H 2250 4100 50  0001 C CNN
-	1    2250 4100
+P 2250 4150
+F 0 "C6" H 2000 4250 59  0000 L BNN
+F 1 "100n" H 1900 4150 59  0000 L BNN
+F 2 "Capacitor_SMD:C_0805_2012Metric_Pad1.15x1.40mm_HandSolder" H 2250 4150 50  0001 C CNN
+F 3 "" H 2250 4150 50  0001 C CNN
+	1    2250 4150
 	-1   0    0    -1  
 $EndComp
 $Comp
@@ -425,25 +398,25 @@ F 3 "" H 7150 4600 50  0001 C CNN
 	1    0    0    -1  
 $EndComp
 $Comp
-L main-eagle-import:R-EU_R0805 R1
+L Device:R R1
 U 1 1 5FC72806
 P 4000 5100
-F 0 "R1" H 3950 5159 59  0000 L BNN
-F 1 "10k" H 3800 4970 59  0000 L BNN
+F 0 "R1" H 3930 5153 59  0000 R CNN
+F 1 "10k" H 3930 5048 59  0000 R CNN
 F 2 "Resistor_SMD:R_0805_2012Metric_Pad1.15x1.40mm_HandSolder" H 4000 5100 50  0001 C CNN
 F 3 "" H 4000 5100 50  0001 C CNN
 	1    4000 5100
-	0    -1   -1   0   
+	1    0    0    -1  
 $EndComp
 $Comp
-L main-eagle-import:C-EUC0805 C2
+L Device:C C2
 U 1 1 A3360F69
-P 3400 5000
-F 0 "C2" H 3460 5015 59  0000 L BNN
-F 1 "3n2" H 3460 4815 59  0000 L BNN
-F 2 "Capacitor_SMD:C_0805_2012Metric_Pad1.15x1.40mm_HandSolder" H 3400 5000 50  0001 C CNN
-F 3 "" H 3400 5000 50  0001 C CNN
-	1    3400 5000
+P 3400 5050
+F 0 "C2" H 3460 5065 59  0000 L BNN
+F 1 "3n2" H 3460 4865 59  0000 L BNN
+F 2 "Capacitor_SMD:C_0805_2012Metric_Pad1.15x1.40mm_HandSolder" H 3400 5050 50  0001 C CNN
+F 3 "" H 3400 5050 50  0001 C CNN
+	1    3400 5050
 	1    0    0    -1  
 $EndComp
 $Comp
@@ -458,14 +431,14 @@ F 3 "" H 5800 2800 50  0001 C CNN
 	0    -1   -1   0   
 $EndComp
 $Comp
-L main-eagle-import:C-EUC0805 C3
+L Device:C C3
 U 1 1 EE7D9419
-P 5200 4900
-F 0 "C3" H 5260 4915 59  0000 L BNN
-F 1 "100n" H 5260 4715 59  0000 L BNN
-F 2 "Capacitor_SMD:C_0805_2012Metric_Pad1.15x1.40mm_HandSolder" H 5200 4900 50  0001 C CNN
-F 3 "" H 5200 4900 50  0001 C CNN
-	1    5200 4900
+P 5200 4950
+F 0 "C3" H 5260 4965 59  0000 L BNN
+F 1 "100n" H 5260 4765 59  0000 L BNN
+F 2 "Capacitor_SMD:C_0805_2012Metric_Pad1.15x1.40mm_HandSolder" H 5200 4950 50  0001 C CNN
+F 3 "" H 5200 4950 50  0001 C CNN
+	1    5200 4950
 	1    0    0    -1  
 $EndComp
 $Comp
@@ -480,14 +453,14 @@ F 3 "" H 6850 5100 50  0001 C CNN
 	0    -1   -1   0   
 $EndComp
 $Comp
-L main-eagle-import:C-EUC0805 C1
+L Device:C C1
 U 1 1 C7B2BDD9
-P 3100 5000
-F 0 "C1" H 3160 5015 59  0000 L BNN
-F 1 "not mounted" V 3250 5100 59  0000 L BNN
-F 2 "Capacitor_SMD:C_0805_2012Metric_Pad1.15x1.40mm_HandSolder" H 3100 5000 50  0001 C CNN
-F 3 "" H 3100 5000 50  0001 C CNN
-	1    3100 5000
+P 3100 5050
+F 0 "C1" H 3160 5065 59  0000 L BNN
+F 1 "not mounted" V 3250 5150 59  0000 L BNN
+F 2 "Capacitor_SMD:C_0805_2012Metric_Pad1.15x1.40mm_HandSolder" H 3100 5050 50  0001 C CNN
+F 3 "" H 3100 5050 50  0001 C CNN
+	1    3100 5050
 	1    0    0    -1  
 $EndComp
 $Comp
@@ -700,10 +673,10 @@ Wire Wire Line
 Wire Wire Line
 	1150 4150 1150 5400
 $Comp
-L Connector:Conn_01x02_Male GM_plus
+L Connector:Conn_01x02_Male GM_plus1
 U 1 1 5C4A0B35
 P 8500 3850
-F 0 "GM_plus" V 8450 4000 50  0000 R CNN
+F 0 "GM_plus1" V 8450 4000 50  0000 R CNN
 F 1 "Conn_01x02_Male" V 8350 4350 50  0000 R CNN
 F 2 "Pin_Headers:Pin_Header_Straight_1x02_Pitch2.54mm" H 8500 3850 50  0001 C CNN
 F 3 "~" H 8500 3850 50  0001 C CNN
@@ -711,10 +684,10 @@ F 3 "~" H 8500 3850 50  0001 C CNN
 	-1   0    0    -1  
 $EndComp
 $Comp
-L Connector:Conn_01x02_Male GM_minus
+L Connector:Conn_01x02_Male GM_minus1
 U 1 1 5C4A14B5
 P 8500 4150
-F 0 "GM_minus" V 8350 4150 50  0000 R CNN
+F 0 "GM_minus1" V 8350 4150 50  0000 R CNN
 F 1 "Conn_01x02_Male" V 8250 4400 50  0000 R CNN
 F 2 "Pin_Headers:Pin_Header_Straight_1x02_Pitch2.54mm" H 8500 4150 50  0001 C CNN
 F 3 "~" H 8500 4150 50  0001 C CNN
@@ -842,14 +815,14 @@ Connection ~ 8550 5400
 Wire Wire Line
 	8550 5400 9100 5400
 $Comp
-L main-eagle-import:C-EUC0805 C9
+L Device:C C9
 U 1 1 5C69314E
-P 5750 3750
-F 0 "C9" H 5810 3765 59  0000 L BNN
-F 1 "10n" H 5560 3515 59  0000 L BNN
-F 2 "Capacitor_SMD:C_0805_2012Metric_Pad1.15x1.40mm_HandSolder" H 5750 3750 50  0001 C CNN
-F 3 "" H 5750 3750 50  0001 C CNN
-	1    5750 3750
+P 5750 3800
+F 0 "C9" H 5810 3815 59  0000 L BNN
+F 1 "10n" H 5560 3565 59  0000 L BNN
+F 2 "Capacitor_SMD:C_0805_2012Metric_Pad1.15x1.40mm_HandSolder" H 5750 3800 50  0001 C CNN
+F 3 "" H 5750 3800 50  0001 C CNN
+	1    5750 3800
 	1    0    0    -1  
 $EndComp
 Wire Wire Line
@@ -916,16 +889,43 @@ Wire Wire Line
 Wire Wire Line
 	9850 4700 9850 4200
 Wire Wire Line
-	9850 4200 9900 4200
-Wire Wire Line
-	9900 4900 9850 4900
-Wire Wire Line
 	9850 4900 9850 4700
 Connection ~ 9850 4700
 Wire Wire Line
-	10300 4200 10350 4200
-Wire Wire Line
 	11350 3750 11350 5400
 Wire Wire Line
-	10750 4900 10300 4900
+	4000 4700 4000 4950
+Wire Wire Line
+	4000 5250 4000 5400
+$Comp
+L Device:R R14
+U 1 1 52B5C5D8
+P 11050 3950
+F 0 "R14" H 10981 4003 59  0000 R CNN
+F 1 "1k" H 10981 3898 59  0000 R CNN
+F 2 "Resistor_SMD:R_0805_2012Metric_Pad1.15x1.40mm_HandSolder" H 11050 3950 50  0001 C CNN
+F 3 "" H 11050 3950 50  0001 C CNN
+	1    11050 3950
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	11050 3550 11050 3800
+Wire Wire Line
+	11050 4100 11050 4250
+Wire Wire Line
+	9850 4200 9950 4200
+Wire Wire Line
+	10250 4200 10350 4200
+Wire Wire Line
+	9850 4900 9950 4900
+Wire Wire Line
+	10250 4900 10750 4900
+Wire Wire Line
+	9100 2550 9100 4050
+Wire Wire Line
+	9100 4350 9100 4800
+Wire Wire Line
+	9100 4800 9100 4950
+Wire Wire Line
+	9100 5250 9100 5400
 $EndSCHEMATC
