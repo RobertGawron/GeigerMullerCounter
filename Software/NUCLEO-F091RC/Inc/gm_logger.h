@@ -3,6 +3,6 @@
 
 void GMLogger_Init();
 
-void GMLogger_SendMeasurement();
+void GMLogger_LogMeasurement();
 
 #endif
