@@ -116,6 +116,11 @@ int main(void)
   MX_TIM2_Init();
   /* USER CODE BEGIN 2 */
 
+  // TODO maybe add some module like ApplicationBuilder?
+  GMCircularBuffer_Init();
+  GMDisplayUpdater_Init();
+  GMLogger_Init();
+
   HAL_TIM_Base_Start_IT(&htim2);      //start timer2 in interrupt mode.
 
   /* USER CODE END 2 */
@@ -125,7 +130,7 @@ int main(void)
   while (1)
   {
     /* USER CODE END WHILE */
-	__WFI(); // CPU sleep
+	  __WFI(); // CPU sleep
     /* USER CODE BEGIN 3 */
   }
   /* USER CODE END 3 */

@@ -1,5 +1,5 @@
-#ifndef GM_LOGGER_H_
-#define GM_LOGGER_H_
+#ifndef GMLOGGER_H_
+#define GMLOGGER_H_
 
 void GMLogger_Init();
 
