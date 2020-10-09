@@ -61,7 +61,7 @@ static void GMDisplayUpdater_PrintDoseLabel()
         stringOffset = strlen(labelDose);
         strcpy(&labelDose[stringOffset], labelMinuteCounter);
 #if 0
-        uint16_t dosage = GMDoseCounter_calculate();
+        uint16_t dosage = GMDoseCounter_Calculate();
         stringOffset = strlen(labelDose);
         itoa(dosage, &labelDose[stringOffset], base);
 

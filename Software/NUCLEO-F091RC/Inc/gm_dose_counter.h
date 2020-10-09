@@ -4,6 +4,6 @@
 #include <stdint.h>
 #include "gm_measurement.h"
 
-float GMDoseCounter_Calculate(GMMeasurement_Value_t count);
+float GMDoseCounter_Calculate(GMMeasurement_Value_t measurement);
 
 #endif
