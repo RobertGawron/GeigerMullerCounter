@@ -2,14 +2,13 @@
 #include <string.h>
 
 #include "gm_logger.h"
+#include "gm_logger_hw.h"
 #include "gm_measurement.h"
 #include "gm_circular_buffer.h"
-#include "stm32f0xx_hal.h"
+
 
 #define TX_BUFFER_SIZE 10
-char txBuffer[TX_BUFFER_SIZE];
-
-extern UART_HandleTypeDef huart2; // auto-generated in main.c
+uint8_t txBuffer[TX_BUFFER_SIZE];
 
 void GMLogger_Init()
 {
@@ -24,12 +23,11 @@ void GMLogger_LogMeasurement()
 
     uint16_t base = 10;
     itoa(latestMeasurement, &txBuffer[0], base);
-    uint16_t stringOffset = strlen(txBuffer);
+    uint16_t logLength = strlen(txBuffer);
 
-    txBuffer[stringOffset++] = '\r';
-    txBuffer[stringOffset++] = '\n';
-    txBuffer[stringOffset] = '\0';
+    txBuffer[logLength++] = '\r';
+    txBuffer[logLength++] = '\n';
+    txBuffer[logLength] = '\0';
 
-    HAL_UART_Transmit(&huart2, (uint8_t*) &txBuffer[0], stringOffset, 0xFFFF);
-
+    GMLoggerHW_LogData(&txBuffer[0], logLength);
 }
