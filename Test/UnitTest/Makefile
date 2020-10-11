@@ -1,10 +1,17 @@
-CC=gcc
-CFLAGS=-I./UTestLib
-DEPS = utest.h
-OBJ = main.o 
+CC = gcc
+CFLAGS = -Wall -I./UTestLib -I../../Software/NUCLEO-F091RC/Inc
+DUT_SRC_PATH = ../../Software/NUCLEO-F091RC/Src/
 
-%.o: %.c $(DEPS)
-	$(CC) -c -o $@ $< $(CFLAGS)
+default: all
 
-UnitTest: $(OBJ)
-	$(CC) -o $@ $^ $(CFLAGS)
+all:  main.o gm_circular_buffer.o 
+	$(CC) $(CFLAGS) -o count main.o gm_circular_buffer.o
+
+main.o:  main.c
+	$(CC) $(CFLAGS) -c main.c
+
+gm_circular_buffer.o:  $(DUT_SRC_PATH)/gm_circular_buffer.c
+	$(CC) $(CFLAGS) -c $(DUT_SRC_PATH)/gm_circular_buffer.c
+
+clean: 
+	$(RM) count *.o *~
