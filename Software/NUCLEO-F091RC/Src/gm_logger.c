@@ -22,8 +22,8 @@ void GMLogger_LogMeasurement()
     GMCircularBuffer_GetElement(&latestMeasurement, 0);
 
     uint16_t base = 10;
-    itoa(latestMeasurement, &txBuffer[0], base);
-    uint16_t logLength = strlen(txBuffer);
+    itoa(latestMeasurement, (char*)&txBuffer[0], base);
+    uint16_t logLength = strlen((char*)txBuffer);
 
     txBuffer[logLength++] = '\r';
     txBuffer[logLength++] = '\n';
