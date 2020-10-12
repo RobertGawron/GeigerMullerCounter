@@ -1,5 +1,5 @@
 CC = gcc
-CFLAGS = -Wall -I../Software/NUCLEO-F091RC/Inc
+CFLAGS = -Wall -fpic -I../Software/NUCLEO-F091RC/Inc
 DUT_SRC_PATH = ../Software/NUCLEO-F091RC/Src/
 STUB_SRC_PATH = ./Stub
 default: all
@@ -11,7 +11,7 @@ all:  main.o \
 	gm_logger.o \
 	gm_display_sim.o \
 	gm_logger_sim.o
-	$(CC) $(CFLAGS) -o main main.o \
+	$(CC) $(CFLAGS) -shared -o main.so main.o \
 		gm_circular_buffer.o \
 		gm_display_updater.o \
 		gm_measurement_calculator.o \
