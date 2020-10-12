@@ -80,8 +80,9 @@ static void GMDisplayUpdater_PrintDoseLabel()
 
 static void GMDisplayUpdater_PrintBargraph()
 {
-	GMMeasurement_Value_t maxValue = GMCircularBuffer_GetMaxElement();
-
+	GMMeasurement_Value_t maxValue;
+	GMCircularBuffer_GetMaxElement(&maxValue);
+	#warning "check return value"
 
     for(uint16_t i = 0; i < GMCircularBuffer_GetElementCount(); i++)
     {
