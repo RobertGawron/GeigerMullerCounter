@@ -27,7 +27,7 @@ void GMLogger_LogMeasurement()
 
     txBuffer[logLength++] = '\r';
     txBuffer[logLength++] = '\n';
-    txBuffer[logLength] = '\0';
+    txBuffer[logLength++] = '\0';
 
     GMLoggerHW_LogData(&txBuffer[0], logLength);
 }

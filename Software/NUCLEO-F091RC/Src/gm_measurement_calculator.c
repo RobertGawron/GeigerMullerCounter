@@ -6,6 +6,7 @@ static volatile GMMeasurement_Value_t occurenceCounter;
 
 void GMMeasurementCalculator_Init()
 {
+    GMCircularBuffer_Init();
     occurenceCounter = 0U;
 }
 

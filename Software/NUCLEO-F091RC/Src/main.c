@@ -43,9 +43,8 @@
 
 /* Private includes ----------------------------------------------------------*/
 /* USER CODE BEGIN Includes */
-#include "gm_circular_buffer.h"
+
 #include "gm_display_updater.h"
-#include "gm_display_hw.h"
 #include "gm_measurement_calculator.h"
 #include "gm_logger.h"
 /* USER CODE END Includes */
@@ -125,9 +124,7 @@ int main(void)
   /* USER CODE BEGIN 2 */
 
   // TODO maybe add some module like ApplicationBuilder?
-  GMCircularBuffer_Init();
   GMDisplayUpdater_Init();
-  GMDisplayHW_Init();
   GMMeasurementCalculator_Init();
   GMLogger_Init();
 
