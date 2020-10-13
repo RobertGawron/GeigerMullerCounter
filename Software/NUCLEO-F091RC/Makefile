@@ -1,17 +1,17 @@
 CC = gcc
-CFLAGS = -Wall -fpic -I../Software/NUCLEO-F091RC/Inc
-DUT_SRC_PATH = ../Software/NUCLEO-F091RC/Src/
-STUB_SRC_PATH = ./Stub
+CFLAGS = -Wall -fpic -I./Inc
+DUT_SRC_PATH = ./Src
+STUB_SRC_PATH = ./DriversPCSimulation
 default: all
 
-all:  main.o \
+all: simulation.o \
 	gm_circular_buffer.o \
 	gm_display_updater.o \
 	gm_measurement_calculator.o \
 	gm_logger.o \
 	gm_display_sim.o \
 	gm_logger_sim.o
-	$(CC) $(CFLAGS) -shared -o main.so main.o \
+	$(CC) $(CFLAGS) -shared -o simulation.so simulation.o \
 		gm_circular_buffer.o \
 		gm_display_updater.o \
 		gm_measurement_calculator.o \
@@ -19,8 +19,8 @@ all:  main.o \
 		gm_display_sim.o \
 		gm_logger_sim.o
 
-main.o:  main.c
-	$(CC) $(CFLAGS) -c main.c
+main.o:  simulation.c
+	$(CC) $(CFLAGS) -c simulation.c
 
 gm_circular_buffer.o:  $(DUT_SRC_PATH)/gm_circular_buffer.c
 	$(CC) $(CFLAGS) -c $(DUT_SRC_PATH)/gm_circular_buffer.c
@@ -43,4 +43,4 @@ gm_logger_sim.o:  $(STUB_SRC_PATH)/gm_logger_sim.c
 
 
 clean: 
-	$(RM) main *.o *~
+	$(RM) *.so *.o *~
