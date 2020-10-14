@@ -68,14 +68,16 @@ GMCircularBuffer_GetMaxElementStatus_t GMCircularBuffer_GetMaxElement(GMMeasurem
 {
     GMCircularBuffer_GetMaxElementStatus_t retValue = GMCIRCULARBUFFER_GETMAXELEMENT_NO_MEASSUREMENTS;
 
+    *element = 0u;
+
     if(GMCircularBuffer_GetElementCount() != 0u)
     {
         for(uint16_t i = 0; i < GMCircularBuffer_GetElementCount(); i++)
         {
             GMMeasurement_Value_t currentElement;
-            bool status = GMCircularBuffer_GetElement(&currentElement, i);
+            GMCircularBuffer_GetElementStatus_t status = GMCircularBuffer_GetElement(&currentElement, i);
 
-            if(status)
+            if(status == GMCIRCULARBUFFER_GETELEMENT_OK)
             {
                 if(currentElement > *element)
                 {

@@ -26,15 +26,14 @@ class MainWindow(QMainWindow):
         self.onHWDisplayUpdate()
 
         
-        # TODO move it somewhere
-        
+        """# TODO move it somewhere
         def invokeUpdate(dut):
             time.sleep(10)
             self.dut.generateEndOfSampleCollecting()
             self.onNewLoggedData()
 
         x = threading.Thread(target=invokeUpdate, args=(self,))
-        x.start()
+        x.start()"""
 
 
         self.show()
@@ -53,19 +52,70 @@ class MainWindow(QMainWindow):
         self.WidgetLogger.append (data_with_timestamp)
 
     def onHWDisplayUpdate(self):
-        # this is a dummy implementation just to know how Qt + images works
-
-        LCDHeightBlue = 48
-        LCDHeightYellow = 16
+        for i in range(120):
+            self.dut.generateGMPulse()
         
-        canvas = QtGui.QPixmap(128, LCDHeightBlue+LCDHeightYellow)
+        self.dut.generateEndOfSampleCollecting()
+        
+        for i in range(101):
+            self.dut.generateGMPulse()
+        self.dut.generateEndOfSampleCollecting()
+
+        for i in range(120):
+            self.dut.generateGMPulse()
+        
+        self.dut.generateEndOfSampleCollecting()
+        
+        for i in range(110):
+            self.dut.generateGMPulse()
+        self.dut.generateEndOfSampleCollecting()
+
+
+        display_data = self.dut.getDisplayData()
+        display_length = self.dut.getDisplayLength()
+        display_height = self.dut.getDisplayHeight()
+
+
+        display_pixel_on_color = "#6df8fc"
+        display_pixel_off_color ="#14182b"
+
+        canvas = QtGui.QPixmap(display_length, display_height)
         # clean canvas, otherwise image is black
         # see https://stackoverflow.com/questions/63269098/qpixmap-qpainter-showing-black-window-background
-        canvas.fill(QtGui.QColor("blue"))
+        canvas.fill(QtGui.QColor(display_pixel_off_color))
         self.WidgetHWDisplay.setPixmap(canvas)
 
+
+
         painter = QtGui.QPainter(self.WidgetHWDisplay.pixmap())
-        painter.drawLine(0, 0, 100, 100)
+
+        pen = QtGui.QPen()
+        pen.setWidth(1)
+        pen.setColor(QtGui.QColor(display_pixel_on_color))
+        painter.setPen(pen)
+
+
+        data_str=''
+
+        for y in range(display_height):
+            data_str +=("^\n")
+            for x in range(display_length):
+                # formula from SSD1306_DrawPixel()
+                # SSD1306_Buffer[x + (y / 8) * SSD1306_WIDTH] |= 1 << (y % 8);
+                cell = display_data[x + int(y / 8) * display_length]
+                value = cell & (1 << (y %8))
+                if(value == 0):
+                    pen.setColor(QtGui.QColor(display_pixel_on_color))
+                    painter.setPen(pen)
+                    data_str += ('@')
+                else:
+                    pen.setColor(QtGui.QColor(display_pixel_off_color))
+                    painter.setPen(pen)
+                    data_str += ('_')
+                painter.drawPoint(x, y)
+
+        print (data_str)
+
         painter.end()
 
 

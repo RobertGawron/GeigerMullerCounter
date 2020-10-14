@@ -32,6 +32,7 @@ void GMDisplayUpdater_Init()
 void GMDisplayUpdater_Update()
 {
     GMDisplayHW_Clean();
+    // OSError: exception: access violation reading 0x00000000
     GMDisplayUpdater_PrintDoseLabel();
     GMDisplayUpdater_PrintBargraph();
     GMDisplayHW_Update();
@@ -47,11 +48,11 @@ static void GMDisplayUpdater_PrintDoseLabel()
 {
 	GMMeasurement_Value_t latestSampleValue;
     uint16_t latestSampleIndex = 0U;
-    bool status = GMCircularBuffer_GetElement(&latestSampleValue, latestSampleIndex);
+    GMCircularBuffer_GetElementStatus_t status = GMCircularBuffer_GetElement(&latestSampleValue, latestSampleIndex);
 
     uint16_t stringOffset = 0U;
 
-    if (status)
+    if (status == GMCIRCULARBUFFER_GETELEMENT_OK)
     {
         // TODO check string size to avoid buffer overflow
 
@@ -80,17 +81,17 @@ static void GMDisplayUpdater_PrintDoseLabel()
 
 static void GMDisplayUpdater_PrintBargraph()
 {
-	GMMeasurement_Value_t maxValue;
+	GMMeasurement_Value_t maxValue = 0u;
 	GMCircularBuffer_GetMaxElement(&maxValue);
 	#warning "check return value"
 
-    for(uint16_t i = 0; i < GMCircularBuffer_GetElementCount(); i++)
+    for(uint16_t i = 0; i < GMCircularBuffer_GetElementCount() ; i++)
     {
     	GMMeasurement_Value_t sampleValue;
         uint16_t indexInBuffer = (uint16_t)(GMCircularBuffer_GetElementCount() - (i + 1U));
-        bool status = GMCircularBuffer_GetElement(&sampleValue, indexInBuffer);
+        GMCircularBuffer_GetElementStatus_t status = GMCircularBuffer_GetElement(&sampleValue, indexInBuffer);
 
-        if(status)
+        if(status == GMCIRCULARBUFFER_GETELEMENT_OK)
         {
             const uint16_t DisplayUpdater_LCDHeight = (DisplayUpdater_LCDHeightBlue + DisplayUpdater_LCDHeightYellow);
 

@@ -6,8 +6,8 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>737</width>
-    <height>224</height>
+    <width>782</width>
+    <height>223</height>
    </rect>
   </property>
   <property name="sizePolicy">
@@ -29,7 +29,7 @@
    <widget class="QTextBrowser" name="WidgetLogger">
     <property name="geometry">
      <rect>
-      <x>320</x>
+      <x>360</x>
       <y>10</y>
       <width>400</width>
       <height>171</height>
@@ -141,17 +141,11 @@
    <widget class="QLabel" name="WidgetHWDisplay">
     <property name="geometry">
      <rect>
-      <x>170</x>
+      <x>180</x>
       <y>20</y>
-      <width>128</width>
-      <height>64</height>
+      <width>151</width>
+      <height>151</height>
      </rect>
-    </property>
-    <property name="sizePolicy">
-     <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
-      <horstretch>0</horstretch>
-      <verstretch>0</verstretch>
-     </sizepolicy>
     </property>
     <property name="minimumSize">
      <size>
@@ -161,8 +155,8 @@
     </property>
     <property name="maximumSize">
      <size>
-      <width>128</width>
-      <height>64</height>
+      <width>300</width>
+      <height>300</height>
      </size>
     </property>
     <property name="text">
@@ -185,7 +179,7 @@
     <rect>
      <x>0</x>
      <y>0</y>
-     <width>737</width>
+     <width>782</width>
      <height>21</height>
     </rect>
    </property>
