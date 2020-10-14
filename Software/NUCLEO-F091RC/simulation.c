@@ -6,6 +6,7 @@
 #include "gm_logger.h"
 
 #include "DriversPCSimulation/gm_logger_sim.h"
+#include "DriversPCSimulation/ssd1306_i2c_sim.h"
 
 __declspec(dllexport) void Lib_Simulation_Init()
 {
@@ -22,7 +23,7 @@ __declspec(dllexport) void Lib_GMMeasurementCalculator_OnGMPulseObserved()
 __declspec(dllexport) void Lib_GMMeasurementCalculator_OnSamplingDone()
 {
     GMMeasurementCalculator_OnSamplingDone();
-    // dummy hack
+    GMDisplayUpdater_Update();
     GMLogger_LogMeasurement();
 }
 
@@ -30,4 +31,21 @@ __declspec(dllexport) void Lib_GMLoggerSIM_GetLoggedData(uint8_t** buffer, uint1
 {
     GMLoggerSIM_GetLoggedData(buffer, size);
 }
+
+
+__declspec(dllexport) uint8_t Lib_GMLoggerSIM_GetDisplayLength()
+{
+    return SSD1306I2CSIM_GetDisplayLength();
+}
+
+__declspec(dllexport) uint8_t Lib_GMLoggerSIM_GetDisplayHeight()
+{
+    return SSD1306I2CSIM_GetDisplayHeight();
+}
+
+__declspec(dllexport) uint8_t* Lib_GMLoggerSIM_GetDisplayContent()
+{
+    return SSD1306I2CSIM_GetDisplayContent();
+}
+
  
