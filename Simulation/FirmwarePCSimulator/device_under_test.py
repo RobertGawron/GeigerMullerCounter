@@ -9,12 +9,15 @@ class DeviceUnderTest:
         self.dut = ctypes.CDLL(dllabspath)
         self.dut.Lib_Simulation_Init()
 
+    
     def generateGMPulse(self):
         self.dut.Lib_GMMeasurementCalculator_OnGMPulseObserved()
 
+    
     def generateEndOfSampleCollecting(self):
         self.dut.Lib_GMMeasurementCalculator_OnSamplingDone()
 
+    
     def getLoggedData(self):
         self.dut.Lib_GMLoggerSIM_GetLoggedData.argtypes = [POINTER(POINTER(c_uint8)),  POINTER(c_uint8)]
         data = POINTER(c_uint8)()
@@ -28,5 +31,19 @@ class DeviceUnderTest:
 
         # it is expected that log  end with new line, 
         # this should be stripped application
-        
         return logged_data[:-3]
+
+    
+    def getDisplayLength(self):
+        self.dut.Lib_GMLoggerSIM_GetDisplayLength.restype = c_uint8
+        return self.dut.Lib_GMLoggerSIM_GetDisplayLength()
+    
+
+    def getDisplayHeight(self):
+        self.dut.Lib_GMLoggerSIM_GetDisplayHeight.restype = c_uint8
+        return self.dut.Lib_GMLoggerSIM_GetDisplayHeight()
+
+
+    def getDisplayData(self):
+        self.dut.Lib_GMLoggerSIM_GetDisplayContent.restype = POINTER(c_uint8)
+        return self.dut.Lib_GMLoggerSIM_GetDisplayContent()

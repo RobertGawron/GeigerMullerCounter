@@ -23,7 +23,7 @@ UTEST(GMCircularBuffer_Insert, Insert_One_Element_Expect_One_Element_With_Correc
 
     GMCircularBuffer_GetElementStatus_t isRetreiveOK = GMCircularBuffer_GetElement(&elementRetreived, 0);
     EXPECT_EQ(isRetreiveOK, GMCIRCULARBUFFER_GETELEMENT_OK);
-    EXPECT_EQ(elementRetreived, elementInserted);
+    EXPECT_EQ(elementInserted, elementRetreived);
 }
 
 
