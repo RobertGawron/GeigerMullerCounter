@@ -47,3 +47,21 @@ class DeviceUnderTest:
     def getDisplayData(self):
         self.dut.Lib_GMLoggerSIM_GetDisplayContent.restype = POINTER(c_uint8)
         return self.dut.Lib_GMLoggerSIM_GetDisplayContent()
+
+    def getDisplayPixelValue(self, x, y):
+        # note: this is not optimal data is fetched multiple times
+        
+        display_length = self.getDisplayLength()
+        display_height = self.getDisplayHeight()
+
+        self.dut.Lib_GMLoggerSIM_GetDisplayContent.restype = POINTER(c_uint8)
+        display_data = self.dut.Lib_GMLoggerSIM_GetDisplayContent()
+
+        # formula from SSD1306_DrawPixel()
+        # SSD1306_Buffer[x + (y / 8) * SSD1306_WIDTH] |= 1 << (y % 8);
+        cell = display_data[x + int(y / 8) * display_length]
+        value = cell & (1 << (y % 8))
+
+        return value
+
+
