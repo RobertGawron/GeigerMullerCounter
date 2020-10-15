@@ -32,7 +32,6 @@ void GMDisplayUpdater_Init()
 void GMDisplayUpdater_Update()
 {
     GMDisplayHW_Clean();
-    // OSError: exception: access violation reading 0x00000000
     GMDisplayUpdater_PrintDoseLabel();
     GMDisplayUpdater_PrintBargraph();
     GMDisplayHW_Update();

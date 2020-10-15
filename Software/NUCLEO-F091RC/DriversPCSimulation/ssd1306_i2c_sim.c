@@ -1,26 +1,15 @@
 #include "ssd1306.h"
 #include "ssd1306_i2c_sim.h"
 
-uint8_t SSD1306_Buffer[SSD1306_WIDTH * SSD1306_HEIGHT / 8];
+#define SSD1306I2CSIM_DisplayLength SSD1306_WIDTH
+#define SSD1306I2CSIM_DisplayHeight SSD1306_HEIGHT
 
-// TODO correct and not hardcoded values
-#define SSD1306I2CSIM_DisplayLength 128u
-#define SSD1306I2CSIM_DisplayHeight 48u+16u
-
-uint8_t SSD1306I2CSIM_Display[SSD1306I2CSIM_DisplayLength][SSD1306I2CSIM_DisplayHeight];
-
-typedef enum GMDisplaySIM_PixelState_t
-{
-    GMDISPLAY_SIM_PIXEL_OFF = 0
-    , GMDISPLAY_SIM_PIXEL_ON = 1
-} GMDisplaySIM_PixelState_t;
-
+#define BUFFER_LLENGTH (SSD1306_WIDTH * SSD1306_HEIGHT / 8)
+uint8_t SSD1306_Buffer[BUFFER_LLENGTH]; // originated from ssd1306.h
 
 uint8_t SSD1306_Init() 
 {
-    const size_t length = SSD1306I2CSIM_DisplayLength * SSD1306I2CSIM_DisplayHeight *sizeof(SSD1306I2CSIM_Display[0][0]);
-    memset(&SSD1306I2CSIM_Display[0][0], GMDISPLAY_SIM_PIXEL_OFF, length);
-
+    memset(&SSD1306_Buffer[0], 0u, BUFFER_LLENGTH);
     return 0u;
 }
 
