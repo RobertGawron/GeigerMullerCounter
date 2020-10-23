@@ -1,6 +1,6 @@
 # GeigerMullerCounter
 
-![Docs Generation](https://github.com/RobertGawron/GeigerMullerCounter/workflows/Docs%20Generation/badge.svg)
+[![Docs Generation](https://github.com/RobertGawron/GeigerMullerCounter/workflows/Docs%20Generation/badge.svg)](https://github.com/RobertGawron/GeigerMullerCounter/actions?query=workflow%3A%22Docs+Generation%22)
 
 The Geiger–Müller counter is a relatively simple tool to measure ionizing radiation. When high voltage (typically 380-420V) is applied to the Geiger–Müller tube, the tube doesn't conducts electricity, but it does conducts for a short period, when radiation particle is observed. Those pulses are observed by the detector. The level of ionizing radiation is proportional to the amount of pulses detected in a constant interval of time (typically from 20s to 2,5min).
 
