@@ -19,19 +19,19 @@
 \node (gm_tube) [component] {Geiger tube};
 \node (sample) [system, above=of gm_tube] {Radioactive sample};
 
-\node (polarization) [component, left=of gm_tube] {GM Tube polarization (400V DC)\\ (MC34063)};
+\node (polarization) [component, below=of gm_tube] {GM Tube polarization \\400V DC\\ (MC34063)};
 \node (comparator) [component, right=of gm_tube] {Comparator};
 
 \node (osciloscope) [system, right=of comparator] {Osciloscope\\ (Rigool1054Z)};
 
-\node (data_acquisition) [system, below=of comparator] {Acquisition\\ (NUCLEO-F091RC)};
+\node (data_acquisition) [system, below=of comparator] {HardwareDataLogger\\ sub-project};
 
 \node (pi) [system, below=of data_acquisition] {Data processing and\\ firmware flashing\\ (RaspberryPi 3B)};
 \node (pc) [system, below=of pi] {Local PC\\ (OS independent)};
 
 
 \begin{pgfonlayer}{background}
-\node[system ,  draw, thick,  inner xsep=1em, inner ysep=1em, fit=(gm_tube) (polarization) (comparator) ] {};
+\node[system ,  draw, thick,  inner xsep=1em, inner ysep=1em, fit=(gm_tube) (polarization) (comparator) (data_acquisition)] {};
 \end{pgfonlayer}
 
 % Connectors
@@ -42,7 +42,7 @@
 \draw [-{Latex[scale=3.0]}] (gm_tube) -- node[anchor=south, minimum height=.25cm, draw=none] {} (comparator);
 \draw [-{Latex[scale=3.0]}] (comparator) -- node[anchor=south, minimum height=.25cm, draw=none] {} (osciloscope);
 
-\draw [-{Latex[scale=3.0]}] (comparator) -- node[anchor=west, minimum height=.25cm, draw=none] {3V3 impulses} (data_acquisition);
+\draw [-{Latex[scale=3.0]}] (comparator) -- node[anchor=west, minimum height=.25cm, draw=none] {3V3 pulses} (data_acquisition);
 \draw [-{Latex[scale=3.0]}] (data_acquisition) -- node[anchor=west, minimum height=.25cm, draw=none] {USB} (pi);
 \draw [-{Latex[scale=3.0]}] (pi) -- node[anchor=west, minimum height=.25cm, draw=none] {} (data_acquisition);
 
