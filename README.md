@@ -6,7 +6,7 @@ The Geiger–Müller counter is a relatively simple tool to measure ionizing rad
 
 ## System architecture
 
-![architecture](https://raw.githubusercontent.com/RobertGawron/GeigerMullerCounter/master/Documentation/Diagrams/ArchitectureOverview-1.png)
+<img src="./Documentation/Diagrams/ArchitectureOverview.svg"  width="100%">
 
 ## Hardware and Software details
 
