@@ -1,5 +1,5 @@
 EESchema Schematic File Version 4
-EELAYER 29 0
+EELAYER 30 0
 EELAYER END
 $Descr User 13234 8268
 encoding utf-8
@@ -823,7 +823,7 @@ L Device:D_Zener D4
 U 1 1 5C665A94
 P 8550 5000
 F 0 "D4" V 8504 5079 50  0000 L CNN
-F 1 "D_Zener" V 8595 5079 50  0000 L CNN
+F 1 "5V1" V 8595 5079 50  0000 L CNN
 F 2 "Diode_THT:D_A-405_P2.54mm_Vertical_KathodeUp" H 8550 5000 50  0001 C CNN
 F 3 "~" H 8550 5000 50  0001 C CNN
 	1    8550 5000
