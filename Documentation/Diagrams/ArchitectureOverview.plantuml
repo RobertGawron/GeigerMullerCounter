@@ -1,0 +1,47 @@
+@startuml
+' Define the Geiger-Muller Counter system as a component with a provided interface
+component "Geiger-Muller Counter" as geiger_counter {
+    
+    artifact "GM Tube (STS-5)" as gm_tube
+    artifact "GM Tube Polarization\n(400V DC, MC34063)" as polarization
+    artifact "Comparator (LM358)" as comparator
+    artifact "Shunt Resistor (R7)" as r_sense
+    artifact "LED (D4)" as led
+    artifact "Output Voltage Level Selector\n(Q4, R13, J3)" as out_level_selector
+interface "Pulse Digital output (J3)" as digital_outoput 
+interface "Pulse Analog Outout (TP1)" as analog_output
+
+}
+
+
+' Define the external components with required interfaces
+component "Hardware Data Logger" as data_logger
+component "Oscilloscope\n(optional, for debugging)" as oscilloscope
+
+
+
+' Position Hardware Data Logger and Oscilloscope below the Pulse 3V3 Output Interface using --down-o
+digital_outoput --down-o data_logger
+digital_outoput --down-o oscilloscope
+
+r_sense --down->  analog_output
+analog_output --down-o oscilloscope
+
+' External elements and optional debugging tools
+artifact "Tested Sample" as sample
+artifact "Power Supply\n(5V DC)" as power_supply
+
+' Create system connections
+power_supply -down->  geiger_counter 
+sample -down-> gm_tube : Radioactive Decay
+polarization -left-> gm_tube
+gm_tube -down-> r_sense : "Pulse of current when radiation particle detected"
+r_sense -down-> comparator : "Voltage pulse (analog signal)"
+comparator -right-> led : "Blinks on\nparticle detection"
+comparator -down-> out_level_selector : "Voltage pulse (digital signal)"
+out_level_selector -down-> digital_outoput : "Digital pulse output,\nhigh-state voltage configured by user"
+
+' Add a user to interact with the Output Voltage Level Selector
+actor "User" as user
+user -up-> out_level_selector : "Configures high-state voltage"
+@enduml
